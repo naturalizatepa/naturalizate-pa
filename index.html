@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residencia Permanente Estudiantes | naturalizate.pa</title>
+    <style>
+        /* --- ESTETICA MINIMALISTA & PALETA DE COLORES --- */
+        :root {
+            --navy: #0F1C3F; /* Azul Marino Profundo y Elegante */
+            --white: #FFFFFF;
+            --black: #080808; /* Negro puro mate */
+            --gold: #C9A66B; /* Acento dorado para botones/detalles */
+            --gray-light: #F9F9F9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Tipografía */
+        h1, h2, h3 {
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        /* --- BOTONES --- */
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--white);
+            padding: 18px 40px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 1px solid var(--gold);
+            transition: all 0.4s ease;
+            margin-top: 20px;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: transparent;
+            color: var(--gold);
+        }
+
+        .btn-inverted {
+            background-color: transparent;
+            color: var(--white);
+            border: 1px solid var(--white);
+        }
+        
+        .btn-inverted:hover {
+            background-color: var(--white);
+            color: var(--black);
+        }
+
+        /* --- SECCIONES --- */
+        
+        /* 1. Header / Navbar - Blanco */
+        nav {
+            background-color: var(--white);
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .brand {
+            color: var(--navy);
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-decoration: none;
+        }
+
+        /* 2. Hero Section - Azul Marino */
+        .hero {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 120px 5%;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            max-width: 900px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: block;
+            font-weight: 600;
+        }
+
+        /* 3. Información Legal - Blanco */
+        .legal-info {
+            background-color: var(--white);
+            color: var(--black);
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 50px auto 0;
+            text-align: left;
+        }
+
+        .info-card {
+            border-left: 1px solid var(--navy);
+            padding-left: 25px;
+        }
+
+        /* 4. Oferta Irresistible - Negro */
+        .offer-section {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .offer-box {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .offer-list {
+            list-style: none;
+            text-align: left;
+            margin: 40px 0;
+        }
+
+        .offer-list li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .offer-list span {
+            color: var(--gold);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* 5. Perfil y Contacto - Blanco */
+        .contact-section {
+            background-color: var(--white);
+            color: var(--navy);
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        /* 6. Footer - Azul Marino */
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 40px 5%;
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .offer-box { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR (BLANCO) -->
+    <nav>
+        <a href="#" class="brand">naturalizate.pa</a>
+        <div style="font-size: 0.9rem; color: var(--navy);">Alfonso Villarreal</div>
+    </nav>
+
+    <!-- HERO SECTION (AZUL MARINO) -->
+    <section class="hero">
+        <span class="hero-subtitle">DECRETO EJECUTIVO N° 3 | REPÚBLICA DE PANAMÁ</span>
+        <h1>Panamá: Nueva Subcategoría de Residente Permanente</h1>
+        <p style="max-width: 700px; margin: 20px auto; opacity: 0.8;">
+            Atención Estudiantes: Si has cursado estudios consecutivos por más de 6 años en territorio nacional, tu estatus migratorio está a punto de evolucionar.
+        </p>
+        <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" class="btn-whatsapp btn-inverted">
+            Verificar mi Elegibilidad
+        </a>
+    </section>
+
+    <!-- LEGAL CONTEXT (BLANCO) -->
+    <section class="legal-info">
+        <h2 style="color: var(--navy);">Tu Esfuerzo Académico Reconocido por Ley</h2>
+        <p style="max-width: 800px; margin: 0 auto;">
+            El nuevo decreto crea un camino directo hacia la permanencia definitiva, eliminando barreras económicas y burocráticas históricas.
+        </p>
+
+        <div class="grid-container">
+            <div class="info-card">
+                <h3 style="font-size: 1.1rem; font-weight: 700;">Sin Depósito de Repatriación</h3>
+                <p style="font-size: 0.95rem;">Exención total del depósito de garantía (Art. 3). Un ahorro directo y significativo para tu economía.</p>
+            </div>
+            <div class="info-card">
+                <h3 style="font-size: 1.1rem; font-weight: 700;">Requisitos Simplificados</h3>
+                <p style="font-size: 0.95rem;">Certificación de 6 años de estudios (Primaria, Secundaria o Universidad) y récord policivo limpio.</p>
+            </div>
+            <div class="info-card">
+                <h3 style="font-size: 1.1rem; font-weight: 700;">Ruta a la Permanencia</h3>
+                <p style="font-size: 0.95rem;">Permiso provisional por 2 años con opción directa a Residencia Permanente al culminar el término (Art. 4).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFERTA IRRESISTIBLE (NEGRO) -->
+    <section class="offer-section">
+        <div class="offer-box">
+            <h2 style="color: var(--gold);">Propuesta Exclusiva naturalizate.pa</h2>
+            <p>No dejes que un error administrativo arruine 6 años de esfuerzo. Hemos diseñado una estrategia legal blindada para este decreto.</p>
+            
+            <ul class="offer-list">
+                <li>
+                    <span>✦</span>
+                    <div><strong>Pre-Auditoría de Documentos Gratuita:</strong><br>Analizamos tus créditos y certificaciones escolares antes de presentar cualquier papel, asegurando 0% de riesgo de rechazo.</div>
+                </li>
+                <li>
+                    <span>✦</span>
+                    <div><strong>Gestión Notarial "Llave en Mano":</strong><br>Nos encargamos de las cartas de responsabilidad y declaraciones. Tú solo firmas.</div>
+                </li>
+                <li>
+                    <span>✦</span>
+                    <div><strong>ACCESO PRIORITARIO:</strong><br>Al unirte al grupo de WhatsApp hoy, obtienes una guía PDF: <em>"Los 3 errores que rechazan residencias de estudiantes"</em> y descuento en honorarios.</div>
+                </li>
+            </ul>
+
+            <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" class="btn-whatsapp">
+                Reclamar Oferta en WhatsApp
+            </a>
+            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">Cupos limitados para revisión gratuita este mes.</p>
+        </div>
+    </section>
+
+    <!-- PERFIL Y CONTACTO (BLANCO) -->
+    <section class="contact-section">
+        <h2>Alfonso Villarreal</h2>
+        <p style="letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 30px;">Abogado Fundador | naturalizate.pa</p>
+        
+        <div style="max-width: 600px; margin: 0 auto; line-height: 2;">
+            <p>Especialista en Derecho Migratorio Panameño. Mi misión es transformar tu historial académico en seguridad jurídica permanente.</p>
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 30px 0; width: 50px; margin-left: auto; margin-right: auto;">
+            <p><strong>Email:</strong> Villarreallawyers@protón.me</p>
+            <p><strong>Teléfono:</strong> 6255-7583</p>
+        </div>
+    </section>
+
+    <!-- FOOTER (AZUL MARINO) -->
+    <footer>
+        <p>&copy; 2026 naturalizate.pa. Todos los derechos reservados.</p>
+        <p style="opacity: 0.5;">Panamá, República de Panamá.</p>
+    </footer>
+
+</body>
+</html>

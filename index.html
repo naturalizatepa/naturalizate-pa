@@ -3,291 +3,510 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Residencia Permanente Estudiantes | naturalizate.pa</title>
+    <title>Naturalízate.pa | De Residente a Ciudadano Panameño</title>
     <style>
-        /* --- ESTETICA MINIMALISTA & PALETA DE COLORES --- */
         :root {
-            --navy: #0F1C3F; /* Azul Marino Profundo y Elegante */
-            --white: #FFFFFF;
-            --black: #080808; /* Negro puro mate */
-            --gold: #C9A66B; /* Acento dorado para botones/detalles */
-            --gray-light: #F9F9F9;
+            --navy: #0d1b2a;
+            --navy-light: #1b3a5f;
+            --white: #ffffff;
+            --black: #000000;
+            --gray-light: #f8f9fa;
+            --gray-text: #4a4a4a;
+            --whatsapp: #25D366;
+            --whatsapp-hover: #20bd5a;
+            --gold: #C9A66B; /* Tono dorado elegante para resaltar "Nacionalidad" */
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-weight: 300;
             line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Tipografía */
-        h1, h2, h3 {
-            font-weight: 400;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-        }
-
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
-
-        /* --- BOTONES --- */
-        .btn-whatsapp {
-            display: inline-block;
-            background-color: var(--gold);
-            color: var(--white);
-            padding: 18px 40px;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border: 1px solid var(--gold);
-            transition: all 0.4s ease;
-            margin-top: 20px;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: transparent;
-            color: var(--gold);
-        }
-
-        .btn-inverted {
-            background-color: transparent;
-            color: var(--white);
-            border: 1px solid var(--white);
-        }
-        
-        .btn-inverted:hover {
-            background-color: var(--white);
             color: var(--black);
+            background-color: var(--gray-light);
         }
 
-        /* --- SECCIONES --- */
-        
-        /* 1. Header / Navbar - Blanco */
-        nav {
-            background-color: var(--white);
-            padding: 25px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .brand {
-            color: var(--navy);
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-decoration: none;
-        }
-
-        /* 2. Hero Section - Azul Marino */
-        .hero {
+        /* Header */
+        header {
             background-color: var(--navy);
-            color: var(--white);
-            padding: 120px 5%;
+            padding: 20px 0;
             text-align: center;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            border-bottom: 2px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            color: var(--gold);
+            font-weight: 400;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.95), rgba(27, 58, 95, 0.95)), url('https://images.unsplash.com/photo-1585255318859-f5c15f4cffe9?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 20px;
+            text-align: center;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
+            font-weight: 300;
             max-width: 900px;
+            margin: 0 auto 20px;
             line-height: 1.2;
         }
-        
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-            display: block;
+
+        .hero h1 strong {
             font-weight: 600;
+            color: var(--gold);
         }
 
-        /* 3. Información Legal - Blanco */
-        .legal-info {
-            background-color: var(--white);
-            color: var(--black);
-            padding: 100px 5%;
-            text-align: center;
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #e0e0e0;
+            font-weight: 300;
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-            max-width: 1200px;
-            margin: 50px auto 0;
-            text-align: left;
-        }
-
-        .info-card {
-            border-left: 1px solid var(--navy);
-            padding-left: 25px;
-        }
-
-        /* 4. Oferta Irresistible - Negro */
-        .offer-section {
-            background-color: var(--black);
+        /* Botones CTA */
+        .btn {
+            display: inline-block;
+            background-color: var(--whatsapp);
             color: var(--white);
-            padding: 100px 5%;
-            text-align: center;
+            text-decoration: none;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .offer-box {
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 60px;
-            max-width: 800px;
+        .btn:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--navy);
+            color: var(--navy);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+
+        /* El Problema (Agitación) */
+        .problem-section {
+            padding: 100px 20px;
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .offer-list {
-            list-style: none;
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: var(--navy);
+            margin-bottom: 60px;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .pain-card {
+            background: var(--gray-light);
+            padding: 40px;
+            border-left: 4px solid #ff4444;
+            transition: transform 0.3s ease;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pain-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .pain-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+
+        .pain-card p {
+            color: var(--gray-text);
+            font-size: 1.1rem;
+        }
+
+        /* La Solución (Ventajas) */
+        .solution-section {
+            padding: 100px 20px;
+            background-color: var(--navy);
+            color: var(--white);
+        }
+
+        .solution-section .section-title {
+            color: var(--white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        /* Requisitos - Minimalista */
+        .requirements {
+            padding: 100px 20px;
+            background: var(--white);
+        }
+
+        .req-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border: 2px solid var(--navy);
+            padding: 50px;
+            text-align: center;
+        }
+
+        .req-title {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .path-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
             text-align: left;
-            margin: 40px 0;
+            margin-top: 40px;
+        }
+
+        .path {
+            padding: 20px;
+            background: var(--gray-light);
+        }
+
+        .path h4 {
+            color: var(--navy);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+
+        /* Oferta Irresistible */
+        .offer-section {
+            padding: 80px 20px;
+            background: var(--gray-light);
+            text-align: center;
+        }
+
+        .offer-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .offer-badge {
+            background: var(--navy);
+            color: var(--gold);
+            padding: 10px 20px;
+            display: inline-block;
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .offer-wrapper h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .offer-list {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto 40px;
+            list-style: none;
         }
 
         .offer-list li {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: flex-start;
+            margin: 15px 0;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 30px;
         }
-        
-        .offer-list span {
-            color: var(--gold);
-            margin-right: 15px;
+
+        .offer-list li::before {
+            content: "✓";
+            color: var(--whatsapp);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
             font-size: 1.2rem;
         }
 
-        /* 5. Perfil y Contacto - Blanco */
-        .contact-section {
-            background-color: var(--white);
-            color: var(--navy);
-            padding: 80px 5%;
-            text-align: center;
-        }
-
-        /* 6. Footer - Azul Marino */
+        /* Footer / Contacto */
         footer {
-            background-color: var(--navy);
+            background-color: var(--black);
             color: var(--white);
-            padding: 40px 5%;
+            padding: 80px 20px 40px;
             text-align: center;
-            font-size: 0.8rem;
-            opacity: 0.8;
         }
 
-        /* Responsive */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            text-align: left;
+        }
+
+        .footer-contact h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .footer-contact p {
+            margin-bottom: 10px;
+            color: #aaa;
+        }
+
+        .footer-contact a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .offer-box { padding: 30px; }
+            .hero h1 { font-size: 2.2rem; }
+            .section-title { font-size: 2rem; }
+            .path-grid { grid-template-columns: 1fr; }
+            .offer-wrapper { padding: 30px 20px; }
+            .footer-grid { text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR (BLANCO) -->
-    <nav>
-        <a href="#" class="brand">naturalizate.pa</a>
-        <div style="font-size: 0.9rem; color: var(--navy);">Alfonso Villarreal</div>
-    </nav>
+    <header>
+        <div class="logo">NATURALÍZATE<span>.PA</span></div>
+    </header>
 
-    <!-- HERO SECTION (AZUL MARINO) -->
+    <!-- HERO SECTION -->
     <section class="hero">
-        <span class="hero-subtitle">DECRETO EJECUTIVO N° 3 | REPÚBLICA DE PANAMÁ</span>
-        <h1>Panamá: Nueva Subcategoría de Residente Permanente</h1>
-        <p style="max-width: 700px; margin: 20px auto; opacity: 0.8;">
-            Atención Estudiantes: Si has cursado estudios consecutivos por más de 6 años en territorio nacional, tu estatus migratorio está a punto de evolucionar.
-        </p>
-        <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" class="btn-whatsapp btn-inverted">
-            Verificar mi Elegibilidad
-        </a>
-    </section>
-
-    <!-- LEGAL CONTEXT (BLANCO) -->
-    <section class="legal-info">
-        <h2 style="color: var(--navy);">Tu Esfuerzo Académico Reconocido por Ley</h2>
-        <p style="max-width: 800px; margin: 0 auto;">
-            El nuevo decreto crea un camino directo hacia la permanencia definitiva, eliminando barreras económicas y burocráticas históricas.
-        </p>
-
-        <div class="grid-container">
-            <div class="info-card">
-                <h3 style="font-size: 1.1rem; font-weight: 700;">Sin Depósito de Repatriación</h3>
-                <p style="font-size: 0.95rem;">Exención total del depósito de garantía (Art. 3). Un ahorro directo y significativo para tu economía.</p>
-            </div>
-            <div class="info-card">
-                <h3 style="font-size: 1.1rem; font-weight: 700;">Requisitos Simplificados</h3>
-                <p style="font-size: 0.95rem;">Certificación de 6 años de estudios (Primaria, Secundaria o Universidad) y récord policivo limpio.</p>
-            </div>
-            <div class="info-card">
-                <h3 style="font-size: 1.1rem; font-weight: 700;">Ruta a la Permanencia</h3>
-                <p style="font-size: 0.95rem;">Permiso provisional por 2 años con opción directa a Residencia Permanente al culminar el término (Art. 4).</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- OFERTA IRRESISTIBLE (NEGRO) -->
-    <section class="offer-section">
-        <div class="offer-box">
-            <h2 style="color: var(--gold);">Propuesta Exclusiva naturalizate.pa</h2>
-            <p>No dejes que un error administrativo arruine 6 años de esfuerzo. Hemos diseñado una estrategia legal blindada para este decreto.</p>
-            
-            <ul class="offer-list">
-                <li>
-                    <span>✦</span>
-                    <div><strong>Pre-Auditoría de Documentos Gratuita:</strong><br>Analizamos tus créditos y certificaciones escolares antes de presentar cualquier papel, asegurando 0% de riesgo de rechazo.</div>
-                </li>
-                <li>
-                    <span>✦</span>
-                    <div><strong>Gestión Notarial "Llave en Mano":</strong><br>Nos encargamos de las cartas de responsabilidad y declaraciones. Tú solo firmas.</div>
-                </li>
-                <li>
-                    <span>✦</span>
-                    <div><strong>ACCESO PRIORITARIO:</strong><br>Al unirte al grupo de WhatsApp hoy, obtienes una guía PDF: <em>"Los 3 errores que rechazan residencias de estudiantes"</em> y descuento en honorarios.</div>
-                </li>
-            </ul>
-
-            <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" class="btn-whatsapp">
-                Reclamar Oferta en WhatsApp
+        <div class="container">
+            <h1>Dejaste de ser un visitante hace tiempo. <strong>Es hora de dejar de ser un extranjero.</strong></h1>
+            <p>La Residencia Permanente fue solo el primer paso. Obtén tu Carta de Naturaleza, el Pasaporte Panameño y elimina las barreras comerciales y civiles que aún te limitan.</p>
+            <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" class="btn">
+                <span style="font-size: 1.3rem; margin-right: 10px;">💬</span> EVALÚA TU CASO GRATIS
             </a>
-            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">Cupos limitados para revisión gratuita este mes.</p>
+            <p style="margin-top: 20px; font-size: 0.9rem; color: #bbb;">Vía directa al grupo VIP de WhatsApp</p>
         </div>
     </section>
 
-    <!-- PERFIL Y CONTACTO (BLANCO) -->
-    <section class="contact-section">
-        <h2>Alfonso Villarreal</h2>
-        <p style="letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 30px;">Abogado Fundador | naturalizate.pa</p>
-        
-        <div style="max-width: 600px; margin: 0 auto; line-height: 2;">
-            <p>Especialista en Derecho Migratorio Panameño. Mi misión es transformar tu historial académico en seguridad jurídica permanente.</p>
-            <hr style="border: 0; border-top: 1px solid #ddd; margin: 30px 0; width: 50px; margin-left: auto; margin-right: auto;">
-            <p><strong>Email:</strong> Villarreallawyers@protón.me</p>
-            <p><strong>Teléfono:</strong> 6255-7583</p>
+    <!-- EL PROBLEMA (AGITACIÓN) -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">El problema de conformarse con la "Residencia"</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="pain-icon">🚫</div>
+                    <h3>Limitaciones Comerciales</h3>
+                    <p>La Constitución panameña reserva el "comercio al por menor" (retail) exclusivamente para nacionales. Como residente, tus opciones de emprendimiento tienen un techo de cristal legal.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">🛂</div>
+                    <h3>Pasaporte Restrictivo</h3>
+                    <p>Dependiendo de tu país de origen, viajar por el mundo requiere de constantes visas, papeleos consulares y demoras que los ciudadanos panameños no sufren.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">🏛️</div>
+                    <h3>Incertidumbre Cívica</h3>
+                    <p>No tienes derecho al voto. Las políticas, impuestos y leyes que afectan tu vida, tu familia y tu patrimonio en Panamá son decididas por otros. Además, sigues sujeto a renovaciones de carnet.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER (AZUL MARINO) -->
+    <!-- LA SOLUCIÓN (VENTAJAS) -->
+    <section class="solution-section">
+        <div class="container">
+            <h2 class="section-title">La Solución: Ciudadanía Panameña Plena</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.2rem; color: #ccc;">
+                El proceso de naturalización (Carta de Naturaleza) no es un trámite migratorio más; es un decreto firmado por el Presidente de la República que te otorga derechos constitucionales absolutos.
+            </p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🇵🇦</div>
+                    <h3>Pasaporte Panameño</h3>
+                    <p>Acceso sin visa a más de 140 países, incluyendo toda Europa (Schengen), Reino Unido y ventajas en visados hacia EE.UU.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💼</div>
+                    <h3>Libertad Empresarial</h3>
+                    <p>Derecho absoluto a abrir negocios al por menor, ejercer profesiones restringidas y participar en licitaciones estatales sin desventajas.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🗳️</div>
+                    <h3>Poder de Decisión</h3>
+                    <p>Cédula panameña con pleno derecho al voto. Tienes voz oficial en el país donde inviertes, vives y crías a tu familia.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Seguridad de Vida</h3>
+                    <p>Cero renovaciones en Migración. Cero miedo a cambios en las políticas migratorias. Eres inamovible de tu país.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REQUISITOS (LÓGICA SIMPLE) -->
+    <section class="requirements">
+        <div class="container">
+            <div class="req-box">
+                <h2 class="req-title">¿Ya cumples con el tiempo legal?</h2>
+                <p>El Artículo 10 de la Constitución establece el tiempo exacto que necesitas como <strong>Residente Permanente</strong> para solicitar la naturalización:</p>
+                
+                <div class="path-grid">
+                    <div class="path">
+                        <h4>Ruta General</h4>
+                        <p><strong>5 años</strong> continuos de Residencia Permanente oficial en territorio panameño.</p>
+                    </div>
+                    <div class="path">
+                        <h4>Ruta Familiar</h4>
+                        <p><strong>3 años</strong> de Residencia Permanente si estás casado(a) con un nacional o tienes hijos panameños.</p>
+                    </div>
+                </div>
+                <p style="margin-top: 30px; font-size: 0.9rem; color: #666;">*Existen acuerdos de reciprocidad para países latinoamericanos y España que pueden reducir estos tiempos (1 a 3 años).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFERTA IRRESISTIBLE -->
+    <section class="offer-section">
+        <div class="container">
+            <div class="offer-wrapper">
+                <div class="offer-badge">TU PUENTE HACIA LA CIUDADANÍA</div>
+                <h2>El proceso es burocrático. <br>Nosotros lo hacemos simple.</h2>
+                <p style="margin-bottom: 30px; color: var(--gray-text); font-size: 1.1rem;">
+                    El mayor obstáculo para la naturalización no es el tiempo, sino la burocracia: expedientes en SNM, exámenes de historia, filtros de seguridad y la firma en la Presidencia.
+                </p>
+                
+                <ul class="offer-list">
+                    <li><strong>Auditoría de tu expediente:</strong> Verificamos que SNM y el Tribunal Electoral tengan tus fechas correctas.</li>
+                    <li><strong>Instructivo VIP para el Examen:</strong> Te entregamos nuestra guía resumida exacta (método 80/20) para que apruebes el examen de Geografía, Historia y Cívica a la primera.</li>
+                    <li><strong>Armado de Solvencia:</strong> Estructuramos tus pruebas económicas según los estándares que Presidencia aprueba sin objeciones.</li>
+                    <li><strong>Seguimiento de Estado:</strong> Impulsamos tu expediente desde Migración hasta el Ministerio de Gobierno y Presidencia.</li>
+                </ul>
+
+                <h3 style="margin: 40px 0 20px; color: var(--navy); font-size: 1.5rem;">Diagnóstico Inicial 100% Sin Costo</h3>
+                
+                <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" class="btn" style="width: 100%; max-width: 400px;">
+                    ACCEDER AL GRUPO DE ASESORÍA
+                </a>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #888;">Habla directamente con el Abogado Alfonso Villarreal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 naturalizate.pa. Todos los derechos reservados.</p>
-        <p style="opacity: 0.5;">Panamá, República de Panamá.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-contact">
+                    <div class="logo" style="margin-bottom: 20px;">NATURALÍZATE<span>.PA</span></div>
+                    <p>Tu socio legal exclusivo para la obtención de la nacionalidad panameña.</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Abogado Especialista</h3>
+                    <p><strong>Alfonso Villarreal</strong></p>
+                    <p>Derecho Migratorio y Constitucional</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contacto Directo</h3>
+                    <p>📱 <a href="tel:+50762557583">+507 6255-7583</a></p>
+                    <p>📧 <a href="mailto:Villarreallawyers@proton.me">Villarreallawyers@proton.me</a></p>
+                    <p style="margin-top: 15px;">
+                        <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" style="color: var(--whatsapp); font-weight: bold;">
+                            &rarr; Unirse a la comunidad en WhatsApp
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Naturalízate.pa | Todos los derechos reservados.</p>
+                <p style="margin-top: 5px; font-size: 0.8rem; color: #444;">La información provista no constituye consejo legal hasta establecer una relación abogado-cliente. Procesos fundamentados en el Título II (Nacionalidad y Extranjería) de la Constitución Política de la República de Panamá.</p>
+            </div>
+        </div>
     </footer>
 
 </body>

@@ -1,513 +1,1100 @@
-<!DOCTYPE html>
+
+```html
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naturalízate.pa | De Residente a Ciudadano Panameño</title>
-    <style>
-        :root {
-            --navy: #0d1b2a;
-            --navy-light: #1b3a5f;
-            --white: #ffffff;
-            --black: #000000;
-            --gray-light: #f8f9fa;
-            --gray-text: #4a4a4a;
-            --whatsapp: #25D366;
-            --whatsapp-hover: #20bd5a;
-            --gold: #C9A66B; /* Tono dorado elegante para resaltar "Nacionalidad" */
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>naturalizate.pa | Auditoría para Naturalización en Panamá</title>
+  <meta name="description" content="Naturalízate.pa: Auditoría de Elegibilidad (US$50.00 abonable). Guía de examen y seguimiento para obtener tu nacionalidad panameña." />
+  <meta name="theme-color" content="#0d1b2a" />
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
+  <!-- Open Graph -->
+  <meta property="og:title" content="naturalizate.pa | Naturalización en Panamá" />
+  <meta property="og:description" content="De residente a ciudadano: agenda tu Auditoría de Elegibilidad (US$50.00 abonable) y obtén tu cédula y pasaporte panameño." />
+  <meta property="og:type" content="website" />
 
-        body {
-            line-height: 1.6;
-            color: var(--black);
-            background-color: var(--gray-light);
-        }
+  <style>
+    :root{
+      --navy:#0d1b2a;
+      --navy2:#1b3a5f;
+      --white:#ffffff;
+      --black:#000000;
+      --gray0:#f8f9fa;
+      --gray1:#e6e6e6;
+      --gray2:#b8b8b8;
+      --text:#111111;
+      --text2:#333333;
+      --muted:#666666;
 
-        /* Header */
-        header {
-            background-color: var(--navy);
-            padding: 20px 0;
-            text-align: center;
-            border-bottom: 2px solid var(--gold);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+      --wa:#25D366;
+      --wa2:#20bd5a;
 
-        .logo {
-            color: var(--white);
-            font-size: 1.8rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-        }
+      --urgent:#ff4444;
 
-        .logo span {
-            color: var(--gold);
-            font-weight: 400;
-        }
+      --radius:18px;
+      --radius2:999px;
+      --shadow:0 20px 60px rgba(13,27,42,.18);
+      --shadow2:0 10px 30px rgba(0,0,0,.10);
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(13, 27, 42, 0.95), rgba(27, 58, 95, 0.95)), url('https://images.unsplash.com/photo-1585255318859-f5c15f4cffe9?auto=format&fit=crop&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 120px 20px;
-            text-align: center;
-        }
+      --max:1140px;
+    }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 300;
-            max-width: 900px;
-            margin: 0 auto 20px;
-            line-height: 1.2;
-        }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color:var(--text);
+      background:var(--gray0);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
 
-        .hero h1 strong {
-            font-weight: 600;
-            color: var(--gold);
-        }
+    /* Top notice */
+    .notice{
+      background:var(--black);
+      color:var(--white);
+      font-size:14px;
+      letter-spacing:.4px;
+      padding:10px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .notice .wrap{
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .notice b{color:#fff}
+    .notice a{color:var(--wa); text-decoration:none; border-bottom:1px solid rgba(37,211,102,.4)}
+    .notice a:hover{border-bottom-color:var(--wa)}
 
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            color: #e0e0e0;
-            font-weight: 300;
-        }
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(13,27,42,.90);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:18px;
+    }
+    .brand{
+      display:flex; align-items:baseline; gap:6px;
+      text-decoration:none;
+    }
+    .brand .name{
+      font-weight:300;
+      letter-spacing:3px;
+      color:var(--white);
+      font-size:20px;
+      text-transform:uppercase;
+    }
+    .brand .tld{
+      color:var(--wa);
+      font-weight:600;
+      letter-spacing:1px;
+      font-size:18px;
+    }
 
-        /* Botones CTA */
-        .btn {
-            display: inline-block;
-            background-color: var(--whatsapp);
-            color: var(--white);
-            text-decoration: none;
-            padding: 18px 40px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .navlinks{
+      display:flex; gap:18px; align-items:center;
+    }
+    .navlinks a{
+      color:rgba(255,255,255,.86);
+      text-decoration:none;
+      font-size:14px;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+    }
+    .navlinks a:hover{color:#fff}
 
-        .btn:hover {
-            background-color: var(--whatsapp-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-        }
+    .navcta{
+      display:flex; gap:10px; align-items:center;
+    }
 
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--navy);
-            color: var(--navy);
-            box-shadow: none;
-        }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 18px;
+      border-radius:var(--radius2);
+      border:1px solid transparent;
+      font-weight:700;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+      font-size:13px;
+      cursor:pointer;
+      text-decoration:none;
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{
+      background:var(--wa);
+      color:var(--white);
+      box-shadow:0 10px 25px rgba(37,211,102,.28);
+    }
+    .btn-primary:hover{background:var(--wa2); transform:translateY(-2px); box-shadow:0 14px 35px rgba(37,211,102,.35)}
+    .btn-ghost{
+      background:transparent;
+      border-color:rgba(255,255,255,.28);
+      color:var(--white);
+    }
+    .btn-ghost:hover{border-color:#fff}
 
-        .btn-outline:hover {
-            background-color: var(--navy);
-            color: var(--white);
-        }
+    .burger{
+      display:none;
+      width:44px; height:44px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.16);
+      background:transparent;
+      color:#fff;
+      cursor:pointer;
+    }
 
-        /* El Problema (Agitación) */
-        .problem-section {
-            padding: 100px 20px;
-            background-color: var(--white);
-        }
+    /* Hero */
+    .hero{
+      background:
+        radial-gradient(900px 500px at 15% 20%, rgba(37,211,102,.12), transparent 55%),
+        radial-gradient(700px 450px at 80% 30%, rgba(255,255,255,.06), transparent 60%),
+        linear-gradient(135deg, rgba(13,27,42,.96), rgba(27,58,95,.96));
+      color:var(--white);
+      padding:82px 0 56px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::after{
+      content:"";
+      position:absolute; inset:-2px;
+      background-image:
+        linear-gradient(45deg, rgba(255,255,255,.03) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.03) 75%, rgba(255,255,255,.03)),
+        linear-gradient(45deg, rgba(255,255,255,.03) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.03) 75%, rgba(255,255,255,.03));
+      background-size:64px 64px;
+      background-position:0 0, 32px 32px;
+      opacity:.35;
+      pointer-events:none;
+    }
+    .hero .wrap{position:relative; z-index:1}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:40px;
+      align-items:center;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      border:1px solid rgba(37,211,102,.45);
+      background:rgba(37,211,102,.10);
+      color:#c9ffe0;
+      padding:8px 14px;
+      border-radius:var(--radius2);
+      font-size:13px;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+      margin-bottom:18px;
+    }
+    h1{
+      margin:0 0 14px;
+      font-size:44px;
+      line-height:1.12;
+      font-weight:300;
+      letter-spacing:.2px;
+    }
+    h1 strong{font-weight:800}
+    .lead{
+      color:rgba(255,255,255,.86);
+      font-size:18px;
+      margin:0 0 20px;
+      max-width:58ch;
+    }
+    .hero-actions{
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+      margin-top:18px;
+    }
+    .trust{
+      display:flex; gap:18px; flex-wrap:wrap;
+      margin-top:22px;
+      color:rgba(255,255,255,.74);
+      font-size:13px;
+    }
+    .trust span{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:var(--radius2);
+      background:rgba(255,255,255,.04);
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .card{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:0 10px 30px rgba(0,0,0,.12);
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size:16px;
+      letter-spacing:.7px;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+    .card p{margin:0 0 12px; color:rgba(255,255,255,.84)}
+    .checklist{list-style:none; padding:0; margin:12px 0 0}
+    .checklist li{display:flex; gap:10px; align-items:flex-start; margin:10px 0; color:rgba(255,255,255,.86)}
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background:var(--wa);
+      box-shadow:0 0 0 4px rgba(37,211,102,.14);
+      margin-top:7px;
+      flex:0 0 10px;
+    }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            font-weight: 300;
-            color: var(--navy);
-            margin-bottom: 60px;
-        }
+    /* Sections */
+    section{padding:72px 0}
+    .white{background:var(--white)}
+    .dark{background:var(--black); color:var(--white)}
+    .gray{background:var(--gray0)}
+    .navy{background:linear-gradient(135deg, var(--navy), var(--navy2)); color:var(--white)}
 
-        .pain-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
+    .title{
+      font-size:34px;
+      line-height:1.2;
+      font-weight:300;
+      color:var(--navy);
+      margin:0 0 12px;
+    }
+    .title.darktitle{color:#fff}
+    .subtitle{
+      color:var(--muted);
+      margin:0 0 30px;
+      max-width:75ch;
+      font-size:16px;
+    }
+    .subtitle.onDark{color:rgba(255,255,255,.75)}
 
-        .pain-card {
-            background: var(--gray-light);
-            padding: 40px;
-            border-left: 4px solid #ff4444;
-            transition: transform 0.3s ease;
-        }
+    /* Problem cards */
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .p-card{
+      background:var(--gray0);
+      border:1px solid var(--gray1);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow2);
+    }
+    .p-card b{color:var(--navy)}
+    .p-card .tag{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:var(--radius2);
+      background:rgba(255,68,68,.10);
+      border:1px solid rgba(255,68,68,.35);
+      color:#b71c1c;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.8px;
+      margin-bottom:10px;
+      font-weight:800;
+    }
 
-        .pain-card:hover {
-            transform: translateY(-5px);
-        }
+    /* Benefits */
+    .b-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    .b{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:var(--radius);
+      padding:18px;
+      min-height:152px;
+    }
+    .b .k{color:#fff; font-weight:800; letter-spacing:.6px; text-transform:uppercase; font-size:13px}
+    .b p{margin:8px 0 0; color:rgba(255,255,255,.78); font-size:14px}
 
-        .pain-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+    /* Eligibility */
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .panel{
+      background:var(--white);
+      border-radius:var(--radius);
+      border:1px solid var(--gray1);
+      padding:24px;
+      box-shadow:var(--shadow2);
+    }
+    .panel h3{
+      margin:0 0 8px;
+      color:var(--navy);
+      font-size:16px;
+      text-transform:uppercase;
+      letter-spacing:.8px;
+    }
+    .panel p{margin:0 0 10px; color:var(--text2)}
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      background:var(--navy);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:var(--radius2);
+      font-weight:800;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+      font-size:12px;
+      margin-top:6px;
+    }
+    .fine{font-size:12.5px; color:var(--muted); margin-top:10px}
 
-        .pain-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--navy);
-        }
+    /* Process */
+    .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+    .step{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:var(--radius);
+      padding:18px;
+    }
+    .num{
+      width:42px;height:42px;border-radius:14px;
+      display:flex;align-items:center;justify-content:center;
+      background:#fff;color:var(--navy);
+      font-weight:900;
+      margin-bottom:12px;
+    }
+    .step h4{margin:0 0 6px; font-size:15px; letter-spacing:.5px; text-transform:uppercase}
+    .step p{margin:0; color:rgba(255,255,255,.78); font-size:14px}
 
-        .pain-card p {
-            color: var(--gray-text);
-            font-size: 1.1rem;
-        }
+    /* Offer */
+    .offer{
+      background:var(--white);
+      border:1px solid var(--gray1);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:center;
+    }
+    .offer .label{
+      display:inline-flex;
+      background:rgba(13,27,42,.08);
+      color:var(--navy);
+      border:1px solid rgba(13,27,42,.14);
+      padding:7px 12px;
+      border-radius:var(--radius2);
+      font-weight:900;
+      letter-spacing:.9px;
+      text-transform:uppercase;
+      font-size:12px;
+      margin-bottom:10px;
+    }
+    .offer h3{margin:0 0 10px; font-size:26px; font-weight:300; color:var(--navy); line-height:1.2}
+    .offer h3 strong{font-weight:900}
+    .offer ul{margin:10px 0 0; padding:0; list-style:none}
+    .offer li{display:flex; gap:10px; margin:10px 0; color:var(--text2)}
+    .tick{
+      width:18px;height:18px;border-radius:6px;
+      background:rgba(37,211,102,.14);
+      border:1px solid rgba(37,211,102,.40);
+      display:flex; align-items:center; justify-content:center;
+      color:var(--wa);
+      font-weight:900;
+      flex:0 0 18px;
+      margin-top:3px;
+    }
+    .offerSide{
+      background:linear-gradient(135deg, var(--navy), var(--navy2));
+      color:#fff;
+      border-radius:var(--radius);
+      padding:22px;
+      text-align:center;
+    }
+    .offerSide .big{
+      font-size:38px; font-weight:300; letter-spacing:-1px; margin:8px 0 2px
+    }
+    .offerSide .small{color:rgba(255,255,255,.78); font-size:13px; margin:0 0 14px}
+    .offerSide .mini{
+      border-top:1px solid rgba(255,255,255,.12);
+      margin-top:14px;
+      padding-top:14px;
+      color:rgba(255,255,255,.82);
+      font-size:13px;
+    }
 
-        /* La Solución (Ventajas) */
-        .solution-section {
-            padding: 100px 20px;
-            background-color: var(--navy);
-            color: var(--white);
-        }
+    /* FAQ */
+    details{
+      background:var(--white);
+      border:1px solid var(--gray1);
+      border-radius:var(--radius);
+      padding:16px 18px;
+      box-shadow:var(--shadow2);
+    }
+    details + details{margin-top:12px}
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      color:var(--navy);
+      letter-spacing:.4px;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{margin:10px 0 0; color:var(--text2)}
+    .note{
+      font-size:12.5px;
+      color:var(--muted);
+      margin-top:18px;
+    }
 
-        .solution-section .section-title {
-            color: var(--white);
-        }
+    /* Contact */
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:14px;
+    }
+    .c{
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      padding:18px;
+    }
+    .c .k{font-weight:900; letter-spacing:.8px; text-transform:uppercase; font-size:12px}
+    .c a{color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.20)}
+    .c a:hover{border-bottom-color:#fff}
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
+    /* Footer */
+    footer{
+      padding:34px 0;
+      background:#050505;
+      color:rgba(255,255,255,.78);
+      border-top:1px solid rgba(255,255,255,.10);
+      font-size:13px;
+    }
+    .foot{
+      display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;
+      align-items:flex-start;
+    }
+    .foot strong{color:#fff}
+    .legal{max-width:85ch}
 
-        .benefit-card {
-            text-align: center;
-            padding: 40px 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            background: rgba(255,255,255,0.02);
-        }
+    /* Mobile */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr; gap:18px}
+      .grid3{grid-template-columns:1fr}
+      .b-grid{grid-template-columns:1fr 1fr}
+      .split{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr 1fr}
+      .offer{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      .navlinks{display:none}
+      .burger{display:inline-flex; align-items:center; justify-content:center}
+    }
+    @media (max-width: 520px){
+      h1{font-size:34px}
+      .steps{grid-template-columns:1fr}
+      .b-grid{grid-template-columns:1fr}
+    }
 
-        .benefit-icon {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
+    /* Mobile drawer */
+    .drawer{
+      display:none;
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.52);
+      z-index:80;
+      padding:18px;
+    }
+    .drawer.open{display:block}
+    .drawerPanel{
+      background:rgba(13,27,42,.98);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:20px;
+      padding:16px;
+      max-width:520px;
+      margin:0 auto;
+      box-shadow:var(--shadow);
+    }
+    .drawerPanel a{
+      display:block;
+      padding:12px 10px;
+      color:#fff;
+      text-decoration:none;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      margin-top:10px;
+      text-transform:uppercase;
+      letter-spacing:.8px;
+      font-weight:800;
+      font-size:13px;
+    }
+    .drawerPanel a:hover{border-color:rgba(255,255,255,.26)}
+    .drawerTop{
+      display:flex; justify-content:space-between; align-items:center; gap:12px;
+      padding:6px 4px 12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      margin-bottom:10px;
+    }
+    .xbtn{
+      width:42px;height:42px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background:transparent;color:#fff;cursor:pointer;
+    }
 
-        .benefit-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            font-weight: 400;
-        }
-
-        /* Requisitos - Minimalista */
-        .requirements {
-            padding: 100px 20px;
-            background: var(--white);
-        }
-
-        .req-box {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--white);
-            border: 2px solid var(--navy);
-            padding: 50px;
-            text-align: center;
-        }
-
-        .req-title {
-            font-size: 2rem;
-            color: var(--navy);
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
-        .path-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            text-align: left;
-            margin-top: 40px;
-        }
-
-        .path {
-            padding: 20px;
-            background: var(--gray-light);
-        }
-
-        .path h4 {
-            color: var(--navy);
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            border-bottom: 2px solid var(--gold);
-            padding-bottom: 10px;
-        }
-
-        /* Oferta Irresistible */
-        .offer-section {
-            padding: 80px 20px;
-            background: var(--gray-light);
-            text-align: center;
-        }
-
-        .offer-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 60px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
-
-        .offer-badge {
-            background: var(--navy);
-            color: var(--gold);
-            padding: 10px 20px;
-            display: inline-block;
-            font-weight: 600;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        .offer-wrapper h2 {
-            font-size: 2.5rem;
-            color: var(--navy);
-            font-weight: 300;
-            margin-bottom: 30px;
-        }
-
-        .offer-list {
-            text-align: left;
-            max-width: 500px;
-            margin: 0 auto 40px;
-            list-style: none;
-        }
-
-        .offer-list li {
-            margin: 15px 0;
-            font-size: 1.1rem;
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .offer-list li::before {
-            content: "✓";
-            color: var(--whatsapp);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        /* Footer / Contacto */
-        footer {
-            background-color: var(--black);
-            color: var(--white);
-            padding: 80px 20px 40px;
-            text-align: center;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto 60px;
-            text-align: left;
-        }
-
-        .footer-contact h3 {
-            color: var(--gold);
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-
-        .footer-contact p {
-            margin-bottom: 10px;
-            color: #aaa;
-        }
-
-        .footer-contact a {
-            color: var(--white);
-            text-decoration: none;
-        }
-
-        .copyright {
-            border-top: 1px solid #333;
-            padding-top: 30px;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .section-title { font-size: 2rem; }
-            .path-grid { grid-template-columns: 1fr; }
-            .offer-wrapper { padding: 30px 20px; }
-            .footer-grid { text-align: center; }
-        }
-    </style>
+    /* Floating WA */
+    .floatWA{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:60;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .floatWA .hint{
+      display:none;
+      background:rgba(0,0,0,.78);
+      color:#fff;
+      padding:10px 12px;
+      border-radius:14px;
+      font-size:12.5px;
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .floatWA:hover .hint{display:block}
+    .waFab{
+      width:54px;height:54px;border-radius:18px;
+      border:0;
+      background:var(--wa);
+      color:#fff;
+      font-size:20px;
+      cursor:pointer;
+      box-shadow:0 14px 40px rgba(37,211,102,.38);
+    }
+    .waFab:hover{background:var(--wa2)}
+  </style>
 </head>
+
 <body>
+  <div class="notice">
+    <div class="wrap">
+      <div>
+        <b>Naturalización en Panamá:</b> de residente a ciudadano con un plan claro (sin perder tiempo en “requisitos confusos”).
+      </div>
+      <div>
+        <a href="#diagnostico">Ir a la Auditoría</a>
+      </div>
+    </div>
+  </div>
 
-    <header>
-        <div class="logo">NATURALÍZATE<span>.PA</span></div>
-    </header>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <div class="name">NATURALÍZATE</div><div class="tld">.PA</div>
+      </a>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="container">
-            <h1>Dejaste de ser un visitante hace tiempo. <strong>Es hora de dejar de ser un extranjero.</strong></h1>
-            <p>La Residencia Permanente fue solo el primer paso. Obtén tu Carta de Naturaleza, el Pasaporte Panameño y elimina las barreras comerciales y civiles que aún te limitan.</p>
-            <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" class="btn">
-                <span style="font-size: 1.3rem; margin-right: 10px;">💬</span> EVALÚA TU CASO GRATIS
-            </a>
-            <p style="margin-top: 20px; font-size: 0.9rem; color: #bbb;">Vía directa al grupo VIP de WhatsApp</p>
+      <nav class="navlinks" aria-label="Navegación">
+        <a href="#problema">Problema</a>
+        <a href="#solucion">Solución</a>
+        <a href="#elegibilidad">Elegibilidad</a>
+        <a href="#proceso">Ruta</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="navcta">
+        <a class="btn btn-ghost" href="#diagnostico">Auditoría</a>
+        <a class="btn btn-primary" id="btnWAHeader" target="_blank" rel="noopener" href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t">WhatsApp</a>
+        <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Drawer -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawerPanel" role="dialog" aria-modal="true" aria-label="Menú">
+      <div class="drawerTop">
+        <div class="brand" style="gap:8px;">
+          <div class="name" style="font-size:16px;">NATURALÍZATE</div><div class="tld" style="font-size:14px;">.PA</div>
         </div>
-    </section>
+        <button class="xbtn" id="closeDrawer" aria-label="Cerrar menú">✕</button>
+      </div>
+      <a href="#problema" class="dlink">Problema</a>
+      <a href="#solucion" class="dlink">Solución</a>
+      <a href="#elegibilidad" class="dlink">Elegibilidad</a>
+      <a href="#proceso" class="dlink">Ruta</a>
+      <a href="#faq" class="dlink">FAQ</a>
+      <a href="#diagnostico" class="dlink">Auditoría</a>
+      <a href="#contacto" class="dlink">Contacto</a>
+      <a target="_blank" rel="noopener" href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t">Unirse al grupo WhatsApp</a>
+    </div>
+  </div>
 
-    <!-- EL PROBLEMA (AGITACIÓN) -->
-    <section class="problem-section">
-        <div class="container">
-            <h2 class="section-title">El problema de conformarse con la "Residencia"</h2>
-            <div class="pain-grid">
-                <div class="pain-card">
-                    <div class="pain-icon">🚫</div>
-                    <h3>Limitaciones Comerciales</h3>
-                    <p>La Constitución panameña reserva el "comercio al por menor" (retail) exclusivamente para nacionales. Como residente, tus opciones de emprendimiento tienen un techo de cristal legal.</p>
-                </div>
-                <div class="pain-card">
-                    <div class="pain-icon">🛂</div>
-                    <h3>Pasaporte Restrictivo</h3>
-                    <p>Dependiendo de tu país de origen, viajar por el mundo requiere de constantes visas, papeleos consulares y demoras que los ciudadanos panameños no sufren.</p>
-                </div>
-                <div class="pain-card">
-                    <div class="pain-icon">🏛️</div>
-                    <h3>Incertidumbre Cívica</h3>
-                    <p>No tienes derecho al voto. Las políticas, impuestos y leyes que afectan tu vida, tu familia y tu patrimonio en Panamá son decididas por otros. Además, sigues sujeto a renovaciones de carnet.</p>
-                </div>
+  <!-- HERO -->
+  <main id="inicio" class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="badge">Ruta clara · Examen preparado · Seguimiento</div>
+        <h1>Dejaste de ser un visitante. <strong>Es hora de dejar de ser un extranjero.</strong></h1>
+        <p class="lead">
+          La residencia te deja vivir en Panamá. La <strong>naturalización</strong> te da estabilidad definitiva:
+          cédula, pasaporte, y una vida sin depender de cambios migratorios.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" id="btnWAHero" target="_blank" rel="noopener"
+             href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t">Entrar al grupo WhatsApp</a>
+          <a class="btn btn-ghost" href="#elegibilidad">Ver si califico</a>
+        </div>
+        <div class="trust" aria-label="Indicadores de confianza">
+          <span>✓ Auditoría por Zoom: US$50.00 (abonable)</span>
+          <span>✓ Guía 80/20 para el examen</span>
+          <span>✓ Checklist de expediente</span>
+        </div>
+      </div>
+
+      <aside class="card" aria-label="Diagnóstico rápido">
+        <h3>Diagnóstico en 60 segundos</h3>
+        <p>Responde 3 preguntas. Te damos una ruta sugerida y el mensaje listo para WhatsApp.</p>
+
+        <ul class="checklist">
+          <li><span class="dot"></span><div><b>Tiempo</b>: ¿cuántos años llevas como residente permanente?</div></li>
+          <li><span class="dot"></span><div><b>Familia</b>: ¿cónyuge o hijos panameños?</div></li>
+          <li><span class="dot"></span><div><b>Meta</b>: pasaporte, negocio, estabilidad o todo.</div></li>
+        </ul>
+
+        <div style="margin-top:16px">
+          <a class="btn btn-primary" href="#diagnostico">Agendar Auditoría</a>
+        </div>
+        <p style="margin:12px 0 0; font-size:12.5px; color:rgba(255,255,255,.72)">
+          Este sitio es informativo. La estrategia final depende de tu caso.
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <!-- PROBLEMA -->
+  <section id="problema" class="white">
+    <div class="wrap">
+      <h2 class="title">El problema real de “quedarte solo con la residencia”</h2>
+      <p class="subtitle">
+        Mucha gente vive años en Panamá y aun así mantiene límites prácticos: decisiones importantes dependen de trámites,
+        renovaciones y criterios administrativos. La ciudadanía reduce esa fricción y te coloca en otra categoría.
+      </p>
+
+      <div class="grid3">
+        <div class="p-card">
+          <div class="tag">bloqueo</div>
+          <p><b>Oportunidades limitadas</b> para ciertas actividades económicas o trámites donde el estatus de extranjero complica.</p>
+        </div>
+        <div class="p-card">
+          <div class="tag">costo oculto</div>
+          <p><b>Tiempo y dinero</b> se van en requisitos, certificaciones y vueltas cuando no hay un expediente bien armado desde el inicio.</p>
+        </div>
+        <div class="p-card">
+          <div class="tag">incertidumbre</div>
+          <p><b>Cambios y demoras</b>: el “estado del trámite” se convierte en una carga mental constante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUCIÓN -->
+  <section id="solucion" class="navy">
+    <div class="wrap">
+      <h2 class="title darktitle">La solución: Naturalización como “cierre definitivo”</h2>
+      <p class="subtitle onDark">
+        No es “otro trámite”: es un cambio de estatus con impacto en tu movilidad, estabilidad y planificación familiar.
+        Aquí lo presentamos como una ruta clara y ejecutable.
+      </p>
+
+      <div class="b-grid">
+        <div class="b">
+          <div class="k">Estabilidad</div>
+          <p>Menos fricción administrativa y más previsibilidad para tu vida y tu patrimonio.</p>
+        </div>
+        <div class="b">
+          <div class="k">Movilidad</div>
+          <p>Acceso a beneficios de viaje según el pasaporte panameño y convenios.</p>
+        </div>
+        <div class="b">
+          <div class="k">Integración</div>
+          <p>Participación plena en la vida cívica y formalización completa de tu arraigo.</p>
+        </div>
+        <div class="b">
+          <div class="k">Plan claro</div>
+          <p>Checklist + guía de examen + seguimiento del expediente (sin improvisación).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELEGIBILIDAD -->
+  <section id="elegibilidad" class="gray">
+    <div class="wrap">
+      <h2 class="title">Elegibilidad (pre-chequeo simple)</h2>
+      <p class="subtitle">
+        Los tiempos y condiciones exactas dependen de tu perfil. Este pre-chequeo te orienta para saber si estás cerca o listo.
+      </p>
+
+      <div class="split">
+        <div class="panel">
+          <h3>Ruta general</h3>
+          <p>Si eres residente permanente y ya construiste vida en Panamá, normalmente el criterio central es el <b>tiempo</b> y tu <b>arraigo</b>.</p>
+          <div class="pill">Meta: ordenar expediente + examen</div>
+          <div class="fine">Recomendación: prepara documentos, solvencia y cronología desde ya para evitar rechazos/dilaciones.</div>
+        </div>
+
+        <div class="panel">
+          <h3>Ruta familiar</h3>
+          <p>Si tienes <b>vínculo familiar</b> con Panamá (cónyuge o hijos panameños), tu estrategia debe demostrar estabilidad, convivencia y trazabilidad.</p>
+          <div class="pill">Meta: acelerar con evidencia sólida</div>
+          <div class="fine">El factor “familiar” ayuda, pero el expediente mal sustentado igual se puede trabar.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso" class="dark">
+    <div class="wrap">
+      <h2 class="title darktitle">Ruta en 4 etapas (sin perderte en burocracia)</h2>
+      <p class="subtitle onDark">
+        Convertimos el camino a la naturalización en un sistema: diagnóstico, preparación, presentación y seguimiento.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h4>Diagnóstico</h4>
+          <p>Revisamos tu punto de partida: estatus, tiempos, riesgos y prioridad (pasaporte/estabilidad/negocio).</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h4>Expediente</h4>
+          <p>Checklist y armado: documentos, solvencia, antecedentes, cronología y consistencia de datos.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h4>Examen</h4>
+          <p>Guía 80/20: te enfocamos en lo que realmente preguntan (historia, geografía y cívica).</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h4>Seguimiento</h4>
+          <p>Monitoreo de estado y respuesta a observaciones para evitar “meses perdidos”.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA / DIAGNÓSTICO -->
+  <section id="diagnostico" class="white">
+    <div class="wrap">
+      <div class="offer">
+        <div>
+          <div class="label">solución de inicio inmediato</div>
+          <h3>Auditoría de Elegibilidad <strong>US$50.00</strong> (abonable) + mensaje listo para WhatsApp</h3>
+          <p class="subtitle" style="margin-bottom:10px">
+            Responde estas preguntas y genera un mensaje para agendar tu Auditoría. Te orienta con claridad y acelera la respuesta.
+          </p>
+          
+          <div style="margin: 12px 0 16px; padding: 16px; border: 1px solid var(--gray1); border-radius: 16px; background: #fff;">
+            <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+              <div style="display:inline-flex; padding:6px 10px; border-radius:999px; background:rgba(13,27,42,.08); border:1px solid rgba(13,27,42,.14); color:var(--navy); font-weight:900; letter-spacing:.9px; text-transform:uppercase; font-size:12px;">
+                Auditoría de Elegibilidad (Zoom)
+              </div>
+              <div style="display:inline-flex; padding:6px 10px; border-radius:999px; background:rgba(37,211,102,.10); border:1px solid rgba(37,211,102,.35); color:var(--navy); font-weight:900; letter-spacing:.9px; text-transform:uppercase; font-size:12px;">
+                Inversión: US$50.00
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- LA SOLUCIÓN (VENTAJAS) -->
-    <section class="solution-section">
-        <div class="container">
-            <h2 class="section-title">La Solución: Ciudadanía Panameña Plena</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.2rem; color: #ccc;">
-                El proceso de naturalización (Carta de Naturaleza) no es un trámite migratorio más; es un decreto firmado por el Presidente de la República que te otorga derechos constitucionales absolutos.
+            <p style="margin:12px 0 0; color:var(--text2);">
+              ¡Bienvenido(a) a <b>Naturalízate.pa</b>! Soy el <b>Lic. Villarreal</b>.
+              Para darte una cotización exacta y una ruta realista, iniciamos con una <b>Auditoría de Elegibilidad vía Zoom</b>.
             </p>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🇵🇦</div>
-                    <h3>Pasaporte Panameño</h3>
-                    <p>Acceso sin visa a más de 140 países, incluyendo toda Europa (Schengen), Reino Unido y ventajas en visados hacia EE.UU.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">💼</div>
-                    <h3>Libertad Empresarial</h3>
-                    <p>Derecho absoluto a abrir negocios al por menor, ejercer profesiones restringidas y participar en licitaciones estatales sin desventajas.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🗳️</div>
-                    <h3>Poder de Decisión</h3>
-                    <p>Cédula panameña con pleno derecho al voto. Tienes voz oficial en el país donde inviertes, vives y crías a tu familia.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🛡️</div>
-                    <h3>Seguridad de Vida</h3>
-                    <p>Cero renovaciones en Migración. Cero miedo a cambios en las políticas migratorias. Eres inamovible de tu país.</p>
-                </div>
+            <p style="margin:10px 0 0; color:var(--text2);">
+              <b>¿En qué consiste?</b> Revisamos tu historial <b>migratorio</b>, <b>penal</b> y <b>fiscal</b> para asegurar que tu expediente esté
+              estructurado para avanzar con el estándar que normalmente exige la <b>Presidencia</b>.
+            </p>
+            <p style="margin:10px 0 0; color:var(--text2);">
+              <b>🎁 Oferta Naturalízate.pa:</b> si calificas y decides iniciar el trámite, estos <b>US$50.00 se abonan al total</b> de tu proceso.
+              En la práctica, tu auditoría te sale <b>gratis</b>.
+            </p>
+          </div>
+
+          <form id="quiz" aria-label="Diagnóstico">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:10px 0 12px">
+              <label style="display:block">
+                <span style="display:block; font-weight:900; color:var(--navy); font-size:12px; letter-spacing:.8px; text-transform:uppercase; margin-bottom:6px">
+                  Tiempo como residente permanente
+                </span>
+                <select id="qTiempo" required style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid var(--gray1); outline:none">
+                  <option value="" selected disabled>Selecciona</option>
+                  <option value="menos de 3 años">Menos de 3 años</option>
+                  <option value="3 a 4 años">3 a 4 años</option>
+                  <option value="5+ años">5+ años</option>
+                </select>
+              </label>
+
+              <label style="display:block">
+                <span style="display:block; font-weight:900; color:var(--navy); font-size:12px; letter-spacing:.8px; text-transform:uppercase; margin-bottom:6px">
+                  Vínculo familiar
+                </span>
+                <select id="qFamilia" required style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid var(--gray1); outline:none">
+                  <option value="" selected disabled>Selecciona</option>
+                  <option value="sí, cónyuge panameño/a">Sí, cónyuge panameño/a</option>
+                  <option value="sí, hijos panameños">Sí, hijos panameños</option>
+                  <option value="no">No</option>
+                </select>
+              </label>
+
+              <label style="display:block; grid-column:1/-1">
+                <span style="display:block; font-weight:900; color:var(--navy); font-size:12px; letter-spacing:.8px; text-transform:uppercase; margin-bottom:6px">
+                  Tu objetivo principal
+                </span>
+                <select id="qMeta" required style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid var(--gray1); outline:none">
+                  <option value="" selected disabled>Selecciona</option>
+                  <option value="pasaporte y movilidad">Pasaporte y movilidad</option>
+                  <option value="estabilidad definitiva">Estabilidad definitiva (cédula y tranquilidad)</option>
+                  <option value="negocio/crecimiento">Negocio / crecimiento</option>
+                  <option value="todo lo anterior">Todo lo anterior</option>
+                </select>
+              </label>
+              
+              <label style="display:block; grid-column:1/-1">
+                <span style="display:block; font-weight:900; color:var(--navy); font-size:12px; letter-spacing:.8px; text-transform:uppercase; margin-bottom:6px">
+                  Preferencia de horario (Zoom)
+                </span>
+                <select id="qHorario" required style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid var(--gray1); outline:none">
+                  <option value="" selected disabled>Selecciona</option>
+                  <option value="mañana en la mañana">Mañana en la mañana</option>
+                  <option value="jueves por la tarde">Jueves por la tarde</option>
+                </select>
+              </label>
             </div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center">
+              <button class="btn btn-primary" type="submit">Generar mensaje</button>
+              <button class="btn" type="button" id="copyBtn" style="border:1px solid var(--gray1); background:#fff; color:var(--navy)">Copiar</button>
+              <a class="btn btn-primary" target="_blank" rel="noopener" id="waBtn"
+                 href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t">Abrir WhatsApp</a>
+            </div>
+
+            <textarea id="out"
+              style="width:100%; margin-top:12px; min-height:140px; padding:14px; border-radius:16px; border:1px solid var(--gray1); outline:none; resize:vertical"
+              placeholder="Aquí aparecerá tu mensaje listo para enviar..."></textarea>
+          </form>
         </div>
-    </section>
 
-    <!-- REQUISITOS (LÓGICA SIMPLE) -->
-    <section class="requirements">
-        <div class="container">
-            <div class="req-box">
-                <h2 class="req-title">¿Ya cumples con el tiempo legal?</h2>
-                <p>El Artículo 10 de la Constitución establece el tiempo exacto que necesitas como <strong>Residente Permanente</strong> para solicitar la naturalización:</p>
-                
-                <div class="path-grid">
-                    <div class="path">
-                        <h4>Ruta General</h4>
-                        <p><strong>5 años</strong> continuos de Residencia Permanente oficial en territorio panameño.</p>
-                    </div>
-                    <div class="path">
-                        <h4>Ruta Familiar</h4>
-                        <p><strong>3 años</strong> de Residencia Permanente si estás casado(a) con un nacional o tienes hijos panameños.</p>
-                    </div>
-                </div>
-                <p style="margin-top: 30px; font-size: 0.9rem; color: #666;">*Existen acuerdos de reciprocidad para países latinoamericanos y España que pueden reducir estos tiempos (1 a 3 años).</p>
-            </div>
+        <aside class="offerSide" aria-label="Resumen de contacto">
+          <div style="font-weight:900; letter-spacing:.9px; text-transform:uppercase; font-size:12px; color:rgba(255,255,255,.75)">
+            naturalizate.pa
+          </div>
+          <div class="big">US$50</div>
+          <p class="small">Auditoría por Zoom (abonable al total si inicias)</p>
+
+          <a class="btn btn-primary" style="width:100%; justify-content:center" target="_blank" rel="noopener"
+             href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t">Entrar al grupo</a>
+
+          <div class="mini">
+            <div><b>Alfonso Villarreal</b></div>
+            <div><a style="color:#fff" href="mailto:Villarreallawyers@proton.me">Villarreallawyers@proton.me</a></div>
+            <div><a style="color:#fff" href="tel:+50762557583">+507 6255-7583</a></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="gray">
+    <div class="wrap">
+      <h2 class="title">Preguntas frecuentes (rápidas y útiles)</h2>
+      <p class="subtitle">
+        Esto no reemplaza una evaluación formal, pero te evita perder tiempo en suposiciones.
+      </p>
+
+      <details>
+        <summary>¿La naturalización es lo mismo que residencia permanente?</summary>
+        <p>No. La residencia es un estatus migratorio; la naturalización te orienta hacia la ciudadanía con derechos y efectos más amplios. El camino exacto depende de tu situación.</p>
+      </details>
+      
+      <details>
+        <summary>¿Por qué la auditoría tiene costo?</summary>
+        <p>Porque es una sesión técnica donde dedicamos tiempo profesional a analizar tu caso en detalle (historial migratorio, penal y fiscal). La inversión inicial de US$50.00 se abona al total si decides proceder, haciendo que la sesión sea, en la práctica, gratuita para clientes comprometidos.</p>
+      </details>
+
+      <details>
+        <summary>¿Qué suele trabar un expediente?</summary>
+        <p>Inconsistencias documentales, falta de solvencia clara, antecedentes sin explicar, cronología incompleta o no preparar bien el examen. Por eso trabajamos con checklist y orden.</p>
+      </details>
+
+      <details>
+        <summary>¿Qué gano si ya “tengo mis papeles”?</summary>
+        <p>Ganas estabilidad y menos fricción: menos dependencia de renovaciones/criterios administrativos y una mejor posición para proyectos a largo plazo.</p>
+      </details>
+
+      <p class="note">
+        Referencias públicas: Constitución Política (nacionalidad) y guías institucionales. Los criterios específicos pueden variar según tu perfil y la autoridad competente.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="navy">
+    <div class="wrap">
+      <h2 class="title darktitle">Contacto directo</h2>
+      <p class="subtitle onDark">Si quieres empezar hoy, entra al grupo VIP o contáctame por email/teléfono.</p>
+
+      <div class="contact">
+        <div class="c">
+          <div class="k">Cuenta</div>
+          <div style="margin-top:8px; font-size:18px; font-weight:300; letter-spacing:2px">naturalizate.pa</div>
         </div>
-    </section>
-
-    <!-- OFERTA IRRESISTIBLE -->
-    <section class="offer-section">
-        <div class="container">
-            <div class="offer-wrapper">
-                <div class="offer-badge">TU PUENTE HACIA LA CIUDADANÍA</div>
-                <h2>El proceso es burocrático. <br>Nosotros lo hacemos simple.</h2>
-                <p style="margin-bottom: 30px; color: var(--gray-text); font-size: 1.1rem;">
-                    El mayor obstáculo para la naturalización no es el tiempo, sino la burocracia: expedientes en SNM, exámenes de historia, filtros de seguridad y la firma en la Presidencia.
-                </p>
-                
-                <ul class="offer-list">
-                    <li><strong>Auditoría de tu expediente:</strong> Verificamos que SNM y el Tribunal Electoral tengan tus fechas correctas.</li>
-                    <li><strong>Instructivo VIP para el Examen:</strong> Te entregamos nuestra guía resumida exacta (método 80/20) para que apruebes el examen de Geografía, Historia y Cívica a la primera.</li>
-                    <li><strong>Armado de Solvencia:</strong> Estructuramos tus pruebas económicas según los estándares que Presidencia aprueba sin objeciones.</li>
-                    <li><strong>Seguimiento de Estado:</strong> Impulsamos tu expediente desde Migración hasta el Ministerio de Gobierno y Presidencia.</li>
-                </ul>
-
-                <h3 style="margin: 40px 0 20px; color: var(--navy); font-size: 1.5rem;">Diagnóstico Inicial 100% Sin Costo</h3>
-                
-                <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" class="btn" style="width: 100%; max-width: 400px;">
-                    ACCEDER AL GRUPO DE ASESORÍA
-                </a>
-                <p style="margin-top: 15px; font-size: 0.9rem; color: #888;">Habla directamente con el Abogado Alfonso Villarreal</p>
-            </div>
+        <div class="c">
+          <div class="k">Email</div>
+          <div style="margin-top:8px"><a href="mailto:Villarreallawyers@proton.me">Villarreallawyers@proton.me</a></div>
         </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-contact">
-                    <div class="logo" style="margin-bottom: 20px;">NATURALÍZATE<span>.PA</span></div>
-                    <p>Tu socio legal exclusivo para la obtención de la nacionalidad panameña.</p>
-                </div>
-                <div class="footer-contact">
-                    <h3>Abogado Especialista</h3>
-                    <p><strong>Alfonso Villarreal</strong></p>
-                    <p>Derecho Migratorio y Constitucional</p>
-                </div>
-                <div class="footer-contact">
-                    <h3>Contacto Directo</h3>
-                    <p>📱 <a href="tel:+50762557583">+507 6255-7583</a></p>
-                    <p>📧 <a href="mailto:Villarreallawyers@proton.me">Villarreallawyers@proton.me</a></p>
-                    <p style="margin-top: 15px;">
-                        <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" style="color: var(--whatsapp); font-weight: bold;">
-                            &rarr; Unirse a la comunidad en WhatsApp
-                        </a>
-                    </p>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2026 Naturalízate.pa | Todos los derechos reservados.</p>
-                <p style="margin-top: 5px; font-size: 0.8rem; color: #444;">La información provista no constituye consejo legal hasta establecer una relación abogado-cliente. Procesos fundamentados en el Título II (Nacionalidad y Extranjería) de la Constitución Política de la República de Panamá.</p>
-            </div>
+        <div class="c">
+          <div class="k">Teléfono</div>
+          <div style="margin-top:8px"><a href="tel:+50762557583">+507 6255-7583</a></div>
         </div>
-    </footer>
+      </div>
 
+      <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap">
+        <a class="btn btn-primary" target="_blank" rel="noopener"
+           href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t">Unirse al grupo WhatsApp</a>
+        <a class="btn btn-ghost" href="#inicio">Volver arriba</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <strong>naturalizate.pa</strong><br />
+        Alfonso Villarreal
+      </div>
+      <div class="legal">
+        Material informativo. No constituye asesoría legal hasta formalizar relación abogado-cliente.
+        Los requisitos y criterios aplicables dependen de la normativa vigente y evaluación del caso.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <div class="floatWA" aria-label="Acceso rápido a WhatsApp">
+    <div class="hint">Entrar al grupo WhatsApp</div>
+    <button class="waFab" id="waFab" title="WhatsApp">✆</button>
+  </div>
+
+  <script>
+    // Brand / links
+    const GROUP_URL = "https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t";
+
+    // Drawer (mobile menu)
+    const drawer = document.getElementById('drawer');
+    const burger = document.getElementById('burger');
+    const closeDrawer = document.getElementById('closeDrawer');
+
+    function openDrawer(){
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function shutDrawer(){
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+    burger?.addEventListener('click', openDrawer);
+    closeDrawer?.addEventListener('click', shutDrawer);
+    drawer?.addEventListener('click', (e)=>{ if(e.target === drawer) shutDrawer(); });
+    document.querySelectorAll('.dlink').forEach(a => a.addEventListener('click', shutDrawer));
+
+    // Smooth scroll for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href');
+        if(!id || id === '#') return;
+        const el = document.querySelector(id);
+        if(el){
+          e.preventDefault();
+          el.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+
+    // Diagnostic form -> message generator
+    const quiz = document.getElementById('quiz');
+    const out = document.getElementById('out');
+    const copyBtn = document.getElementById('copyBtn');
+    const waBtn = document.getElementById('waBtn');
+
+    function buildMessage(tiempo, familia, meta, horario){
+      const lines = [];
+      lines.push("Hola, vengo de naturalizate.pa. Quiero agendar la Auditoría de Elegibilidad (Zoom) para mi naturalización en Panamá.");
+      lines.push("");
+      lines.push("Entiendo que la auditoría tiene una inversión de US$50.00 (abonable al total si califico e inicio el trámite).");
+      lines.push("");
+      lines.push("Datos rápidos:");
+      lines.push(`- Tiempo como residente permanente: ${tiempo}`);
+      lines.push(`- Vínculo familiar: ${familia}`);
+      lines.push(`- Objetivo principal: ${meta}`);
+      lines.push(`- Preferencia de horario: ${horario}`);
+      lines.push("");
+      lines.push("¿Me confirman disponibilidad y el enlace de Zoom, por favor?");
+      lines.push("");
+      lines.push("Gracias.");
+      return lines.join("\n");
+    }
+
+    quiz?.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const tiempo = document.getElementById('qTiempo').value;
+      const familia = document.getElementById('qFamilia').value;
+      const meta = document.getElementById('qMeta').value;
+      const horario = document.getElementById('qHorario').value;
+
+      const msg = buildMessage(tiempo, familia, meta, horario);
+      out.value = msg;
+
+      waBtn.href = GROUP_URL;
+      
+      out.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+
+    copyBtn?.addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText(out.value || "");
+        copyBtn.textContent = "Copiado";
+        setTimeout(()=>copyBtn.textContent="Copiar", 1200);
+      }catch(err){
+        out.focus();
+        out.select();
+        document.execCommand('copy');
+        copyBtn.textContent = "Copiado";
+        setTimeout(()=>copyBtn.textContent="Copiar", 1200);
+      }
+    });
+
+    // Floating WA
+    document.getElementById('waFab')?.addEventListener('click', ()=>{
+      window.open(GROUP_URL, "_blank", "noopener");
+    });
+
+    // Ensure all WA buttons point to group URL
+    ["btnWAHeader","btnWAHero"].forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.href = GROUP_URL;
+    });
+  </script>
 </body>
 </html>
+```

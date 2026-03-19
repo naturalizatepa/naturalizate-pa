@@ -40,6 +40,7 @@
 
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
+    html{scroll-padding-top: 70px;} /* Offset for smooth scroll */
     body{
       font-family: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       color:var(--text);
@@ -485,24 +486,6 @@
     .foot strong{color:#fff}
     .legal{max-width:85ch}
 
-    /* Mobile */
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns:1fr; gap:18px}
-      .grid3{grid-template-columns:1fr}
-      .b-grid{grid-template-columns:1fr 1fr}
-      .split{grid-template-columns:1fr}
-      .steps{grid-template-columns:1fr 1fr}
-      .offer{grid-template-columns:1fr}
-      .contact{grid-template-columns:1fr}
-      .navlinks{display:none}
-      .burger{display:inline-flex; align-items:center; justify-content:center}
-    }
-    @media (max-width: 520px){
-      h1{font-size:34px}
-      .steps{grid-template-columns:1fr}
-      .b-grid{grid-template-columns:1fr}
-    }
-
     /* Mobile drawer */
     .drawer{
       display:none;
@@ -577,6 +560,51 @@
       box-shadow:0 14px 40px rgba(37,211,102,.38);
     }
     .waFab:hover{background:var(--wa2)}
+
+    /* =================================================================
+       Responsive Design - Mobile Adaptation
+       ================================================================= */
+    @media (max-width: 768px) {
+      /* --- Global Adjustments --- */
+      body { font-size: 15px; }
+      section { padding: 50px 0; }
+      h1 { font-size: 32px; text-align: center; }
+      .title { font-size: 28px; }
+      .lead { font-size: 16px; text-align: center; }
+      .subtitle { max-width: 100%; }
+      .wrap { padding: 0 15px; }
+
+      /* --- Stacking All Grids --- */
+      .hero-grid, .grid3, .split, .steps, .offer, .contact, .foot, .b-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* --- Header & Navigation --- */
+      .navlinks { display: none; }
+      .burger { display: inline-flex; align-items: center; justify-content: center; }
+      .navcta .btn-ghost { display: none; } /* Hide "Diagnóstico" button in header on mobile */
+
+      /* --- Hero Section --- */
+      .hero { padding: 50px 0 40px; }
+      .hero-grid aside.card { display: none; } /* Hide side card on mobile for simplicity */
+      .hero-actions { justify-content: center; } /* Center main buttons */
+      .trust { flex-direction: column; align-items: flex-start; gap: 10px; } /* Stack trust badges */
+      .badge { margin-left: auto; margin-right: auto; } /* Center badge */
+
+      /* --- Components --- */
+      .b, .p-card, .step, .panel, .c { min-height: unset; } /* Remove min-height */
+      .b-grid, .steps, .contact { gap: 10px; }
+      .offer { padding: 20px; }
+      .foot { text-align: center; gap: 20px; }
+      .legal { text-align: center; }
+
+      /* --- Notice Bar --- */
+      .notice .wrap {
+        justify-content: center;
+        text-align: center;
+        gap: 8px;
+      }
+    }
   </style>
 </head>
 
@@ -1095,4 +1123,3 @@
   </script>
 </body>
 </html>
-```

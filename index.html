@@ -1,461 +1,272 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>naturalizate.pa | Ciudadanía Panameña - Naturalización en Panamá</title>
-  <meta name="description" content="Obtén tu ciudadanía panameña. Agenda una Auditoría de Elegibilidad (US$50 abonable) para un proceso de naturalización sólido. Cédula, pasaporte y estabilidad definitiva." />
-  <meta name="theme-color" content="#0d1b2a" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="naturalizate.pa | Naturalización en Panamá" />
-  <meta property="og:description" content="De residente a ciudadano: Auditoría de Elegibilidad (US$50 abonable) + guía de examen + ruta clara." />
-  <meta property="og:type" content="website" />
-
-  <!-- SEO: Schema LegalService + AggregateRating + múltiples reviews -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <title>Naturalización en Panamá | naturalizate.pa</title>
+  <meta name="description" content="Obtenga su ciudadanía panameña. Sesión de Diagnóstico Legal y gestión de expediente con el Lic. Alfonso Villarreal."/>
+  <meta name="theme-color" content="#0d1b2a"/>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LegalService",
-    "name": "naturalizate.pa - Asesoría para Naturalización en Panamá",
-    "url": "https://naturalizate.pa/",
-    "description": "Asesoría legal para naturalización en Panamá: Auditoría de elegibilidad, preparación de expediente, guía de examen y seguimiento.",
-    "provider": {
-      "@type": "Person",
-      "name": "Alfonso Villarreal",
-      "jobTitle": "Abogado Especialista en Derecho Migratorio"
-    },
-    "areaServed": { "@type": "Country", "name": "Panamá" },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "ratingCount": "6"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-        "author": { "@type": "Person", "name": "Familia Castro" },
-        "reviewBody": "Estamos muy agradecidos. El Lic. Villarreal agilizó nuestro trámite de naturalización, cuidó nuestros documentos con responsabilidad y nos trató de manera muy familiar. El resultado fue un éxito."
-      },
-      {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-        "author": { "@type": "Person", "name": "Carlos M." },
-        "reviewBody": "Después de años de dudas, la auditoría nos dio claridad total. Ordenamos el expediente, avanzamos sin tropiezos y siempre tuvimos respuesta. Excelente acompañamiento."
-      },
-      {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-        "author": { "@type": "Person", "name": "María P." },
-        "reviewBody": "Me explicaron el proceso con pasos claros, revisaron cada documento y evitaron errores. Sentí seguridad desde el inicio y el trámite avanzó con orden."
-      },
-      {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-        "author": { "@type": "Person", "name": "Jorge R." },
-        "reviewBody": "Lo mejor fue la transparencia: supe qué faltaba, qué seguía y cuándo. La guía para el examen fue directa y me ayudó a prepararme rápido."
-      },
-      {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-        "author": { "@type": "Person", "name": "Ana L." },
-        "reviewBody": "Teníamos miedo por la burocracia. Con la auditoría, detectaron riesgos y nos dieron un plan. El seguimiento fue constante y sin vueltas."
-      },
-      {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-        "author": { "@type": "Person", "name": "Luis y Paola" },
-        "reviewBody": "Un trato profesional y humano. Nos ayudaron a reunir lo correcto, a tiempo, y a mantener el expediente limpio. Recomendado."
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"LegalService","name":"naturalizate.pa","url":"https://naturalizate.pa","telephone":"+50762557583","address":{"@type":"PostalAddress","addressLocality":"Ciudad de Panamá","addressCountry":"PA"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"6"}}
   </script>
-
   <style>
+    /* =====================================================
+       SISTEMA DE DISEÑO — Replicado del código de referencia
+       ===================================================== */
     :root{
-      --navy:#0d1b2a;
-      --navy2:#1b3a5f;
-      --white:#ffffff;
-      --black:#000000;
-      --gray0:#f8f9fa;
-      --gray1:#e6e6e6;
-      --gray2:#b8b8b8;
-      --text:#111111;
-      --text2:#333333;
-      --muted:#666666;
+      /* COLORES EXACTOS DEL CÓDIGO DE REFERENCIA */
+      --navy:       #0d1b2a;   /* rgb(13, 27, 42)   — Header, cards oscuras, pills */
+      --navy2:      #1b3a5f;   /* rgb(27, 58, 95)   — Gradiente secundario */
+      --black:      #000000;   /* rgb(0, 0, 0)       — Topbar, sección proceso */
+      --black-soft: #050505;   /* rgb(5, 5, 5)       — Footer */
+      --white:      #ffffff;   /* rgb(255,255,255)  */
+      --gray0:      #f8f9fa;   /* rgb(248,249,250)  — Fondo secciones alternas */
+      --gray1:      #e6e6e6;   /* rgb(230,230,230)  — Bordes */
+      --text:       #111111;   /* rgb(17,17,17)      — Texto principal */
+      --text2:      #333333;   /* rgb(51,51,51)      — Texto secundario */
+      --muted:      #666666;   /* rgb(102,102,102)  — Texto muted */
+      --wa:         #25D366;   /* rgb(37,211,102)   — Verde WhatsApp */
+      --wa-shadow:  rgba(37,211,102,0.28);
+      --wa-glow:    rgba(37,211,102,0.38);
+      --red-bg:     rgba(255,68,68,0.10);
+      --red-border: rgba(255,68,68,0.35);
+      --red-text:   #b71c1c;   /* rgb(183,28,28) */
+      --green-bg:   rgba(37,211,102,0.10);
+      --green-border:rgba(37,211,102,0.30);
+      --green-text: #0b6831;   /* rgb(11,104,49) */
+      --star:       #FFC107;   /* rgb(255,193,7) */
 
-      --wa:#25D366;
-      --wa2:#20bd5a;
-
-      --radius:18px;
-      --radius2:999px;
-      --shadow:0 20px 60px rgba(13,27,42,.18);
-      --shadow2:0 10px 30px rgba(0,0,0,.10);
-
-      --max:1140px;
+      --radius-lg:  18px;
+      --radius-md:  14px;
+      --radius-sm:  12px;
+      --radius-pill:999px;
+      --shadow-card:0 10px 30px rgba(0,0,0,.10);
+      --shadow-heavy:0 20px 60px rgba(13,27,42,.18);
+      --max:        1140px;
     }
 
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    html{scroll-padding-top:72px}
+    html,body{margin:0;padding:0;overflow-x:hidden;scroll-behavior:smooth;scroll-padding-top:68px}
     body{
-      font-family:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-      color:var(--text);
-      background:var(--gray0);
-      line-height:1.6;
-      overflow-x:hidden;
-      text-rendering:optimizeLegibility;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+      font-family:'Helvetica Neue',Helvetica,Arial,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+      color:var(--text);background:var(--gray0);line-height:1.6;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+      padding-bottom:72px; /* espacio sticky CTA */
     }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
 
-    .notice{
-      background:var(--black);
-      color:var(--white);
-      font-size:14px;
-      letter-spacing:.3px;
-      padding:10px 0;
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-    .notice .wrap{display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;}
-    .notice a{color:var(--wa); text-decoration:none; border-bottom:1px solid rgba(37,211,102,.4)}
-
-    header{
-      position:sticky; top:0; z-index:50;
-      background:rgba(13,27,42,.92);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0; gap:12px;}
-    .brand{display:flex; align-items:baseline; gap:6px; text-decoration:none}
-    .brand .name{font-weight:300; letter-spacing:3px; color:var(--white); font-size:18px; text-transform:uppercase;}
-    .brand .tld{color:var(--wa); font-weight:700; letter-spacing:1px; font-size:16px}
-
-    .navlinks{display:flex; gap:16px; align-items:center}
-    .navlinks a{color:rgba(255,255,255,.86); text-decoration:none; font-size:13px; letter-spacing:.6px; text-transform:uppercase;}
-    .navcta{display:flex; gap:10px; align-items:center}
-
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 16px;
-      border-radius:var(--radius2);
-      border:1px solid transparent;
-      font-weight:800;
-      letter-spacing:.6px;
-      text-transform:uppercase;
-      font-size:12.5px;
-      cursor:pointer;
-      text-decoration:none;
-      transition:transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
-      user-select:none;
-      white-space:nowrap;
-    }
-    .btn:active{transform:translateY(1px)}
-    .btn-primary{background:var(--wa); color:var(--white); box-shadow:0 10px 25px rgba(37,211,102,.28)}
-    .btn-primary:hover{background:var(--wa2); transform:translateY(-2px); box-shadow:0 14px 35px rgba(37,211,102,.35)}
-    .btn-ghost{background:transparent; border-color:rgba(255,255,255,.28); color:var(--white)}
-    .btn-ghost:hover{border-color:#fff}
-
-    .burger{
-      display:none;
-      width:44px;height:44px;border-radius:12px;
-      border:1px solid rgba(255,255,255,.16);
-      background:transparent;color:#fff;cursor:pointer;
-    }
-
-    /* HERO (móvil-first) */
-    .hero{
-      background:
-        radial-gradient(900px 500px at 15% 20%, rgba(37,211,102,.12), transparent 55%),
-        radial-gradient(700px 450px at 80% 30%, rgba(255,255,255,.06), transparent 60%),
-        linear-gradient(135deg, rgba(13,27,42,.96), rgba(27,58,95,.96));
-      color:var(--white);
-      padding:64px 0 44px;
-      position:relative;
-      overflow:hidden;
-    }
-    .hero::after{
-      content:"";
-      position:absolute; inset:-2px;
-      background-image:
-        linear-gradient(45deg, rgba(255,255,255,.03) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.03) 75%, rgba(255,255,255,.03)),
-        linear-gradient(45deg, rgba(255,255,255,.03) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.03) 75%, rgba(255,255,255,.03));
-      background-size:64px 64px;
-      background-position:0 0, 32px 32px;
-      opacity:.35;
-      pointer-events:none;
-    }
-    .hero .wrap{position:relative; z-index:1}
-    .hero-grid{display:grid; grid-template-columns:1fr; gap:14px; align-items:start}
-    .badge{
-      display:inline-flex; align-items:center; gap:10px;
-      border:1px solid rgba(37,211,102,.45);
-      background:rgba(37,211,102,.10);
-      color:#c9ffe0;
-      padding:8px 14px;
-      border-radius:var(--radius2);
-      font-size:12px;
-      letter-spacing:.6px;
-      text-transform:uppercase;
-      margin-bottom:10px;
-    }
-    h1{margin:0 0 10px; font-size:32px; line-height:1.12; font-weight:300;}
+    /* ── TIPOGRAFÍA ─────────────────────────────────── */
+    h1{font-size:clamp(2rem,5.5vw,2.75rem);font-weight:300;line-height:1.13;margin:0 0 10px}
     h1 strong{font-weight:900}
-    .lead{color:rgba(255,255,255,.88); font-size:16px; margin:0 0 12px; max-width:60ch;}
-    .hero-actions{display:grid; grid-template-columns:1fr; gap:10px; margin-top:10px}
-    .hero-actions .btn{width:100%}
-    .trust{display:flex; flex-direction:column; gap:10px; margin-top:12px; color:rgba(255,255,255,.78); font-size:13px;}
-    .trust span{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border:1px solid rgba(255,255,255,.10); border-radius:var(--radius); background:rgba(255,255,255,.04);}
+    h2{font-size:clamp(1.5rem,4vw,1.625rem);font-weight:300;line-height:1.2;margin:0 0 10px;color:var(--navy)}
+    h2.on-dark{color:var(--white)}
+    h3{font-size:0.8125rem;font-weight:900;text-transform:uppercase;letter-spacing:.9px;margin:0 0 8px;color:var(--navy)}
+    p{margin:0 0 15px;font-size:0.9375rem;color:var(--muted)}
+    .lead{font-size:1rem;color:rgba(255,255,255,.88);max-width:534px}
 
-    /* Sections */
-    section{padding:48px 0}
-    .white{background:var(--white)}
-    .dark{background:var(--black); color:var(--white)}
-    .gray{background:var(--gray0)}
-    .navy{background:linear-gradient(135deg, var(--navy), var(--navy2)); color:var(--white)}
-
-    .title{font-size:26px; line-height:1.2; font-weight:300; color:var(--navy); margin:0 0 10px;}
-    .title.darktitle{color:#fff}
-    .subtitle{color:var(--muted); margin:0 0 22px; max-width:75ch; font-size:15px;}
-    .subtitle.onDark{color:rgba(255,255,255,.78)}
-
-    .grid3{display:grid; grid-template-columns:1fr; gap:12px}
-    .p-card{background:var(--gray0); border:1px solid var(--gray1); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow2);}
-    .p-card .tag{display:inline-flex; padding:6px 10px; border-radius:var(--radius2); background:rgba(255,68,68,.10); border:1px solid rgba(255,68,68,.35); color:#b71c1c; font-size:12px; text-transform:uppercase; letter-spacing:.8px; margin-bottom:10px; font-weight:900;}
-
-    .b-grid{display:grid; grid-template-columns:1fr; gap:10px; margin-top:12px}
-    .b{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10); border-radius:var(--radius); padding:16px;}
-    .b .k{color:#fff; font-weight:900; letter-spacing:.6px; text-transform:uppercase; font-size:12px}
-    .b p{margin:6px 0 0; color:rgba(255,255,255,.80); font-size:14px}
-
-    .split{display:grid; grid-template-columns:1fr; gap:12px}
-    .panel{background:var(--white); border-radius:var(--radius); border:1px solid var(--gray1); padding:18px; box-shadow:var(--shadow2);}
-    .panel h3{margin:0 0 8px; color:var(--navy); font-size:13px; text-transform:uppercase; letter-spacing:.9px; font-weight:900}
-    .pill{display:inline-flex; align-items:center; gap:10px; background:var(--navy); color:#fff; padding:10px 12px; border-radius:var(--radius2); font-weight:900; letter-spacing:.6px; text-transform:uppercase; font-size:11px; margin-top:6px;}
-    .fine{font-size:12.5px; color:var(--muted); margin-top:8px}
-
-    .steps{display:grid; grid-template-columns:1fr; gap:12px}
-    .step{background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.10); border-radius:var(--radius); padding:16px;}
-    .num{width:40px;height:40px;border-radius:14px; display:flex;align-items:center;justify-content:center; background:#fff;color:var(--navy); font-weight:900; margin-bottom:10px;}
-    .step h4{margin:0 0 6px; font-size:13px; letter-spacing:.6px; text-transform:uppercase}
-    .step p{margin:0; color:rgba(255,255,255,.80); font-size:14px}
-
-    /* Testimonios carrusel */
-    .t-wrap{max-width:920px;margin:0 auto}
-    .t-head{text-align:center}
-    .t-badges{display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:10px}
-    .t-badge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px; border-radius:var(--radius2);
-      border:1px solid var(--gray1);
-      background:#fff;
-      font-size:12px; font-weight:900; letter-spacing:.6px; text-transform:uppercase;
-      color:var(--navy);
-      box-shadow:var(--shadow2);
-    }
-
-    .carousel{
-      margin-top:18px;
-      position:relative;
-      background:#fff;
-      border:1px solid var(--gray1);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .track{display:flex; transition:transform .45s ease; will-change:transform; touch-action:pan-y;}
-    .slide{min-width:100%; padding:20px 18px;}
-    .quote{margin:0; padding:0; border:0; font-size:16px; color:var(--text2); line-height:1.55; font-style:italic;}
-    .who{margin-top:12px; display:flex; flex-direction:column; gap:6px;}
-    .stars{color:#FFC107; letter-spacing:2px; font-size:16px}
-    cite{font-style:normal; font-weight:900; color:var(--navy);}
-    .result{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px; border-radius:var(--radius2);
-      background:rgba(37,211,102,.10);
-      border:1px solid rgba(37,211,102,.30);
-      color:#0b6831;
-      font-size:12px; font-weight:900; letter-spacing:.6px; text-transform:uppercase;
-      width:max-content;
-    }
-
-    .controls{
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      padding:10px 12px;
-      border-top:1px solid var(--gray1);
-      background:linear-gradient(180deg, rgba(248,249,250,1), rgba(255,255,255,1));
-    }
-    .navBtn{
-      width:44px;height:44px;
-      border-radius:14px;
-      border:1px solid var(--gray1);
-      background:#fff;
-      cursor:pointer;
-      font-weight:900;
-      color:var(--navy);
-      transition:transform .15s ease, box-shadow .15s ease;
-    }
-    .navBtn:active{transform:translateY(1px)}
-    .dots{display:flex; gap:8px; align-items:center; justify-content:center; flex:1}
-    .dotBtn{width:9px;height:9px;border-radius:999px; border:0; background:rgba(13,27,42,.18); cursor:pointer;}
-    .dotBtn[aria-current="true"]{background:var(--navy)}
-    .t-cta{padding:14px 12px 18px; text-align:center;}
-    .t-cta .btn{width:100%}
-
-    /* Offer */
-    .offer{
-      background:var(--white);
-      border:1px solid var(--gray1);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
-      display:grid;
-      grid-template-columns:1fr;
-      gap:12px;
-      align-items:start;
-    }
-    .offer .label{
-      display:inline-flex; background:rgba(13,27,42,.08); color:var(--navy);
-      border:1px solid rgba(13,27,42,.14);
-      padding:7px 12px; border-radius:var(--radius2);
-      font-weight:900; letter-spacing:.9px; text-transform:uppercase; font-size:11.5px; margin-bottom:8px;
-    }
-    .offer h3{margin:0 0 10px; font-size:22px; font-weight:300; color:var(--navy); line-height:1.25}
-    .offer h3 strong{font-weight:900}
-    .offerSide{
-      background:linear-gradient(135deg, var(--navy), var(--navy2));
-      color:#fff; border-radius:var(--radius);
-      padding:16px; text-align:center;
-    }
-    .offerSide .big{font-size:34px; font-weight:300; letter-spacing:-1px; margin:6px 0 2px}
-    .offerSide .small{color:rgba(255,255,255,.80); font-size:13px; margin:0 0 12px}
-    .offerSide .mini{
-      border-top:1px solid rgba(255,255,255,.12);
-      margin-top:12px; padding-top:12px;
-      color:rgba(255,255,255,.86); font-size:13px;
-    }
-
-    details{background:var(--white); border:1px solid var(--gray1); border-radius:var(--radius); padding:14px 16px; box-shadow:var(--shadow2);}
-    details + details{margin-top:10px}
-    summary{cursor:pointer; font-weight:900; color:var(--navy); letter-spacing:.2px; list-style:none}
-    summary::-webkit-details-marker{display:none}
-
-    .contact{display:grid; grid-template-columns:1fr; gap:10px}
-    .c{border-radius:var(--radius); border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); padding:16px;}
-    .c .k{font-weight:900; letter-spacing:.8px; text-transform:uppercase; font-size:12px}
-    .c a{color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.20)}
-
-    footer{padding:22px 0 90px; background:#050505; color:rgba(255,255,255,.78); border-top:1px solid rgba(255,255,255,.10); font-size:13px;}
-    .foot{display:flex; flex-direction:column; gap:12px}
-    .legal{max-width:85ch}
-
-    /* Drawer */
-    .drawer{display:none; position:fixed; inset:0; background:rgba(0,0,0,.52); z-index:80; padding:18px}
-    .drawer.open{display:block}
-    .drawerPanel{
-      background:rgba(13,27,42,.98);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:20px;
-      padding:16px;
-      max-width:520px;
-      margin:0 auto;
-      box-shadow:var(--shadow);
-    }
-    .drawerPanel a{
-      display:block;
-      padding:12px 10px;
-      color:#fff;
+    /* ── BOTONES ────────────────────────────────────── */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 16px;border-radius:var(--radius-pill);border:1px solid transparent;
+      font-weight:800;letter-spacing:.6px;text-transform:uppercase;font-size:12.5px;
+      cursor:pointer;user-select:none;white-space:nowrap;transition:opacity .2s,transform .2s;
       text-decoration:none;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.10);
-      margin-top:10px;
-      text-transform:uppercase;
-      letter-spacing:.8px;
-      font-weight:900;
-      font-size:13px;
     }
-    .drawerTop{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:6px 4px 12px; border-bottom:1px solid rgba(255,255,255,.10); margin-bottom:10px;}
-    .xbtn{width:42px;height:42px;border-radius:14px; border:1px solid rgba(255,255,255,.16); background:transparent;color:#fff;cursor:pointer;}
+    .btn:active{transform:scale(.98)}
+    .btn-wa{background:var(--wa);color:var(--white);box-shadow:0 10px 25px var(--wa-shadow);border-color:transparent}
+    .btn-wa:hover{opacity:.9}
+    .btn-outline-white{background:transparent;border-color:rgba(255,255,255,.28);color:var(--white)}
+    .btn-outline-white:hover{border-color:rgba(255,255,255,.6)}
+    .btn-outline-dark{background:var(--white);border-color:var(--gray1);color:var(--navy)}
+    .btn-outline-dark:hover{border-color:#bbb}
 
-    /* Floating WhatsApp */
-    .floatWA{position:fixed; right:16px; bottom:88px; z-index:60; display:flex; gap:10px; align-items:center;}
-    .floatWA .hint{display:none; background:rgba(0,0,0,.78); color:#fff; padding:10px 12px; border-radius:14px; font-size:12.5px; border:1px solid rgba(255,255,255,.10);}
-    .floatWA:hover .hint{display:block}
-    .waFab{width:54px;height:54px;border-radius:18px; border:0;background:var(--wa);color:#fff;font-size:20px; cursor:pointer; box-shadow:0 14px 40px rgba(37,211,102,.38);}
-    .waFab:hover{background:var(--wa2)}
+    /* ── TOPBAR ─────────────────────────────────────── */
+    .topbar{background:var(--black);color:var(--white);font-size:14px;letter-spacing:.3px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .topbar .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .topbar a{color:var(--wa);border-bottom:1px solid rgba(37,211,102,.4)}
 
-    /* Sticky bottom CTA */
-    .stickyCta{
-      position:fixed; left:0; right:0; bottom:0;
-      z-index:70;
-      background:rgba(13,27,42,.96);
-      border-top:1px solid rgba(255,255,255,.10);
-      padding:10px 12px env(safe-area-inset-bottom);
-      backdrop-filter: blur(10px);
+    /* ── HEADER ─────────────────────────────────────── */
+    header{position:sticky;top:0;z-index:50;background:rgba(13,27,42,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
+    .brand{display:flex;align-items:baseline;gap:6px}
+    .brand-name{font-weight:300;letter-spacing:3px;color:var(--white);font-size:18px;text-transform:uppercase}
+    .brand-tld{color:var(--wa);font-weight:700;letter-spacing:1px;font-size:16px}
+    .nav-links{display:flex;gap:16px;align-items:center}
+    .nav-links a{color:rgba(255,255,255,.86);font-size:13px;letter-spacing:.6px;text-transform:uppercase}
+    .nav-links a:hover{color:var(--white)}
+    .nav-cta{display:flex;gap:10px;align-items:center}
+    .burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:transparent;color:var(--white);cursor:pointer;font-size:20px}
+
+    /* ── DRAWER MÓVIL ───────────────────────────────── */
+    .drawer{display:none;position:fixed;inset:0;background:rgba(0,0,0,.52);z-index:80;padding:18px}
+    .drawer.open{display:block}
+    .drawer-panel{background:rgba(13,27,42,.98);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:16px;max-width:520px;margin:0 auto;box-shadow:var(--shadow-heavy)}
+    .drawer-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:6px 4px 12px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:10px}
+    .drawer-close{width:42px;height:42px;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:transparent;color:var(--white);cursor:pointer;font-size:18px}
+    .drawer-panel a{display:block;padding:12px 10px;color:var(--white);border-radius:12px;border:1px solid rgba(255,255,255,.1);margin-top:10px;text-transform:uppercase;letter-spacing:.8px;font-weight:900;font-size:13px}
+
+    /* ── HERO ───────────────────────────────────────── */
+    .hero{
+      padding:82px 0 56px;
+      background:
+        radial-gradient(900px 500px at 15% 20%,rgba(37,211,102,.12),transparent 55%),
+        radial-gradient(700px 450px at 80% 30%,rgba(255,255,255,.06),transparent 60%),
+        linear-gradient(135deg,rgba(13,27,42,.96),rgba(27,58,95,.96));
+      color:var(--white);position:relative;overflow:hidden;
     }
-    .stickyCta .wrap{display:flex; gap:10px; align-items:center; justify-content:space-between;}
-    .stickyCta .msg{color:rgba(255,255,255,.82); font-size:12.5px; line-height:1.2; max-width:52%;}
-    .stickyCta .msg b{color:#fff}
-    .stickyCta .btn{flex:1; justify-content:center; width:48%}
+    .hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(37,211,102,.45);background:rgba(37,211,102,.10);color:#c9ffe0;padding:8px 14px;border-radius:var(--radius-pill);font-size:12px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:10px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+    .hero-trust{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;font-size:13px;color:rgba(255,255,255,.78)}
+    .hero-trust span{display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid rgba(255,255,255,.1);border-radius:18px;background:rgba(255,255,255,.04)}
 
-    @media (prefers-reduced-motion: reduce){
-      .track{transition:none}
-      .btn{transition:none}
+    /* ── SECCIONES ──────────────────────────────────── */
+    section{padding:72px 0}
+    .sec-white{background:var(--white)}
+    .sec-gray{background:var(--gray0)}
+    .sec-navy{background:linear-gradient(135deg,var(--navy),var(--navy2));color:var(--white)}
+    .sec-black{background:var(--black);color:var(--white)}
+
+    /* ── PROBLEM CARDS ──────────────────────────────── */
+    .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+    .p-card{background:var(--gray0);border:1px solid var(--gray1);border-radius:var(--radius-lg);padding:18px;box-shadow:var(--shadow-card)}
+    .p-tag{display:inline-flex;padding:6px 10px;border-radius:var(--radius-pill);background:var(--red-bg);border:1px solid var(--red-border);color:var(--red-text);font-size:12px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;font-weight:900}
+    .p-card p{color:var(--text2)}
+
+    /* ── SOLUTION GRID ──────────────────────────────── */
+    .b-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:12px}
+    .b-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:16px}
+    .b-item .k{color:var(--white);font-weight:900;letter-spacing:.6px;text-transform:uppercase;font-size:12px}
+    .b-item p{margin:6px 0 0;color:rgba(255,255,255,.80);font-size:14px}
+
+    /* ── ELIGIBILIDAD ───────────────────────────────── */
+    .split{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+    .panel-card{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray1);padding:18px;box-shadow:var(--shadow-card)}
+    .pill{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:var(--white);padding:10px 12px;border-radius:var(--radius-pill);font-weight:900;letter-spacing:.6px;text-transform:uppercase;font-size:11px;margin-top:6px}
+    .fine{font-size:12.5px;color:var(--muted);margin-top:8px}
+
+    /* ── PROCESO ────────────────────────────────────── */
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .step-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:16px}
+    .step-num{width:40px;height:40px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:var(--white);color:var(--navy);font-weight:900;margin-bottom:10px}
+    .step-item h4{margin:0 0 6px;font-size:13px;letter-spacing:.6px;text-transform:uppercase;color:var(--white)}
+    .step-item p{margin:0;color:rgba(255,255,255,.80);font-size:14px}
+
+    /* ── TESTIMONIOS ────────────────────────────────── */
+    .t-wrap{max-width:920px;margin:0 auto}
+    .t-badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+    .t-badge{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--radius-pill);border:1px solid var(--gray1);background:var(--white);font-size:12px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;color:var(--navy);box-shadow:var(--shadow-card)}
+    .carousel{margin-top:18px;position:relative;background:var(--white);border:1px solid var(--gray1);border-radius:var(--radius-lg);box-shadow:var(--shadow-heavy);overflow:hidden}
+    .track{display:flex;transition:transform .45s ease;will-change:transform;touch-action:pan-y}
+    .slide{min-width:100%;padding:20px 18px}
+    .slide blockquote{margin:0;padding:0;border:0;font-size:16px;color:var(--text2);line-height:1.55;font-style:italic}
+    .slide .who{margin-top:12px;display:flex;flex-direction:column;gap:6px}
+    .slide cite{font-style:normal;font-weight:900;color:var(--navy)}
+    .slide .stars{color:var(--star);letter-spacing:2px;font-size:16px;margin-bottom:8px}
+    .result-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--radius-pill);background:var(--green-bg);border:1px solid var(--green-border);color:var(--green-text);font-size:12px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;width:max-content}
+    .controls{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-top:1px solid var(--gray1);background:linear-gradient(var(--gray0),var(--white))}
+    .nav-btn{width:44px;height:44px;border-radius:14px;border:1px solid var(--gray1);background:var(--white);cursor:pointer;font-weight:900;color:var(--navy);font-size:18px;transition:transform .15s,box-shadow .15s}
+    .nav-btn:hover{transform:translateY(-1px);box-shadow:0 4px 10px rgba(0,0,0,.08)}
+    .dots{display:flex;gap:8px;align-items:center;justify-content:center;flex:1}
+    .dot-btn{width:9px;height:9px;border-radius:999px;border:0;background:rgba(13,27,42,.18);cursor:pointer}
+    .dot-btn[aria-current="true"]{background:var(--navy)}
+    .t-cta{padding:14px 12px 18px;text-align:center}
+    .t-cta .btn{width:100%}
+    .t-cta p{margin:10px 0 0;font-size:12.5px;color:var(--muted)}
+
+    /* ── DIAGNÓSTICO (FORMULARIO) ───────────────────── */
+    .diag-grid{background:var(--white);border:1px solid var(--gray1);border-radius:var(--radius-lg);box-shadow:var(--shadow-heavy);display:grid;grid-template-columns:1fr;gap:18px;padding:26px}
+    .diag-label-tag{display:inline-flex;background:rgba(13,27,42,.08);color:var(--navy);border:1px solid rgba(13,27,42,.14);padding:7px 12px;border-radius:var(--radius-pill);font-weight:900;letter-spacing:.9px;text-transform:uppercase;font-size:11.5px;margin-bottom:8px}
+    .diag-title{margin:0 0 10px;font-size:22px;font-weight:300;color:var(--navy);line-height:1.25}
+    .diag-title strong{font-weight:900}
+    .info-box{padding:16px;border:1px solid var(--gray1);border-radius:16px;background:var(--white);margin:12px 0 16px}
+    .info-box p{margin:0;color:var(--text2);font-size:15px}
+    .form-row{display:grid;grid-template-columns:1fr;gap:12px;margin:10px 0 12px}
+    .form-label{display:block;font-weight:900;color:var(--navy);font-size:12px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px}
+    .form-select,.form-input,.form-textarea{width:100%;padding:12px;border-radius:14px;border:1px solid var(--gray1);outline:none;font-family:inherit;font-size:14px;background:var(--gray0);color:var(--text)}
+    .form-select:focus,.form-input:focus,.form-textarea:focus{border-color:var(--navy)}
+    .form-textarea{min-height:130px;resize:vertical;border-radius:16px;padding:14px}
+    .form-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px}
+    .aside-panel{background:linear-gradient(135deg,var(--navy),var(--navy2));color:var(--white);border-radius:var(--radius-lg);padding:20px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:8px}
+    .aside-brand{font-weight:900;letter-spacing:.9px;text-transform:uppercase;font-size:12px;color:rgba(255,255,255,.75)}
+    .aside-price{font-size:34px;font-weight:300;letter-spacing:-1px;margin:4px 0 2px}
+    .aside-sub{color:rgba(255,255,255,.80);font-size:13px}
+    .aside-contact{border-top:1px solid rgba(255,255,255,.12);margin-top:10px;padding-top:12px;color:rgba(255,255,255,.86);font-size:13px;line-height:2}
+    .aside-contact a{color:var(--white)}
+
+    /* ── FAQ ────────────────────────────────────────── */
+    details{background:var(--white);border:1px solid var(--gray1);border-radius:var(--radius-lg);padding:14px 16px;box-shadow:var(--shadow-card)}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:900;color:var(--navy);letter-spacing:.2px;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    details p{margin-top:10px;color:var(--text2)}
+
+    /* ── CONTACTO ───────────────────────────────────── */
+    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+    .contact-card{border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:16px}
+    .contact-card .k{font-weight:900;letter-spacing:.8px;text-transform:uppercase;font-size:12px;margin-bottom:8px}
+    .contact-card a{color:var(--white);border-bottom:1px solid rgba(255,255,255,.2)}
+    .contact-val{font-size:16px;font-weight:300;letter-spacing:1px}
+    .contact-actions{margin-top:14px;display:grid;gap:10px}
+
+    /* ── FOOTER ─────────────────────────────────────── */
+    footer{padding:24px 0 22px;background:var(--black-soft);color:rgba(255,255,255,.78);border-top:1px solid rgba(255,255,255,.1);font-size:13px}
+    .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .legal{max-width:55ch}
+
+    /* ── FLOATING WA ────────────────────────────────── */
+    .float-wa{position:fixed;right:16px;bottom:88px;z-index:60}
+    .wa-fab{width:54px;height:54px;border-radius:18px;border:0;background:var(--wa);color:var(--white);font-size:22px;cursor:pointer;box-shadow:0 14px 40px var(--wa-glow);display:flex;align-items:center;justify-content:center;transition:transform .2s}
+    .wa-fab:hover{transform:scale(1.05)}
+
+    /* ── STICKY CTA (SOLO MÓVIL) ────────────────────── */
+    .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(13,27,42,.96);border-top:1px solid rgba(255,255,255,.1);padding:10px 20px env(safe-area-inset-bottom);backdrop-filter:blur(10px);display:none}
+    .sticky-inner{display:flex;gap:10px;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto}
+    .sticky-msg{color:rgba(255,255,255,.82);font-size:12.5px;line-height:1.3;max-width:52%}
+    .sticky-msg b{color:var(--white)}
+
+    /* =====================================================
+       RESPONSIVE — Mobile First
+       ===================================================== */
+    @media(max-width:900px){
+      .nav-links,.nav-cta .btn-outline-white{display:none}
+      .burger{display:inline-flex;align-items:center;justify-content:center}
+      .hero{padding:50px 0 40px}
+      h1{font-size:clamp(1.8rem,6vw,2.3rem)}
+      .hero-actions{flex-direction:column}
+      .hero-actions .btn{width:100%;justify-content:center}
+      section{padding:48px 0}
+      .diag-grid{grid-template-columns:1fr}
+      .sticky-cta{display:block}
+      .float-wa{bottom:80px}
+      .hero-trust{flex-direction:column}
+      .hero-trust span{font-size:12px}
     }
-
-    @media (min-width: 900px){
-      section{padding:72px 0}
-      .hero{padding:82px 0 56px}
-      .hero-grid{grid-template-columns: 1.1fr .9fr; gap:26px; align-items:stretch}
-      h1{font-size:44px}
-      .hero-actions{display:flex; gap:12px}
-      .hero-actions .btn{width:auto}
-      .trust{flex-direction:row; flex-wrap:wrap}
-      .grid3{grid-template-columns:repeat(3,1fr)}
-      .b-grid{grid-template-columns:repeat(4,1fr)}
-      .split{grid-template-columns:1fr 1fr}
-      .steps{grid-template-columns:repeat(4,1fr)}
-      .offer{grid-template-columns: 1.2fr .8fr; padding:26px; gap:18px}
-      .contact{grid-template-columns:repeat(3,1fr)}
-      .foot{flex-direction:row; justify-content:space-between}
-      .stickyCta{display:none}
-      .floatWA{bottom:18px}
-    }
-
-    @media (max-width: 980px){
-      .navlinks{display:none}
-      .burger{display:inline-flex; align-items:center; justify-content:center}
-    }
-
-    @media (max-width: 420px){
-      .notice{font-size:13px}
-      .brand .name{font-size:16px}
-      .brand .tld{font-size:14px}
-      .stickyCta .msg{display:none}
-      .stickyCta .btn{width:100%}
+    @media(max-width:480px){
+      h1{font-size:1.75rem}
+      .hero-badge{font-size:10px;padding:6px 10px}
+      .topbar{font-size:12px}
     }
   </style>
 </head>
-
 <body>
-  <div class="notice">
+
+  <!-- TOPBAR NEGRA -->
+  <div class="topbar">
     <div class="wrap">
       <div><b>Naturalización en Panamá:</b> de residente a ciudadano con una ruta clara.</div>
       <div><a href="#diagnostico">Agendar Auditoría</a></div>
     </div>
   </div>
 
+  <!-- HEADER -->
   <header>
     <div class="wrap nav">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <div class="name">NATURALÍZATE</div><div class="tld">.PA</div>
+      <a href="#inicio" class="brand" aria-label="Inicio">
+        <div class="brand-name">NATURALÍZATE</div>
+        <div class="brand-tld">.PA</div>
       </a>
-
-      <nav class="navlinks" aria-label="Navegación">
+      <nav class="nav-links" aria-label="Navegación principal">
         <a href="#problema">Problema</a>
         <a href="#solucion">Solución</a>
         <a href="#elegibilidad">Elegibilidad</a>
@@ -465,102 +276,103 @@
         <a href="#faq">FAQ</a>
         <a href="#contacto">Contacto</a>
       </nav>
-
-      <div class="navcta">
-        <a class="btn btn-ghost" href="#diagnostico">Auditoría</a>
-        <a class="btn btn-primary" id="btnWAHeader" target="_blank" rel="noopener"
-           href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" aria-label="Abrir WhatsApp">WhatsApp</a>
+      <div class="nav-cta">
+        <a href="#diagnostico" class="btn btn-outline-white">Auditoría</a>
+        <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" rel="noopener" class="btn btn-wa" aria-label="WhatsApp">WhatsApp</a>
         <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
       </div>
     </div>
   </header>
 
-  <!-- Drawer -->
+  <!-- DRAWER -->
   <div class="drawer" id="drawer" aria-hidden="true">
-    <div class="drawerPanel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
-      <div class="drawerTop">
-        <div class="brand" style="gap:8px;" id="drawer-title">
-          <div class="name" style="font-size:16px;">NATURALÍZATE</div><div class="tld" style="font-size:14px;">.PA</div>
+    <div class="drawer-panel" role="dialog" aria-modal="true">
+      <div class="drawer-top">
+        <div class="brand">
+          <div class="brand-name" style="font-size:16px">NATURALÍZATE</div>
+          <div class="brand-tld" style="font-size:14px">.PA</div>
         </div>
-        <button class="xbtn" id="closeDrawer" aria-label="Cerrar menú">✕</button>
+        <button class="drawer-close" id="closeDrawer" aria-label="Cerrar menú">✕</button>
       </div>
       <a href="#problema" class="dlink">Problema</a>
       <a href="#solucion" class="dlink">Solución</a>
       <a href="#elegibilidad" class="dlink">Elegibilidad</a>
       <a href="#proceso" class="dlink">Ruta</a>
       <a href="#testimonials" class="dlink">Testimonios</a>
-      <a href="#diagnostico" class="dlink">Auditoría</a>
+      <a href="#diagnostico" class="dlink" style="color:var(--wa)">Auditoría</a>
       <a href="#faq" class="dlink">FAQ</a>
       <a href="#contacto" class="dlink">Contacto</a>
-      <a target="_blank" rel="noopener" href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t">Unirse al grupo WhatsApp</a>
+      <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" rel="noopener" class="dlink">Unirse al grupo WhatsApp</a>
     </div>
   </div>
 
   <!-- HERO -->
   <main id="inicio" class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="badge">Ruta clara · Examen preparado · Seguimiento</div>
-        <h1>Dejaste de ser un visitante. <strong>Es hora de dejar de ser un extranjero.</strong></h1>
-        <p class="lead">
-          La residencia te deja vivir en Panamá. La <strong>naturalización</strong> te da estabilidad definitiva: cédula, pasaporte y tranquilidad.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" id="btnWAHero" target="_blank" rel="noopener"
-             href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t">Entrar al grupo WhatsApp</a>
-          <a class="btn btn-ghost" href="#diagnostico">Agendar Auditoría (US$50)</a>
-        </div>
-
-        <div class="trust" aria-label="Indicadores de confianza">
-          <span>✓ Auditoría por Zoom: US$50.00 (abonable)</span>
-          <span>✓ Checklist de expediente</span>
-          <span>✓ Guía 80/20 para el examen</span>
-        </div>
+    <div class="wrap">
+      <div class="hero-badge">Ruta clara · Examen preparado · Seguimiento</div>
+      <h1>Dejaste de ser un visitante.<br><strong>Es hora de dejar de ser un extranjero.</strong></h1>
+      <p class="lead">La residencia te deja vivir en Panamá. La <strong>naturalización</strong> te da estabilidad definitiva: cédula, pasaporte y tranquilidad.</p>
+      <div class="hero-actions">
+        <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" rel="noopener" class="btn btn-wa">Entrar al grupo WhatsApp</a>
+        <a href="#diagnostico" class="btn btn-outline-white">Agendar Diagnóstico Legal</a>
+      </div>
+      <div class="hero-trust" aria-label="Indicadores de confianza">
+        <span>✓ Diagnóstico sin costo inicial</span>
+        <span>✓ Checklist de expediente</span>
+        <span>✓ Guía 80/20 para el examen</span>
       </div>
     </div>
   </main>
 
   <!-- PROBLEMA -->
-  <section id="problema" class="white">
+  <section id="problema" class="sec-white">
     <div class="wrap">
-      <h2 class="title">El problema real de “quedarte solo con la residencia”</h2>
-      <p class="subtitle">Aun con residencia, muchas decisiones siguen atadas a trámites. La ciudadanía reduce fricción y te da estabilidad.</p>
+      <h2>El problema real de "quedarte solo con la residencia"</h2>
+      <p style="max-width:625px;margin-bottom:22px">Aun con residencia, muchas decisiones siguen atadas a trámites. La ciudadanía reduce fricción y te da estabilidad.</p>
       <div class="grid3">
-        <div class="p-card"><div class="tag">bloqueo</div><p><b>Oportunidades limitadas</b> donde el estatus de extranjero complica.</p></div>
-        <div class="p-card"><div class="tag">costo oculto</div><p><b>Tiempo y dinero</b> se pierden cuando el expediente no está ordenado.</p></div>
-        <div class="p-card"><div class="tag">incertidumbre</div><p><b>Demoras y estrés</b>: el “estado del trámite” se vuelve una carga.</p></div>
+        <div class="p-card">
+          <div class="p-tag">bloqueo</div>
+          <p><b style="color:var(--text)">Oportunidades limitadas</b> donde el estatus de extranjero complica.</p>
+        </div>
+        <div class="p-card">
+          <div class="p-tag">costo oculto</div>
+          <p><b style="color:var(--text)">Tiempo y dinero</b> se pierden cuando el expediente no está ordenado.</p>
+        </div>
+        <div class="p-card">
+          <div class="p-tag">incertidumbre</div>
+          <p><b style="color:var(--text)">Demoras y estrés</b>: el "estado del trámite" se vuelve una carga.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- SOLUCIÓN -->
-  <section id="solucion" class="navy">
+  <section id="solucion" class="sec-navy">
     <div class="wrap">
-      <h2 class="title darktitle">La solución: Naturalización como “cierre definitivo”</h2>
-      <p class="subtitle onDark">No es “otro trámite”: es un cambio de estatus con impacto directo en tu vida.</p>
+      <h2 class="on-dark">La solución: Naturalización como "cierre definitivo"</h2>
+      <p style="color:rgba(255,255,255,.78);max-width:625px;margin-bottom:0">No es "otro trámite": es un cambio de estatus con impacto directo en tu vida.</p>
       <div class="b-grid">
-        <div class="b"><div class="k">Estabilidad</div><p>Menos fricción y más previsibilidad.</p></div>
-        <div class="b"><div class="k">Movilidad</div><p>Mejor posición para viajes y trámites.</p></div>
-        <div class="b"><div class="k">Integración</div><p>Formaliza tu proyecto de vida.</p></div>
-        <div class="b"><div class="k">Plan claro</div><p>Checklist + guía + seguimiento.</p></div>
+        <div class="b-item"><div class="k">Estabilidad</div><p>Menos fricción y más previsibilidad.</p></div>
+        <div class="b-item"><div class="k">Movilidad</div><p>Mejor posición para viajes y trámites.</p></div>
+        <div class="b-item"><div class="k">Integración</div><p>Formaliza tu proyecto de vida.</p></div>
+        <div class="b-item"><div class="k">Plan claro</div><p>Checklist + guía + seguimiento.</p></div>
       </div>
     </div>
   </section>
 
   <!-- ELEGIBILIDAD -->
-  <section id="elegibilidad" class="gray">
+  <section id="elegibilidad" class="sec-gray">
     <div class="wrap">
-      <h2 class="title">Elegibilidad (pre-chequeo simple)</h2>
-      <p class="subtitle">La Auditoría confirma tiempos, riesgos y ruta óptima según tu perfil.</p>
+      <h2>Elegibilidad (pre-chequeo simple)</h2>
+      <p style="max-width:625px;margin-bottom:22px">El Diagnóstico confirma tiempos, riesgos y ruta óptima según tu perfil.</p>
       <div class="split">
-        <div class="panel">
+        <div class="panel-card">
           <h3>Ruta general</h3>
-          <p>Clave: <b>tiempo</b>, <b>arraigo</b> y expediente sin inconsistencias.</p>
+          <p>Clave: <b style="color:var(--text)">tiempo</b>, <b style="color:var(--text)">arraigo</b> y expediente sin inconsistencias.</p>
           <div class="pill">Meta: ordenar + examen</div>
           <div class="fine">Arma cronología y soportes para evitar observaciones.</div>
         </div>
-        <div class="panel">
+        <div class="panel-card">
           <h3>Ruta familiar</h3>
           <p>Clave: sustento documental del vínculo y estabilidad.</p>
           <div class="pill">Meta: evidencia sólida</div>
@@ -571,203 +383,199 @@
   </section>
 
   <!-- PROCESO -->
-  <section id="proceso" class="dark">
+  <section id="proceso" class="sec-black">
     <div class="wrap">
-      <h2 class="title darktitle">Ruta en 4 etapas (sin perderte en burocracia)</h2>
-      <p class="subtitle onDark">Auditoría → Expediente → Examen → Seguimiento.</p>
+      <h2 class="on-dark">Ruta en 4 etapas (sin perderte en burocracia)</h2>
+      <p style="color:rgba(255,255,255,.78);max-width:625px;margin-bottom:22px">Diagnóstico → Expediente → Examen → Seguimiento.</p>
       <div class="steps">
-        <div class="step"><div class="num">1</div><h4>Auditoría</h4><p>Revisión migratoria, penal y fiscal. Ruta y cotización exacta.</p></div>
-        <div class="step"><div class="num">2</div><h4>Expediente</h4><p>Armado con orden y consistencia.</p></div>
-        <div class="step"><div class="num">3</div><h4>Examen</h4><p>Guía 80/20 para estudiar lo esencial.</p></div>
-        <div class="step"><div class="num">4</div><h4>Seguimiento</h4><p>Monitoreo y respuesta a observaciones.</p></div>
+        <div class="step-item"><div class="step-num">1</div><h4>Diagnóstico</h4><p>Revisión migratoria, penal y fiscal. Ruta exacta.</p></div>
+        <div class="step-item"><div class="step-num">2</div><h4>Expediente</h4><p>Armado con orden y consistencia.</p></div>
+        <div class="step-item"><div class="step-num">3</div><h4>Examen</h4><p>Guía 80/20 para estudiar lo esencial.</p></div>
+        <div class="step-item"><div class="step-num">4</div><h4>Seguimiento</h4><p>Monitoreo y respuesta a observaciones.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIOS: Carrusel -->
-  <section id="testimonials" class="gray">
+  <!-- TESTIMONIOS -->
+  <section id="testimonials" class="sec-gray">
     <div class="wrap t-wrap">
-      <div class="t-head">
-        <h2 class="title" style="text-align:center">Resultados reales. Trato humano. Proceso ordenado.</h2>
-        <p class="subtitle" style="text-align:center; margin-left:auto; margin-right:auto">
-          Evidencia rápida para decidir con confianza (ideal desde redes).
-        </p>
-        <div class="t-badges" aria-label="Badges de confianza">
-          <div class="t-badge">★★★★★ 5/5</div>
-          <div class="t-badge">✅ Expediente ordenado</div>
-          <div class="t-badge">⏱️ Seguimiento constante</div>
-          <div class="t-badge">🔍 Auditoría (US$50 abonable)</div>
-        </div>
+      <h2 class="text-center" style="text-align:center;color:var(--navy)">Resultados reales. Trato humano. Proceso ordenado.</h2>
+      <p style="text-align:center;margin:0 auto 10px;max-width:600px">Evidencia rápida para decidir con confianza.</p>
+      <div class="t-badges">
+        <div class="t-badge">★★★★★ 5/5</div>
+        <div class="t-badge">✅ Expediente ordenado</div>
+        <div class="t-badge">⏱️ Seguimiento constante</div>
+        <div class="t-badge">🔍 Diagnóstico sin costo</div>
       </div>
 
       <div class="carousel" aria-label="Carrusel de testimonios">
         <div class="track" id="tTrack" aria-live="polite">
+
           <article class="slide">
-            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
-            <blockquote class="quote">
-              “Estamos muy agradecidos. El Lic. Villarreal agilizó nuestro trámite, cuidó nuestros documentos con responsabilidad y nos trató de manera muy familiar. El resultado fue un éxito.”
-            </blockquote>
-            <div class="who">
-              <cite>Familia Castro</cite>
-              <span class="result">✅ Ciudadanía obtenida</span>
-            </div>
+            <div class="stars">★★★★★</div>
+            <blockquote>"Estamos muy agradecidos. El Lic. Villarreal agilizó nuestro trámite, cuidó nuestros documentos con responsabilidad y nos trató de manera muy familiar. El resultado fue un éxito."</blockquote>
+            <div class="who"><cite>Familia Castro</cite><span class="result-badge">✅ Ciudadanía obtenida</span></div>
           </article>
 
           <article class="slide">
-            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
-            <blockquote class="quote">
-              “La auditoría nos dio claridad total. Ordenamos el expediente sin errores y siempre supimos qué seguía. Acompañamiento serio y rápido.”
-            </blockquote>
-            <div class="who">
-              <cite>Carlos M.</cite>
-              <span class="result">✅ Ruta clara desde el día 1</span>
-            </div>
+            <div class="stars">★★★★★</div>
+            <blockquote>"La auditoría nos dio claridad total. Ordenamos el expediente sin errores y siempre supimos qué seguía. Acompañamiento serio y rápido."</blockquote>
+            <div class="who"><cite>Carlos M.</cite><span class="result-badge">✅ Ruta clara desde el día 1</span></div>
           </article>
 
           <article class="slide">
-            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
-            <blockquote class="quote">
-              “Me explicaron el proceso paso a paso y revisaron cada documento. Evitaron observaciones y me sentí segura desde el inicio.”
-            </blockquote>
-            <div class="who">
-              <cite>María P.</cite>
-              <span class="result">✅ Expediente sólido</span>
-            </div>
+            <div class="stars">★★★★★</div>
+            <blockquote>"Me explicaron el proceso paso a paso y revisaron cada documento. Evitaron observaciones y me sentí segura desde el inicio."</blockquote>
+            <div class="who"><cite>María P.</cite><span class="result-badge">✅ Expediente sólido</span></div>
           </article>
 
           <article class="slide">
-            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
-            <blockquote class="quote">
-              “Transparencia total: sabía exactamente qué faltaba y cuándo. La guía del examen fue directa y me ayudó a prepararme rápido.”
-            </blockquote>
-            <div class="who">
-              <cite>Jorge R.</cite>
-              <span class="result">✅ Preparación de examen</span>
-            </div>
+            <div class="stars">★★★★★</div>
+            <blockquote>"Transparencia total: sabía exactamente qué faltaba y cuándo. La guía del examen fue directa y me ayudó a prepararme rápido."</blockquote>
+            <div class="who"><cite>Jorge R.</cite><span class="result-badge">✅ Preparación de examen</span></div>
           </article>
 
           <article class="slide">
-            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
-            <blockquote class="quote">
-              “En la auditoría detectaron riesgos y nos dieron un plan. El seguimiento fue constante y sin vueltas.”
-            </blockquote>
-            <div class="who">
-              <cite>Ana L.</cite>
-              <span class="result">✅ Riesgos detectados a tiempo</span>
-            </div>
+            <div class="stars">★★★★★</div>
+            <blockquote>"En la auditoría detectaron riesgos y nos dieron un plan. El seguimiento fue constante y sin vueltas."</blockquote>
+            <div class="who"><cite>Ana L.</cite><span class="result-badge">✅ Riesgos detectados a tiempo</span></div>
           </article>
 
           <article class="slide">
-            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
-            <blockquote class="quote">
-              “Trato profesional y humano. Nos ayudaron a reunir lo correcto y a mantener el expediente limpio. Recomendado.”
-            </blockquote>
-            <div class="who">
-              <cite>Luis y Paola</cite>
-              <span class="result">✅ Acompañamiento cercano</span>
-            </div>
+            <div class="stars">★★★★★</div>
+            <blockquote>"Trato profesional y humano. Nos ayudaron a reunir lo correcto y a mantener el expediente limpio. Recomendado."</blockquote>
+            <div class="who"><cite>Luis y Paola</cite><span class="result-badge">✅ Acompañamiento cercano</span></div>
           </article>
+
         </div>
 
         <div class="controls">
-          <button class="navBtn" id="tPrev" aria-label="Testimonio anterior">‹</button>
-          <div class="dots" id="tDots" aria-label="Indicadores"></div>
-          <button class="navBtn" id="tNext" aria-label="Siguiente testimonio">›</button>
+          <button class="nav-btn" id="tPrev" aria-label="Anterior">‹</button>
+          <div class="dots" id="tDots"></div>
+          <button class="nav-btn" id="tNext" aria-label="Siguiente">›</button>
         </div>
 
         <div class="t-cta">
-          <a href="#diagnostico" class="btn btn-primary">Agendar Auditoría (US$50)</a>
-          <p style="margin:10px 0 0; font-size:12.5px; color:var(--muted)">
-            Si calificas e inicias trámite, los US$50 se abonan al total.
-          </p>
+          <a href="#diagnostico" class="btn btn-wa">Solicitar Diagnóstico Legal</a>
+          <p>Sesión de evaluación personalizada sin costo inicial.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DIAGNÓSTICO -->
-  <section id="diagnostico" class="white">
+  <!-- DIAGNÓSTICO / FORMULARIO -->
+  <section id="diagnostico" class="sec-white">
     <div class="wrap">
-      <div class="offer">
+      <div class="diag-grid">
+        <!-- Formulario -->
         <div>
-          <div class="label">solución de inicio inmediato</div>
-          <h3>Auditoría de Elegibilidad <strong>US$50.00</strong> (abonable) + mensaje listo para WhatsApp</h3>
-          <p class="subtitle" style="margin-bottom:10px">Responde estas preguntas y genera un mensaje para agendar tu Auditoría.</p>
-
-          <div style="margin: 12px 0 16px; padding: 16px; border: 1px solid var(--gray1); border-radius: 16px; background: #fff;">
-            <p style="margin:0; color:var(--text2);">
-              Revisamos tu historial <b>migratorio</b>, <b>penal</b> y <b>fiscal</b> para estructurar tu caso con estándar de Presidencia.
-              <br><b>Oferta:</b> si calificas e inicias, los <b>US$50</b> se abonan al total.
-            </p>
+          <div class="diag-label-tag">Acceso a Agenda Privada</div>
+          <h2 class="diag-title">Solicite su Sesión de<br><strong>Diagnóstico Legal</strong></h2>
+          <p style="color:var(--muted);font-size:15px;margin-bottom:0">Complete los datos para verificar su elegibilidad. Solo atendemos casos con potencial real de éxito.</p>
+          <div class="info-box">
+            <p>Revisamos su historial <b>migratorio</b>, <b>penal</b> y <b>fiscal</b> para estructurar su caso con estándar de Presidencia. La sesión es personalizada y sin costo inicial.</p>
           </div>
 
-          <form id="quiz" aria-label="Auditoría de Elegibilidad - formulario">
-            <div style="display:grid; grid-template-columns:1fr; gap:12px; margin:10px 0 12px">
-              <label style="display:block">
-                <span style="display:block; font-weight:900; color:var(--navy); font-size:12px; letter-spacing:.8px; text-transform:uppercase; margin-bottom:6px">Tiempo como residente permanente</span>
-                <select id="qTiempo" required style="width:100%; padding:12px; border-radius:14px; border:1px solid var(--gray1); outline:none">
-                  <option value="" selected disabled>Selecciona</option>
-                  <option value="menos de 3 años">Menos de 3 años</option>
-                  <option value="3 a 4 años">3 a 4 años</option>
-                  <option value="5+ años">5+ años</option>
+          <form id="qualifyForm">
+            <div class="form-row">
+
+              <label>
+                <span class="form-label">Nombre y Apellido</span>
+                <input type="text" id="qNombre" class="form-input" required placeholder="Ej. Juan Pérez">
+              </label>
+
+              <label>
+                <span class="form-label">Nacionalidad de Origen</span>
+                <select id="qNacionalidad" class="form-select" required>
+                  <option value="" disabled selected>Seleccione su país de origen</option>
+                  <option>Afganistán</option><option>Albania</option><option>Alemania</option>
+                  <option>Angola</option><option>Arabia Saudita</option><option>Argentina</option>
+                  <option>Australia</option><option>Austria</option><option>Bangladesh</option>
+                  <option>Bélgica</option><option>Bolivia</option><option>Bosnia y Herzegovina</option>
+                  <option>Brasil</option><option>Bulgaria</option><option>Camboya</option>
+                  <option>Camerún</option><option>Canadá</option><option>Chile</option>
+                  <option>China</option><option>Colombia</option><option>Corea del Sur</option>
+                  <option>Costa Rica</option><option>Croatia</option><option>Cuba</option>
+                  <option>Dinamarca</option><option>Ecuador</option><option>Egipto</option>
+                  <option>El Salvador</option><option>Emiratos Árabes</option><option>Eslovaquia</option>
+                  <option>España</option><option>Estados Unidos</option><option>Etiopía</option>
+                  <option>Filipinas</option><option>Finlandia</option><option>Francia</option>
+                  <option>Ghana</option><option>Grecia</option><option>Guatemala</option>
+                  <option>Haití</option><option>Honduras</option><option>Hungría</option>
+                  <option>India</option><option>Indonesia</option><option>Irán</option>
+                  <option>Iraq</option><option>Irlanda</option><option>Israel</option>
+                  <option>Italia</option><option>Jamaica</option><option>Japón</option>
+                  <option>Jordania</option><option>Kazajistán</option><option>Kenia</option>
+                  <option>Kuwait</option><option>Líbano</option><option>Libia</option>
+                  <option>Malasia</option><option>Marruecos</option><option>México</option>
+                  <option>Nigeria</option><option>Nicaragua</option><option>Noruega</option>
+                  <option>Nueva Zelanda</option><option>Países Bajos</option><option>Pakistán</option>
+                  <option>Paraguay</option><option>Perú</option><option>Polonia</option>
+                  <option>Portugal</option><option>Puerto Rico</option><option>Qatar</option>
+                  <option>Reino Unido</option><option>República Dominicana</option><option>Rumania</option>
+                  <option>Rusia</option><option>Senegal</option><option>Serbia</option>
+                  <option>Siria</option><option>Sudáfrica</option><option>Suecia</option>
+                  <option>Suiza</option><option>Tailandia</option><option>Taiwán</option>
+                  <option>Tanzania</option><option>Turquía</option><option>Ucrania</option>
+                  <option>Uganda</option><option>Uruguay</option><option>Venezuela</option>
+                  <option>Vietnam</option><option>Yemen</option><option>Otra Nacionalidad</option>
                 </select>
               </label>
 
-              <label style="display:block">
-                <span style="display:block; font-weight:900; color:var(--navy); font-size:12px; letter-spacing:.8px; text-transform:uppercase; margin-bottom:6px">Vínculo familiar</span>
-                <select id="qFamilia" required style="width:100%; padding:12px; border-radius:14px; border:1px solid var(--gray1); outline:none">
-                  <option value="" selected disabled>Selecciona</option>
-                  <option value="sí, cónyuge panameño/a">Sí, cónyuge panameño/a</option>
-                  <option value="sí, hijos panameños">Sí, hijos panameños</option>
-                  <option value="no">No</option>
+              <label>
+                <span class="form-label">Años de residencia permanente (Cédula E)</span>
+                <select id="qTiempo" class="form-select" required>
+                  <option value="" disabled selected>Seleccione tiempo</option>
+                  <option>Menos de 3 años</option>
+                  <option>Entre 3 y 4 años</option>
+                  <option>5 años o más</option>
                 </select>
               </label>
 
-              <label style="display:block">
-                <span style="display:block; font-weight:900; color:var(--navy); font-size:12px; letter-spacing:.8px; text-transform:uppercase; margin-bottom:6px">Tu objetivo principal</span>
-                <select id="qMeta" required style="width:100%; padding:12px; border-radius:14px; border:1px solid var(--gray1); outline:none">
-                  <option value="" selected disabled>Selecciona</option>
-                  <option value="pasaporte y movilidad">Pasaporte y movilidad</option>
-                  <option value="estabilidad definitiva">Estabilidad definitiva (cédula y tranquilidad)</option>
-                  <option value="negocio/crecimiento">Negocio / crecimiento</option>
-                  <option value="todo lo anterior">Todo lo anterior</option>
+              <label>
+                <span class="form-label">Vínculo familiar en Panamá</span>
+                <select id="qFamilia" class="form-select" required>
+                  <option value="" disabled selected>Seleccione opción</option>
+                  <option>Tengo cónyuge panameño/a</option>
+                  <option>Tengo hijos panameños</option>
+                  <option>Ambos (cónyuge e hijos)</option>
+                  <option>No tengo vínculo familiar panameño</option>
                 </select>
               </label>
 
-              <label style="display:block">
-                <span style="display:block; font-weight:900; color:var(--navy); font-size:12px; letter-spacing:.8px; text-transform:uppercase; margin-bottom:6px">Preferencia de horario (Zoom)</span>
-                <select id="qHorario" required style="width:100%; padding:12px; border-radius:14px; border:1px solid var(--gray1); outline:none">
-                  <option value="" selected disabled>Selecciona</option>
-                  <option value="mañana en la mañana">Mañana en la mañana</option>
-                  <option value="jueves por la tarde">Jueves por la tarde</option>
+              <label>
+                <span class="form-label">¿Está listo/a para iniciar en los próximos 30-60 días?</span>
+                <select id="qInicio" class="form-select" required>
+                  <option value="" disabled selected>Seleccione disponibilidad</option>
+                  <option>Sí, quiero iniciar en los próximos 30 días</option>
+                  <option>Sí, en los próximos 60 días</option>
+                  <option>Solo busco información por ahora</option>
                 </select>
               </label>
+
             </div>
 
-            <div style="display:grid; grid-template-columns:1fr; gap:10px">
-              <button class="btn btn-primary" type="submit" style="width:100%">Generar mensaje</button>
-              <button class="btn" type="button" id="copyBtn" style="border:1px solid var(--gray1); background:#fff; color:var(--navy); width:100%">Copiar</button>
-              <a class="btn btn-primary" target="_blank" rel="noopener" id="waBtn"
-                 href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" style="width:100%">Abrir WhatsApp</a>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-wa" style="width:100%;justify-content:center">Enviar Solicitud de Diagnóstico</button>
+              <button type="button" id="copyBtn" class="btn btn-outline-dark" style="width:100%;justify-content:center">Copiar Mensaje</button>
+              <a id="waBtn" href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" rel="noopener" class="btn btn-wa" style="width:100%;justify-content:center">Abrir WhatsApp</a>
             </div>
 
-            <textarea id="out" style="width:100%; margin-top:12px; min-height:140px; padding:14px; border-radius:16px; border:1px solid var(--gray1); outline:none; resize:vertical"
-              placeholder="Aquí aparecerá tu mensaje listo para enviar..."></textarea>
+            <textarea id="msgOut" class="form-textarea" style="margin-top:12px" placeholder="Aquí aparecerá su mensaje listo para enviar..."></textarea>
           </form>
         </div>
 
-        <aside class="offerSide" aria-label="Resumen de contacto">
-          <div style="font-weight:900; letter-spacing:.9px; text-transform:uppercase; font-size:12px; color:rgba(255,255,255,.75)">naturalizate.pa</div>
-          <div class="big">US$50</div>
-          <p class="small">Auditoría por Zoom (abonable al total si inicias)</p>
-
-          <a class="btn btn-primary" style="width:100%; justify-content:center" target="_blank" rel="noopener"
-             href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t">Entrar al grupo</a>
-
-          <div class="mini">
+        <!-- Panel lateral -->
+        <aside class="aside-panel" aria-label="Resumen de contacto">
+          <div class="aside-brand">naturalizate.pa</div>
+          <div class="aside-price">Diagnóstico</div>
+          <div class="aside-sub">Sesión personalizada</div>
+          <p style="font-size:12px;color:rgba(255,255,255,.65);margin:0">Cupos limitados. Solo atendemos casos con potencial real de éxito.</p>
+          <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" rel="noopener" class="btn btn-wa" style="width:100%;justify-content:center;margin-top:8px">Entrar al grupo</a>
+          <div class="aside-contact">
             <div><b>Alfonso Villarreal</b></div>
-            <div><a style="color:#fff" href="mailto:Villarreallawyers@proton.me">Villarreallawyers@proton.me</a></div>
-            <div><a style="color:#fff" href="tel:+50762557583">+507 6255-7583</a></div>
+            <div><a href="mailto:Villarreallawyers@proton.me">Villarreallawyers@proton.me</a></div>
+            <div><a href="tel:+50762557583">+507 6255-7583</a></div>
           </div>
         </aside>
       </div>
@@ -775,219 +583,189 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="gray">
+  <section id="faq" class="sec-gray">
     <div class="wrap">
-      <h2 class="title">Preguntas frecuentes</h2>
-      <p class="subtitle">Respuestas cortas para dudas comunes.</p>
+      <h2>Preguntas frecuentes</h2>
+      <p style="max-width:625px;margin-bottom:22px">Respuestas cortas para dudas comunes.</p>
       <details>
         <summary>¿La naturalización es lo mismo que residencia permanente?</summary>
-        <p>No. La residencia es un estatus migratorio; la naturalización te orienta hacia la ciudadanía con efectos más amplios.</p>
+        <p>No. La residencia es un estatus migratorio; la naturalización te orienta hacia la ciudadanía con efectos más amplios e irrevocables.</p>
       </details>
       <details>
-        <summary>¿Por qué la auditoría tiene costo?</summary>
-        <p>Es una sesión técnica: revisión migratoria, penal y fiscal. Si calificas e inicias, los US$50 se abonan al total.</p>
+        <summary>¿Por qué pasan por un filtro de elegibilidad?</summary>
+        <p>Para proteger su tiempo e inversión. Solo tomamos casos viables. El diagnóstico determina si su perfil califica antes de comprometer recursos.</p>
+      </details>
+      <details>
+        <summary>¿Incluye preparación para el examen de conocimientos?</summary>
+        <p>Sí. El proceso incluye material de estudio con metodología 80/20: solo las preguntas con mayor probabilidad de aparecer en historia, geografía y cívica.</p>
       </details>
     </div>
   </section>
 
   <!-- CONTACTO -->
-  <section id="contacto" class="navy">
+  <section id="contacto" class="sec-navy">
     <div class="wrap">
-      <h2 class="title darktitle">Contacto directo</h2>
-      <p class="subtitle onDark">Entra al grupo VIP o contáctame por email/teléfono.</p>
-
-      <div class="contact">
-        <div class="c"><div class="k">Cuenta</div><div style="margin-top:8px; font-size:18px; font-weight:300; letter-spacing:2px">naturalizate.pa</div></div>
-        <div class="c"><div class="k">Email</div><div style="margin-top:8px"><a href="mailto:Villarreallawyers@proton.me">Villarreallawyers@proton.me</a></div></div>
-        <div class="c"><div class="k">Teléfono</div><div style="margin-top:8px"><a href="tel:+50762557583">+507 6255-7583</a></div></div>
+      <h2 class="on-dark">Contacto directo</h2>
+      <p style="color:rgba(255,255,255,.78);max-width:625px;margin-bottom:22px">Entra al grupo VIP o contáctame por email/teléfono.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="k">Cuenta</div>
+          <div class="contact-val">naturalizate.pa</div>
+        </div>
+        <div class="contact-card">
+          <div class="k">Email</div>
+          <div><a href="mailto:Villarreallawyers@proton.me">Villarreallawyers@proton.me</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="k">Teléfono</div>
+          <div><a href="tel:+50762557583">+507 6255-7583</a></div>
+        </div>
       </div>
-
-      <div style="margin-top:14px; display:grid; gap:10px">
-        <a class="btn btn-primary" target="_blank" rel="noopener"
-           href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" style="width:100%">Unirse al grupo WhatsApp</a>
-        <a class="btn btn-ghost" href="#inicio" style="width:100%">Volver arriba</a>
+      <div class="contact-actions">
+        <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" rel="noopener" class="btn btn-wa" style="width:100%;justify-content:center">Unirse al grupo WhatsApp</a>
+        <a href="#inicio" class="btn btn-outline-white" style="width:100%;justify-content:center">Volver arriba</a>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="wrap foot">
-      <div><strong>naturalizate.pa</strong><br />Alfonso Villarreal</div>
+      <div><strong>naturalizate.pa</strong><br>Alfonso Villarreal</div>
       <div class="legal">Material informativo. No constituye asesoría legal hasta formalizar relación abogado-cliente.</div>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp -->
-  <div class="floatWA" aria-label="Acceso rápido a WhatsApp">
-    <div class="hint">Entrar al grupo WhatsApp</div>
-    <button class="waFab" id="waFab" title="WhatsApp" aria-label="Abrir grupo de WhatsApp">✆</button>
+  <!-- FLOATING WA -->
+  <div class="float-wa" aria-label="WhatsApp">
+    <button class="wa-fab" id="waFab" aria-label="Abrir WhatsApp" title="WhatsApp">✆</button>
   </div>
 
-  <!-- Sticky bottom CTA -->
-  <div class="stickyCta" role="region" aria-label="CTA fijo">
-    <div class="wrap">
-      <div class="msg"><b>Auditoría Zoom:</b> US$50 abonable.</div>
-      <a class="btn btn-primary" href="#diagnostico">Agendar ahora</a>
+  <!-- STICKY CTA MÓVIL -->
+  <div class="sticky-cta" role="region" aria-label="CTA fijo">
+    <div class="sticky-inner">
+      <div class="sticky-msg"><b>Diagnóstico Legal</b><br>sin costo inicial.</div>
+      <a href="#diagnostico" class="btn btn-wa" style="flex:1;max-width:55%;justify-content:center">Solicitar ahora</a>
     </div>
   </div>
 
   <script>
-    const GROUP_URL = "https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t";
+    const WA_GROUP = "https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t";
+    const WA_NUMBER = "50762557583";
 
-    // Drawer
+    /* ── MENÚ MÓVIL ── */
     const drawer = document.getElementById('drawer');
-    const burger = document.getElementById('burger');
-    const closeDrawer = document.getElementById('closeDrawer');
+    const burger  = document.getElementById('burger');
+    const closeBtn= document.getElementById('closeDrawer');
+    const open  = () => { drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; };
+    const close = () => { drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); document.body.style.overflow=''; };
+    burger.addEventListener('click', open);
+    closeBtn.addEventListener('click', close);
+    drawer.addEventListener('click', e => { if(e.target===drawer) close(); });
+    document.querySelectorAll('.dlink').forEach(a => a.addEventListener('click', close));
 
-    function openDrawer(){
-      drawer.classList.add('open');
-      drawer.setAttribute('aria-hidden','false');
-      document.body.style.overflow = 'hidden';
-    }
-    function shutDrawer(){
-      drawer.classList.remove('open');
-      drawer.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
-    }
-    burger?.addEventListener('click', openDrawer);
-    closeDrawer?.addEventListener('click', shutDrawer);
-    drawer?.addEventListener('click', (e)=>{ if(e.target === drawer) shutDrawer(); });
-    document.querySelectorAll('.dlink').forEach(a => a.addEventListener('click', shutDrawer));
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        const id = a.getAttribute('href');
-        if(!id || id === '#') return;
-        const el = document.querySelector(id);
-        if(el){
-          e.preventDefault();
-          el.scrollIntoView({behavior:'smooth', block:'start'});
-        }
+    /* ── SMOOTH SCROLL ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const el = document.querySelector(a.getAttribute('href'));
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
       });
     });
 
-    // Form (mensaje)
-    const quiz = document.getElementById('quiz');
-    const out = document.getElementById('out');
+    /* ── FLOATING WA ── */
+    document.getElementById('waFab').addEventListener('click', () => window.open(WA_GROUP,'_blank','noopener'));
+
+    /* ── FORMULARIO → WHATSAPP ── */
+    const form    = document.getElementById('qualifyForm');
+    const msgOut  = document.getElementById('msgOut');
     const copyBtn = document.getElementById('copyBtn');
-    const waBtn = document.getElementById('waBtn');
+    const waBtn   = document.getElementById('waBtn');
 
-    function buildMessage(tiempo, familia, meta, horario){
-      const lines = [];
-      lines.push("Hola, vengo de naturalizate.pa. Quiero agendar la Auditoría de Elegibilidad (Zoom) para mi naturalización en Panamá.");
-      lines.push("");
-      lines.push("Entiendo que la auditoría tiene una inversión de US$50.00 (abonable al total si califico e inicio el trámite).");
-      lines.push("");
-      lines.push("Datos rápidos:");
-      lines.push(`- Tiempo como residente permanente: ${tiempo}`);
-      lines.push(`- Vínculo familiar: ${familia}`);
-      lines.push(`- Objetivo principal: ${meta}`);
-      lines.push(`- Preferencia de horario: ${horario}`);
-      lines.push("");
-      lines.push("¿Me confirman disponibilidad, método de pago y el enlace de Zoom, por favor?");
-      lines.push("");
-      lines.push("Gracias.");
-      return lines.join("\n");
-    }
-
-    quiz?.addEventListener('submit', (e)=>{
+    form.addEventListener('submit', e => {
       e.preventDefault();
-      const tiempo = document.getElementById('qTiempo').value;
-      const familia = document.getElementById('qFamilia').value;
-      const meta = document.getElementById('qMeta').value;
-      const horario = document.getElementById('qHorario').value;
-      out.value = buildMessage(tiempo, familia, meta, horario);
-      waBtn.href = GROUP_URL;
-      out.scrollIntoView({behavior:'smooth', block:'center'});
+      const nombre       = document.getElementById('qNombre').value;
+      const nacionalidad = document.getElementById('qNacionalidad').value;
+      const tiempo       = document.getElementById('qTiempo').value;
+      const familia      = document.getElementById('qFamilia').value;
+      const inicio       = document.getElementById('qInicio').value;
+
+      const texto = [
+        "🏛️ *SOLICITUD DE DIAGNÓSTICO LEGAL — naturalizate.pa* 🏛️",
+        "",
+        "Estimado Lic. Villarreal, solicito agendar mi sesión de diagnóstico para naturalización.",
+        "",
+        `👤 *Nombre:* ${nombre}`,
+        `🌎 *Nacionalidad:* ${nacionalidad}`,
+        `📅 *Residencia Permanente:* ${tiempo}`,
+        `👨‍👩‍👧 *Vínculo Familiar:* ${familia}`,
+        `⏱️ *Disponibilidad:* ${inicio}`,
+        "",
+        "Quedo a la espera de validación y disponibilidad. Gracias."
+      ].join('\n');
+
+      msgOut.value = texto;
+      const enc = encodeURIComponent(texto);
+      waBtn.href = `https://wa.me/${WA_NUMBER}?text=${enc}`;
+      msgOut.scrollIntoView({behavior:'smooth',block:'center'});
     });
 
-    copyBtn?.addEventListener('click', async ()=>{
-      try{
-        await navigator.clipboard.writeText(out.value || "");
-        copyBtn.textContent = "Copiado";
-        setTimeout(()=>copyBtn.textContent="Copiar", 1200);
-      }catch(err){
-        out.focus(); out.select();
-        document.execCommand('copy');
-        copyBtn.textContent = "Copiado";
-        setTimeout(()=>copyBtn.textContent="Copiar", 1200);
+    copyBtn.addEventListener('click', async () => {
+      if(!msgOut.value) return;
+      try {
+        await navigator.clipboard.writeText(msgOut.value);
+      } catch(err) {
+        msgOut.select(); document.execCommand('copy');
       }
+      copyBtn.textContent = 'Copiado ✓';
+      setTimeout(() => copyBtn.textContent = 'Copiar Mensaje', 1800);
     });
 
-    // Floating WA
-    document.getElementById('waFab')?.addEventListener('click', ()=>{
-      window.open(GROUP_URL, "_blank", "noopener");
-    });
-
-    ["btnWAHeader","btnWAHero"].forEach(id=>{
-      const el = document.getElementById(id);
-      if(el) el.href = GROUP_URL;
-    });
-
-    // Carrusel testimonios
+    /* ── CARRUSEL TESTIMONIOS ── */
     (function(){
-      const track = document.getElementById('tTrack');
+      const track  = document.getElementById('tTrack');
       if(!track) return;
-
       const slides = Array.from(track.children);
-      const dotsWrap = document.getElementById('tDots');
-      const prevBtn = document.getElementById('tPrev');
-      const nextBtn = document.getElementById('tNext');
+      const dotsW  = document.getElementById('tDots');
+      const prevB  = document.getElementById('tPrev');
+      const nextB  = document.getElementById('tNext');
+      let idx = 0, timer, paused = false;
 
-      let index = 0, timer = null, paused = false;
-      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      const dots = slides.map((_, i)=>{
+      const dots = slides.map((_,i) => {
         const b = document.createElement('button');
-        b.className = 'dotBtn';
-        b.type = 'button';
-        b.setAttribute('aria-label', `Ir al testimonio ${i+1}`);
-        b.addEventListener('click', ()=>goTo(i, true));
-        dotsWrap.appendChild(b);
-        return b;
+        b.className = 'dot-btn'; b.type='button';
+        b.setAttribute('aria-label',`Ir al testimonio ${i+1}`);
+        b.addEventListener('click', () => go(i, true));
+        dotsW.appendChild(b); return b;
       });
 
       function render(){
-        track.style.transform = `translateX(-${index*100}%)`;
-        dots.forEach((d,i)=>d.setAttribute('aria-current', i===index ? 'true' : 'false'));
+        track.style.transform = `translateX(-${idx*100}%)`;
+        dots.forEach((d,i) => d.setAttribute('aria-current', i===idx ? 'true':'false'));
       }
-      function goTo(i, userAction=false){
-        index = (i + slides.length) % slides.length;
+      function go(i, user=false){
+        idx = (i+slides.length) % slides.length;
         render();
-        if(userAction) restart();
+        if(user) restart();
       }
-      function next(){ goTo(index+1, true); }
-      function prev(){ goTo(index-1, true); }
+      prevB.addEventListener('click', () => go(idx-1, true));
+      nextB.addEventListener('click', () => go(idx+1, true));
 
-      prevBtn?.addEventListener('click', prev);
-      nextBtn?.addEventListener('click', next);
-
-      function start(){
-        if(reduceMotion) return;
-        if(timer) clearInterval(timer);
-        timer = setInterval(()=>{ if(!paused) goTo(index+1, false); }, 5200);
-      }
-      function stop(){ if(timer) clearInterval(timer); timer = null; }
+      function start(){ timer = setInterval(() => { if(!paused) go(idx+1); }, 5000); }
+      function stop(){  clearInterval(timer); }
       function restart(){ stop(); start(); }
 
-      const carousel = track.parentElement;
-      carousel.addEventListener('mouseenter', ()=>{paused=true;});
-      carousel.addEventListener('mouseleave', ()=>{paused=false;});
-      carousel.addEventListener('touchstart', ()=>{paused=true;}, {passive:true});
-      carousel.addEventListener('touchend', ()=>{paused=false;}, {passive:true});
+      const car = track.parentElement;
+      car.addEventListener('mouseenter', () => paused=true);
+      car.addEventListener('mouseleave', () => paused=false);
+      car.addEventListener('touchstart', () => paused=true, {passive:true});
+      car.addEventListener('touchend',   () => setTimeout(()=>paused=false, 2000), {passive:true});
 
-      // swipe
-      let x0 = null;
-      track.addEventListener('touchstart', (e)=>{ x0 = e.touches[0].clientX; }, {passive:true});
-      track.addEventListener('touchmove', (e)=>{
-        if(x0 === null) return;
-        const x1 = e.touches[0].clientX;
-        const dx = x1 - x0;
-        if(Math.abs(dx) > 50){
-          if(dx < 0) next(); else prev();
-          x0 = null;
-        }
+      let x0=null;
+      track.addEventListener('touchstart', e => x0=e.touches[0].clientX, {passive:true});
+      track.addEventListener('touchmove',  e => {
+        if(x0===null) return;
+        const dx = e.touches[0].clientX - x0;
+        if(Math.abs(dx)>50){ go(dx<0?idx+1:idx-1,true); x0=null; }
       }, {passive:true});
 
       render(); start();

@@ -1,775 +1,1173 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-  <title>Naturalización en Panamá | naturalizate.pa</title>
-  <meta name="description" content="Obtenga su ciudadanía panameña. Sesión de Diagnóstico Legal y gestión de expediente con el Lic. Alfonso Villarreal."/>
-  <meta name="theme-color" content="#0d1b2a"/>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"LegalService","name":"naturalizate.pa","url":"https://naturalizate.pa","telephone":"+50762557583","address":{"@type":"PostalAddress","addressLocality":"Ciudad de Panamá","addressCountry":"PA"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"6"}}
-  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Naturalización en Panamá | Abogado Migratorio | naturalizate.pa</title>
+  <meta name="description" content="Obtenga su ciudadanía panameña. Sesión de Diagnóstico y gestión de expediente con el Lic. Alfonso Villarreal." />
+  <meta name="theme-color" content="#0d1b2a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- FUENTES: Modernas y Legibles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    /* =====================================================
-       SISTEMA DE DISEÑO — Replicado del código de referencia
-       ===================================================== */
-    :root{
-      /* COLORES EXACTOS DEL CÓDIGO DE REFERENCIA */
-      --navy:       #0d1b2a;   /* rgb(13, 27, 42)   — Header, cards oscuras, pills */
-      --navy2:      #1b3a5f;   /* rgb(27, 58, 95)   — Gradiente secundario */
-      --black:      #000000;   /* rgb(0, 0, 0)       — Topbar, sección proceso */
-      --black-soft: #050505;   /* rgb(5, 5, 5)       — Footer */
-      --white:      #ffffff;   /* rgb(255,255,255)  */
-      --gray0:      #f8f9fa;   /* rgb(248,249,250)  — Fondo secciones alternas */
-      --gray1:      #e6e6e6;   /* rgb(230,230,230)  — Bordes */
-      --text:       #111111;   /* rgb(17,17,17)      — Texto principal */
-      --text2:      #333333;   /* rgb(51,51,51)      — Texto secundario */
-      --muted:      #666666;   /* rgb(102,102,102)  — Texto muted */
-      --wa:         #25D366;   /* rgb(37,211,102)   — Verde WhatsApp */
-      --wa-shadow:  rgba(37,211,102,0.28);
-      --wa-glow:    rgba(37,211,102,0.38);
-      --red-bg:     rgba(255,68,68,0.10);
-      --red-border: rgba(255,68,68,0.35);
-      --red-text:   #b71c1c;   /* rgb(183,28,28) */
-      --green-bg:   rgba(37,211,102,0.10);
-      --green-border:rgba(37,211,102,0.30);
-      --green-text: #0b6831;   /* rgb(11,104,49) */
-      --star:       #FFC107;   /* rgb(255,193,7) */
-
-      --radius-lg:  18px;
-      --radius-md:  14px;
-      --radius-sm:  12px;
-      --radius-pill:999px;
-      --shadow-card:0 10px 30px rgba(0,0,0,.10);
-      --shadow-heavy:0 20px 60px rgba(13,27,42,.18);
-      --max:        1140px;
+    :root {
+      /* PALETA DE COLORES */
+      --navy: #0d1b2a;
+      --navy2: #1b3a57;
+      --navy-light: #15283a;
+      --white: #ffffff;
+      --gray0: #f8f9fa;
+      --gray1: #e9ecef;
+      --gray2: #dee2e6;
+      --text: #212529;
+      --muted: #6c757d;
+      --wa: #25D366;
+      --wa-hover: #20bd5a;
+      --wa-dark: #128C7E;
+      --error: #dc3545;
+      --success: #28a745;
+      
+      /* TIPOGRAFÍA */
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      /* ESPACIADO Y DIMENSIONES */
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-pill: 999px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.1);
+      --shadow-sm: 0 4px 12px rgba(0,0,0,0.08);
+      --max-width: 1100px;
+      
+      /* ALTURAS PARA MÓVIL */
+      --header-height: 70px;
+      --sticky-cta-height: 80px;
+      
+      /* TAMAÑOS TÁCTILES MÍNIMOS */
+      --touch-target: 44px;
+    }
+    
+    /* RESET Y BASE */
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { 
+      scroll-behavior: smooth; 
+      scroll-padding-top: calc(var(--header-height) + 20px);
+      font-size: 16px;
+    }
+    
+    body {
+      margin: 0; 
+      padding: 0;
+      padding-bottom: calc(var(--sticky-cta-height) + 20px);
+      background-color: var(--gray0); 
+      color: var(--text); 
+      font-family: var(--font-body); 
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    
+    @media (max-width: 768px) {
+      html { font-size: 15px; }
+    }
+    
+    .wrap { 
+      max-width: var(--max-width); 
+      margin: 0 auto; 
+      padding: 0 20px;
+      width: 100%;
+    }
+    
+    /* TIPOGRAFÍA RESPONSIVA */
+    h1, h2, h3 { 
+      font-family: var(--font-heading); 
+      font-weight: 600; 
+      margin: 0 0 15px;
+      word-wrap: break-word;
+    }
+    h1 { 
+      font-size: clamp(1.8rem, 5vw, 2.8rem); 
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    h2 { 
+      font-size: clamp(1.4rem, 4vw, 2.2rem); 
+      color: var(--navy);
+      letter-spacing: -0.3px;
+    }
+    h3 { 
+      font-size: clamp(1rem, 3vw, 1.1rem);
+      line-height: 1.4;
+    }
+    p { margin: 0 0 15px; }
+    .lead { 
+      font-size: clamp(1rem, 2.5vw, 1.1rem); 
+      max-width: 650px;
+      line-height: 1.7;
+    }
+    
+    /* UTILIDADES */
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .text-uppercase { 
+      text-transform: uppercase; 
+      font-size: 0.7rem; 
+      letter-spacing: 1.5px; 
+      font-weight: 700; 
+    }
+    
+    /* BOTONES OPTIMIZADOS PARA TÁCTIL */
+    .btn {
+      display: inline-flex; 
+      align-items: center; 
+      justify-content: center;
+      padding: 14px 28px; 
+      font-size: 0.85rem; 
+      font-weight: 700;
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      border: 1px solid transparent;
+      border-radius: var(--radius-pill); 
+      cursor: pointer; 
+      transition: all 0.25s ease;
+      text-decoration: none; 
+      text-align: center; 
+      width: 100%;
+      min-height: var(--touch-target);
+      touch-action: manipulation;
+    }
+    
+    @media(min-width: 600px) { 
+      .btn { 
+        width: auto; 
+        padding: 12px 32px;
+      } 
     }
 
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;overflow-x:hidden;scroll-behavior:smooth;scroll-padding-top:68px}
-    body{
-      font-family:'Helvetica Neue',Helvetica,Arial,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-      color:var(--text);background:var(--gray0);line-height:1.6;
-      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-      padding-bottom:72px; /* espacio sticky CTA */
+    .btn-primary { 
+      background-color: var(--wa); 
+      color: var(--white); 
+      box-shadow: 0 8px 20px rgba(37,211,102,0.3);
+      font-size: 0.9rem;
     }
-    a{text-decoration:none;color:inherit}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-
-    /* ── TIPOGRAFÍA ─────────────────────────────────── */
-    h1{font-size:clamp(2rem,5.5vw,2.75rem);font-weight:300;line-height:1.13;margin:0 0 10px}
-    h1 strong{font-weight:900}
-    h2{font-size:clamp(1.5rem,4vw,1.625rem);font-weight:300;line-height:1.2;margin:0 0 10px;color:var(--navy)}
-    h2.on-dark{color:var(--white)}
-    h3{font-size:0.8125rem;font-weight:900;text-transform:uppercase;letter-spacing:.9px;margin:0 0 8px;color:var(--navy)}
-    p{margin:0 0 15px;font-size:0.9375rem;color:var(--muted)}
-    .lead{font-size:1rem;color:rgba(255,255,255,.88);max-width:534px}
-
-    /* ── BOTONES ────────────────────────────────────── */
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 16px;border-radius:var(--radius-pill);border:1px solid transparent;
-      font-weight:800;letter-spacing:.6px;text-transform:uppercase;font-size:12.5px;
-      cursor:pointer;user-select:none;white-space:nowrap;transition:opacity .2s,transform .2s;
-      text-decoration:none;
+    .btn-primary:hover, 
+    .btn-primary:active { 
+      background-color: var(--wa-hover); 
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(37,211,102,0.4);
     }
-    .btn:active{transform:scale(.98)}
-    .btn-wa{background:var(--wa);color:var(--white);box-shadow:0 10px 25px var(--wa-shadow);border-color:transparent}
-    .btn-wa:hover{opacity:.9}
-    .btn-outline-white{background:transparent;border-color:rgba(255,255,255,.28);color:var(--white)}
-    .btn-outline-white:hover{border-color:rgba(255,255,255,.6)}
-    .btn-outline-dark{background:var(--white);border-color:var(--gray1);color:var(--navy)}
-    .btn-outline-dark:hover{border-color:#bbb}
-
-    /* ── TOPBAR ─────────────────────────────────────── */
-    .topbar{background:var(--black);color:var(--white);font-size:14px;letter-spacing:.3px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-    .topbar .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    .topbar a{color:var(--wa);border-bottom:1px solid rgba(37,211,102,.4)}
-
-    /* ── HEADER ─────────────────────────────────────── */
-    header{position:sticky;top:0;z-index:50;background:rgba(13,27,42,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
-    .brand{display:flex;align-items:baseline;gap:6px}
-    .brand-name{font-weight:300;letter-spacing:3px;color:var(--white);font-size:18px;text-transform:uppercase}
-    .brand-tld{color:var(--wa);font-weight:700;letter-spacing:1px;font-size:16px}
-    .nav-links{display:flex;gap:16px;align-items:center}
-    .nav-links a{color:rgba(255,255,255,.86);font-size:13px;letter-spacing:.6px;text-transform:uppercase}
-    .nav-links a:hover{color:var(--white)}
-    .nav-cta{display:flex;gap:10px;align-items:center}
-    .burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:transparent;color:var(--white);cursor:pointer;font-size:20px}
-
-    /* ── DRAWER MÓVIL ───────────────────────────────── */
-    .drawer{display:none;position:fixed;inset:0;background:rgba(0,0,0,.52);z-index:80;padding:18px}
-    .drawer.open{display:block}
-    .drawer-panel{background:rgba(13,27,42,.98);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:16px;max-width:520px;margin:0 auto;box-shadow:var(--shadow-heavy)}
-    .drawer-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:6px 4px 12px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:10px}
-    .drawer-close{width:42px;height:42px;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:transparent;color:var(--white);cursor:pointer;font-size:18px}
-    .drawer-panel a{display:block;padding:12px 10px;color:var(--white);border-radius:12px;border:1px solid rgba(255,255,255,.1);margin-top:10px;text-transform:uppercase;letter-spacing:.8px;font-weight:900;font-size:13px}
-
-    /* ── HERO ───────────────────────────────────────── */
-    .hero{
-      padding:82px 0 56px;
-      background:
-        radial-gradient(900px 500px at 15% 20%,rgba(37,211,102,.12),transparent 55%),
-        radial-gradient(700px 450px at 80% 30%,rgba(255,255,255,.06),transparent 60%),
-        linear-gradient(135deg,rgba(13,27,42,.96),rgba(27,58,95,.96));
-      color:var(--white);position:relative;overflow:hidden;
+    
+    .btn-ghost { 
+      background-color: transparent; 
+      border-color: rgba(255,255,255,0.4); 
+      color: var(--white); 
     }
-    .hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(37,211,102,.45);background:rgba(37,211,102,.10);color:#c9ffe0;padding:8px 14px;border-radius:var(--radius-pill);font-size:12px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:10px}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
-    .hero-trust{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;font-size:13px;color:rgba(255,255,255,.78)}
-    .hero-trust span{display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid rgba(255,255,255,.1);border-radius:18px;background:rgba(255,255,255,.04)}
-
-    /* ── SECCIONES ──────────────────────────────────── */
-    section{padding:72px 0}
-    .sec-white{background:var(--white)}
-    .sec-gray{background:var(--gray0)}
-    .sec-navy{background:linear-gradient(135deg,var(--navy),var(--navy2));color:var(--white)}
-    .sec-black{background:var(--black);color:var(--white)}
-
-    /* ── PROBLEM CARDS ──────────────────────────────── */
-    .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
-    .p-card{background:var(--gray0);border:1px solid var(--gray1);border-radius:var(--radius-lg);padding:18px;box-shadow:var(--shadow-card)}
-    .p-tag{display:inline-flex;padding:6px 10px;border-radius:var(--radius-pill);background:var(--red-bg);border:1px solid var(--red-border);color:var(--red-text);font-size:12px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;font-weight:900}
-    .p-card p{color:var(--text2)}
-
-    /* ── SOLUTION GRID ──────────────────────────────── */
-    .b-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:12px}
-    .b-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:16px}
-    .b-item .k{color:var(--white);font-weight:900;letter-spacing:.6px;text-transform:uppercase;font-size:12px}
-    .b-item p{margin:6px 0 0;color:rgba(255,255,255,.80);font-size:14px}
-
-    /* ── ELIGIBILIDAD ───────────────────────────────── */
-    .split{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
-    .panel-card{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray1);padding:18px;box-shadow:var(--shadow-card)}
-    .pill{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:var(--white);padding:10px 12px;border-radius:var(--radius-pill);font-weight:900;letter-spacing:.6px;text-transform:uppercase;font-size:11px;margin-top:6px}
-    .fine{font-size:12.5px;color:var(--muted);margin-top:8px}
-
-    /* ── PROCESO ────────────────────────────────────── */
-    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-    .step-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:16px}
-    .step-num{width:40px;height:40px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:var(--white);color:var(--navy);font-weight:900;margin-bottom:10px}
-    .step-item h4{margin:0 0 6px;font-size:13px;letter-spacing:.6px;text-transform:uppercase;color:var(--white)}
-    .step-item p{margin:0;color:rgba(255,255,255,.80);font-size:14px}
-
-    /* ── TESTIMONIOS ────────────────────────────────── */
-    .t-wrap{max-width:920px;margin:0 auto}
-    .t-badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
-    .t-badge{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--radius-pill);border:1px solid var(--gray1);background:var(--white);font-size:12px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;color:var(--navy);box-shadow:var(--shadow-card)}
-    .carousel{margin-top:18px;position:relative;background:var(--white);border:1px solid var(--gray1);border-radius:var(--radius-lg);box-shadow:var(--shadow-heavy);overflow:hidden}
-    .track{display:flex;transition:transform .45s ease;will-change:transform;touch-action:pan-y}
-    .slide{min-width:100%;padding:20px 18px}
-    .slide blockquote{margin:0;padding:0;border:0;font-size:16px;color:var(--text2);line-height:1.55;font-style:italic}
-    .slide .who{margin-top:12px;display:flex;flex-direction:column;gap:6px}
-    .slide cite{font-style:normal;font-weight:900;color:var(--navy)}
-    .slide .stars{color:var(--star);letter-spacing:2px;font-size:16px;margin-bottom:8px}
-    .result-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--radius-pill);background:var(--green-bg);border:1px solid var(--green-border);color:var(--green-text);font-size:12px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;width:max-content}
-    .controls{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-top:1px solid var(--gray1);background:linear-gradient(var(--gray0),var(--white))}
-    .nav-btn{width:44px;height:44px;border-radius:14px;border:1px solid var(--gray1);background:var(--white);cursor:pointer;font-weight:900;color:var(--navy);font-size:18px;transition:transform .15s,box-shadow .15s}
-    .nav-btn:hover{transform:translateY(-1px);box-shadow:0 4px 10px rgba(0,0,0,.08)}
-    .dots{display:flex;gap:8px;align-items:center;justify-content:center;flex:1}
-    .dot-btn{width:9px;height:9px;border-radius:999px;border:0;background:rgba(13,27,42,.18);cursor:pointer}
-    .dot-btn[aria-current="true"]{background:var(--navy)}
-    .t-cta{padding:14px 12px 18px;text-align:center}
-    .t-cta .btn{width:100%}
-    .t-cta p{margin:10px 0 0;font-size:12.5px;color:var(--muted)}
-
-    /* ── DIAGNÓSTICO (FORMULARIO) ───────────────────── */
-    .diag-grid{background:var(--white);border:1px solid var(--gray1);border-radius:var(--radius-lg);box-shadow:var(--shadow-heavy);display:grid;grid-template-columns:1fr;gap:18px;padding:26px}
-    .diag-label-tag{display:inline-flex;background:rgba(13,27,42,.08);color:var(--navy);border:1px solid rgba(13,27,42,.14);padding:7px 12px;border-radius:var(--radius-pill);font-weight:900;letter-spacing:.9px;text-transform:uppercase;font-size:11.5px;margin-bottom:8px}
-    .diag-title{margin:0 0 10px;font-size:22px;font-weight:300;color:var(--navy);line-height:1.25}
-    .diag-title strong{font-weight:900}
-    .info-box{padding:16px;border:1px solid var(--gray1);border-radius:16px;background:var(--white);margin:12px 0 16px}
-    .info-box p{margin:0;color:var(--text2);font-size:15px}
-    .form-row{display:grid;grid-template-columns:1fr;gap:12px;margin:10px 0 12px}
-    .form-label{display:block;font-weight:900;color:var(--navy);font-size:12px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px}
-    .form-select,.form-input,.form-textarea{width:100%;padding:12px;border-radius:14px;border:1px solid var(--gray1);outline:none;font-family:inherit;font-size:14px;background:var(--gray0);color:var(--text)}
-    .form-select:focus,.form-input:focus,.form-textarea:focus{border-color:var(--navy)}
-    .form-textarea{min-height:130px;resize:vertical;border-radius:16px;padding:14px}
-    .form-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px}
-    .aside-panel{background:linear-gradient(135deg,var(--navy),var(--navy2));color:var(--white);border-radius:var(--radius-lg);padding:20px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:8px}
-    .aside-brand{font-weight:900;letter-spacing:.9px;text-transform:uppercase;font-size:12px;color:rgba(255,255,255,.75)}
-    .aside-price{font-size:34px;font-weight:300;letter-spacing:-1px;margin:4px 0 2px}
-    .aside-sub{color:rgba(255,255,255,.80);font-size:13px}
-    .aside-contact{border-top:1px solid rgba(255,255,255,.12);margin-top:10px;padding-top:12px;color:rgba(255,255,255,.86);font-size:13px;line-height:2}
-    .aside-contact a{color:var(--white)}
-
-    /* ── FAQ ────────────────────────────────────────── */
-    details{background:var(--white);border:1px solid var(--gray1);border-radius:var(--radius-lg);padding:14px 16px;box-shadow:var(--shadow-card)}
-    details+details{margin-top:10px}
-    summary{cursor:pointer;font-weight:900;color:var(--navy);letter-spacing:.2px;list-style:none}
-    summary::-webkit-details-marker{display:none}
-    details p{margin-top:10px;color:var(--text2)}
-
-    /* ── CONTACTO ───────────────────────────────────── */
-    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
-    .contact-card{border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:16px}
-    .contact-card .k{font-weight:900;letter-spacing:.8px;text-transform:uppercase;font-size:12px;margin-bottom:8px}
-    .contact-card a{color:var(--white);border-bottom:1px solid rgba(255,255,255,.2)}
-    .contact-val{font-size:16px;font-weight:300;letter-spacing:1px}
-    .contact-actions{margin-top:14px;display:grid;gap:10px}
-
-    /* ── FOOTER ─────────────────────────────────────── */
-    footer{padding:24px 0 22px;background:var(--black-soft);color:rgba(255,255,255,.78);border-top:1px solid rgba(255,255,255,.1);font-size:13px}
-    .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-    .legal{max-width:55ch}
-
-    /* ── FLOATING WA ────────────────────────────────── */
-    .float-wa{position:fixed;right:16px;bottom:88px;z-index:60}
-    .wa-fab{width:54px;height:54px;border-radius:18px;border:0;background:var(--wa);color:var(--white);font-size:22px;cursor:pointer;box-shadow:0 14px 40px var(--wa-glow);display:flex;align-items:center;justify-content:center;transition:transform .2s}
-    .wa-fab:hover{transform:scale(1.05)}
-
-    /* ── STICKY CTA (SOLO MÓVIL) ────────────────────── */
-    .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(13,27,42,.96);border-top:1px solid rgba(255,255,255,.1);padding:10px 20px env(safe-area-inset-bottom);backdrop-filter:blur(10px);display:none}
-    .sticky-inner{display:flex;gap:10px;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto}
-    .sticky-msg{color:rgba(255,255,255,.82);font-size:12.5px;line-height:1.3;max-width:52%}
-    .sticky-msg b{color:var(--white)}
-
-    /* =====================================================
-       RESPONSIVE — Mobile First
-       ===================================================== */
-    @media(max-width:900px){
-      .nav-links,.nav-cta .btn-outline-white{display:none}
-      .burger{display:inline-flex;align-items:center;justify-content:center}
-      .hero{padding:50px 0 40px}
-      h1{font-size:clamp(1.8rem,6vw,2.3rem)}
-      .hero-actions{flex-direction:column}
-      .hero-actions .btn{width:100%;justify-content:center}
-      section{padding:48px 0}
-      .diag-grid{grid-template-columns:1fr}
-      .sticky-cta{display:block}
-      .float-wa{bottom:80px}
-      .hero-trust{flex-direction:column}
-      .hero-trust span{font-size:12px}
+    .btn-ghost:hover, 
+    .btn-ghost:active { 
+      background-color: rgba(255,255,255,0.15); 
+      border-color: var(--white); 
     }
-    @media(max-width:480px){
-      h1{font-size:1.75rem}
-      .hero-badge{font-size:10px;padding:6px 10px}
-      .topbar{font-size:12px}
+    
+    /* HEADER OPTIMIZADO */
+    header {
+      position: sticky; 
+      top: 0; 
+      z-index: 100;
+      background: rgba(13, 27, 42, 0.98); 
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.1); 
+      padding: 12px 0;
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-flex { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      width: 100%;
+    }
+    
+    /* BRAND SIN SUBRAYADO */
+    .brand { 
+      display: flex; 
+      align-items: baseline; 
+      gap: 6px; 
+      text-decoration: none;
+      padding: 8px;
+      margin: -8px;
+      border-radius: var(--radius-sm);
+      transition: opacity 0.2s;
+    }
+    .brand:hover, 
+    .brand:focus { 
+      text-decoration: none; 
+      opacity: 0.9; 
+    }
+    .brand:focus-visible {
+      outline: 2px solid var(--wa);
+      outline-offset: 4px;
+    }
+    .brand .name { 
+      font-weight: 300; 
+      letter-spacing: 2px; 
+      color: var(--white); 
+      font-size: clamp(14px, 3vw, 18px); 
+      text-transform: uppercase; 
+      white-space: nowrap;
+    }
+    .brand .tld { 
+      color: var(--wa); 
+      font-weight: 700; 
+      font-size: clamp(12px, 2.5vw, 16px); 
+      white-space: nowrap;
+    }
+    
+    .nav-links { 
+      display: flex; 
+      gap: 20px; 
+      align-items: center;
+    }
+    .nav-links a { 
+      font-size: 0.75rem; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      opacity: 0.85; 
+      text-decoration: none;
+      color: var(--white); 
+      transition: all 0.2s;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      min-height: var(--touch-target);
+      display: inline-flex;
+      align-items: center;
+    }
+    .nav-links a:hover { 
+      opacity: 1;
+      background: rgba(255,255,255,0.1);
+    }
+    
+    .burger { 
+      display: none; 
+      background: none; 
+      border: none; 
+      font-size: 1.8rem; 
+      color: white; 
+      cursor: pointer;
+      padding: 8px;
+      min-width: var(--touch-target);
+      min-height: var(--touch-target);
+      border-radius: var(--radius-sm);
+      transition: background 0.2s;
+    }
+    .burger:hover { background: rgba(255,255,255,0.1); }
+
+    /* HERO OPTIMIZADO */
+    .hero {
+      background: linear-gradient(135deg, var(--navy), var(--navy2));
+      color: var(--white); 
+      padding: 60px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: 
+        radial-gradient(circle at 20% 80%, rgba(37,211,102,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(37,211,102,0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(37,211,102,0.5); 
+      background: rgba(37,211,102,0.15);
+      color: #c9ffe0; 
+      padding: 8px 16px; 
+      border-radius: var(--radius-pill); 
+      font-size: 11px;
+      letter-spacing: 1.2px; 
+      text-transform: uppercase; 
+      margin-bottom: 24px; 
+      font-weight: 700;
+      backdrop-filter: blur(4px);
+    }
+    
+    .hero-actions { 
+      display: flex; 
+      gap: 12px; 
+      flex-direction: column; 
+      align-items: center; 
+      margin-top: 32px; 
+      width: 100%;
+    }
+    
+    @media(min-width: 600px) { 
+      .hero-actions { 
+        flex-direction: row; 
+        justify-content: center; 
+      } 
+    }
+    
+    /* SECCIONES */
+    section { 
+      padding: 60px 0;
+    }
+    
+    @media(min-width: 768px) {
+      section { padding: 80px 0; }
+    }
+    
+    .grid-3 { 
+      display: grid; 
+      grid-template-columns: 1fr; 
+      gap: 20px; 
+    }
+    
+    @media(min-width: 768px) { 
+      .grid-3 { 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 24px;
+      } 
+    }
+    
+    /* CARDS OPTIMIZADAS */
+    .card { 
+      background: var(--white); 
+      padding: 24px; 
+      border-radius: var(--radius); 
+      border: 1px solid var(--gray1); 
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    @media(min-width: 768px) {
+      .card { 
+        padding: 30px;
+        box-shadow: var(--shadow);
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+      }
+    }
+    
+    /* FORMULARIO OPTIMIZADO PARA MÓVIL */
+    .form-container { 
+      background: var(--white); 
+      border: 1px solid var(--gray1); 
+      border-radius: var(--radius); 
+      padding: 24px; 
+      box-shadow: var(--shadow-sm);
+    }
+    
+    @media(min-width: 768px) {
+      .form-container { 
+        padding: 40px; 
+        box-shadow: var(--shadow);
+      }
+    }
+    
+    .form-group { 
+      margin-bottom: 20px; 
+      text-align: left; 
+    }
+    
+    .form-group label { 
+      display: block; 
+      font-size: 0.75rem; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      margin-bottom: 8px; 
+      font-weight: 600; 
+      color: var(--navy);
+    }
+    
+    .form-control { 
+      width: 100%; 
+      padding: 14px 16px; 
+      background: var(--gray0); 
+      border: 1px solid var(--gray1); 
+      color: var(--text); 
+      border-radius: var(--radius-sm); 
+      font-family: var(--font-body); 
+      font-size: 16px;
+      min-height: var(--touch-target);
+      transition: all 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--wa);
+      box-shadow: 0 0 0 3px rgba(37,211,102,0.15);
+      background: var(--white);
+    }
+    
+    .form-control:invalid {
+      border-color: var(--error);
+    }
+    
+    select.form-control {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236c757d' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+    
+    /* TESTIMONIOS */
+    .testimonial { 
+      text-align: center; 
+      max-width: 700px; 
+      margin: 0 auto; 
+      padding: 20px;
+    }
+    
+    .quote { 
+      font-family: var(--font-heading); 
+      font-size: clamp(1.1rem, 3vw, 1.3rem); 
+      font-style: italic; 
+      line-height: 1.7; 
+      margin-bottom: 20px; 
+      color: var(--white);
+    }
+    
+    .author { 
+      font-size: 0.85rem; 
+      font-weight: 700; 
+      letter-spacing: 1px; 
+      color: var(--white); 
+      text-transform: uppercase; 
+      opacity: 0.9;
+    }
+
+    /* FAQ OPTIMIZADO */
+    details { 
+      background: var(--white); 
+      border: 1px solid var(--gray1); 
+      border-radius: var(--radius); 
+      padding: 16px 20px; 
+      margin-bottom: 12px;
+      transition: all 0.2s;
+    }
+    
+    details[open] {
+      box-shadow: var(--shadow-sm);
+    }
+    
+    summary { 
+      font-weight: 600; 
+      color: var(--navy); 
+      cursor: pointer; 
+      list-style: none; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      padding: 8px 0;
+      min-height: var(--touch-target);
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    summary::-webkit-details-marker { display: none; }
+    
+    summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--wa);
+      font-weight: 300;
+      line-height: 1;
+      transition: transform 0.2s;
+    }
+    
+    details[open] summary::after {
+      content: '−';
+      transform: rotate(0);
+    }
+    
+    details p {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--gray1);
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    
+    /* FOOTER */
+    footer { 
+      background: var(--navy); 
+      color: var(--white); 
+      padding: 40px 0; 
+      text-align: center; 
+      font-size: 0.85rem; 
+      opacity: 0.95;
+    }
+    
+    /* STICKY CTA OPTIMIZADO PARA MÓVIL */
+    .sticky-cta {
+      position: fixed; 
+      left: 0; 
+      right: 0; 
+      bottom: 0; 
+      z-index: 90;
+      background: rgba(255, 255, 255, 0.98); 
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--gray1);
+      padding: 12px 20px;
+      padding-bottom: calc(12px + env(safe-area-inset-bottom));
+      box-shadow: 0 -5px 25px rgba(0,0,0,0.12);
+    }
+    
+    .sticky-cta .btn { 
+      width: 100%;
+      font-size: 0.9rem;
+      padding: 16px 24px;
+    }
+    
+    @media(min-width: 901px) { 
+      .sticky-cta { display: none; } 
+    }
+
+    /* DRAWER/MENÚ MÓVIL OPTIMIZADO */
+    .drawer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 199;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    
+    .drawer-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .drawer { 
+      position: fixed; 
+      top: 0; 
+      right: 0; 
+      width: 100%; 
+      max-width: 320px; 
+      height: 100%; 
+      height: 100vh;
+      height: 100dvh;
+      background: var(--navy); 
+      z-index: 200; 
+      transform: translateX(100%); 
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+      padding: 80px 24px 40px;
+      box-shadow: -5px 0 30px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .drawer.open { 
+      transform: translateX(0); 
+    }
+    
+    .drawer a { 
+      display: flex;
+      align-items: center;
+      font-family: var(--font-heading); 
+      font-size: 1.1rem; 
+      color: white; 
+      padding: 16px 12px; 
+      margin-bottom: 8px; 
+      border-bottom: 1px solid rgba(255,255,255,0.08); 
+      text-decoration: none;
+      transition: all 0.2s;
+      min-height: var(--touch-target);
+      border-radius: var(--radius-sm);
+    }
+    
+    .drawer a:hover, 
+    .drawer a:active { 
+      color: var(--wa);
+      background: rgba(255,255,255,0.08);
+    }
+    
+    .close-drawer { 
+      position: absolute; 
+      top: 16px; 
+      right: 16px; 
+      font-size: 2rem; 
+      background: rgba(255,255,255,0.1); 
+      border: none; 
+      color: white; 
+      cursor: pointer; 
+      width: 44px; 
+      height: 44px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s;
+      min-width: var(--touch-target);
+      min-height: var(--touch-target);
+    }
+    
+    .close-drawer:hover, 
+    .close-drawer:active { 
+      background: rgba(255,255,255,0.2);
+      transform: rotate(90deg);
+    }
+
+    /* MEDIA QUERIES RESPONSIVAS */
+    @media (max-width: 900px) {
+      .nav-links, 
+      .nav-cta-desktop { 
+        display: none; 
+      }
+      .burger { 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .wrap { padding: 0 16px; }
+    }
+    
+    @media (max-width: 480px) {
+      :root {
+        --header-height: 60px;
+      }
+      
+      .wrap { padding: 0 14px; }
+      
+      .hero {
+        padding: 50px 0 60px;
+      }
+      
+      .badge {
+        font-size: 10px;
+        padding: 6px 12px;
+      }
+      
+      h1 {
+        font-size: 1.6rem;
+        line-height: 1.3;
+      }
+      
+      .lead {
+        font-size: 1rem;
+      }
+      
+      .card {
+        padding: 20px;
+      }
+      
+      .form-container {
+        padding: 20px 16px;
+      }
+      
+      .btn {
+        padding: 16px 20px;
+        font-size: 0.85rem;
+      }
+      
+      .sticky-cta {
+        padding: 10px 14px;
+        padding-bottom: calc(10px + env(safe-area-inset-bottom));
+      }
+    }
+    
+    @supports (padding: max(0px)) {
+      .wrap {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+      }
+      
+      header {
+        padding-top: max(12px, env(safe-area-inset-top));
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .hero > .wrap > * {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    .hero > .wrap > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero > .wrap > *:nth-child(2) { animation-delay: 0.2s; }
+    .hero > .wrap > *:nth-child(3) { animation-delay: 0.3s; }
+    .hero > .wrap > *:nth-child(4) { animation-delay: 0.4s; }
+    
+    .loading {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    
+    .form-message {
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+      display: none;
+    }
+    
+    .form-message.error {
+      background: rgba(220, 53, 69, 0.1);
+      color: var(--error);
+      border: 1px solid var(--error);
+      display: block;
+    }
+    
+    .form-message.success {
+      background: rgba(40, 167, 69, 0.1);
+      color: var(--success);
+      border: 1px solid var(--success);
+      display: block;
     }
   </style>
 </head>
+
 <body>
 
-  <!-- TOPBAR NEGRA -->
-  <div class="topbar">
-    <div class="wrap">
-      <div><b>Naturalización en Panamá:</b> de residente a ciudadano con una ruta clara.</div>
-      <div><a href="#diagnostico">Agendar Auditoría</a></div>
-    </div>
-  </div>
+  <!-- OVERLAY PARA MENÚ MÓVIL -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
 
   <!-- HEADER -->
-  <header>
-    <div class="wrap nav">
-      <a href="#inicio" class="brand" aria-label="Inicio">
-        <div class="brand-name">NATURALÍZATE</div>
-        <div class="brand-tld">.PA</div>
+  <header role="banner">
+    <div class="wrap nav-flex">
+      <a href="#" class="brand" aria-label="Naturalízate.pa - Inicio">
+        <div class="name">NATURALÍZATE</div><div class="tld">.PA</div>
       </a>
       <nav class="nav-links" aria-label="Navegación principal">
-        <a href="#problema">Problema</a>
-        <a href="#solucion">Solución</a>
-        <a href="#elegibilidad">Elegibilidad</a>
-        <a href="#proceso">Ruta</a>
-        <a href="#testimonials">Testimonios</a>
-        <a href="#diagnostico">Auditoría</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#riesgos">Contexto</a>
+        <a href="#testimonios">Casos</a>
+        <a href="#diagnostico">Diagnóstico</a>
       </nav>
-      <div class="nav-cta">
-        <a href="#diagnostico" class="btn btn-outline-white">Auditoría</a>
-        <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" rel="noopener" class="btn btn-wa" aria-label="WhatsApp">WhatsApp</a>
-        <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
-      </div>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer">
+        <span aria-hidden="true">☰</span>
+      </button>
     </div>
   </header>
 
-  <!-- DRAWER -->
-  <div class="drawer" id="drawer" aria-hidden="true">
-    <div class="drawer-panel" role="dialog" aria-modal="true">
-      <div class="drawer-top">
-        <div class="brand">
-          <div class="brand-name" style="font-size:16px">NATURALÍZATE</div>
-          <div class="brand-tld" style="font-size:14px">.PA</div>
-        </div>
-        <button class="drawer-close" id="closeDrawer" aria-label="Cerrar menú">✕</button>
-      </div>
-      <a href="#problema" class="dlink">Problema</a>
-      <a href="#solucion" class="dlink">Solución</a>
-      <a href="#elegibilidad" class="dlink">Elegibilidad</a>
-      <a href="#proceso" class="dlink">Ruta</a>
-      <a href="#testimonials" class="dlink">Testimonios</a>
-      <a href="#diagnostico" class="dlink" style="color:var(--wa)">Auditoría</a>
-      <a href="#faq" class="dlink">FAQ</a>
-      <a href="#contacto" class="dlink">Contacto</a>
-      <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" rel="noopener" class="dlink">Unirse al grupo WhatsApp</a>
+  <!-- MENÚ MÓVIL OPTIMIZADO -->
+  <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+    <button class="close-drawer" id="closeDrawer" aria-label="Cerrar menú">
+      <span aria-hidden="true">×</span>
+    </button>
+    <nav style="margin-top: 40px;">
+      <a href="#riesgos" class="dlink">
+        <span>📋</span>&nbsp; Contexto
+      </a>
+      <a href="#testimonios" class="dlink">
+        <span>⭐</span>&nbsp; Casos de Éxito
+      </a>
+      <a href="#diagnostico" class="dlink" style="color: var(--wa); border-color: rgba(37,211,102,0.3);">
+        <span>✅</span>&nbsp; Verificar Elegibilidad
+      </a>
+    </nav>
+    <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+      <a href="https://wa.me/50762557583" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem; opacity: 0.8;">
+        <span>💬</span>&nbsp; Chat Directo
+      </a>
     </div>
   </div>
 
-  <!-- HERO -->
-  <main id="inicio" class="hero">
+  <!-- HERO - ✅ GRUPO ELIMINADO -->
+  <main class="hero" role="main">
     <div class="wrap">
-      <div class="hero-badge">Ruta clara · Examen preparado · Seguimiento</div>
-      <h1>Dejaste de ser un visitante.<br><strong>Es hora de dejar de ser un extranjero.</strong></h1>
-      <p class="lead">La residencia te deja vivir en Panamá. La <strong>naturalización</strong> te da estabilidad definitiva: cédula, pasaporte y tranquilidad.</p>
-      <div class="hero-actions">
-        <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" rel="noopener" class="btn btn-wa">Entrar al grupo WhatsApp</a>
-        <a href="#diagnostico" class="btn btn-outline-white">Agendar Diagnóstico Legal</a>
+      <div class="badge">
+        <span>✓</span> Ruta Legal • Examen Preparado • Seguimiento
       </div>
-      <div class="hero-trust" aria-label="Indicadores de confianza">
-        <span>✓ Diagnóstico sin costo inicial</span>
-        <span>✓ Checklist de expediente</span>
-        <span>✓ Guía 80/20 para el examen</span>
+      <h1>De la Residencia Temporal a la Ciudadanía Panameña</h1>
+      <p class="lead mx-auto">Formalice su estatus definitivo. Obtenga pasaporte y seguridad jurídica mediante un proceso estructurado y transparente.</p>
+      <div class="hero-actions">
+        <a href="#diagnostico" class="btn btn-primary">Verificar Elegibilidad Ahora</a>
       </div>
     </div>
   </main>
 
-  <!-- PROBLEMA -->
-  <section id="problema" class="sec-white">
-    <div class="wrap">
-      <h2>El problema real de "quedarte solo con la residencia"</h2>
-      <p style="max-width:625px;margin-bottom:22px">Aun con residencia, muchas decisiones siguen atadas a trámites. La ciudadanía reduce fricción y te da estabilidad.</p>
-      <div class="grid3">
-        <div class="p-card">
-          <div class="p-tag">bloqueo</div>
-          <p><b style="color:var(--text)">Oportunidades limitadas</b> donde el estatus de extranjero complica.</p>
-        </div>
-        <div class="p-card">
-          <div class="p-tag">costo oculto</div>
-          <p><b style="color:var(--text)">Tiempo y dinero</b> se pierden cuando el expediente no está ordenado.</p>
-        </div>
-        <div class="p-card">
-          <div class="p-tag">incertidumbre</div>
-          <p><b style="color:var(--text)">Demoras y estrés</b>: el "estado del trámite" se vuelve una carga.</p>
-        </div>
+  <!-- RIESGOS -->
+  <section id="riesgos" aria-labelledby="riesgos-title">
+    <div class="wrap text-center">
+      <h2 id="riesgos-title" style="margin-bottom: 40px;">El Riesgo de la Informalidad Jurídica</h2>
+      <div class="grid-3">
+        <article class="card">
+          <h3 style="color:var(--navy);">⚖️ Riesgo Regulatorio</h3>
+          <p style="color:var(--muted); margin-bottom: 0;">La normativa migratoria es cambiante. Un error administrativo puede derivar en un rechazo definitivo de su solicitud.</p>
+        </article>
+        <article class="card">
+          <h3 style="color:var(--navy);">📚 Examen Oficial</h3>
+          <p style="color:var(--muted); margin-bottom: 0;">El temario es extenso. Enfrentar la prueba sin una estrategia académica aumenta significativamente el riesgo de reprobación.</p>
+        </article>
+        <article class="card">
+          <h3 style="color:var(--navy);">🔒 Inestabilidad</h3>
+          <p style="color:var(--muted); margin-bottom: 0;">Mantenerse solo con residencia limita su capacidad de planificación a largo plazo y la plenitud de sus derechos civiles.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- SOLUCIÓN -->
-  <section id="solucion" class="sec-navy">
-    <div class="wrap">
-      <h2 class="on-dark">La solución: Naturalización como "cierre definitivo"</h2>
-      <p style="color:rgba(255,255,255,.78);max-width:625px;margin-bottom:0">No es "otro trámite": es un cambio de estatus con impacto directo en tu vida.</p>
-      <div class="b-grid">
-        <div class="b-item"><div class="k">Estabilidad</div><p>Menos fricción y más previsibilidad.</p></div>
-        <div class="b-item"><div class="k">Movilidad</div><p>Mejor posición para viajes y trámites.</p></div>
-        <div class="b-item"><div class="k">Integración</div><p>Formaliza tu proyecto de vida.</p></div>
-        <div class="b-item"><div class="k">Plan claro</div><p>Checklist + guía + seguimiento.</p></div>
-      </div>
-    </div>
-  </section>
+  <!-- FORMULARIO FILTRO -->
+  <section id="diagnostico" style="background-color: var(--white);" aria-labelledby="diagnostico-title">
+    <div class="wrap text-center">
+      <p class="text-uppercase" style="color: var(--wa);">Atención Exclusiva</p>
+      <h2 id="diagnostico-title" style="margin-bottom: 10px;">Solicite su Sesión de Diagnóstico Legal</h2>
+      <p class="mx-auto" style="max-width: 700px; margin-bottom: 32px; color: var(--muted);">
+        Verifique su Elegibilidad para la Naturalización. Complete los datos para habilitar el acceso a nuestra agenda privada.
+      </p>
 
-  <!-- ELEGIBILIDAD -->
-  <section id="elegibilidad" class="sec-gray">
-    <div class="wrap">
-      <h2>Elegibilidad (pre-chequeo simple)</h2>
-      <p style="max-width:625px;margin-bottom:22px">El Diagnóstico confirma tiempos, riesgos y ruta óptima según tu perfil.</p>
-      <div class="split">
-        <div class="panel-card">
-          <h3>Ruta general</h3>
-          <p>Clave: <b style="color:var(--text)">tiempo</b>, <b style="color:var(--text)">arraigo</b> y expediente sin inconsistencias.</p>
-          <div class="pill">Meta: ordenar + examen</div>
-          <div class="fine">Arma cronología y soportes para evitar observaciones.</div>
-        </div>
-        <div class="panel-card">
-          <h3>Ruta familiar</h3>
-          <p>Clave: sustento documental del vínculo y estabilidad.</p>
-          <div class="pill">Meta: evidencia sólida</div>
-          <div class="fine">Estrategia precisa y verificable.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESO -->
-  <section id="proceso" class="sec-black">
-    <div class="wrap">
-      <h2 class="on-dark">Ruta en 4 etapas (sin perderte en burocracia)</h2>
-      <p style="color:rgba(255,255,255,.78);max-width:625px;margin-bottom:22px">Diagnóstico → Expediente → Examen → Seguimiento.</p>
-      <div class="steps">
-        <div class="step-item"><div class="step-num">1</div><h4>Diagnóstico</h4><p>Revisión migratoria, penal y fiscal. Ruta exacta.</p></div>
-        <div class="step-item"><div class="step-num">2</div><h4>Expediente</h4><p>Armado con orden y consistencia.</p></div>
-        <div class="step-item"><div class="step-num">3</div><h4>Examen</h4><p>Guía 80/20 para estudiar lo esencial.</p></div>
-        <div class="step-item"><div class="step-num">4</div><h4>Seguimiento</h4><p>Monitoreo y respuesta a observaciones.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIOS -->
-  <section id="testimonials" class="sec-gray">
-    <div class="wrap t-wrap">
-      <h2 class="text-center" style="text-align:center;color:var(--navy)">Resultados reales. Trato humano. Proceso ordenado.</h2>
-      <p style="text-align:center;margin:0 auto 10px;max-width:600px">Evidencia rápida para decidir con confianza.</p>
-      <div class="t-badges">
-        <div class="t-badge">★★★★★ 5/5</div>
-        <div class="t-badge">✅ Expediente ordenado</div>
-        <div class="t-badge">⏱️ Seguimiento constante</div>
-        <div class="t-badge">🔍 Diagnóstico sin costo</div>
-      </div>
-
-      <div class="carousel" aria-label="Carrusel de testimonios">
-        <div class="track" id="tTrack" aria-live="polite">
-
-          <article class="slide">
-            <div class="stars">★★★★★</div>
-            <blockquote>"Estamos muy agradecidos. El Lic. Villarreal agilizó nuestro trámite, cuidó nuestros documentos con responsabilidad y nos trató de manera muy familiar. El resultado fue un éxito."</blockquote>
-            <div class="who"><cite>Familia Castro</cite><span class="result-badge">✅ Ciudadanía obtenida</span></div>
-          </article>
-
-          <article class="slide">
-            <div class="stars">★★★★★</div>
-            <blockquote>"La auditoría nos dio claridad total. Ordenamos el expediente sin errores y siempre supimos qué seguía. Acompañamiento serio y rápido."</blockquote>
-            <div class="who"><cite>Carlos M.</cite><span class="result-badge">✅ Ruta clara desde el día 1</span></div>
-          </article>
-
-          <article class="slide">
-            <div class="stars">★★★★★</div>
-            <blockquote>"Me explicaron el proceso paso a paso y revisaron cada documento. Evitaron observaciones y me sentí segura desde el inicio."</blockquote>
-            <div class="who"><cite>María P.</cite><span class="result-badge">✅ Expediente sólido</span></div>
-          </article>
-
-          <article class="slide">
-            <div class="stars">★★★★★</div>
-            <blockquote>"Transparencia total: sabía exactamente qué faltaba y cuándo. La guía del examen fue directa y me ayudó a prepararme rápido."</blockquote>
-            <div class="who"><cite>Jorge R.</cite><span class="result-badge">✅ Preparación de examen</span></div>
-          </article>
-
-          <article class="slide">
-            <div class="stars">★★★★★</div>
-            <blockquote>"En la auditoría detectaron riesgos y nos dieron un plan. El seguimiento fue constante y sin vueltas."</blockquote>
-            <div class="who"><cite>Ana L.</cite><span class="result-badge">✅ Riesgos detectados a tiempo</span></div>
-          </article>
-
-          <article class="slide">
-            <div class="stars">★★★★★</div>
-            <blockquote>"Trato profesional y humano. Nos ayudaron a reunir lo correcto y a mantener el expediente limpio. Recomendado."</blockquote>
-            <div class="who"><cite>Luis y Paola</cite><span class="result-badge">✅ Acompañamiento cercano</span></div>
-          </article>
-
-        </div>
-
-        <div class="controls">
-          <button class="nav-btn" id="tPrev" aria-label="Anterior">‹</button>
-          <div class="dots" id="tDots"></div>
-          <button class="nav-btn" id="tNext" aria-label="Siguiente">›</button>
-        </div>
-
-        <div class="t-cta">
-          <a href="#diagnostico" class="btn btn-wa">Solicitar Diagnóstico Legal</a>
-          <p>Sesión de evaluación personalizada sin costo inicial.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DIAGNÓSTICO / FORMULARIO -->
-  <section id="diagnostico" class="sec-white">
-    <div class="wrap">
-      <div class="diag-grid">
-        <!-- Formulario -->
-        <div>
-          <div class="diag-label-tag">Acceso a Agenda Privada</div>
-          <h2 class="diag-title">Solicite su Sesión de<br><strong>Diagnóstico Legal</strong></h2>
-          <p style="color:var(--muted);font-size:15px;margin-bottom:0">Complete los datos para verificar su elegibilidad. Solo atendemos casos con potencial real de éxito.</p>
-          <div class="info-box">
-            <p>Revisamos su historial <b>migratorio</b>, <b>penal</b> y <b>fiscal</b> para estructurar su caso con estándar de Presidencia. La sesión es personalizada y sin costo inicial.</p>
+      <div class="form-container" style="max-width: 700px; margin: 0 auto;">
+        <div id="formMessage" class="form-message" role="alert" aria-live="polite"></div>
+        
+        <form id="qualifyForm" novalidate autocomplete="on">
+          <div class="form-group">
+            <label for="qNombre">Nombre y Apellido</label>
+            <input 
+              type="text" 
+              id="qNombre" 
+              name="nombre" 
+              class="form-control" 
+              required 
+              placeholder="Ej. Juan Pérez" 
+              autocomplete="name"
+              inputmode="text"
+              minlength="3"
+            >
           </div>
-
-          <form id="qualifyForm">
-            <div class="form-row">
-
-              <label>
-                <span class="form-label">Nombre y Apellido</span>
-                <input type="text" id="qNombre" class="form-input" required placeholder="Ej. Juan Pérez">
-              </label>
-
-              <label>
-                <span class="form-label">Nacionalidad de Origen</span>
-                <select id="qNacionalidad" class="form-select" required>
-                  <option value="" disabled selected>Seleccione su país de origen</option>
-                  <option>Afganistán</option><option>Albania</option><option>Alemania</option>
-                  <option>Angola</option><option>Arabia Saudita</option><option>Argentina</option>
-                  <option>Australia</option><option>Austria</option><option>Bangladesh</option>
-                  <option>Bélgica</option><option>Bolivia</option><option>Bosnia y Herzegovina</option>
-                  <option>Brasil</option><option>Bulgaria</option><option>Camboya</option>
-                  <option>Camerún</option><option>Canadá</option><option>Chile</option>
-                  <option>China</option><option>Colombia</option><option>Corea del Sur</option>
-                  <option>Costa Rica</option><option>Croatia</option><option>Cuba</option>
-                  <option>Dinamarca</option><option>Ecuador</option><option>Egipto</option>
-                  <option>El Salvador</option><option>Emiratos Árabes</option><option>Eslovaquia</option>
-                  <option>España</option><option>Estados Unidos</option><option>Etiopía</option>
-                  <option>Filipinas</option><option>Finlandia</option><option>Francia</option>
-                  <option>Ghana</option><option>Grecia</option><option>Guatemala</option>
-                  <option>Haití</option><option>Honduras</option><option>Hungría</option>
-                  <option>India</option><option>Indonesia</option><option>Irán</option>
-                  <option>Iraq</option><option>Irlanda</option><option>Israel</option>
-                  <option>Italia</option><option>Jamaica</option><option>Japón</option>
-                  <option>Jordania</option><option>Kazajistán</option><option>Kenia</option>
-                  <option>Kuwait</option><option>Líbano</option><option>Libia</option>
-                  <option>Malasia</option><option>Marruecos</option><option>México</option>
-                  <option>Nigeria</option><option>Nicaragua</option><option>Noruega</option>
-                  <option>Nueva Zelanda</option><option>Países Bajos</option><option>Pakistán</option>
-                  <option>Paraguay</option><option>Perú</option><option>Polonia</option>
-                  <option>Portugal</option><option>Puerto Rico</option><option>Qatar</option>
-                  <option>Reino Unido</option><option>República Dominicana</option><option>Rumania</option>
-                  <option>Rusia</option><option>Senegal</option><option>Serbia</option>
-                  <option>Siria</option><option>Sudáfrica</option><option>Suecia</option>
-                  <option>Suiza</option><option>Tailandia</option><option>Taiwán</option>
-                  <option>Tanzania</option><option>Turquía</option><option>Ucrania</option>
-                  <option>Uganda</option><option>Uruguay</option><option>Venezuela</option>
-                  <option>Vietnam</option><option>Yemen</option><option>Otra Nacionalidad</option>
-                </select>
-              </label>
-
-              <label>
-                <span class="form-label">Años de residencia permanente (Cédula E)</span>
-                <select id="qTiempo" class="form-select" required>
-                  <option value="" disabled selected>Seleccione tiempo</option>
-                  <option>Menos de 3 años</option>
-                  <option>Entre 3 y 4 años</option>
-                  <option>5 años o más</option>
-                </select>
-              </label>
-
-              <label>
-                <span class="form-label">Vínculo familiar en Panamá</span>
-                <select id="qFamilia" class="form-select" required>
-                  <option value="" disabled selected>Seleccione opción</option>
-                  <option>Tengo cónyuge panameño/a</option>
-                  <option>Tengo hijos panameños</option>
-                  <option>Ambos (cónyuge e hijos)</option>
-                  <option>No tengo vínculo familiar panameño</option>
-                </select>
-              </label>
-
-              <label>
-                <span class="form-label">¿Está listo/a para iniciar en los próximos 30-60 días?</span>
-                <select id="qInicio" class="form-select" required>
-                  <option value="" disabled selected>Seleccione disponibilidad</option>
-                  <option>Sí, quiero iniciar en los próximos 30 días</option>
-                  <option>Sí, en los próximos 60 días</option>
-                  <option>Solo busco información por ahora</option>
-                </select>
-              </label>
-
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn btn-wa" style="width:100%;justify-content:center">Enviar Solicitud de Diagnóstico</button>
-              <button type="button" id="copyBtn" class="btn btn-outline-dark" style="width:100%;justify-content:center">Copiar Mensaje</button>
-              <a id="waBtn" href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" rel="noopener" class="btn btn-wa" style="width:100%;justify-content:center">Abrir WhatsApp</a>
-            </div>
-
-            <textarea id="msgOut" class="form-textarea" style="margin-top:12px" placeholder="Aquí aparecerá su mensaje listo para enviar..."></textarea>
-          </form>
-        </div>
-
-        <!-- Panel lateral -->
-        <aside class="aside-panel" aria-label="Resumen de contacto">
-          <div class="aside-brand">naturalizate.pa</div>
-          <div class="aside-price">Diagnóstico</div>
-          <div class="aside-sub">Sesión personalizada</div>
-          <p style="font-size:12px;color:rgba(255,255,255,.65);margin:0">Cupos limitados. Solo atendemos casos con potencial real de éxito.</p>
-          <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" rel="noopener" class="btn btn-wa" style="width:100%;justify-content:center;margin-top:8px">Entrar al grupo</a>
-          <div class="aside-contact">
-            <div><b>Alfonso Villarreal</b></div>
-            <div><a href="mailto:Villarreallawyers@proton.me">Villarreallawyers@proton.me</a></div>
-            <div><a href="tel:+50762557583">+507 6255-7583</a></div>
+          
+          <div class="form-group">
+            <label for="qNacionalidad">Nacionalidad de Origen</label>
+            <select id="qNacionalidad" name="nacionalidad" class="form-control" required autocomplete="country">
+              <option value="" disabled selected>Seleccione su país...</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Venezuela">Venezuela</option>
+              <option value="España">España</option>
+              <option value="Estados Unidos">Estados Unidos</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Perú">Perú</option>
+              <option value="Nicaragua">Nicaragua</option>
+              <option value="México">México</option>
+              <option value="Otra">Otra Nacionalidad</option>
+            </select>
           </div>
-        </aside>
+          
+          <div class="form-group">
+            <label for="qTiempo">Años de residencia permanente (Cédula E)</label>
+            <select id="qTiempo" name="tiempo" class="form-control" required>
+              <option value="" disabled selected>Seleccione tiempo...</option>
+              <option value="Menos de 3 años">Menos de 3 años</option>
+              <option value="Entre 3 y 4 años">Entre 3 y 4 años</option>
+              <option value="5 años o más">5 años o más</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="qFamilia">Vínculo familiar en Panamá</label>
+            <select id="qFamilia" name="familia" class="form-control" required>
+              <option value="" disabled selected>Seleccione opción...</option>
+              <option value="Cónyuge Panameño/a">Tengo cónyuge panameño/a</option>
+              <option value="Hijos Panameños">Tengo hijos panameños</option>
+              <option value="Ninguno">No tengo vínculo familiar</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="qInicio">Disponibilidad para iniciar trámite</label>
+            <select id="qInicio" name="inicio" class="form-control" required>
+              <option value="" disabled selected>¿Cuándo planea iniciar?</option>
+              <option value="Inmediatamente (30 días)">Inmediatamente (30 días)</option>
+              <option value="En los próximos 60 días">En los próximos 60 días</option>
+              <option value="Solo busco información">Solo busco información</option>
+            </select>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="margin-top: 12px; width: 100%;" id="submitBtn">
+            <span>📤</span> Enviar Solicitud y Contactar
+          </button>
+        </form>
+        
+        <p style="font-size: 0.75rem; color: var(--muted); margin-top: 16px; margin-bottom: 0;">
+          🔒 Sus datos están protegidos. Solo se usarán para contacto profesional.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIO -->
+  <section id="testimonios" style="background: var(--navy);" aria-labelledby="testimonios-title">
+    <div class="wrap">
+      <div class="testimonial">
+        <p class="quote">"La firma demostró un rigor técnico impecable. Su diagnóstico inicial detectó inconsistencias que habrían causado la negativa del trámite. Hoy gozamos de plena ciudadanía."</p>
+        <p class="author">— Familia Castro, Naturalización Concedida 2025</p>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="sec-gray">
-    <div class="wrap">
-      <h2>Preguntas frecuentes</h2>
-      <p style="max-width:625px;margin-bottom:22px">Respuestas cortas para dudas comunes.</p>
+  <section class="wrap" aria-labelledby="faq-title">
+    <h2 id="faq-title" class="text-center" style="margin-bottom: 32px;">Consultas Frecuentes</h2>
+    <div style="max-width: 800px; margin: 0 auto;">
       <details>
-        <summary>¿La naturalización es lo mismo que residencia permanente?</summary>
-        <p>No. La residencia es un estatus migratorio; la naturalización te orienta hacia la ciudadanía con efectos más amplios e irrevocables.</p>
+        <summary>
+          <span>Diferencia entre residencia y ciudadanía</span>
+        </summary>
+        <p>La residencia es un permiso de estancia temporal o permanente. La naturalización confiere la ciudadanía panameña, incluyendo pasaporte y la plenitud de derechos políticos y civiles, eliminando la necesidad de renovaciones periódicas.</p>
       </details>
       <details>
-        <summary>¿Por qué pasan por un filtro de elegibilidad?</summary>
-        <p>Para proteger su tiempo e inversión. Solo tomamos casos viables. El diagnóstico determina si su perfil califica antes de comprometer recursos.</p>
+        <summary>
+          <span>¿Por qué debo pasar por un filtro de elegibilidad?</span>
+        </summary>
+        <p>Nuestro despacho se rige por un estricto código de ética profesional. No aceptamos casos que no cumplen con los requisitos de la Ley Migratoria. El filtro nos permite indicarle con honestidad si está listo para el proceso o qué requisitos le faltan para estarlo.</p>
       </details>
       <details>
-        <summary>¿Incluye preparación para el examen de conocimientos?</summary>
-        <p>Sí. El proceso incluye material de estudio con metodología 80/20: solo las preguntas con mayor probabilidad de aparecer en historia, geografía y cívica.</p>
+        <summary>
+          <span>¿Cuánto tiempo toma el proceso de naturalización?</span>
+        </summary>
+        <p>El proceso varía según cada caso, pero generalmente toma entre 12 a 24 meses desde la presentación de la solicitud hasta la resolución final. Nuestro equipo le brindará un cronograma estimado tras el diagnóstico inicial.</p>
       </details>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto" class="sec-navy">
-    <div class="wrap">
-      <h2 class="on-dark">Contacto directo</h2>
-      <p style="color:rgba(255,255,255,.78);max-width:625px;margin-bottom:22px">Entra al grupo VIP o contáctame por email/teléfono.</p>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <div class="k">Cuenta</div>
-          <div class="contact-val">naturalizate.pa</div>
-        </div>
-        <div class="contact-card">
-          <div class="k">Email</div>
-          <div><a href="mailto:Villarreallawyers@proton.me">Villarreallawyers@proton.me</a></div>
-        </div>
-        <div class="contact-card">
-          <div class="k">Teléfono</div>
-          <div><a href="tel:+50762557583">+507 6255-7583</a></div>
-        </div>
-      </div>
-      <div class="contact-actions">
-        <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" target="_blank" rel="noopener" class="btn btn-wa" style="width:100%;justify-content:center">Unirse al grupo WhatsApp</a>
-        <a href="#inicio" class="btn btn-outline-white" style="width:100%;justify-content:center">Volver arriba</a>
-      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="wrap foot">
-      <div><strong>naturalizate.pa</strong><br>Alfonso Villarreal</div>
-      <div class="legal">Material informativo. No constituye asesoría legal hasta formalizar relación abogado-cliente.</div>
+  <footer role="contentinfo">
+    <div class="wrap">
+      <div style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 12px; letter-spacing: 1px;">NATURALÍZATE.PA</div>
+      <p style="margin-bottom: 16px; opacity:0.8; line-height: 1.7;">
+        Firma legal especializada en Derecho Migratorio.<br>
+        República de Panamá.
+      </p>
+      <p style="opacity: 0.5; font-size: 0.8rem;">
+        &copy; 2026 Lic. Alfonso Villarreal. Todos los derechos reservados.
+      </p>
+      <p style="opacity: 0.4; font-size: 0.75rem; margin-top: 12px;">
+        <a href="#" style="color: inherit; text-decoration: none; margin: 0 8px;">Política de Privacidad</a>
+        <span>|</span>
+        <a href="#" style="color: inherit; text-decoration: none; margin: 0 8px;">Términos de Servicio</a>
+      </p>
     </div>
   </footer>
 
-  <!-- FLOATING WA -->
-  <div class="float-wa" aria-label="WhatsApp">
-    <button class="wa-fab" id="waFab" aria-label="Abrir WhatsApp" title="WhatsApp">✆</button>
-  </div>
-
-  <!-- STICKY CTA MÓVIL -->
-  <div class="sticky-cta" role="region" aria-label="CTA fijo">
-    <div class="sticky-inner">
-      <div class="sticky-msg"><b>Diagnóstico Legal</b><br>sin costo inicial.</div>
-      <a href="#diagnostico" class="btn btn-wa" style="flex:1;max-width:55%;justify-content:center">Solicitar ahora</a>
-    </div>
+  <!-- STICKY BOTTOM CTA (SOLO EN MÓVIL) -->
+  <div class="sticky-cta" role="region" aria-label="Acción rápida">
+    <a href="#diagnostico" class="btn btn-primary">
+      <span style="margin-right: 8px;">✓</span> Verificar Elegibilidad
+    </a>
   </div>
 
   <script>
-    const WA_GROUP = "https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t";
-    const WA_NUMBER = "50762557583";
-
-    /* ── MENÚ MÓVIL ── */
+    // ============================================
+    // MENÚ MÓVIL OPTIMIZADO
+    // ============================================
+    const burger = document.getElementById('burger');
     const drawer = document.getElementById('drawer');
-    const burger  = document.getElementById('burger');
-    const closeBtn= document.getElementById('closeDrawer');
-    const open  = () => { drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; };
-    const close = () => { drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); document.body.style.overflow=''; };
-    burger.addEventListener('click', open);
-    closeBtn.addEventListener('click', close);
-    drawer.addEventListener('click', e => { if(e.target===drawer) close(); });
-    document.querySelectorAll('.dlink').forEach(a => a.addEventListener('click', close));
-
-    /* ── SMOOTH SCROLL ── */
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const el = document.querySelector(a.getAttribute('href'));
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
-      });
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const closeDrawer = document.getElementById('closeDrawer');
+    const body = document.body;
+    
+    function openDrawer() {
+      drawer.classList.add('open');
+      drawerOverlay.classList.add('open');
+      burger.setAttribute('aria-expanded', 'true');
+      drawerOverlay.setAttribute('aria-hidden', 'false');
+      body.style.overflow = 'hidden';
+      body.style.position = 'fixed';
+      body.style.width = '100%';
+      body.style.top = `-${window.scrollY}px`;
+    }
+    
+    function closeDrawerFunc() {
+      drawer.classList.remove('open');
+      drawerOverlay.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      drawerOverlay.setAttribute('aria-hidden', 'true');
+      body.style.overflow = '';
+      body.style.position = '';
+      body.style.width = '';
+      body.style.top = '';
+      window.scrollTo(0, parseInt(body.style.top || '0') * -1);
+    }
+    
+    burger.addEventListener('click', openDrawer);
+    closeDrawer.addEventListener('click', closeDrawerFunc);
+    drawerOverlay.addEventListener('click', closeDrawerFunc);
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) {
+        closeDrawerFunc();
+      }
+    });
+    
+    document.querySelectorAll('.dlink').forEach(link => {
+      link.addEventListener('click', closeDrawerFunc);
     });
 
-    /* ── FLOATING WA ── */
-    document.getElementById('waFab').addEventListener('click', () => window.open(WA_GROUP,'_blank','noopener'));
-
-    /* ── FORMULARIO → WHATSAPP ── */
-    const form    = document.getElementById('qualifyForm');
-    const msgOut  = document.getElementById('msgOut');
-    const copyBtn = document.getElementById('copyBtn');
-    const waBtn   = document.getElementById('waBtn');
-
-    form.addEventListener('submit', e => {
+    // ============================================
+    // FORMULARIO CON VALIDACIÓN MEJORADA
+    // ============================================
+    const qualifyForm = document.getElementById('qualifyForm');
+    const formMessage = document.getElementById('formMessage');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    qualifyForm.querySelectorAll('.form-control').forEach(field => {
+      field.addEventListener('blur', function() {
+        validateField(this);
+      });
+      
+      field.addEventListener('input', function() {
+        if (this.validity.valid) {
+          this.style.borderColor = '';
+        }
+      });
+    });
+    
+    function validateField(field) {
+      if (!field.value.trim() && field.required) {
+        field.style.borderColor = 'var(--error)';
+        return false;
+      }
+      field.style.borderColor = '';
+      return true;
+    }
+    
+    qualifyForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      const nombre       = document.getElementById('qNombre').value;
-      const nacionalidad = document.getElementById('qNacionalidad').value;
-      const tiempo       = document.getElementById('qTiempo').value;
-      const familia      = document.getElementById('qFamilia').value;
-      const inicio       = document.getElementById('qInicio').value;
-
-      const texto = [
-        "🏛️ *SOLICITUD DE DIAGNÓSTICO LEGAL — naturalizate.pa* 🏛️",
-        "",
-        "Estimado Lic. Villarreal, solicito agendar mi sesión de diagnóstico para naturalización.",
-        "",
-        `👤 *Nombre:* ${nombre}`,
-        `🌎 *Nacionalidad:* ${nacionalidad}`,
-        `📅 *Residencia Permanente:* ${tiempo}`,
-        `👨‍👩‍👧 *Vínculo Familiar:* ${familia}`,
-        `⏱️ *Disponibilidad:* ${inicio}`,
-        "",
-        "Quedo a la espera de validación y disponibilidad. Gracias."
-      ].join('\n');
-
-      msgOut.value = texto;
-      const enc = encodeURIComponent(texto);
-      waBtn.href = `https://wa.me/${WA_NUMBER}?text=${enc}`;
-      msgOut.scrollIntoView({behavior:'smooth',block:'center'});
-    });
-
-    copyBtn.addEventListener('click', async () => {
-      if(!msgOut.value) return;
-      try {
-        await navigator.clipboard.writeText(msgOut.value);
-      } catch(err) {
-        msgOut.select(); document.execCommand('copy');
-      }
-      copyBtn.textContent = 'Copiado ✓';
-      setTimeout(() => copyBtn.textContent = 'Copiar Mensaje', 1800);
-    });
-
-    /* ── CARRUSEL TESTIMONIOS ── */
-    (function(){
-      const track  = document.getElementById('tTrack');
-      if(!track) return;
-      const slides = Array.from(track.children);
-      const dotsW  = document.getElementById('tDots');
-      const prevB  = document.getElementById('tPrev');
-      const nextB  = document.getElementById('tNext');
-      let idx = 0, timer, paused = false;
-
-      const dots = slides.map((_,i) => {
-        const b = document.createElement('button');
-        b.className = 'dot-btn'; b.type='button';
-        b.setAttribute('aria-label',`Ir al testimonio ${i+1}`);
-        b.addEventListener('click', () => go(i, true));
-        dotsW.appendChild(b); return b;
+      
+      let isValid = true;
+      const requiredFields = qualifyForm.querySelectorAll('[required]');
+      
+      requiredFields.forEach(field => {
+        if (!validateField(field)) {
+          isValid = false;
+        }
       });
-
-      function render(){
-        track.style.transform = `translateX(-${idx*100}%)`;
-        dots.forEach((d,i) => d.setAttribute('aria-current', i===idx ? 'true':'false'));
+      
+      if (!isValid) {
+        showMessage('Por favor, complete todos los campos obligatorios.', 'error');
+        const firstInvalid = qualifyForm.querySelector('.form-control[style*="error"]');
+        if (firstInvalid) {
+          firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          firstInvalid.focus();
+        }
+        return;
       }
-      function go(i, user=false){
-        idx = (i+slides.length) % slides.length;
-        render();
-        if(user) restart();
+      
+      submitBtn.classList.add('loading');
+      submitBtn.innerHTML = '<span>⏳</span> Enviando...';
+      submitBtn.disabled = true;
+      
+      const formData = new FormData(qualifyForm);
+      const nombre = formData.get('nombre');
+      const nacionalidad = formData.get('nacionalidad');
+      const tiempo = formData.get('tiempo');
+      const familia = formData.get('familia');
+      const inicio = formData.get('inicio');
+
+      const mensaje = `🏛️ *SOLICITUD DE DIAGNÓSTICO LEGAL* 🏛️%0A%0A`
+        + `Estimado Lic. Villarreal, solicito agendar la sesión de diagnóstico para mi naturalización. Mis datos son:%0A%0A`
+        + `👤 *Nombre:* ${nombre}%0A`
+        + `🌎 *Nacionalidad:* ${nacionalidad}%0A`
+        + `📅 *Residencia Permanente:* ${tiempo}%0A`
+        + `👨‍👩‍👧 *Vínculo Familiar:* ${familia}%0A`
+        + `⏱️ *Disposición:* ${inicio}%0A%0A`
+        + `Quedo a la espera de su validación y disponibilidad para coordinar la sesión. Gracias.`;
+
+      const numero = "50762557583";
+      const url = `https://wa.me/${numero}?text=${mensaje}`;
+      
+      setTimeout(() => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+        
+        if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+          window.location.href = url;
+        }
+        
+        submitBtn.classList.remove('loading');
+        submitBtn.innerHTML = '<span>📤</span> Enviar Solicitud y Contactar';
+        submitBtn.disabled = false;
+        
+        showMessage('¡Redirigiendo a WhatsApp... Si no se abre, revise su conexión.', 'success');
+      }, 500);
+    });
+    
+    function showMessage(text, type) {
+      formMessage.textContent = text;
+      formMessage.className = 'form-message ' + type;
+      
+      setTimeout(() => {
+        formMessage.className = 'form-message';
+      }, 5000);
+    }
+    
+    // ============================================
+    // SMOOTH SCROLL PARA ANCLAS
+    // ============================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href === '') return;
+        
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const headerHeight = document.querySelector('header').offsetHeight;
+          const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // ============================================
+    // OPTIMIZACIÓN DE RENDIMIENTO
+    // ============================================
+    document.addEventListener('DOMContentLoaded', function() {
+      const preconnect = document.createElement('link');
+      preconnect.rel = 'preconnect';
+      preconnect.href = 'https://wa.me';
+      document.head.appendChild(preconnect);
+      
+      if ('serviceWorker' in navigator) {
+        // navigator.serviceWorker.register('/sw.js');
       }
-      prevB.addEventListener('click', () => go(idx-1, true));
-      nextB.addEventListener('click', () => go(idx+1, true));
-
-      function start(){ timer = setInterval(() => { if(!paused) go(idx+1); }, 5000); }
-      function stop(){  clearInterval(timer); }
-      function restart(){ stop(); start(); }
-
-      const car = track.parentElement;
-      car.addEventListener('mouseenter', () => paused=true);
-      car.addEventListener('mouseleave', () => paused=false);
-      car.addEventListener('touchstart', () => paused=true, {passive:true});
-      car.addEventListener('touchend',   () => setTimeout(()=>paused=false, 2000), {passive:true});
-
-      let x0=null;
-      track.addEventListener('touchstart', e => x0=e.touches[0].clientX, {passive:true});
-      track.addEventListener('touchmove',  e => {
-        if(x0===null) return;
-        const dx = e.touches[0].clientX - x0;
-        if(Math.abs(dx)>50){ go(dx<0?idx+1:idx-1,true); x0=null; }
-      }, {passive:true});
-
-      render(); start();
-    })();
+    });
+    
+    function isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    
+    if (isMobile()) {
+      document.documentElement.classList.add('mobile-device');
+    }
   </script>
 </body>
 </html>

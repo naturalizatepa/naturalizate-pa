@@ -10,14 +10,12 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="format-detection" content="telephone=no" />
 
-  <!-- FUENTES: Modernas y Legibles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      /* PALETA DE COLORES */
       --navy: #0d1b2a;
       --navy2: #1b3a57;
       --navy-light: #15283a;
@@ -32,28 +30,27 @@
       --wa-dark: #128C7E;
       --error: #dc3545;
       --success: #28a745;
+      --gold: #d4a017;
+      --gold-light: #f5e6b8;
+      --accent-blue: #3498db;
       
-      /* TIPOGRAFÍA */
       --font-heading: 'Poppins', sans-serif;
       --font-body: 'Inter', sans-serif;
       
-      /* ESPACIADO Y DIMENSIONES */
       --radius: 12px;
       --radius-sm: 8px;
+      --radius-lg: 16px;
       --radius-pill: 999px;
       --shadow: 0 10px 30px rgba(0,0,0,0.1);
       --shadow-sm: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 20px 50px rgba(0,0,0,0.15);
       --max-width: 1100px;
       
-      /* ALTURAS PARA MÓVIL */
       --header-height: 70px;
       --sticky-cta-height: 80px;
-      
-      /* TAMAÑOS TÁCTILES MÍNIMOS */
       --touch-target: 44px;
     }
     
-    /* RESET Y BASE */
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
     html { 
       scroll-behavior: smooth; 
@@ -85,8 +82,7 @@
       width: 100%;
     }
     
-    /* TIPOGRAFÍA RESPONSIVA */
-    h1, h2, h3 { 
+    h1, h2, h3, h4 { 
       font-family: var(--font-heading); 
       font-weight: 600; 
       margin: 0 0 15px;
@@ -103,8 +99,12 @@
       letter-spacing: -0.3px;
     }
     h3 { 
-      font-size: clamp(1rem, 3vw, 1.1rem);
+      font-size: clamp(1rem, 3vw, 1.25rem);
       line-height: 1.4;
+    }
+    h4 {
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      margin-bottom: 8px;
     }
     p { margin: 0 0 15px; }
     .lead { 
@@ -113,7 +113,6 @@
       line-height: 1.7;
     }
     
-    /* UTILIDADES */
     .text-center { text-align: center; }
     .mx-auto { margin-left: auto; margin-right: auto; }
     .text-uppercase { 
@@ -122,8 +121,7 @@
       letter-spacing: 1.5px; 
       font-weight: 700; 
     }
-    
-    /* BOTONES OPTIMIZADOS PARA TÁCTIL */
+
     .btn {
       display: inline-flex; 
       align-items: center; 
@@ -145,10 +143,7 @@
     }
     
     @media(min-width: 600px) { 
-      .btn { 
-        width: auto; 
-        padding: 12px 32px;
-      } 
+      .btn { width: auto; padding: 12px 32px; } 
     }
 
     .btn-primary { 
@@ -157,11 +152,21 @@
       box-shadow: 0 8px 20px rgba(37,211,102,0.3);
       font-size: 0.9rem;
     }
-    .btn-primary:hover, 
-    .btn-primary:active { 
+    .btn-primary:hover, .btn-primary:active { 
       background-color: var(--wa-hover); 
       transform: translateY(-2px);
       box-shadow: 0 10px 25px rgba(37,211,102,0.4);
+    }
+    
+    .btn-wa-dark {
+      background-color: var(--wa-dark);
+      color: var(--white);
+      box-shadow: 0 8px 20px rgba(18,140,126,0.3);
+    }
+    .btn-wa-dark:hover, .btn-wa-dark:active {
+      background-color: #0f7a6e;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(18,140,126,0.4);
     }
     
     .btn-ghost { 
@@ -169,594 +174,778 @@
       border-color: rgba(255,255,255,0.4); 
       color: var(--white); 
     }
-    .btn-ghost:hover, 
-    .btn-ghost:active { 
+    .btn-ghost:hover, .btn-ghost:active { 
       background-color: rgba(255,255,255,0.15); 
       border-color: var(--white); 
     }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), #e6b82e);
+      color: var(--navy);
+      box-shadow: 0 8px 20px rgba(212,160,23,0.3);
+    }
+    .btn-gold:hover, .btn-gold:active {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(212,160,23,0.45);
+    }
     
-    /* HEADER OPTIMIZADO */
+    .btn-outline-navy {
+      background: transparent;
+      border: 2px solid var(--navy);
+      color: var(--navy);
+    }
+    .btn-outline-navy:hover, .btn-outline-navy:active {
+      background: var(--navy);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* HEADER */
     header {
-      position: sticky; 
-      top: 0; 
-      z-index: 100;
+      position: sticky; top: 0; z-index: 100;
       background: rgba(13, 27, 42, 0.98); 
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.1); 
       padding: 12px 0;
       height: var(--header-height);
-      display: flex;
-      align-items: center;
+      display: flex; align-items: center;
     }
     
-    .nav-flex { 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center;
-      width: 100%;
-    }
+    .nav-flex { display: flex; justify-content: space-between; align-items: center; width: 100%; }
     
-    /* BRAND SIN SUBRAYADO */
     .brand { 
-      display: flex; 
-      align-items: baseline; 
-      gap: 6px; 
-      text-decoration: none;
-      padding: 8px;
-      margin: -8px;
-      border-radius: var(--radius-sm);
-      transition: opacity 0.2s;
+      display: flex; align-items: baseline; gap: 6px; text-decoration: none;
+      padding: 8px; margin: -8px; border-radius: var(--radius-sm); transition: opacity 0.2s;
     }
-    .brand:hover, 
-    .brand:focus { 
-      text-decoration: none; 
-      opacity: 0.9; 
-    }
-    .brand:focus-visible {
-      outline: 2px solid var(--wa);
-      outline-offset: 4px;
-    }
+    .brand:hover, .brand:focus { text-decoration: none; opacity: 0.9; }
     .brand .name { 
-      font-weight: 300; 
-      letter-spacing: 2px; 
-      color: var(--white); 
-      font-size: clamp(14px, 3vw, 18px); 
-      text-transform: uppercase; 
-      white-space: nowrap;
+      font-weight: 300; letter-spacing: 2px; color: var(--white); 
+      font-size: clamp(14px, 3vw, 18px); text-transform: uppercase; white-space: nowrap;
     }
     .brand .tld { 
-      color: var(--wa); 
-      font-weight: 700; 
-      font-size: clamp(12px, 2.5vw, 16px); 
-      white-space: nowrap;
+      color: var(--wa); font-weight: 700; font-size: clamp(12px, 2.5vw, 16px); white-space: nowrap;
     }
     
-    .nav-links { 
-      display: flex; 
-      gap: 20px; 
-      align-items: center;
-    }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
     .nav-links a { 
-      font-size: 0.75rem; 
-      text-transform: uppercase; 
-      letter-spacing: 1px; 
-      opacity: 0.85; 
-      text-decoration: none;
-      color: var(--white); 
-      transition: all 0.2s;
-      padding: 8px 12px;
-      border-radius: var(--radius-sm);
-      min-height: var(--touch-target);
-      display: inline-flex;
-      align-items: center;
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85; 
+      text-decoration: none; color: var(--white); transition: all 0.2s;
+      padding: 8px 12px; border-radius: var(--radius-sm); min-height: var(--touch-target);
+      display: inline-flex; align-items: center;
     }
-    .nav-links a:hover { 
-      opacity: 1;
-      background: rgba(255,255,255,0.1);
-    }
+    .nav-links a:hover { opacity: 1; background: rgba(255,255,255,0.1); }
     
     .burger { 
-      display: none; 
-      background: none; 
-      border: none; 
-      font-size: 1.8rem; 
-      color: white; 
-      cursor: pointer;
-      padding: 8px;
-      min-width: var(--touch-target);
-      min-height: var(--touch-target);
-      border-radius: var(--radius-sm);
-      transition: background 0.2s;
+      display: none; background: none; border: none; font-size: 1.8rem; color: white; cursor: pointer;
+      padding: 8px; min-width: var(--touch-target); min-height: var(--touch-target);
+      border-radius: var(--radius-sm); transition: background 0.2s;
     }
     .burger:hover { background: rgba(255,255,255,0.1); }
 
-    /* HERO OPTIMIZADO */
+    /* HERO */
     .hero {
       background: linear-gradient(135deg, var(--navy), var(--navy2));
-      color: var(--white); 
-      padding: 60px 0 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      color: var(--white); padding: 60px 0 80px; text-align: center;
+      position: relative; overflow: hidden;
     }
-    
     .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
       background-image: 
         radial-gradient(circle at 20% 80%, rgba(37,211,102,0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(37,211,102,0.08) 0%, transparent 50%);
       pointer-events: none;
     }
-    
     .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border: 1px solid rgba(37,211,102,0.5); 
-      background: rgba(37,211,102,0.15);
-      color: #c9ffe0; 
-      padding: 8px 16px; 
-      border-radius: var(--radius-pill); 
-      font-size: 11px;
-      letter-spacing: 1.2px; 
-      text-transform: uppercase; 
-      margin-bottom: 24px; 
-      font-weight: 700;
+      display: inline-flex; align-items: center; gap: 6px;
+      border: 1px solid rgba(37,211,102,0.5); background: rgba(37,211,102,0.15);
+      color: #c9ffe0; padding: 8px 16px; border-radius: var(--radius-pill); font-size: 11px;
+      letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 24px; font-weight: 700;
       backdrop-filter: blur(4px);
     }
-    
     .hero-actions { 
-      display: flex; 
-      gap: 12px; 
-      flex-direction: column; 
-      align-items: center; 
-      margin-top: 32px; 
-      width: 100%;
+      display: flex; gap: 12px; flex-direction: column; align-items: center; margin-top: 32px; width: 100%;
     }
-    
-    @media(min-width: 600px) { 
-      .hero-actions { 
-        flex-direction: row; 
-        justify-content: center; 
-      } 
-    }
-    
+    @media(min-width: 600px) { .hero-actions { flex-direction: row; justify-content: center; } }
+
     /* SECCIONES */
-    section { 
-      padding: 60px 0;
-    }
+    section { padding: 60px 0; }
+    @media(min-width: 768px) { section { padding: 80px 0; } }
     
-    @media(min-width: 768px) {
-      section { padding: 80px 0; }
-    }
-    
-    .grid-3 { 
-      display: grid; 
-      grid-template-columns: 1fr; 
-      gap: 20px; 
-    }
-    
-    @media(min-width: 768px) { 
-      .grid-3 { 
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 24px;
-      } 
-    }
-    
-    /* CARDS OPTIMIZADAS */
+    .grid-3 { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    @media(min-width: 768px) { .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media(min-width: 768px) { .grid-2 { grid-template-columns: repeat(2, 1fr); gap: 30px; } }
+
+    .grid-2-1 { display: grid; grid-template-columns: 1fr; gap: 30px; }
+    @media(min-width: 768px) { .grid-2-1 { grid-template-columns: 2fr 1fr; gap: 40px; align-items: start; } }
+
     .card { 
-      background: var(--white); 
-      padding: 24px; 
-      border-radius: var(--radius); 
-      border: 1px solid var(--gray1); 
-      box-shadow: var(--shadow-sm);
+      background: var(--white); padding: 24px; border-radius: var(--radius); 
+      border: 1px solid var(--gray1); box-shadow: var(--shadow-sm);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    
     @media(min-width: 768px) {
-      .card { 
-        padding: 30px;
-        box-shadow: var(--shadow);
-      }
-      .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-      }
+      .card { padding: 30px; box-shadow: var(--shadow); }
+      .card:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
     }
-    
-    /* FORMULARIO OPTIMIZADO PARA MÓVIL */
+
     .form-container { 
-      background: var(--white); 
-      border: 1px solid var(--gray1); 
-      border-radius: var(--radius); 
-      padding: 24px; 
-      box-shadow: var(--shadow-sm);
+      background: var(--white); border: 1px solid var(--gray1); border-radius: var(--radius); 
+      padding: 24px; box-shadow: var(--shadow-sm);
     }
-    
-    @media(min-width: 768px) {
-      .form-container { 
-        padding: 40px; 
-        box-shadow: var(--shadow);
-      }
-    }
-    
-    .form-group { 
-      margin-bottom: 20px; 
-      text-align: left; 
-    }
-    
+    @media(min-width: 768px) { .form-container { padding: 40px; box-shadow: var(--shadow); } }
+
+    .form-group { margin-bottom: 20px; text-align: left; }
     .form-group label { 
-      display: block; 
-      font-size: 0.75rem; 
-      text-transform: uppercase; 
-      letter-spacing: 1px; 
-      margin-bottom: 8px; 
-      font-weight: 600; 
-      color: var(--navy);
+      display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; 
+      margin-bottom: 8px; font-weight: 600; color: var(--navy);
     }
-    
     .form-control { 
-      width: 100%; 
-      padding: 14px 16px; 
-      background: var(--gray0); 
-      border: 1px solid var(--gray1); 
-      color: var(--text); 
-      border-radius: var(--radius-sm); 
-      font-family: var(--font-body); 
-      font-size: 16px;
-      min-height: var(--touch-target);
-      transition: all 0.2s;
-      -webkit-appearance: none;
-      appearance: none;
+      width: 100%; padding: 14px 16px; background: var(--gray0); 
+      border: 1px solid var(--gray1); color: var(--text); border-radius: var(--radius-sm); 
+      font-family: var(--font-body); font-size: 16px; min-height: var(--touch-target);
+      transition: all 0.2s; -webkit-appearance: none; appearance: none;
     }
-    
     .form-control:focus {
-      outline: none;
-      border-color: var(--wa);
-      box-shadow: 0 0 0 3px rgba(37,211,102,0.15);
-      background: var(--white);
+      outline: none; border-color: var(--wa); box-shadow: 0 0 0 3px rgba(37,211,102,0.15); background: var(--white);
     }
-    
-    .form-control:invalid {
-      border-color: var(--error);
-    }
-    
+    .form-control:invalid { border-color: var(--error); }
     select.form-control {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236c757d' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 16px center;
-      padding-right: 40px;
+      background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px;
     }
-    
-    /* TESTIMONIOS */
-    .testimonial { 
-      text-align: center; 
-      max-width: 700px; 
-      margin: 0 auto; 
-      padding: 20px;
-    }
-    
-    .quote { 
-      font-family: var(--font-heading); 
-      font-size: clamp(1.1rem, 3vw, 1.3rem); 
-      font-style: italic; 
-      line-height: 1.7; 
-      margin-bottom: 20px; 
+
+    /* LEAD MAGNET SECTION */
+    .lead-magnet-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
       color: var(--white);
+      position: relative;
+      overflow: hidden;
     }
-    
-    .author { 
-      font-size: 0.85rem; 
-      font-weight: 700; 
-      letter-spacing: 1px; 
-      color: var(--white); 
-      text-transform: uppercase; 
-      opacity: 0.9;
+    .lead-magnet-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(212,160,23,0.08) 0%, transparent 70%);
+      pointer-events: none;
     }
-
-    /* FAQ OPTIMIZADO */
-    details { 
-      background: var(--white); 
-      border: 1px solid var(--gray1); 
-      border-radius: var(--radius); 
-      padding: 16px 20px; 
-      margin-bottom: 12px;
-      transition: all 0.2s;
+    .lead-magnet-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
     }
-    
-    details[open] {
-      box-shadow: var(--shadow-sm);
-    }
-    
-    summary { 
-      font-weight: 600; 
-      color: var(--navy); 
-      cursor: pointer; 
-      list-style: none; 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center;
-      padding: 8px 0;
-      min-height: var(--touch-target);
-      -webkit-tap-highlight-color: transparent;
-    }
-    
-    summary::-webkit-details-marker { display: none; }
-    
-    summary::after {
-      content: '+';
-      font-size: 1.4rem;
-      color: var(--wa);
-      font-weight: 300;
-      line-height: 1;
-      transition: transform 0.2s;
-    }
-    
-    details[open] summary::after {
-      content: '−';
-      transform: rotate(0);
-    }
-    
-    details p {
-      margin-top: 12px;
-      padding-top: 12px;
-      border-top: 1px solid var(--gray1);
-      color: var(--muted);
-      line-height: 1.7;
-    }
-    
-    /* FOOTER */
-    footer { 
-      background: var(--navy); 
-      color: var(--white); 
-      padding: 40px 0; 
-      text-align: center; 
-      font-size: 0.85rem; 
-      opacity: 0.95;
-    }
-    
-    /* STICKY CTA OPTIMIZADO PARA MÓVIL */
-    .sticky-cta {
-      position: fixed; 
-      left: 0; 
-      right: 0; 
-      bottom: 0; 
-      z-index: 90;
-      background: rgba(255, 255, 255, 0.98); 
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-top: 1px solid var(--gray1);
-      padding: 12px 20px;
-      padding-bottom: calc(12px + env(safe-area-inset-bottom));
-      box-shadow: 0 -5px 25px rgba(0,0,0,0.12);
-    }
-    
-    .sticky-cta .btn { 
-      width: 100%;
-      font-size: 0.9rem;
-      padding: 16px 24px;
-    }
-    
-    @media(min-width: 901px) { 
-      .sticky-cta { display: none; } 
-    }
-
-    /* DRAWER/MENÚ MÓVIL OPTIMIZADO */
-    .drawer-overlay {
-      position: fixed;
+    .lead-magnet-card::before {
+      content: '';
+      position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: 199;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), #e6b82e, var(--gold));
     }
-    
-    .drawer-overlay.open {
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .drawer { 
-      position: fixed; 
-      top: 0; 
-      right: 0; 
-      width: 100%; 
-      max-width: 320px; 
-      height: 100%; 
-      height: 100vh;
-      height: 100dvh;
-      background: var(--navy); 
-      z-index: 200; 
-      transform: translateX(100%); 
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-      padding: 80px 24px 40px;
-      box-shadow: -5px 0 30px rgba(0,0,0,0.4);
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .drawer.open { 
-      transform: translateX(0); 
-    }
-    
-    .drawer a { 
+    .lead-magnet-icon {
+      width: 80px;
+      height: 100px;
+      background: linear-gradient(135deg, var(--gold), #e6b82e);
+      border-radius: var(--radius-sm);
+      margin: 0 auto 24px;
       display: flex;
       align-items: center;
-      font-family: var(--font-heading); 
-      font-size: 1.1rem; 
-      color: white; 
-      padding: 16px 12px; 
-      margin-bottom: 8px; 
-      border-bottom: 1px solid rgba(255,255,255,0.08); 
-      text-decoration: none;
-      transition: all 0.2s;
-      min-height: var(--touch-target);
-      border-radius: var(--radius-sm);
-    }
-    
-    .drawer a:hover, 
-    .drawer a:active { 
-      color: var(--wa);
-      background: rgba(255,255,255,0.08);
-    }
-    
-    .close-drawer { 
-      position: absolute; 
-      top: 16px; 
-      right: 16px; 
-      font-size: 2rem; 
-      background: rgba(255,255,255,0.1); 
-      border: none; 
-      color: white; 
-      cursor: pointer; 
-      width: 44px; 
-      height: 44px; 
-      display: flex; 
-      align-items: center; 
       justify-content: center;
-      border-radius: 50%;
-      transition: all 0.2s;
-      min-width: var(--touch-target);
-      min-height: var(--touch-target);
+      font-size: 2.2rem;
+      box-shadow: 0 8px 25px rgba(212,160,23,0.3);
+      position: relative;
     }
-    
-    .close-drawer:hover, 
-    .close-drawer:active { 
-      background: rgba(255,255,255,0.2);
-      transform: rotate(90deg);
+    .lead-magnet-icon::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 0;
+      right: 0;
+      bottom: 8px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.3), transparent);
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    }
+    .lead-magnet-checklist {
+      text-align: left;
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin: 20px 0;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .lead-magnet-checklist li {
+      list-style: none;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .lead-magnet-checklist li:last-child {
+      border-bottom: none;
+    }
+    .lead-magnet-checklist li::before {
+      content: '✓';
+      color: var(--wa);
+      font-weight: 700;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      background: rgba(37,211,102,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      margin-top: 2px;
+    }
+    .dm-instruction {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37,211,102,0.12);
+      border: 1px solid rgba(37,211,102,0.3);
+      border-radius: var(--radius-pill);
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 16px;
+    }
+    .dm-instruction span.code {
+      background: var(--wa);
+      color: var(--white);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
-    /* MEDIA QUERIES RESPONSIVAS */
-    @media (max-width: 900px) {
-      .nav-links, 
-      .nav-cta-desktop { 
-        display: none; 
-      }
-      .burger { 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      .wrap { padding: 0 16px; }
+    /* WHATSAPP FUNNEL */
+    .wa-funnel-section {
+      background: linear-gradient(180deg, var(--gray0) 0%, #e8f5e9 100%);
     }
-    
-    @media (max-width: 480px) {
-      :root {
-        --header-height: 60px;
-      }
-      
-      .wrap { padding: 0 14px; }
-      
-      .hero {
-        padding: 50px 0 60px;
-      }
-      
-      .badge {
-        font-size: 10px;
-        padding: 6px 12px;
-      }
-      
-      h1 {
-        font-size: 1.6rem;
-        line-height: 1.3;
-      }
-      
-      .lead {
-        font-size: 1rem;
-      }
-      
-      .card {
-        padding: 20px;
-      }
-      
-      .form-container {
-        padding: 20px 16px;
-      }
-      
-      .btn {
-        padding: 16px 20px;
-        font-size: 0.85rem;
-      }
-      
-      .sticky-cta {
-        padding: 10px 14px;
-        padding-bottom: calc(10px + env(safe-area-inset-bottom));
-      }
+    .wa-funnel-container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      border: 1px solid var(--gray1);
     }
-    
-    @supports (padding: max(0px)) {
-      .wrap {
-        padding-left: max(20px, env(safe-area-inset-left));
-        padding-right: max(20px, env(safe-area-inset-right));
-      }
-      
-      header {
-        padding-top: max(12px, env(safe-area-inset-top));
-      }
+    .wa-funnel-header {
+      background: linear-gradient(135deg, var(--wa-dark), #0f7a6e);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
+    .wa-avatar {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .wa-header-info h4 {
+      margin: 0;
+      color: var(--white);
+      font-size: 1rem;
+    }
+    .wa-header-info p {
+      margin: 0;
+      font-size: 0.75rem;
+      opacity: 0.85;
+      color: rgba(255,255,255,0.8);
+    }
+    .wa-chat-body {
+      padding: 24px;
+      min-height: 300px;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e8f5e9' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") var(--gray0);
+    }
+    .wa-bubble {
+      background: var(--white);
+      border-radius: var(--radius) var(--radius) var(--radius) 4px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      max-width: 85%;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      animation: bubbleIn 0.4s ease-out forwards;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    .wa-bubble.bot {
+      background: var(--white);
+    }
+    .wa-bubble.user {
+      background: #dcf8c6;
+      border-radius: var(--radius) var(--radius) 4px var(--radius);
+      margin-left: auto;
+      text-align: right;
+    }
+    .wa-bubble .wa-time {
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-align: right;
+      margin-top: 4px;
+      display: block;
+    }
+    @keyframes bubbleIn {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+    .wa-bubble:nth-child(1) { animation-delay: 0.3s; }
+    .wa-bubble:nth-child(2) { animation-delay: 0.8s; }
+    .wa-bubble:nth-child(3) { animation-delay: 1.3s; }
+    .wa-bubble:nth-child(4) { animation-delay: 1.8s; }
+    .wa-bubble:nth-child(5) { animation-delay: 2.3s; }
     
-    .hero > .wrap > * {
-      animation: fadeInUp 0.6s ease-out forwards;
+    .wa-buttons-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+      animation: bubbleIn 0.4s ease-out 2s forwards;
+      opacity: 0;
+    }
+    .wa-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      background: var(--white);
+      border: 1px solid var(--wa-dark);
+      border-radius: var(--radius-pill);
+      color: var(--wa-dark);
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      min-height: var(--touch-target);
+    }
+    .wa-btn:hover, .wa-btn:active {
+      background: var(--wa-dark);
+      color: var(--white);
+    }
+    .wa-cta-bottom {
+      padding: 20px 24px;
+      background: var(--white);
+      border-top: 1px solid var(--gray1);
+      text-align: center;
+    }
+    .wa-cta-bottom .btn {
+      font-size: 0.9rem;
+      padding: 16px 24px;
+    }
+
+    /* PRICING */
+    .pricing-section {
+      background: linear-gradient(180deg, var(--white) 0%, var(--gray0) 100%);
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    @media(min-width: 768px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+    }
+    .pricing-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray1);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .pricing-card.featured {
+      border-color: var(--wa);
+      box-shadow: var(--shadow);
+    }
+    .pricing-card.featured::before {
+      content: '★ MÁS POPULAR';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(90deg, var(--wa), #20bd5a);
+      color: var(--white);
+      text-align: center;
+      padding: 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      z-index: 1;
+    }
+    .pricing-header {
+      padding: 32px 24px 24px;
+      text-align: center;
+      border-bottom: 1px solid var(--gray1);
+    }
+    .pricing-card.featured .pricing-header {
+      padding-top: 48px;
+    }
+    .pricing-name {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .pricing-price {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .pricing-price .currency {
+      font-size: 0.5em;
+      vertical-align: super;
+      margin-right: 2px;
+      font-weight: 600;
+    }
+    .pricing-price .range {
+      display: block;
+      font-size: 0.4em;
+      color: var(--muted);
+      font-weight: 400;
+      margin-top: 4px;
+    }
+    .pricing-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .pricing-features {
+      padding: 24px;
+      list-style: none;
+      margin: 0;
+    }
+    .pricing-features li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--gray1);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+    .pricing-features li .check-icon {
+      color: var(--wa);
+      font-weight: 700;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      background: rgba(37,211,102,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      margin-top: 2px;
+    }
+    .pricing-cta {
+      padding: 0 24px 24px;
+    }
+    .pricing-cta .btn {
+      margin-bottom: 10px;
+    }
+
+    /* CONSULTA OFERTA */
+    .consulta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, var(--gold), #e6b82e);
+      color: var(--navy);
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .consulta-card {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--gold);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    .consulta-header {
+      background: linear-gradient(135deg, var(--navy), var(--navy2));
+      color: var(--white);
+      padding: 28px 24px;
+      text-align: center;
+      position: relative;
+    }
+    .consulta-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: var(--white);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    .consulta-price {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 8px 0 4px;
+    }
+    .consulta-price .currency {
+      font-size: 1.2rem;
+      vertical-align: super;
+    }
+    .consulta-body {
+      padding: 24px;
+    }
+    .consulta-steps {
+      list-style: none;
+      margin: 0 0 20px;
+      padding: 0;
+    }
+    .consulta-steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gray1);
+      font-size: 0.9rem;
+    }
+    .consulta-steps li:last-child {
+      border-bottom: none;
+    }
+    .step-number {
+      width: 28px;
+      height: 28px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .discount-box {
+      background: linear-gradient(135deg, rgba(212,160,23,0.1), rgba(212,160,23,0.05));
+      border: 1px solid rgba(212,160,23,0.3);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+      margin-top: 16px;
+    }
+    .discount-box strong {
+      color: var(--gold);
+    }
+
+    /* TESTIMONIOS */
+    .testimonial { text-align: center; max-width: 700px; margin: 0 auto; padding: 20px; }
+    .quote { 
+      font-family: var(--font-heading); font-size: clamp(1.1rem, 3vw, 1.3rem); font-style: italic; 
+      line-height: 1.7; margin-bottom: 20px; color: var(--white);
+    }
+    .author { 
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; color: var(--white); 
+      text-transform: uppercase; opacity: 0.9;
+    }
+
+    /* FAQ */
+    details { 
+      background: var(--white); border: 1px solid var(--gray1); border-radius: var(--radius); 
+      padding: 16px 20px; margin-bottom: 12px; transition: all 0.2s;
+    }
+    details[open] { box-shadow: var(--shadow-sm); }
+    summary { 
+      font-weight: 600; color: var(--navy); cursor: pointer; list-style: none; 
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 8px 0; min-height: var(--touch-target); -webkit-tap-highlight-color: transparent;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: '+'; font-size: 1.4rem; color: var(--wa); font-weight: 300; line-height: 1; transition: transform 0.2s;
+    }
+    details[open] summary::after { content: '−'; transform: rotate(0); }
+    details p {
+      margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--gray1);
+      color: var(--muted); line-height: 1.7;
+    }
+
+    /* FOOTER */
+    footer { 
+      background: var(--navy); color: var(--white); padding: 40px 0; text-align: center; 
+      font-size: 0.85rem; opacity: 0.95;
+    }
+
+    /* STICKY CTA */
+    .sticky-cta {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+      background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--gray1);
+      padding: 12px 20px; padding-bottom: calc(12px + env(safe-area-inset-bottom));
+      box-shadow: 0 -5px 25px rgba(0,0,0,0.12);
+    }
+    .sticky-cta .btn { width: 100%; font-size: 0.9rem; padding: 16px 24px; }
+    @media(min-width: 901px) { .sticky-cta { display: none; } }
+
+    /* DRAWER */
+    .drawer-overlay {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6); z-index: 199;
+      opacity: 0; visibility: hidden; transition: all 0.3s ease;
+      backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+    }
+    .drawer-overlay.open { opacity: 1; visibility: visible; }
+    .drawer { 
+      position: fixed; top: 0; right: 0; width: 100%; max-width: 320px; 
+      height: 100%; height: 100vh; height: 100dvh;
+      background: var(--navy); z-index: 200; transform: translateX(100%); 
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+      padding: 80px 24px 40px; box-shadow: -5px 0 30px rgba(0,0,0,0.4);
+      display: flex; flex-direction: column;
+    }
+    .drawer.open { transform: translateX(0); }
+    .drawer a { 
+      display: flex; align-items: center; font-family: var(--font-heading); font-size: 1.1rem; 
+      color: white; padding: 16px 12px; margin-bottom: 8px; 
+      border-bottom: 1px solid rgba(255,255,255,0.08); text-decoration: none;
+      transition: all 0.2s; min-height: var(--touch-target); border-radius: var(--radius-sm);
+    }
+    .drawer a:hover, .drawer a:active { color: var(--wa); background: rgba(255,255,255,0.08); }
+    .close-drawer { 
+      position: absolute; top: 16px; right: 16px; font-size: 2rem; background: rgba(255,255,255,0.1); 
+      border: none; color: white; cursor: pointer; width: 44px; height: 44px; 
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; transition: all 0.2s; min-width: var(--touch-target); min-height: var(--touch-target);
+    }
+    .close-drawer:hover, .close-drawer:active { background: rgba(255,255,255,0.2); transform: rotate(90deg); }
+
+    /* MEDIA QUERIES */
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta-desktop { display: none; }
+      .burger { display: flex; align-items: center; justify-content: center; }
+      .wrap { padding: 0 16px; }
+    }
+    @media (max-width: 480px) {
+      :root { --header-height: 60px; }
+      .wrap { padding: 0 14px; }
+      .hero { padding: 50px 0 60px; }
+      .badge { font-size: 10px; padding: 6px 12px; }
+      h1 { font-size: 1.6rem; line-height: 1.3; }
+      .lead { font-size: 1rem; }
+      .card { padding: 20px; }
+      .form-container { padding: 20px 16px; }
+      .btn { padding: 16px 20px; font-size: 0.85rem; }
+      .sticky-cta { padding: 10px 14px; padding-bottom: calc(10px + env(safe-area-inset-bottom)); }
+      .lead-magnet-card { padding: 24px 16px; }
+      .consulta-price { font-size: 2.4rem; }
+    }
+    @supports (padding: max(0px)) {
+      .wrap { padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
+      header { padding-top: max(12px, env(safe-area-inset-top)); }
     }
     
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero > .wrap > * { animation: fadeInUp 0.6s ease-out forwards; }
     .hero > .wrap > *:nth-child(1) { animation-delay: 0.1s; }
     .hero > .wrap > *:nth-child(2) { animation-delay: 0.2s; }
     .hero > .wrap > *:nth-child(3) { animation-delay: 0.3s; }
     .hero > .wrap > *:nth-child(4) { animation-delay: 0.4s; }
     
-    .loading {
-      opacity: 0.6;
-      pointer-events: none;
+    .loading { opacity: 0.6; pointer-events: none; }
+    .form-message { padding: 12px 16px; border-radius: var(--radius-sm); margin-bottom: 16px; font-size: 0.9rem; display: none; }
+    .form-message.error { background: rgba(220, 53, 69, 0.1); color: var(--error); border: 1px solid var(--error); display: block; }
+    .form-message.success { background: rgba(40, 167, 69, 0.1); color: var(--success); border: 1px solid var(--success); display: block; }
+
+    /* Scroll animations */
+    .fade-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    
-    .form-message {
-      padding: 12px 16px;
-      border-radius: var(--radius-sm);
-      margin-bottom: 16px;
-      font-size: 0.9rem;
-      display: none;
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
-    
-    .form-message.error {
-      background: rgba(220, 53, 69, 0.1);
-      color: var(--error);
-      border: 1px solid var(--error);
-      display: block;
+
+    /* Price range visual */
+    .price-range-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 12px 0;
+      padding: 8px 0;
     }
-    
-    .form-message.success {
-      background: rgba(40, 167, 69, 0.1);
-      color: var(--success);
-      border: 1px solid var(--success);
-      display: block;
+    .price-bar {
+      flex: 1;
+      height: 6px;
+      background: var(--gray2);
+      border-radius: 3px;
+      position: relative;
+      overflow: hidden;
+    }
+    .price-bar-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--wa), var(--wa-dark));
+      border-radius: 3px;
+      width: 60%;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- OVERLAY PARA MENÚ MÓVIL -->
   <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
 
   <!-- HEADER -->
@@ -766,8 +955,8 @@
         <div class="name">NATURALÍZATE</div><div class="tld">.PA</div>
       </a>
       <nav class="nav-links" aria-label="Navegación principal">
-        <a href="#riesgos">Contexto</a>
-        <a href="#testimonios">Casos</a>
+        <a href="#guia">Guía Gratuita</a>
+        <a href="#precios">Precios</a>
         <a href="#diagnostico">Diagnóstico</a>
       </nav>
       <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer">
@@ -776,17 +965,20 @@
     </div>
   </header>
 
-  <!-- MENÚ MÓVIL OPTIMIZADO -->
+  <!-- MENÚ MÓVIL -->
   <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
     <button class="close-drawer" id="closeDrawer" aria-label="Cerrar menú">
       <span aria-hidden="true">×</span>
     </button>
     <nav style="margin-top: 40px;">
-      <a href="#riesgos" class="dlink">
-        <span>📋</span>&nbsp; Contexto
+      <a href="#guia" class="dlink">
+        <span>📋</span>&nbsp; Guía Gratuita
       </a>
-      <a href="#testimonios" class="dlink">
-        <span>⭐</span>&nbsp; Casos de Éxito
+      <a href="#whatsapp" class="dlink">
+        <span>💬</span>&nbsp; WhatsApp
+      </a>
+      <a href="#precios" class="dlink">
+        <span>💰</span>&nbsp; Precios y Planes
       </a>
       <a href="#diagnostico" class="dlink" style="color: var(--wa); border-color: rgba(37,211,102,0.3);">
         <span>✅</span>&nbsp; Verificar Elegibilidad
@@ -799,7 +991,7 @@
     </div>
   </div>
 
-  <!-- HERO - ✅ GRUPO ELIMINADO -->
+  <!-- HERO -->
   <main class="hero" role="main">
     <div class="wrap">
       <div class="badge">
@@ -809,27 +1001,252 @@
       <p class="lead mx-auto">Formalice su estatus definitivo. Obtenga pasaporte y seguridad jurídica mediante un proceso estructurado y transparente.</p>
       <div class="hero-actions">
         <a href="#diagnostico" class="btn btn-primary">Verificar Elegibilidad Ahora</a>
+        <a href="#guia" class="btn btn-ghost">Descargar Guía Gratuita</a>
       </div>
     </div>
   </main>
 
-  <!-- RIESGOS -->
-  <section id="riesgos" aria-labelledby="riesgos-title">
-    <div class="wrap text-center">
-      <h2 id="riesgos-title" style="margin-bottom: 40px;">El Riesgo de la Informalidad Jurídica</h2>
-      <div class="grid-3">
-        <article class="card">
-          <h3 style="color:var(--navy);">⚖️ Riesgo Regulatorio</h3>
-          <p style="color:var(--muted); margin-bottom: 0;">La normativa migratoria es cambiante. Un error administrativo puede derivar en un rechazo definitivo de su solicitud.</p>
-        </article>
-        <article class="card">
-          <h3 style="color:var(--navy);">📚 Examen Oficial</h3>
-          <p style="color:var(--muted); margin-bottom: 0;">El temario es extenso. Enfrentar la prueba sin una estrategia académica aumenta significativamente el riesgo de reprobación.</p>
-        </article>
-        <article class="card">
-          <h3 style="color:var(--navy);">🔒 Inestabilidad</h3>
-          <p style="color:var(--muted); margin-bottom: 0;">Mantenerse solo con residencia limita su capacidad de planificación a largo plazo y la plenitud de sus derechos civiles.</p>
-        </article>
+  <!-- LEAD MAGNET - GUÍA DESCARGABLE -->
+  <section id="guia" class="lead-magnet-section" aria-labelledby="guia-title">
+    <div class="wrap text-center fade-section">
+      <p class="text-uppercase" style="color: var(--gold);">📥 Recurso Gratuito</p>
+      <h2 id="guia-title" style="color: var(--white); margin-bottom: 10px;">Checklist Definitivo para la Naturalización</h2>
+      <p class="mx-auto" style="max-width: 600px; color: rgba(255,255,255,0.8); margin-bottom: 32px;">
+        Documentos, plazos y costos exactos para su trámite de naturalización en Panamá. Todo en una sola guía.
+      </p>
+
+      <div class="lead-magnet-card">
+        <div class="lead-magnet-icon">📄</div>
+        <h3 style="color: var(--white); margin-bottom: 8px;">Guía Descargable Completa</h3>
+        <p style="color: rgba(255,255,255,0.75); font-size: 0.9rem; margin-bottom: 0;">
+          El checklist que le evita rechazos, pérdida de tiempo y gastos innecesarios.
+        </p>
+
+        <div class="lead-magnet-checklist">
+          <li>Lista completa de documentos requeridos por la Ley Migratoria</li>
+          <li>Plazos estimados de cada etapa del proceso</li>
+          <li>Desglose detallado de costos oficiales y honorarios</li>
+          <li>Requisitos del examen de historia y geografía</li>
+          <li>Errores comunes que causan el rechazo de la solicitud</li>
+          <li>Cronograma paso a paso desde la solicitud hasta la resolución</li>
+        </div>
+
+        <a href="#diagnostico" class="btn btn-gold" style="margin-top: 8px;">
+          <span>📥</span>&nbsp; Descargar Checklist Gratuito
+        </a>
+
+        <div class="dm-instruction" style="margin-top: 20px;">
+          💬 Comente <span class="code">GUÍA</span> en nuestros vídeos y recíbala automáticamente por DM
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHATSAPP FUNNEL -->
+  <section id="whatsapp" class="wa-funnel-section" aria-labelledby="whatsapp-title">
+    <div class="wrap text-center fade-section">
+      <p class="text-uppercase" style="color: var(--wa);">Respuesta Inmediata</p>
+      <h2 id="whatsapp-title" style="margin-bottom: 10px;">¿Quiere Nacionalizarse?</h2>
+      <p class="mx-auto" style="max-width: 600px; margin-bottom: 40px; color: var(--muted);">
+        Inicie una conversación automatizada por WhatsApp. En 24 horas un asesor le enviará sus requisitos personalizados y el costo de la consulta.
+      </p>
+
+      <div class="wa-funnel-container">
+        <div class="wa-funnel-header">
+          <div class="wa-avatar">⚖️</div>
+          <div class="wa-header-info">
+            <h4>Asistente Migratorio</h4>
+            <p>Normalmente responde de inmediato</p>
+          </div>
+        </div>
+
+        <div class="wa-chat-body">
+          <div class="wa-bubble bot">
+            👋 ¡Hola! Bienvenido al servicio de naturalización panameña. Estoy aquí para ayudarle.
+            <span class="wa-time">Ahora</span>
+          </div>
+          <div class="wa-bubble bot">
+            Para orientarle correctamente, necesito hacerle 3 preguntas rápidas:
+            <span class="wa-time">Ahora</span>
+          </div>
+          <div class="wa-bubble bot">
+            <strong>1️⃣</strong> ¿Tiene cédula de identidad panameña tipo E (residencia permanente)?
+            <span class="wa-time">Ahora</span>
+          </div>
+          <div class="wa-bubble bot">
+            <strong>2️⃣</strong> ¿Hace cuántos años reside en Panamá?
+            <span class="wa-time">Ahora</span>
+          </div>
+          <div class="wa-bubble bot">
+            <strong>3️⃣</strong> ¿Cuál es su país de origen?
+            <span class="wa-time">Ahora</span>
+          </div>
+          <div class="wa-bubble bot">
+            ✅ Con esta información, un asesor legal le contactará en <strong>máximo 24 horas</strong> con sus requisitos personalizados y el costo de la consulta.
+            <span class="wa-time">Ahora</span>
+          </div>
+        </div>
+
+        <div class="wa-cta-bottom">
+          <a href="https://wa.me/50762557583?text=Hola%2C%20quiero%20información%20sobre%20naturalización%20panameña.%20¿Puedo%20iniciar%20el%20proceso%3F" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span style="margin-right: 8px; font-size: 1.2rem;">💬</span> Iniciar Conversación por WhatsApp
+          </a>
+          <p style="font-size: 0.75rem; color: var(--muted); margin-top: 12px; margin-bottom: 0;">
+            ⏱️ Respuesta garantizada en menos de 24 horas
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTA OFERTA -->
+  <section id="consulta" style="background: var(--gray0);" aria-labelledby="consulta-title">
+    <div class="wrap text-center fade-section">
+      <div class="consulta-badge">🎯 Sesión de Diagnóstico</div>
+      <h2 id="consulta-title" style="margin-bottom: 10px;">Primera Asesoría Legal Personalizada</h2>
+      <p class="mx-auto" style="max-width: 600px; margin-bottom: 32px; color: var(--muted);">
+        30 minutos de videollamada para evaluar su caso y diseñar su plan de acción.
+      </p>
+
+      <div class="consulta-card">
+        <div class="consulta-header">
+          <p class="text-uppercase" style="font-size: 0.7rem; letter-spacing: 1.5px; margin-bottom: 8px; opacity: 0.8;">Sesión de Diagnóstico por Videollamada</p>
+          <p class="consulta-price"><span class="currency">$</span>29<span style="font-size: 1.5rem;">.99</span></p>
+          <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 0;">Duración: 30 minutos</p>
+        </div>
+        <div class="consulta-body">
+          <ul class="consulta-steps">
+            <li>
+              <span class="step-number">1</span>
+              <div><strong>Evaluación completa</strong><br><span style="color: var(--muted); font-size: 0.85rem;">Analizamos su situación migratoria actual y documentamos su caso.</span></div>
+            </li>
+            <li>
+              <span class="step-number">2</span>
+              <div><strong>Plan de acción personalizado</strong><br><span style="color: var(--muted); font-size: 0.85rem;">Recibe un cronograma detallado con los pasos exactos para su naturalización.</span></div>
+            </li>
+            <li>
+              <span class="step-number">3</span>
+              <div><strong>Oferta de servicio completo</strong><br><span style="color: var(--muted); font-size: 0.85rem;">Precio cerrado para la gestión integral de su expediente.</span></div>
+            </li>
+          </ul>
+
+          <div class="discount-box">
+            <p style="margin: 0 0 4px; font-size: 0.85rem; font-weight: 600; color: var(--navy);">🔥 Descuento por Pago Anticipado</p>
+            <p style="margin: 0; font-size: 0.9rem; color: var(--navy); line-height: 1.5;">
+              Si contrata el servicio completo <strong>hoy mismo</strong>, el <strong>50% de esta consulta se descuenta</strong> del precio final del servicio.
+            </p>
+          </div>
+
+          <div style="margin-top: 20px;">
+            <a href="https://wa.me/50762557583?text=Hola%2C%20deseo%20agendar%20la%20sesión%20de%20diagnóstico%20de%20%2429.99%20para%20mi%20naturalización." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-bottom: 10px;">
+              <span style="margin-right: 8px;">📅</span> Agendar Mi Consulta Ahora
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS DEL SERVICIO -->
+  <section id="precios" class="pricing-section" aria-labelledby="precios-title">
+    <div class="wrap text-center fade-section">
+      <p class="text-uppercase" style="color: var(--wa);">Servicio de Naturalización</p>
+      <h2 id="precios-title" style="margin-bottom: 10px;">Planes y Tarifas</h2>
+      <p class="mx-auto" style="max-width: 600px; margin-bottom: 40px; color: var(--muted);">
+        Elija el plan que mejor se adapte a sus necesidades. Precio cerrado, sin sorpresas.
+      </p>
+
+      <div class="pricing-grid">
+        <!-- PLAN BÁSICO -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <p class="pricing-name">Plan Básico</p>
+            <div class="pricing-price">
+              <span class="currency">$</span>800
+              <span class="range">desde · según complejidad</span>
+            </div>
+            <p class="pricing-desc">Gestión documental profesional</p>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Llenado y revisión de todos los formularios oficiales</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Organización y verificación de documentos requeridos</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Presentación del expediente ante las autoridades competentes</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Seguimiento del estado del trámite</span>
+            </li>
+          </ul>
+          <div class="pricing-cta">
+            <a href="#diagnostico" class="btn btn-outline-navy">
+              Verificar Elegibilidad
+            </a>
+          </div>
+        </div>
+
+        <!-- PLAN FULL -->
+        <div class="pricing-card featured">
+          <div class="pricing-header">
+            <p class="pricing-name">Plan Full Integral</p>
+            <div class="pricing-price">
+              <span class="currency">$</span>1,500
+              <span class="range">desde · según complejidad</span>
+            </div>
+            <p class="pricing-desc">Acompañamiento completo hasta la naturalización</p>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Todo lo incluido en el Plan Básico</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Preparación completa para el examen de historia y geografía</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Simulacro de entrevista con retroalimentación</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Acompañamiento presencial a la entrevista oficial</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Material de estudio personalizado</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Consultas ilimitadas durante todo el proceso</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Prioridad en la atención y seguimiento semanal</span>
+            </li>
+          </ul>
+          <div class="pricing-cta">
+            <a href="#diagnostico" class="btn btn-primary">
+              Quiero el Plan Full
+            </a>
+            <p style="font-size: 0.75rem; color: var(--muted); margin-top: 8px; margin-bottom: 0;">
+              Recuerde: el 50% de su consulta de $29.99 se descuenta
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="max-width: 700px; margin: 32px auto 0; padding: 20px; background: rgba(37,211,102,0.06); border: 1px solid rgba(37,211,102,0.2); border-radius: var(--radius);">
+        <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">
+          💡 <strong>Nota:</strong> Los precios pueden variar según la complejidad del caso. Tras la sesión de diagnóstico, le ofrecemos un <strong>precio cerrado y definitivo</strong> para su expediente completo.
+        </p>
       </div>
     </div>
   </section>
@@ -935,22 +1352,28 @@
     <h2 id="faq-title" class="text-center" style="margin-bottom: 32px;">Consultas Frecuentes</h2>
     <div style="max-width: 800px; margin: 0 auto;">
       <details>
-        <summary>
-          <span>Diferencia entre residencia y ciudadanía</span>
-        </summary>
+        <summary><span>Diferencia entre residencia y ciudadanía</span></summary>
         <p>La residencia es un permiso de estancia temporal o permanente. La naturalización confiere la ciudadanía panameña, incluyendo pasaporte y la plenitud de derechos políticos y civiles, eliminando la necesidad de renovaciones periódicas.</p>
       </details>
       <details>
-        <summary>
-          <span>¿Por qué debo pasar por un filtro de elegibilidad?</span>
-        </summary>
+        <summary><span>¿Por qué debo pasar por un filtro de elegibilidad?</span></summary>
         <p>Nuestro despacho se rige por un estricto código de ética profesional. No aceptamos casos que no cumplen con los requisitos de la Ley Migratoria. El filtro nos permite indicarle con honestidad si está listo para el proceso o qué requisitos le faltan para estarlo.</p>
       </details>
       <details>
-        <summary>
-          <span>¿Cuánto tiempo toma el proceso de naturalización?</span>
-        </summary>
+        <summary><span>¿Cuánto tiempo toma el proceso de naturalización?</span></summary>
         <p>El proceso varía según cada caso, pero generalmente toma entre 12 a 24 meses desde la presentación de la solicitud hasta la resolución final. Nuestro equipo le brindará un cronograma estimado tras el diagnóstico inicial.</p>
+      </details>
+      <details>
+        <summary><span>¿Qué diferencia el Plan Básico del Plan Full?</span></summary>
+        <p>El Plan Básico se enfoca en la gestión documental: llenado de formularios, organización de expedientes y presentación ante las autoridades. El Plan Full incluye todo lo anterior más preparación para el examen de historia y geografía, simulacro de entrevista, acompañamiento presencial a la entrevista oficial y consultas ilimitadas durante todo el proceso.</p>
+      </details>
+      <details>
+        <summary><span>¿Cómo funciona el descuento de la consulta?</span></summary>
+        <p>Si después de la sesión de diagnóstico de $29.99 decide contratar el servicio completo de naturalización (Plan Básico o Plan Full), el 50% del valor de la consulta se descuenta del precio final. Es decir, solo pagaría $15 adicionales sobre el costo del plan elegido.</p>
+      </details>
+      <details>
+        <summary><span>¿Puedo obtener la guía gratuita sin agendar consulta?</span></summary>
+        <p>Sí. Puede descargar el Checklist Definitivo completando el formulario de diagnóstico, o simplemente comentando "GUÍA" en cualquiera de nuestros vídeos en redes sociales y recibirá la guía automáticamente por mensaje directo.</p>
       </details>
     </div>
   </section>
@@ -983,35 +1406,36 @@
 
   <script>
     // ============================================
-    // MENÚ MÓVIL OPTIMIZADO
+    // MENÚ MÓVIL
     // ============================================
     const burger = document.getElementById('burger');
     const drawer = document.getElementById('drawer');
     const drawerOverlay = document.getElementById('drawerOverlay');
     const closeDrawer = document.getElementById('closeDrawer');
-    const body = document.body;
+    const bodyEl = document.body;
     
     function openDrawer() {
       drawer.classList.add('open');
       drawerOverlay.classList.add('open');
       burger.setAttribute('aria-expanded', 'true');
       drawerOverlay.setAttribute('aria-hidden', 'false');
-      body.style.overflow = 'hidden';
-      body.style.position = 'fixed';
-      body.style.width = '100%';
-      body.style.top = `-${window.scrollY}px`;
+      bodyEl.style.overflow = 'hidden';
+      bodyEl.style.position = 'fixed';
+      bodyEl.style.width = '100%';
+      bodyEl.style.top = `-${window.scrollY}px`;
     }
     
     function closeDrawerFunc() {
+      const scrollY = bodyEl.style.top;
       drawer.classList.remove('open');
       drawerOverlay.classList.remove('open');
       burger.setAttribute('aria-expanded', 'false');
       drawerOverlay.setAttribute('aria-hidden', 'true');
-      body.style.overflow = '';
-      body.style.position = '';
-      body.style.width = '';
-      body.style.top = '';
-      window.scrollTo(0, parseInt(body.style.top || '0') * -1);
+      bodyEl.style.overflow = '';
+      bodyEl.style.position = '';
+      bodyEl.style.width = '';
+      bodyEl.style.top = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
     
     burger.addEventListener('click', openDrawer);
@@ -1029,7 +1453,7 @@
     });
 
     // ============================================
-    // FORMULARIO CON VALIDACIÓN MEJORADA
+    // FORMULARIO
     // ============================================
     const qualifyForm = document.getElementById('qualifyForm');
     const formMessage = document.getElementById('formMessage');
@@ -1039,7 +1463,6 @@
       field.addEventListener('blur', function() {
         validateField(this);
       });
-      
       field.addEventListener('input', function() {
         if (this.validity.valid) {
           this.style.borderColor = '';
@@ -1103,7 +1526,6 @@
       
       setTimeout(() => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
-        
         if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
           window.location.href = url;
         }
@@ -1119,55 +1541,68 @@
     function showMessage(text, type) {
       formMessage.textContent = text;
       formMessage.className = 'form-message ' + type;
-      
       setTimeout(() => {
         formMessage.className = 'form-message';
       }, 5000);
     }
     
     // ============================================
-    // SMOOTH SCROLL PARA ANCLAS
+    // SMOOTH SCROLL
     // ============================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
         if (href === '#' || href === '') return;
-        
         const target = document.querySelector(href);
         if (target) {
           e.preventDefault();
           const headerHeight = document.querySelector('header').offsetHeight;
           const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
-          
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
         }
       });
     });
-    
+
     // ============================================
-    // OPTIMIZACIÓN DE RENDIMIENTO
+    // SCROLL ANIMATIONS
+    // ============================================
+    const fadeSections = document.querySelectorAll('.fade-section');
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    fadeSections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // ============================================
+    // OPTIMIZACIÓN
     // ============================================
     document.addEventListener('DOMContentLoaded', function() {
       const preconnect = document.createElement('link');
       preconnect.rel = 'preconnect';
       preconnect.href = 'https://wa.me';
       document.head.appendChild(preconnect);
-      
-      if ('serviceWorker' in navigator) {
-        // navigator.serviceWorker.register('/sw.js');
-      }
     });
-    
-    function isMobile() {
+
+    function isMobileDevice() {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
     
-    if (isMobile()) {
+    if (isMobileDevice()) {
       document.documentElement.classList.add('mobile-device');
     }
   </script>
 </body>
 </html>
+

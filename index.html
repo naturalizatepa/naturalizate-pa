@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>Naturalización en Panamá | Abogado Migratorio | naturalizate.pa</title>
-  <meta name="description" content="Obtenga su ciudadanía panameña. Sesión de Diagnóstico y gestión de expediente con el Lic. Alfonso Villarreal." />
+  <meta name="description" content="Precalifíquese gratis. Elija su plan de naturalización: Básico $1,500 o Completo $2,900. Lic. Alfonso Villarreal." />
   <meta name="theme-color" content="#0d1b2a" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -317,6 +317,45 @@
       background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px;
     }
 
+    /* PRECALIFICACIÓN SECTION */
+    .prequal-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      color: var(--white);
+    }
+    .prequal-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .prequal-result {
+      display: none;
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(37,211,102,0.15);
+      border: 1px solid rgba(37,211,102,0.4);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    .prequal-result.show { display: block; animation: fadeInUp 0.4s ease; }
+    .prequal-result h4 {
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .prequal-result .plan-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 8px 0;
+    }
+    .prequal-result .cta-btn {
+      margin-top: 16px;
+    }
+
     /* LEAD MAGNET SECTION */
     .lead-magnet-section {
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
@@ -411,7 +450,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       margin-top: 2px;
     }
     .dm-instruction {
@@ -597,13 +636,13 @@
       box-shadow: var(--shadow);
     }
     .pricing-card.featured::before {
-      content: '★ MÁS POPULAR';
+      content: '★ MÁS RECOMENDADO';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(90deg, var(--wa), #20bd5a);
-      color: var(--white);
+      background: linear-gradient(90deg, var(--gold), #e6b82e);
+      color: var(--navy);
       text-align: center;
       padding: 8px;
       font-size: 0.7rem;
@@ -651,6 +690,7 @@
       font-size: 0.85rem;
       color: var(--muted);
       margin-top: 8px;
+      font-style: italic;
     }
     .pricing-features {
       padding: 24px;
@@ -682,20 +722,127 @@
       font-size: 0.65rem;
       margin-top: 2px;
     }
+    .pricing-features li .x-icon {
+      color: var(--muted);
+      font-weight: 700;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      background: rgba(108,117,125,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      margin-top: 2px;
+    }
     .pricing-cta {
       padding: 0 24px 24px;
     }
     .pricing-cta .btn {
       margin-bottom: 10px;
     }
+    .installment-info {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 8px;
+      padding: 6px 12px;
+      background: var(--gray0);
+      border-radius: var(--radius-sm);
+    }
 
-    /* CONSULTA OFERTA */
+    /* COMPARISON TABLE */
+    .comparison-section {
+      background: var(--white);
+      padding: 40px 0;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      font-size: 0.9rem;
+    }
+    .comparison-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 16px 12px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .comparison-table td {
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--gray1);
+    }
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    .comparison-table tr:hover {
+      background: var(--gray0);
+    }
+    .comparison-table .feature-name {
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .comparison-table .check {
+      color: var(--wa);
+      font-weight: 700;
+      text-align: center;
+    }
+    .comparison-table .x {
+      color: var(--muted);
+      text-align: center;
+    }
+    @media(max-width: 768px) {
+      .comparison-table {
+        font-size: 0.85rem;
+      }
+      .comparison-table th,
+      .comparison-table td {
+        padding: 12px 8px;
+      }
+    }
+
+    /* GUARANTEE BADGE */
+    .guarantee-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--success), #20c997);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin: 20px 0;
+      box-shadow: 0 4px 15px rgba(40,167,69,0.3);
+    }
+    .guarantee-text {
+      background: rgba(40,167,69,0.08);
+      border: 1px solid rgba(40,167,69,0.2);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .guarantee-text strong {
+      color: var(--success);
+    }
+
+    /* LLAMADA GRATUITA */
     .consulta-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: linear-gradient(135deg, var(--gold), #e6b82e);
-      color: var(--navy);
+      background: linear-gradient(135deg, var(--wa), var(--wa-dark));
+      color: var(--white);
       padding: 8px 16px;
       border-radius: var(--radius-pill);
       font-size: 0.75rem;
@@ -709,7 +856,7 @@
       margin: 0 auto;
       background: var(--white);
       border-radius: var(--radius-lg);
-      border: 2px solid var(--gold);
+      border: 2px solid var(--wa);
       box-shadow: var(--shadow-lg);
       overflow: hidden;
     }
@@ -735,10 +882,16 @@
       font-size: 3rem;
       font-weight: 700;
       margin: 8px 0 4px;
+      color: var(--wa);
     }
-    .consulta-price .currency {
+    .consulta-price .free {
       font-size: 1.2rem;
-      vertical-align: super;
+      background: var(--success);
+      color: var(--white);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      vertical-align: middle;
+      margin-left: 8px;
     }
     .consulta-body {
       padding: 24px;
@@ -771,17 +924,6 @@
       font-size: 0.75rem;
       font-weight: 700;
       flex-shrink: 0;
-    }
-    .discount-box {
-      background: linear-gradient(135deg, rgba(212,160,23,0.1), rgba(212,160,23,0.05));
-      border: 1px solid rgba(212,160,23,0.3);
-      border-radius: var(--radius);
-      padding: 16px;
-      text-align: center;
-      margin-top: 16px;
-    }
-    .discount-box strong {
-      color: var(--gold);
     }
 
     /* TESTIMONIOS */
@@ -915,32 +1057,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* Price range visual */
-    .price-range-bar {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 12px 0;
-      padding: 8px 0;
-    }
-    .price-bar {
-      flex: 1;
-      height: 6px;
-      background: var(--gray2);
-      border-radius: 3px;
-      position: relative;
-      overflow: hidden;
-    }
-    .price-bar-fill {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      background: linear-gradient(90deg, var(--wa), var(--wa-dark));
-      border-radius: 3px;
-      width: 60%;
-    }
   </style>
 </head>
 
@@ -955,9 +1071,10 @@
         <div class="name">NATURALÍZATE</div><div class="tld">.PA</div>
       </a>
       <nav class="nav-links" aria-label="Navegación principal">
-        <a href="#guia">Guía Gratuita</a>
-        <a href="#precios">Precios</a>
-        <a href="#diagnostico">Diagnóstico</a>
+        <a href="#prequalificar">Precalificarse</a>
+        <a href="#precios">Planes</a>
+        <a href="#comparativa">Comparativa</a>
+        <a href="#diagnostico">Llamada Gratuita</a>
       </nav>
       <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer">
         <span aria-hidden="true">☰</span>
@@ -971,17 +1088,11 @@
       <span aria-hidden="true">×</span>
     </button>
     <nav style="margin-top: 40px;">
-      <a href="#guia" class="dlink">
-        <span>📋</span>&nbsp; Guía Gratuita
-      </a>
-      <a href="#whatsapp" class="dlink">
-        <span>💬</span>&nbsp; WhatsApp
-      </a>
-      <a href="#precios" class="dlink">
-        <span>💰</span>&nbsp; Precios y Planes
-      </a>
+      <a href="#prequalificar" class="dlink"><span>✅</span>&nbsp; Precalificarse Gratis</a>
+      <a href="#precios" class="dlink"><span>💰</span>&nbsp; Planes y Precios</a>
+      <a href="#comparativa" class="dlink"><span>📊</span>&nbsp; Tabla Comparativa</a>
       <a href="#diagnostico" class="dlink" style="color: var(--wa); border-color: rgba(37,211,102,0.3);">
-        <span>✅</span>&nbsp; Verificar Elegibilidad
+        <span>📞</span>&nbsp; Llamada Gratuita
       </a>
     </nav>
     <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
@@ -995,16 +1106,94 @@
   <main class="hero" role="main">
     <div class="wrap">
       <div class="badge">
-        <span>✓</span> Ruta Legal • Examen Preparado • Seguimiento
+        <span>✓</span> Precalifíquese en 1 minuto • Sin costo • Sin compromiso
       </div>
       <h1>De la Residencia Temporal a la Ciudadanía Panameña</h1>
-      <p class="lead mx-auto">Formalice su estatus definitivo. Obtenga pasaporte y seguridad jurídica mediante un proceso estructurado y transparente.</p>
+      <p class="lead mx-auto">Responda 4 preguntas rápidas y descubra qué plan de naturalización se ajusta a su caso. Precios cerrados, garantía de satisfacción.</p>
       <div class="hero-actions">
-        <a href="#diagnostico" class="btn btn-primary">Verificar Elegibilidad Ahora</a>
-        <a href="#guia" class="btn btn-ghost">Descargar Guía Gratuita</a>
+        <a href="#prequalificar" class="btn btn-primary">🔍 Precalificarme Ahora (Gratis)</a>
+        <a href="#precios" class="btn btn-ghost">Ver Planes Directamente</a>
       </div>
     </div>
   </main>
+
+  <!-- PRECALIFICACIÓN POR ELEGIBILIDAD -->
+  <section id="prequalificar" class="prequal-section" aria-labelledby="prequal-title">
+    <div class="wrap text-center fade-section">
+      <p class="text-uppercase" style="color: var(--gold);">🎯 Paso 1: Conozca su Perfil</p>
+      <h2 id="prequal-title" style="color: var(--white); margin-bottom: 10px;">Precalificación de Elegibilidad</h2>
+      <p class="mx-auto" style="max-width: 600px; color: rgba(255,255,255,0.8); margin-bottom: 32px;">
+        Responda estas 4 preguntas para recibir una recomendación personalizada de plan. No guardamos sus respuestas.
+      </p>
+
+      <div class="prequal-card">
+        <form id="prequalForm" novalidate>
+          <div class="form-group">
+            <label for="pqTiempo">¿Cuántos años tiene con Cédula E (Residencia Permanente)?</label>
+            <select id="pqTiempo" name="tiempo" class="form-control" required>
+              <option value="" disabled selected>Seleccione...</option>
+              <option value="menos3">Menos de 3 años</option>
+              <option value="3a4">Entre 3 y 4 años</option>
+              <option value="5omas">5 años o más ✓</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="pqVinculo">¿Tiene vínculo familiar con panameños?</label>
+            <select id="pqVinculo" name="vinculo" class="form-control" required>
+              <option value="" disabled selected>Seleccione...</option>
+              <option value="conyuge">Cónyuge panameño/a ✓</option>
+              <option value="hijos">Hijos panameños ✓</option>
+              <option value="ninguno">Ninguno</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="pqDocumentos">¿Sus documentos están completos y actualizados?</label>
+            <select id="pqDocumentos" name="documentos" class="form-control" required>
+              <option value="" disabled selected>Seleccione...</option>
+              <option value="si">Sí, todos en regla ✓</option>
+              <option value="parcial">Algunos sí, otros no</option>
+              <option value="no">No, necesito ayuda para obtenerlos</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="pqPreferencia">¿Qué nivel de acompañamiento prefiere?</label>
+            <select id="pqPreferencia" name="preferencia" class="form-control" required>
+              <option value="" disabled selected>Seleccione...</option>
+              <option value="basico">Esencial: solo gestión documental</option>
+              <option value="completo">Tranquilidad total: acompañamiento completo ✓</option>
+              <option value="indeciso">No estoy seguro / Necesito orientación</option>
+            </select>
+          </div>
+          
+          <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 8px;">
+            <span>✨</span> Ver Mi Recomendación Personalizada
+          </button>
+        </form>
+        
+        <!-- RESULTADO DINÁMICO -->
+        <div id="prequalResult" class="prequal-result">
+          <h4>🎯 Basado en sus respuestas, le recomendamos:</h4>
+          <div class="plan-name" id="recommendedPlan">Plan Completo</div>
+          <p id="recommendationText" style="color: rgba(255,255,255,0.9); margin-bottom: 0;">
+            Su caso requiere preparación especializada para el examen del Tribunal Electoral y acompañamiento constante.
+          </p>
+          <a href="#diagnostico" class="btn btn-primary cta-btn" id="resultCta">
+            📞 Agendar Llamada Gratuita para Confirmar
+          </a>
+          <p style="font-size: 0.75rem; opacity: 0.8; margin-top: 12px; margin-bottom: 0;">
+            💡 La llamada es gratuita y sin compromiso. Le enviaremos la propuesta formal por escrito.
+          </p>
+        </div>
+        
+        <p style="font-size: 0.75rem; opacity: 0.7; margin-top: 16px; margin-bottom: 0;">
+          🔒 Sus respuestas no se almacenan. Solo se usan para generar la recomendación en su pantalla.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- LEAD MAGNET - GUÍA DESCARGABLE -->
   <section id="guia" class="lead-magnet-section" aria-labelledby="guia-title">
@@ -1042,118 +1231,13 @@
     </div>
   </section>
 
-  <!-- WHATSAPP FUNNEL -->
-  <section id="whatsapp" class="wa-funnel-section" aria-labelledby="whatsapp-title">
-    <div class="wrap text-center fade-section">
-      <p class="text-uppercase" style="color: var(--wa);">Respuesta Inmediata</p>
-      <h2 id="whatsapp-title" style="margin-bottom: 10px;">¿Quiere Nacionalizarse?</h2>
-      <p class="mx-auto" style="max-width: 600px; margin-bottom: 40px; color: var(--muted);">
-        Inicie una conversación automatizada por WhatsApp. En 24 horas un asesor le enviará sus requisitos personalizados y el costo de la consulta.
-      </p>
-
-      <div class="wa-funnel-container">
-        <div class="wa-funnel-header">
-          <div class="wa-avatar">⚖️</div>
-          <div class="wa-header-info">
-            <h4>Asistente Migratorio</h4>
-            <p>Normalmente responde de inmediato</p>
-          </div>
-        </div>
-
-        <div class="wa-chat-body">
-          <div class="wa-bubble bot">
-            👋 ¡Hola! Bienvenido al servicio de naturalización panameña. Estoy aquí para ayudarle.
-            <span class="wa-time">Ahora</span>
-          </div>
-          <div class="wa-bubble bot">
-            Para orientarle correctamente, necesito hacerle 3 preguntas rápidas:
-            <span class="wa-time">Ahora</span>
-          </div>
-          <div class="wa-bubble bot">
-            <strong>1️⃣</strong> ¿Tiene cédula de identidad panameña tipo E (residencia permanente)?
-            <span class="wa-time">Ahora</span>
-          </div>
-          <div class="wa-bubble bot">
-            <strong>2️⃣</strong> ¿Hace cuántos años reside en Panamá?
-            <span class="wa-time">Ahora</span>
-          </div>
-          <div class="wa-bubble bot">
-            <strong>3️⃣</strong> ¿Cuál es su país de origen?
-            <span class="wa-time">Ahora</span>
-          </div>
-          <div class="wa-bubble bot">
-            ✅ Con esta información, un asesor legal le contactará en <strong>máximo 24 horas</strong> con sus requisitos personalizados y el costo de la consulta.
-            <span class="wa-time">Ahora</span>
-          </div>
-        </div>
-
-        <div class="wa-cta-bottom">
-          <a href="https://wa.me/50762557583?text=Hola%2C%20quiero%20información%20sobre%20naturalización%20panameña.%20¿Puedo%20iniciar%20el%20proceso%3F" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            <span style="margin-right: 8px; font-size: 1.2rem;">💬</span> Iniciar Conversación por WhatsApp
-          </a>
-          <p style="font-size: 0.75rem; color: var(--muted); margin-top: 12px; margin-bottom: 0;">
-            ⏱️ Respuesta garantizada en menos de 24 horas
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONSULTA OFERTA -->
-  <section id="consulta" style="background: var(--gray0);" aria-labelledby="consulta-title">
-    <div class="wrap text-center fade-section">
-      <div class="consulta-badge">🎯 Sesión de Diagnóstico</div>
-      <h2 id="consulta-title" style="margin-bottom: 10px;">Primera Asesoría Legal Personalizada</h2>
-      <p class="mx-auto" style="max-width: 600px; margin-bottom: 32px; color: var(--muted);">
-        30 minutos de videollamada para evaluar su caso y diseñar su plan de acción.
-      </p>
-
-      <div class="consulta-card">
-        <div class="consulta-header">
-          <p class="text-uppercase" style="font-size: 0.7rem; letter-spacing: 1.5px; margin-bottom: 8px; opacity: 0.8;">Sesión de Diagnóstico por Videollamada</p>
-          <p class="consulta-price"><span class="currency">$</span>49<span style="font-size: 1.5rem;">.99</span></p>
-          <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 0;">Duración: 30 minutos</p>
-        </div>
-        <div class="consulta-body">
-          <ul class="consulta-steps">
-            <li>
-              <span class="step-number">1</span>
-              <div><strong>Evaluación completa</strong><br><span style="color: var(--muted); font-size: 0.85rem;">Analizamos su situación migratoria actual y documentamos su caso.</span></div>
-            </li>
-            <li>
-              <span class="step-number">2</span>
-              <div><strong>Plan de acción personalizado</strong><br><span style="color: var(--muted); font-size: 0.85rem;">Recibe un cronograma detallado con los pasos exactos para su naturalización.</span></div>
-            </li>
-            <li>
-              <span class="step-number">3</span>
-              <div><strong>Oferta de servicio completo</strong><br><span style="color: var(--muted); font-size: 0.85rem;">Precio cerrado para la gestión integral de su expediente.</span></div>
-            </li>
-          </ul>
-
-          <div class="discount-box">
-            <p style="margin: 0 0 4px; font-size: 0.85rem; font-weight: 600; color: var(--navy);">🔥 Descuento por Pago Anticipado</p>
-            <p style="margin: 0; font-size: 0.9rem; color: var(--navy); line-height: 1.5;">
-              Si contrata el servicio completo <strong>hoy mismo</strong>, el valor de esta consulta se descuenta del precio final del servicio.
-            </p>
-          </div>
-
-          <div style="margin-top: 20px;">
-            <a href="https://wa.me/50762557583?text=Hola%2C%20deseo%20agendar%20la%20sesión%20de%20diagnóstico%20de%20%2449.99%20para%20mi%20naturalización." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-bottom: 10px;">
-              <span style="margin-right: 8px;">📅</span> Agendar Mi Consulta Ahora
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRECIOS DEL SERVICIO -->
+  <!-- PLANES DE SERVICIO -->
   <section id="precios" class="pricing-section" aria-labelledby="precios-title">
     <div class="wrap text-center fade-section">
-      <p class="text-uppercase" style="color: var(--wa);">Servicio de Naturalización</p>
-      <h2 id="precios-title" style="margin-bottom: 10px;">Planes y Tarifas</h2>
+      <p class="text-uppercase" style="color: var(--wa);">Planes de Naturalización</p>
+      <h2 id="precios-title" style="margin-bottom: 10px;">Elija su Nivel de Acompañamiento</h2>
       <p class="mx-auto" style="max-width: 600px; margin-bottom: 40px; color: var(--muted);">
-        Elija el plan que mejor se adapte a sus necesidades. Precio cerrado, sin sorpresas.
+        Dos opciones claras. Precios cerrados. Pago en cuotas sin intereses.
       </p>
 
       <div class="pricing-grid">
@@ -1162,177 +1246,188 @@
           <div class="pricing-header">
             <p class="pricing-name">Plan Básico</p>
             <div class="pricing-price">
-              <span class="currency">$</span>2,900
-              <span class="range">desde · según complejidad</span>
+              <span class="currency">$</span>1,500
             </div>
-            <p class="pricing-desc">Gestión documental profesional</p>
+            <p class="pricing-desc">Ideal si tiene documentos en orden y busca acompañamiento esencial</p>
+            <div class="installment-info">💳 3 cuotas de $500 sin intereses</div>
           </div>
           <ul class="pricing-features">
-            <li>
-              <span class="check-icon">✓</span>
-              <span>Llenado y revisión de todos los formularios oficiales</span>
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              <span>Organización y verificación de documentos requeridos</span>
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              <span>Presentación del expediente ante las autoridades competentes</span>
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              <span>Seguimiento del estado del trámite</span>
-            </li>
+            <li><span class="check-icon">✓</span><span>Creación y revisión de carpeta migratoria</span></li>
+            <li><span class="check-icon">✓</span><span>Presentación formal ante Migración</span></li>
+            <li><span class="check-icon">✓</span><span>Preparación para primera entrevista en Migración</span></li>
+            <li><span class="check-icon">✓</span><span>Seguimiento básico del expediente</span></li>
+            <li><span class="x-icon">✕</span><span style="color:var(--muted)">Recabar pruebas documentales adicionales</span></li>
+            <li><span class="x-icon">✕</span><span style="color:var(--muted)">Preparación entrevista Tribunal Electoral</span></li>
+            <li><span class="x-icon">✕</span><span style="color:var(--muted)">Material de examen + simulacro</span></li>
+            <li><span class="x-icon">✕</span><span style="color:var(--muted)">Acompañamiento diario vía WhatsApp</span></li>
+            <li><span class="x-icon">✕</span><span style="color:var(--muted)">Seguimiento hasta juramentación</span></li>
           </ul>
           <div class="pricing-cta">
             <a href="#diagnostico" class="btn btn-outline-navy">
-              Verificar Elegibilidad
+              Agendar Llamada Gratuita
             </a>
           </div>
         </div>
 
-        <!-- PLAN FULL -->
+        <!-- PLAN COMPLETO -->
         <div class="pricing-card featured">
           <div class="pricing-header">
-            <p class="pricing-name">Plan Full Integral</p>
+            <p class="pricing-name">Plan Completo</p>
             <div class="pricing-price">
-              <span class="currency">$</span>5,500
-              <span class="range">desde · según complejidad</span>
+              <span class="currency">$</span>2,900
             </div>
-            <p class="pricing-desc">Acompañamiento completo hasta la naturalización</p>
+            <p class="pricing-desc">Tranquilidad total y máxima tasa de éxito</p>
+            <div class="installment-info">💳 3 cuotas de $966 sin intereses</div>
           </div>
           <ul class="pricing-features">
-            <li>
-              <span class="check-icon">✓</span>
-              <span>Todo lo incluido en el Plan Básico</span>
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              <span>Preparación completa para el examen de historia y geografía</span>
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              <span>Simulacro de entrevista con retroalimentación</span>
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              <span>Acompañamiento presencial a la entrevista oficial</span>
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              <span>Material de estudio personalizado</span>
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              <span>Consultas ilimitadas durante todo el proceso</span>
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              <span>Prioridad en la atención y seguimiento semanal</span>
-            </li>
+            <li><span class="check-icon">✓</span><span><strong>Todo lo del Plan Básico</strong></span></li>
+            <li><span class="check-icon">✓</span><span>Recabar y organizar todas las pruebas documentales</span></li>
+            <li><span class="check-icon">✓</span><span>Preparación especial para entrevista en Tribunal Electoral (Las Américas)</span></li>
+            <li><span class="check-icon">✓</span><span>Material completo de estudio: historia y geografía de Panamá</span></li>
+            <li><span class="check-icon">✓</span><span>Práctica de examen con simulacro y corrección personalizada</span></li>
+            <li><span class="check-icon">✓</span><span>Prólogo y guía paso a paso para el día del examen</span></li>
+            <li><span class="check-icon">✓</span><span>Acompañamiento diario vía WhatsApp (consultas ilimitadas)</span></li>
+            <li><span class="check-icon">✓</span><span>Seguimiento activo hasta la juramentación y obtención de Cédula N</span></li>
           </ul>
           <div class="pricing-cta">
             <a href="#diagnostico" class="btn btn-primary">
-              Quiero el Plan Full
+              Quiero el Plan Completo
             </a>
             <p style="font-size: 0.75rem; color: var(--muted); margin-top: 8px; margin-bottom: 0;">
-              Recuerde: el valor de su consulta de $49.99 se descuenta del precio final
+              🎁 Incluye garantía de satisfacción
             </p>
           </div>
         </div>
       </div>
 
-      <div style="max-width: 700px; margin: 32px auto 0; padding: 20px; background: rgba(37,211,102,0.06); border: 1px solid rgba(37,211,102,0.2); border-radius: var(--radius);">
-        <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">
-          💡 <strong>Nota:</strong> Los precios pueden variar según la complejidad del caso. Tras la sesión de diagnóstico, le ofrecemos un <strong>precio cerrado y definitivo</strong> para su expediente completo.
-        </p>
+      <!-- GARANTÍA -->
+      <div class="mx-auto" style="max-width: 700px; margin-top: 32px;">
+        <div class="guarantee-badge">
+          <span>🛡️</span> Garantía de Satisfacción
+        </div>
+        <div class="guarantee-text">
+          <strong>Si su solicitud es rechazada por causas imputables a nuestro equipo</strong>, le devolvemos el <strong>80% de su inversión</strong> o rehacemos el trámite <strong>sin costo adicional</strong>. Su tranquilidad es nuestra prioridad.
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FORMULARIO FILTRO -->
-  <section id="diagnostico" style="background-color: var(--white);" aria-labelledby="diagnostico-title">
-    <div class="wrap text-center">
-      <p class="text-uppercase" style="color: var(--wa);">Atención Exclusiva</p>
-      <h2 id="diagnostico-title" style="margin-bottom: 10px;">Solicite su Sesión de Diagnóstico Legal</h2>
-      <p class="mx-auto" style="max-width: 700px; margin-bottom: 32px; color: var(--muted);">
-        Verifique su Elegibilidad para la Naturalización. Complete los datos para habilitar el acceso a nuestra agenda privada.
+  <!-- TABLA COMPARATIVA -->
+  <section id="comparativa" class="comparison-section" aria-labelledby="comparativa-title">
+    <div class="wrap fade-section">
+      <h2 id="comparativa-title" class="text-center" style="margin-bottom: 10px;">Comparativa Detallada de Planes</h2>
+      <p class="text-center" style="max-width: 600px; margin: 0 auto 24px; color: var(--muted);">
+        Esta tabla puede guardarse como PDF para su referencia durante la llamada.
+      </p>
+      
+      <div style="overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow);">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th style="min-width: 200px;">Característica</th>
+              <th style="text-align: center; min-width: 120px;">Básico<br><span style="font-weight:400; font-size:0.8em; opacity:0.9">$1,500</span></th>
+              <th style="text-align: center; min-width: 120px; background: rgba(212,160,23,0.1);">Completo<br><span style="font-weight:400; font-size:0.8em; opacity:0.9">$2,900</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="feature-name">Creación de carpeta</td><td class="check">✅</td><td class="check">✅</td></tr>
+            <tr><td class="feature-name">Presentación ante Migración</td><td class="check">✅</td><td class="check">✅</td></tr>
+            <tr><td class="feature-name">Preparación entrevista Migración</td><td class="check">✅</td><td class="check">✅</td></tr>
+            <tr><td class="feature-name">Recabar pruebas/documentos</td><td class="x">❌</td><td class="check">✅</td></tr>
+            <tr><td class="feature-name">Preparación entrevista Tribunal Electoral</td><td class="x">❌</td><td class="check">✅</td></tr>
+            <tr><td class="feature-name">Material de examen (historia/geografía)</td><td class="x">❌</td><td class="check">✅</td></tr>
+            <tr><td class="feature-name">Práctica de examen con simulacro</td><td class="x">❌</td><td class="check">✅</td></tr>
+            <tr><td class="feature-name">Prólogo y guía de estudio</td><td class="x">❌</td><td class="check">✅</td></tr>
+            <tr><td class="feature-name">Acompañamiento diario vía WhatsApp</td><td class="x">❌</td><td class="check">✅</td></tr>
+            <tr><td class="feature-name">Seguimiento hasta juramentación</td><td class="x">❌</td><td class="check">✅</td></tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="text-center" style="margin-top: 24px;">
+        <button onclick="window.print()" class="btn btn-outline-navy" style="max-width: 300px;">
+          🖨️ Imprimir / Guardar como PDF
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LLAMADA GRATUITA -->
+  <section id="diagnostico" style="background: var(--gray0);" aria-labelledby="diagnostico-title">
+    <div class="wrap text-center fade-section">
+      <div class="consulta-badge">🎯 Sin compromiso • 100% gratuito</div>
+      <h2 id="diagnostico-title" style="margin-bottom: 10px;">Llamada de Orientación Gratuita</h2>
+      <p class="mx-auto" style="max-width: 600px; margin-bottom: 32px; color: var(--muted);">
+        10 minutos de videollamada para confirmar su plan ideal, resolver dudas y recibir su propuesta formal por escrito.
       </p>
 
-      <div class="form-container" style="max-width: 700px; margin: 0 auto;">
-        <div id="formMessage" class="form-message" role="alert" aria-live="polite"></div>
-        
-        <form id="qualifyForm" novalidate autocomplete="on">
-          <div class="form-group">
-            <label for="qNombre">Nombre y Apellido</label>
-            <input 
-              type="text" 
-              id="qNombre" 
-              name="nombre" 
-              class="form-control" 
-              required 
-              placeholder="Ej. Juan Pérez" 
-              autocomplete="name"
-              inputmode="text"
-              minlength="3"
-            >
+      <div class="consulta-card">
+        <div class="consulta-header">
+          <p class="text-uppercase" style="font-size: 0.7rem; letter-spacing: 1.5px; margin-bottom: 8px; opacity: 0.8;">Con el Lic. Alfonso Villarreal</p>
+          <p class="consulta-price"><span class="currency">$</span>0<span class="free">GRATIS</span></p>
+          <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 0;">Duración: 10 minutos • Sin compromiso</p>
+        </div>
+        <div class="consulta-body">
+          <ul class="consulta-steps">
+            <li>
+              <span class="step-number">1</span>
+              <div><strong>Confirmación de elegibilidad</strong><br><span style="color: var(--muted); font-size: 0.85rem;">Validamos su perfil migratorio y documentos en tiempo real.</span></div>
+            </li>
+            <li>
+              <span class="step-number">2</span>
+              <div><strong>Explicación del plan recomendado</strong><br><span style="color: var(--muted); font-size: 0.85rem;">Le detallamos qué incluye, cronograma y próximos pasos.</span></div>
+            </li>
+            <li>
+              <span class="step-number">3</span>
+              <div><strong>Propuesta formal por escrito</strong><br><span style="color: var(--muted); font-size: 0.85rem;">Si decide avanzar, recibe su contrato y opciones de pago al instante.</span></div>
+            </li>
+          </ul>
+
+          <div style="margin-top: 20px;">
+            <a href="https://wa.me/50762557583?text=Hola%2C%20ya%20me%20precalifiqué%20en%20la%20web.%20Deseo%20agendar%20mi%20llamada%20gratuita%20de%20orientación%20para%20naturalización." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-bottom: 10px;">
+              <span style="margin-right: 8px;">📅</span> Agendar Mi Llamada Gratuita
+            </a>
+            <p style="font-size: 0.75rem; color: var(--muted); margin: 0;">
+              También puede escribirnos directamente: +507 6255-7583
+            </p>
           </div>
-          
-          <div class="form-group">
-            <label for="qNacionalidad">Nacionalidad de Origen</label>
-            <select id="qNacionalidad" name="nacionalidad" class="form-control" required autocomplete="country">
-              <option value="" disabled selected>Seleccione su país...</option>
-              <option value="Colombia">Colombia</option>
-              <option value="Venezuela">Venezuela</option>
-              <option value="España">España</option>
-              <option value="Estados Unidos">Estados Unidos</option>
-              <option value="Argentina">Argentina</option>
-              <option value="Perú">Perú</option>
-              <option value="Nicaragua">Nicaragua</option>
-              <option value="México">México</option>
-              <option value="Otra">Otra Nacionalidad</option>
-            </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHATSAPP FUNNEL (Alternativa rápida) -->
+  <section id="whatsapp" class="wa-funnel-section" aria-labelledby="whatsapp-title">
+    <div class="wrap text-center fade-section">
+      <p class="text-uppercase" style="color: var(--wa);">¿Prefiere chat rápido?</p>
+      <h2 id="whatsapp-title" style="margin-bottom: 10px;">Escríbanos por WhatsApp</h2>
+      <p class="mx-auto" style="max-width: 600px; margin-bottom: 40px; color: var(--muted);">
+        Si ya sabe qué plan quiere o tiene preguntas específicas, nuestro equipo le responderá en menos de 24 horas.
+      </p>
+
+      <div class="wa-funnel-container">
+        <div class="wa-funnel-header">
+          <div class="wa-avatar">⚖️</div>
+          <div class="wa-header-info">
+            <h4>Equipo Naturalízate.pa</h4>
+            <p>Respuesta en menos de 24 horas</p>
           </div>
-          
-          <div class="form-group">
-            <label for="qTiempo">Años de residencia permanente (Cédula E)</label>
-            <select id="qTiempo" name="tiempo" class="form-control" required>
-              <option value="" disabled selected>Seleccione tiempo...</option>
-              <option value="Menos de 3 años">Menos de 3 años</option>
-              <option value="Entre 3 y 4 años">Entre 3 y 4 años</option>
-              <option value="5 años o más">5 años o más</option>
-            </select>
+        </div>
+        <div class="wa-chat-body">
+          <div class="wa-bubble bot">
+            👋 ¡Hola! ¿En qué podemos ayudarle hoy?
+            <span class="wa-time">Ahora</span>
           </div>
-          
-          <div class="form-group">
-            <label for="qFamilia">Vínculo familiar en Panamá</label>
-            <select id="qFamilia" name="familia" class="form-control" required>
-              <option value="" disabled selected>Seleccione opción...</option>
-              <option value="Cónyuge Panameño/a">Tengo cónyuge panameño/a</option>
-              <option value="Hijos Panameños">Tengo hijos panameños</option>
-              <option value="Ninguno">No tengo vínculo familiar</option>
-            </select>
+          <div class="wa-bubble bot">
+            💡 Tip: Si aún no está seguro de su plan ideal, le recomendamos primero <strong>precalificarse gratis</strong> en nuestra web.
+            <span class="wa-time">Ahora</span>
           </div>
-          
-          <div class="form-group">
-            <label for="qInicio">Disponibilidad para iniciar trámite</label>
-            <select id="qInicio" name="inicio" class="form-control" required>
-              <option value="" disabled selected>¿Cuándo planea iniciar?</option>
-              <option value="Inmediatamente (30 días)">Inmediatamente (30 días)</option>
-              <option value="En los próximos 60 días">En los próximos 60 días</option>
-              <option value="Solo busco información">Solo busco información</option>
-            </select>
-          </div>
-          
-          <button type="submit" class="btn btn-primary" style="margin-top: 12px; width: 100%;" id="submitBtn">
-            <span>📤</span> Enviar Solicitud y Contactar
-          </button>
-        </form>
-        
-        <p style="font-size: 0.75rem; color: var(--muted); margin-top: 16px; margin-bottom: 0;">
-          🔒 Sus datos están protegidos. Solo se usarán para contacto profesional.
-        </p>
+        </div>
+        <div class="wa-cta-bottom">
+          <a href="https://wa.me/50762557583?text=Hola%2C%20quiero%20información%20sobre%20los%20planes%20de%20naturalización.%20Ya%20me%20precalifiqué%20y%20mi%20recomendación%20fue%3A%20" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span style="margin-right: 8px; font-size: 1.2rem;">💬</span> Iniciar Conversación por WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -1341,8 +1436,8 @@
   <section id="testimonios" style="background: var(--navy);" aria-labelledby="testimonios-title">
     <div class="wrap">
       <div class="testimonial">
-        <p class="quote">"La firma demostró un rigor técnico impecable. Su diagnóstico inicial detectó inconsistencias que habrían causado la negativa del trámite. Hoy gozamos de plena ciudadanía."</p>
-        <p class="author">— Familia Castro, Naturalización Concedida 2025</p>
+        <p class="quote">"La precalificación me ayudó a entender que necesitaba el Plan Completo. El acompañamiento para el examen del Tribunal Electoral fue clave. Hoy tengo mi Cédula N."</p>
+        <p class="author">— Ana R., Naturalización Concedida 2025</p>
       </div>
     </div>
   </section>
@@ -1352,28 +1447,28 @@
     <h2 id="faq-title" class="text-center" style="margin-bottom: 32px;">Consultas Frecuentes</h2>
     <div style="max-width: 800px; margin: 0 auto;">
       <details>
-        <summary><span>Diferencia entre residencia y ciudadanía</span></summary>
-        <p>La residencia es un permiso de estancia temporal o permanente. La naturalización confiere la ciudadanía panameña, incluyendo pasaporte y la plenitud de derechos políticos y civiles, eliminando la necesidad de renovaciones periódicas.</p>
+        <summary><span>¿Qué pasa si la precalificación me recomienda un plan pero quiero el otro?</span></summary>
+        <p>La recomendación es una guía basada en su perfil, pero usted tiene total libertad para elegir. En la llamada gratuita podemos ajustar la propuesta según sus prioridades y presupuesto.</p>
       </details>
       <details>
-        <summary><span>¿Por qué debo pasar por un filtro de elegibilidad?</span></summary>
-        <p>Nuestro despacho se rige por un estricto código de ética profesional. No aceptamos casos que no cumplen con los requisitos de la Ley Migratoria. El filtro nos permite indicarle con honestidad si está listo para el proceso o qué requisitos le faltan para estarlo.</p>
+        <summary><span>¿Puedo cambiar de plan después de empezar?</span></summary>
+        <p>Sí. Si inicia con el Plan Básico y luego requiere los servicios del Plan Completo, puede hacer la diferencia de pago en cualquier momento. Le ajustamos la propuesta sin penalizaciones.</p>
       </details>
       <details>
-        <summary><span>¿Cuánto tiempo toma el proceso de naturalización?</span></summary>
-        <p>El proceso varía según cada caso, pero generalmente toma entre 12 a 24 meses desde la presentación de la solicitud hasta la resolución final. Nuestro equipo le brindará un cronograma estimado tras el diagnóstico inicial.</p>
+        <summary><span>¿Cómo funcionan las cuotas sin intereses?</span></summary>
+        <p>Tras confirmar su plan, le enviamos un enlace de pago seguro. Puede pagar el total o dividir en 3 cuotas mensuales iguales. No hay intereses, recargos ni costos ocultos.</p>
       </details>
       <details>
-        <summary><span>¿Qué diferencia el Plan Básico del Plan Full?</span></summary>
-        <p>El Plan Básico se enfoca en la gestión documental: llenado de formularios, organización de expedientes y presentación ante las autoridades. El Plan Full incluye todo lo anterior más preparación para el examen de historia y geografía, simulacro de entrevista, acompañamiento presencial a la entrevista oficial y consultas ilimitadas durante todo el proceso.</p>
+        <summary><span>¿Qué cubre exactamente la garantía?</span></summary>
+        <p>Si su solicitud es rechazada por errores atribuibles a nuestro equipo (documentación mal presentada, omisiones en el expediente, etc.), le devolvemos el 80% de lo pagado o rehacemos el trámite completo sin costo adicional. No cubre rechazos por causas ajenas a nuestra gestión (ej.: antecedentes penales no declarados).</p>
       </details>
       <details>
-        <summary><span>¿Cómo funciona el descuento de la consulta?</span></summary>
-        <p>Si después de la sesión de diagnóstico de $49.99 decide contratar el servicio completo de naturalización (Plan Básico o Plan Full), el valor de la consulta se descuenta del precio final. Es decir, solo pagaría el saldo restante sobre el costo del plan elegido.</p>
+        <summary><span>¿La llamada gratuita me obliga a contratar?</span></summary>
+        <p>Absolutamente no. La llamada de 10 minutos es 100% informativa y sin compromiso. Nuestro objetivo es que tome la mejor decisión para su caso, con o sin nosotros.</p>
       </details>
       <details>
-        <summary><span>¿Puedo obtener la guía gratuita sin agendar consulta?</span></summary>
-        <p>Sí. Puede descargar el Checklist Definitivo completando el formulario de diagnóstico, o simplemente comentando "GUÍA" en cualquiera de nuestros vídeos en redes sociales y recibirá la guía automáticamente por mensaje directo.</p>
+        <summary><span>¿Puedo obtener la guía gratuita sin precalificarme?</span></summary>
+        <p>Sí. Comente "GUÍA" en cualquiera de nuestros vídeos en redes sociales o escríbanos por WhatsApp y se la enviaremos automáticamente por mensaje directo.</p>
       </details>
     </div>
   </section>
@@ -1399,8 +1494,8 @@
 
   <!-- STICKY BOTTOM CTA (SOLO EN MÓVIL) -->
   <div class="sticky-cta" role="region" aria-label="Acción rápida">
-    <a href="#diagnostico" class="btn btn-primary">
-      <span style="margin-right: 8px;">✓</span> Verificar Elegibilidad
+    <a href="#prequalificar" class="btn btn-primary">
+      <span style="margin-right: 8px;">🔍</span> Precalificarme Gratis
     </a>
   </div>
 
@@ -1453,99 +1548,64 @@
     });
 
     // ============================================
-    // FORMULARIO
+    // PRECALIFICACIÓN - LÓGICA DE RECOMENDACIÓN
     // ============================================
-    const qualifyForm = document.getElementById('qualifyForm');
-    const formMessage = document.getElementById('formMessage');
-    const submitBtn = document.getElementById('submitBtn');
+    const prequalForm = document.getElementById('prequalForm');
+    const prequalResult = document.getElementById('prequalResult');
+    const recommendedPlan = document.getElementById('recommendedPlan');
+    const recommendationText = document.getElementById('recommendationText');
+    const resultCta = document.getElementById('resultCta');
     
-    qualifyForm.querySelectorAll('.form-control').forEach(field => {
-      field.addEventListener('blur', function() {
-        validateField(this);
-      });
-      field.addEventListener('input', function() {
-        if (this.validity.valid) {
-          this.style.borderColor = '';
-        }
-      });
-    });
-    
-    function validateField(field) {
-      if (!field.value.trim() && field.required) {
-        field.style.borderColor = 'var(--error)';
-        return false;
-      }
-      field.style.borderColor = '';
-      return true;
-    }
-    
-    qualifyForm.addEventListener('submit', function(e) {
+    prequalForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      let isValid = true;
-      const requiredFields = qualifyForm.querySelectorAll('[required]');
+      const tiempo = document.getElementById('pqTiempo').value;
+      const vinculo = document.getElementById('pqVinculo').value;
+      const documentos = document.getElementById('pqDocumentos').value;
+      const preferencia = document.getElementById('pqPreferencia').value;
       
-      requiredFields.forEach(field => {
-        if (!validateField(field)) {
-          isValid = false;
-        }
-      });
+      // Lógica simple de recomendación
+      let plan = 'Completo';
+      let texto = 'Su caso requiere preparación especializada para el examen del Tribunal Electoral y acompañamiento constante.';
       
-      if (!isValid) {
-        showMessage('Por favor, complete todos los campos obligatorios.', 'error');
-        const firstInvalid = qualifyForm.querySelector('.form-control[style*="error"]');
-        if (firstInvalid) {
-          firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          firstInvalid.focus();
-        }
-        return;
+      // Si tiene 5+ años O vínculo familiar O documentos completos Y prefiere básico → Básico
+      if ((tiempo === '5omas' || vinculo !== 'ninguno' || documentos === 'si') && preferencia === 'basico') {
+        plan = 'Básico';
+        texto = 'Su perfil cumple con los requisitos esenciales. El Plan Básico le brinda la gestión profesional que necesita.';
       }
       
-      submitBtn.classList.add('loading');
-      submitBtn.innerHTML = '<span>⏳</span> Enviando...';
-      submitBtn.disabled = true;
+      // Si documentos no están completos → Siempre Completo
+      if (documentos === 'no' || documentos === 'parcial') {
+        plan = 'Completo';
+        texto = 'Necesita apoyo para recabar y organizar sus documentos. El Plan Completo incluye esta gestión integral.';
+      }
       
-      const formData = new FormData(qualifyForm);
-      const nombre = formData.get('nombre');
-      const nacionalidad = formData.get('nacionalidad');
-      const tiempo = formData.get('tiempo');
-      const familia = formData.get('familia');
-      const inicio = formData.get('inicio');
-
-      const mensaje = `🏛️ *SOLICITUD DE DIAGNÓSTICO LEGAL* 🏛️%0A%0A`
-        + `Estimado Lic. Villarreal, solicito agendar la sesión de diagnóstico para mi naturalización. Mis datos son:%0A%0A`
-        + `👤 *Nombre:* ${nombre}%0A`
-        + `🌎 *Nacionalidad:* ${nacionalidad}%0A`
-        + `📅 *Residencia Permanente:* ${tiempo}%0A`
-        + `👨‍👩‍👧 *Vínculo Familiar:* ${familia}%0A`
-        + `⏱️ *Disposición:* ${inicio}%0A%0A`
-        + `Quedo a la espera de su validación y disponibilidad para coordinar la sesión. Gracias.`;
-
-      const numero = "50762557583";
-      const url = `https://wa.me/${numero}?text=${mensaje}`;
+      // Si prefiere completo o indeciso → Completo por defecto
+      if (preferencia === 'completo' || preferencia === 'indeciso') {
+        plan = 'Completo';
+        texto = 'Para máxima tranquilidad y tasa de éxito, el Plan Completo le brinda acompañamiento en cada etapa.';
+      }
       
-      setTimeout(() => {
-        const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
-        if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-          window.location.href = url;
-        }
-        
-        submitBtn.classList.remove('loading');
-        submitBtn.innerHTML = '<span>📤</span> Enviar Solicitud y Contactar';
-        submitBtn.disabled = false;
-        
-        showMessage('¡Redirigiendo a WhatsApp... Si no se abre, revise su conexión.', 'success');
-      }, 500);
+      // Mostrar resultado
+      recommendedPlan.textContent = `Plan ${plan}`;
+      recommendationText.textContent = texto;
+      
+      // Actualizar CTA según plan
+      if (plan === 'Completo') {
+        resultCta.href = "https://wa.me/50762557583?text=Hola%2C%20mi%20precalificación%20me%20recomendó%20el%20Plan%20Completo%20(%242%2C900).%20Deseo%20agendar%20mi%20llamada%20gratuita%20para%20confirmar%20y%20recibir%20la%20propuesta%20formal.";
+      } else {
+        resultCta.href = "https://wa.me/50762557583?text=Hola%2C%20mi%20precalificación%20me%20recomendó%20el%20Plan%20Básico%20(%241%2C500).%20Deseo%20agendar%20mi%20llamada%20gratuita%20para%20confirmar%20y%20recibir%20la%20propuesta%20formal.";
+      }
+      
+      prequalResult.classList.add('show');
+      prequalResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
-    
-    function showMessage(text, type) {
-      formMessage.textContent = text;
-      formMessage.className = 'form-message ' + type;
-      setTimeout(() => {
-        formMessage.className = 'form-message';
-      }, 5000);
-    }
-    
+
+    // ============================================
+    // FORMULARIO DE CONTACTO RÁPIDO (opcional)
+    // ============================================
+    // (Se puede agregar si se desea capturar leads por email también)
+
     // ============================================
     // SMOOTH SCROLL
     // ============================================

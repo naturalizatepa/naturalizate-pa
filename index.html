@@ -635,6 +635,18 @@
     .feature-text strong { color: var(--navy); display: block; margin-bottom: 2px; }
     .feature-text span { font-size: 0.85rem; color: var(--muted); }
 
+    .eligibility-cta-card {
+      padding: 36px 28px;
+      text-align: center;
+      border: 2px solid rgba(37,211,102,0.3);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 10px 40px rgba(37,211,102,0.12);
+      background: var(--white);
+    }
+    @media(max-width: 768px) {
+      .eligibility-cta-card { padding: 28px 20px; }
+    }
+
     /* ============================================
        LEAD MAGNET
     ============================================ */
@@ -783,7 +795,6 @@
       padding: 24px;
       min-height: 280px;
       background: #e8f5e9;
-      background-image: url("image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c8e6c9' fill-opacity='0.4'%3E%3Cpath d='M20 20h4v4h-4zM0 0h4v4H0z'/%3E%3C/g%3E%3C/svg%3E");
     }
     .wa-bubble {
       background: var(--white);
@@ -829,106 +840,135 @@
     .wa-cta-bottom .btn { margin-bottom: 8px; }
 
     /* ============================================
-       PRICING
+       PLAN COMPLETO (SINGLE PLAN)
     ============================================ */
-    .pricing-section { background: var(--white); }
+    .plan-section { background: var(--white); }
     
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      max-width: 950px;
+    .plan-card {
+      max-width: 720px;
       margin: 0 auto;
-    }
-    @media(min-width: 768px) {
-      .pricing-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; align-items: start; }
-    }
-    
-    .pricing-card {
       background: var(--white);
       border-radius: var(--radius-xl);
-      border: 2px solid var(--gray1);
+      border: 2px solid var(--wa);
       overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s ease;
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
       position: relative;
     }
-    .pricing-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-    .pricing-card.featured { border-color: var(--wa); box-shadow: var(--shadow), var(--shadow-glow); }
-    .pricing-badge {
-      position: absolute; top: 0; left: 0; right: 0;
+    .plan-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg), 0 0 60px rgba(37,211,102,0.25); }
+    .plan-card-badge {
       background: linear-gradient(90deg, var(--wa), #20bd5a);
       color: var(--white);
       text-align: center;
-      padding: 10px;
-      font-size: 0.7rem;
+      padding: 12px;
+      font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 1.5px;
-    }
-    .pricing-card.featured .pricing-header { padding-top: 56px; }
-    
-    .pricing-header { padding: 32px 28px 24px; text-align: center; border-bottom: 1px solid var(--gray1); }
-    .pricing-name { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; color: var(--muted); margin-bottom: 8px; }
-    .pricing-ideal {
-      font-size: 0.78rem;
-      color: var(--navy);
-      background: var(--pale-gray);
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: var(--radius-pill);
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
-    .pricing-price-wrap {
-      position: relative;
-    }
-    .pricing-original {
-      font-size: 1rem;
-      color: var(--light-gray);
-      text-decoration: line-through;
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
-    .pricing-price { font-family: var(--font-heading); font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 800; color: var(--navy); line-height: 1; }
-    .pricing-price .currency { font-size: 0.45em; vertical-align: super; margin-right: 2px; font-weight: 600; }
-    .pricing-range { display: block; font-size: 0.8rem; color: var(--muted); font-weight: 400; margin-top: 6px; }
-    .pricing-desc { font-size: 0.9rem; color: var(--muted); margin-top: 8px; }
-    
-    .promo-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: linear-gradient(135deg, var(--error), #c82333);
-      color: var(--white);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 1px;
       text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: var(--radius-pill);
+    }
+    
+    .plan-header {
+      padding: 40px 32px 32px;
+      text-align: center;
+      border-bottom: 1px solid var(--gray1);
+      background: linear-gradient(180deg, rgba(37,211,102,0.03) 0%, transparent 100%);
+    }
+    @media(max-width: 768px) { .plan-header { padding: 32px 20px 24px; } }
+    .plan-name {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 4vw, 2rem);
+      font-weight: 800;
+      color: var(--navy);
       margin-bottom: 8px;
     }
-    
-    .pricing-features { padding: 24px 28px; list-style: none; margin: 0; }
-    .pricing-features li { padding: 12px 0; border-bottom: 1px solid var(--gray1); font-size: 0.9rem; display: flex; align-items: flex-start; gap: 12px; }
-    .pricing-features li:last-child { border-bottom: none; }
-    .pricing-features li .check-icon {
-      color: var(--wa); font-weight: 700; flex-shrink: 0;
-      width: 22px; height: 22px; background: rgba(37,211,102,0.1);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; margin-top: 2px;
+    .plan-tagline {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+    .plan-consult-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212,160,23,0.1);
+      border: 1px solid rgba(212,160,23,0.25);
+      color: var(--navy);
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      font-size: 0.88rem;
+      font-weight: 600;
     }
     
-    .pricing-cta { padding: 0 28px 28px; }
-    .pricing-note { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 12px; margin-bottom: 0; }
+    .plan-features-grid {
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    @media(min-width: 600px) {
+      .plan-features-grid { grid-template-columns: 1fr 1fr; gap: 0 40px; }
+    }
+    @media(max-width: 768px) { .plan-features-grid { padding: 24px 20px; } }
+    
+    .plan-features-grid ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .plan-features-grid li {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--gray1);
+      font-size: 0.92rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.5;
+    }
+    .plan-features-grid li:last-child { border-bottom: none; }
+    .plan-features-grid .check-icon {
+      color: var(--wa);
+      font-weight: 700;
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      background: rgba(37,211,102,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      margin-top: 2px;
+    }
+    
+    .plan-cta-area {
+      padding: 0 32px 36px;
+      text-align: center;
+    }
+    @media(max-width: 768px) { .plan-cta-area { padding: 0 20px 28px; } }
+    .plan-cta-area .btn { max-width: 420px; margin: 0 auto; }
+    .plan-guarantee {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .plan-guarantee .icon {
+      font-size: 1rem;
+    }
 
-    .pricing-footer-note {
-      max-width: 700px; margin: 40px auto 0;
-      padding: 24px;
+    .plan-footer-note {
+      max-width: 720px;
+      margin: 32px auto 0;
+      padding: 20px 24px;
       background: linear-gradient(135deg, rgba(37,211,102,0.06), rgba(37,211,102,0.02));
       border: 1px solid rgba(37,211,102,0.15);
       border-radius: var(--radius-lg);
+      text-align: center;
     }
-    .pricing-footer-note p { margin: 0; font-size: 0.92rem; color: var(--navy); }
+    .plan-footer-note p { margin: 0; font-size: 0.9rem; color: var(--navy); line-height: 1.7; }
 
     /* ============================================
        CONSULTATION OFFER
@@ -942,7 +982,7 @@
     }
     .consulta-header {
       background: linear-gradient(135deg, var(--navy), var(--navy2));
-      color: var(--white); padding: 32px 28px; text-align: center; position: relative;
+      color: var(--white); padding: 36px 28px; text-align: center; position: relative;
     }
     .consulta-header::after {
       content: ''; position: absolute; bottom: -20px; left: 0; right: 0;
@@ -952,27 +992,24 @@
     .consulta-badge-top {
       display: inline-flex; align-items: center; gap: 6px;
       background: linear-gradient(135deg, var(--gold), #e6b82e);
-      color: var(--navy); padding: 6px 16px; border-radius: var(--radius-pill);
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-      margin-bottom: 16px;
+      color: var(--navy); padding: 8px 18px; border-radius: var(--radius-pill);
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      margin-bottom: 20px;
     }
-    .promo-price-wrap {
-      position: relative;
-      display: inline-block;
+    .consulta-title-main {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 4vw, 1.9rem);
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--white);
     }
-    .consulta-original {
-      font-size: 1.2rem;
-      color: rgba(255,255,255,0.4);
-      text-decoration: line-through;
-      font-weight: 500;
-      display: block;
-      margin-bottom: 4px;
-    }
-    .consulta-price { font-family: var(--font-heading); font-size: 3.5rem; font-weight: 800; margin: 0; }
-    .consulta-price .currency { font-size: 1.2rem; vertical-align: super; font-weight: 600; }
-    .consulta-head-sub { font-size: 0.88rem; opacity: 0.8; margin-top: 4px; margin-bottom: 0; }
+    .consulta-head-sub { font-size: 0.92rem; opacity: 0.8; margin-top: 8px; margin-bottom: 0; line-height: 1.6; }
     
-    .consulta-body { padding: 32px 28px; }
+    .consulta-body { padding: 36px 28px; }
+    @media(max-width: 768px) { 
+      .consulta-header { padding: 28px 20px; }
+      .consulta-body { padding: 28px 20px; } 
+    }
     .consulta-steps { list-style: none; margin: 0 0 24px; padding: 0; }
     .consulta-steps li { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--gray1); font-size: 0.92rem; }
     .consulta-steps li:last-child { border-bottom: none; }
@@ -1025,7 +1062,7 @@
     }
     .form-control.error { border-color: var(--error); }
     select.form-control {
-      background-image: url("image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236c757d' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236c757d' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
       background-repeat: no-repeat; background-position: right 18px center; padding-right: 44px;
     }
     
@@ -1133,12 +1170,6 @@
       .trust-item .icon { width: 28px; height: 28px; font-size: 0.85rem; }
       .process-grid { gap: 20px; }
       .process-step { padding: 28px 20px; }
-      .pricing-header { padding: 28px 20px 20px; }
-      .pricing-features { padding: 20px; }
-      .pricing-cta { padding: 0 20px 24px; }
-      .consulta-header { padding: 28px 20px; }
-      .consulta-body { padding: 28px 20px; }
-      .consulta-price { font-size: 3rem; }
       .wa-funnel-header { padding: 20px; }
       .wa-chat-body { padding: 20px; }
       .wa-cta-bottom { padding: 20px; }
@@ -1169,7 +1200,7 @@
       <nav class="nav-links" aria-label="Navegación principal">
         <a href="#proceso">Proceso</a>
         <a href="#guia">Guía</a>
-        <a href="#precios">Precios</a>
+        <a href="#plan">Plan</a>
         <a href="#consulta">Consulta</a>
         <a href="#diagnostico" class="nav-cta">Verificar Elegibilidad</a>
       </nav>
@@ -1186,7 +1217,7 @@
       <a href="#proceso" class="dlink"><span>📋</span> Proceso</a>
       <a href="#guia" class="dlink"><span>📥</span> Guía</a>
       <a href="#whatsapp" class="dlink"><span>💬</span> WhatsApp</a>
-      <a href="#precios" class="dlink"><span>💰</span> Precios</a>
+      <a href="#plan" class="dlink"><span>🚀</span> Plan Completo</a>
       <a href="#consulta" class="dlink"><span>📞</span> Consulta</a>
       <a href="#diagnostico" class="dlink drawer-cta"><span>✅</span> Verificar Elegibilidad</a>
     </nav>
@@ -1246,7 +1277,7 @@
             </ul>
           </div>
           <div>
-            <div class="card" style="padding: 32px; text-align: center; border: 2px solid rgba(37,211,102,0.3); box-shadow: 0 10px 40px rgba(37,211,102,0.15);">
+            <div class="eligibility-cta-card">
               <div style="font-size: 3rem; margin-bottom: 16px;">🤔</div>
               <h3>¿No está seguro si cumple?</h3>
               <p style="color: var(--muted); margin-bottom: 24px;">Nuestro diagnóstico evalúa su caso de forma personalizada y le indica los pasos exactos.</p>
@@ -1315,108 +1346,81 @@
       </div>
     </section>
 
-    <!-- CONSULTATION OFFER -->
-    <section id="consulta" class="consulta-section" aria-labelledby="consulta-title">
+    <!-- PLAN COMPLETO (SINGLE PLAN) -->
+    <section id="plan" class="plan-section" aria-labelledby="plan-title">
       <div class="wrap text-center fade-section">
-        <span class="section-label red">🎯 Oferta por Tiempo Limitado</span>
-        <h2 id="consulta-title" style="margin-bottom: 12px;">Sesión de Diagnóstico Legal</h2>
-        <p class="section-subtitle">30 minutos de videollamada para evaluar su caso y diseñar su plan de acción exacto.</p>
+        <span class="section-label gold">⚖️ Servicio Integral</span>
+        <h2 id="plan-title" style="margin-bottom: 12px;">Nuestro Plan Completo</h2>
+        <p class="section-subtitle">Un único servicio diseñado para cubrir cada etapa de su naturalización. Todo incluido, sin costos ocultos.</p>
 
-        <div class="consulta-card">
-          <div class="consulta-header">
-            <div class="consulta-badge-top">⚡ 50% de Descuento · Oferta Limitada</div>
-            <p class="text-uppercase" style="font-size: 0.72rem; letter-spacing: 1.5px; margin-bottom: 8px; opacity: 0.85;">Sesión de Diagnóstico por Videollamada</p>
-            <div class="promo-price-wrap">
-              <span class="consulta-original">$50.00</span>
-              <p class="consulta-price"><span class="currency">$</span>25<span style="font-size: 1.5rem; opacity: 0.7;">.00</span></p>
+        <div class="plan-card">
+          <div class="plan-card-badge">★ Servicio Todo Incluido — Gestión Integral de Principio a Fin</div>
+          <div class="plan-header">
+            <div class="plan-name">Plan Completo</div>
+            <p class="plan-tagline">Nos encargamos de todo: desde la recolección de documentos hasta que tenga su ciudadanía panameña en mano.</p>
+            <div class="plan-consult-note">
+              <span>💡</span>
+              <span>El precio se determina tras su sesión de diagnóstico según la complejidad de su caso</span>
             </div>
-            <p class="consulta-head-sub">Duración: 30 minutos</p>
           </div>
-          <div class="consulta-body">
-            <ul class="consulta-steps">
-              <li><span class="step-number">1</span><div class="step-content"><strong>Evaluación completa</strong><span>Analizamos su situación migratoria actual y documentamos su caso.</span></div></li>
-              <li><span class="step-number">2</span><div class="step-content"><strong>Plan de acción personalizado</strong><span>Recibe un cronograma detallado con los pasos exactos para su naturalización.</span></div></li>
-              <li><span class="step-number">3</span><div class="step-content"><strong>Oferta de servicio completo</strong><span>Precio cerrado y definitivo para la gestión integral de su expediente.</span></div></li>
+          <div class="plan-features-grid">
+            <ul>
+              <li><span class="check-icon">✓</span><span>Diagnóstico legal personalizado de su caso</span></li>
+              <li><span class="check-icon">✓</span><span>Recolección completa de documentos desde cero</span></li>
+              <li><span class="check-icon">✓</span><span>Organización y verificación de toda la documentación</span></li>
+              <li><span class="check-icon">✓</span><span>Llenado y preparación de todos los formularios oficiales</span></li>
+              <li><span class="check-icon">✓</span><span>Presentación del expediente ante las autoridades</span></li>
             </ul>
-            <div class="discount-box">
-              <p style="margin-bottom: 6px; font-weight: 700; font-size: 0.92rem;">🔥 Descuento por Contratación Inmediata</p>
-              <p>Si contrata el servicio completo <strong>hoy mismo</strong>, el valor de esta consulta se descuenta del precio final del servicio.</p>
-            </div>
-            <a href="https://wa.me/50762557583?text=Hola%2C%20deseo%20agendar%20la%20sesión%20de%20diagnóstico%20promocional%20de%20%2425%20para%20mi%20naturalización." target="_blank" rel="noopener noreferrer" class="btn btn-primary"><span>📅</span> Agendar Mi Consulta Ahora</a>
-            <p style="font-size: 0.72rem; color: var(--muted); margin-top: 12px; text-align: center; margin-bottom: 0;">⏳ Precio promocional por tiempo limitado. Sujeto a disponibilidad.</p>
+            <ul>
+              <li><span class="check-icon">✓</span><span>Preparación completa para el examen de historia y geografía</span></li>
+              <li><span class="check-icon">✓</span><span>Simulacro de entrevista con retroalimentación</span></li>
+              <li><span class="check-icon">✓</span><span>Acompañamiento presencial a la entrevista oficial</span></li>
+              <li><span class="check-icon">✓</span><span>Material de estudio personalizado incluido</span></li>
+              <li><span class="check-icon">✓</span><span>Consultas ilimitadas y seguimiento semanal</span></li>
+            </ul>
           </div>
+          <div class="plan-cta-area">
+            <a href="#diagnostico" class="btn btn-primary"><span>🚀</span> Solicitar Mi Diagnóstico</a>
+            <div class="plan-guarantee">
+              <span class="icon">🔒</span>
+              <span>Precio cerrado y definitivo tras la evaluación de su caso</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="plan-footer-note">
+          <p>💡 <strong>¿Cómo funciona?</strong> Tras su sesión de diagnóstico, le ofrecemos un <strong>precio cerrado y definitivo</strong> para la gestión completa de su expediente. Sin sorpresas ni cargos adicionales durante el proceso.</p>
         </div>
       </div>
     </section>
 
-    <!-- PRICING -->
-    <section id="precios" class="pricing-section" aria-labelledby="precios-title">
+    <!-- CONSULTATION OFFER -->
+    <section id="consulta" class="consulta-section" aria-labelledby="consulta-title">
       <div class="wrap text-center fade-section">
-        <span class="section-label red">⚡ Ofertas por Tiempo Limitado</span>
-        <h2 id="precios-title" style="margin-bottom: 12px;">Planes y Tarifas</h2>
-        <p class="section-subtitle">Elija el plan que mejor se adapte a su situación. Precio cerrado, sin sorpresas.</p>
+        <span class="section-label gold">🎯 Primer Paso</span>
+        <h2 id="consulta-title" style="margin-bottom: 12px;">Sesión de Diagnóstico Legal</h2>
+        <p class="section-subtitle">30 minutos de videollamada para evaluar su caso y diseñar su plan de acción personalizado.</p>
 
-        <div class="pricing-grid">
-          <!-- BASIC -->
-          <div class="pricing-card">
-            <div class="pricing-header">
-              <p class="pricing-name">Plan Básico</p>
-              <span class="pricing-ideal">📋 Ideal si ya tiene sus documentos listos</span>
-              <div class="pricing-price-wrap">
-                <div class="pricing-original">$2,900</div>
-                <div class="promo-tag">🔥 OFERTA POR TIEMPO LIMITADO</div>
-                <div class="pricing-price"><span class="currency">$</span>1,500</div>
-                <span class="pricing-range">desde · según complejidad</span>
-              </div>
-              <p class="pricing-desc">Para quienes ya tienen todo prácticamente armado, solo hace falta presentar</p>
-            </div>
-            <ul class="pricing-features">
-              <li><span class="check-icon">✓</span><span>Presentación del expediente ya preparado ante las autoridades</span></li>
-              <li><span class="check-icon">✓</span><span>Revisión final de formularios y documentos existentes</span></li>
-              <li><span class="check-icon">✓</span><span>Seguimiento del estado del trámite</span></li>
-              <li><span class="check-icon">✓</span><span>Asesoría básica durante el proceso de presentación</span></li>
-            </ul>
-            <div class="pricing-cta">
-              <a href="#diagnostico" class="btn btn-outline-navy">Verificar Elegibilidad</a>
-              <p class="pricing-note">Precio original: <s>$2,900</s> · Oferta limitada: <strong>$1,500</strong></p>
-            </div>
+        <div class="consulta-card">
+          <div class="consulta-header">
+            <div class="consulta-badge-top">⚡ Cupos Limitados</div>
+            <p class="text-uppercase" style="font-size: 0.72rem; letter-spacing: 1.5px; margin-bottom: 12px; opacity: 0.85;">Sesión de Diagnóstico por Videollamada</p>
+            <h3 class="consulta-title-main">Evaluación Personalizada de su Caso</h3>
+            <p class="consulta-head-sub">Duración: 30 minutos · Videollamada privada con un abogado migratorio</p>
           </div>
-
-          <!-- FULL -->
-          <div class="pricing-card featured">
-            <div class="pricing-badge">★ RECOMENDADO</div>
-            <div class="pricing-header">
-              <p class="pricing-name">Plan Full Integral</p>
-              <span class="pricing-ideal">🚀 Ideal si necesita comenzar desde cero</span>
-              <div class="pricing-price-wrap">
-                <div class="pricing-original">$5,500</div>
-                <div class="promo-tag">🔥 OFERTA POR TIEMPO LIMITADO</div>
-                <div class="pricing-price"><span class="currency">$</span>2,900</div>
-                <span class="pricing-range">desde · según complejidad</span>
-              </div>
-              <p class="pricing-desc">Para quienes aún no tienen todo armado y hay que empezar a recabar los documentos</p>
-            </div>
-            <ul class="pricing-features">
-              <li><span class="check-icon">✓</span><span>Recolección completa de documentos desde cero</span></li>
-              <li><span class="check-icon">✓</span><span>Organización y verificación de toda la documentación</span></li>
-              <li><span class="check-icon">✓</span><span>Llenado y preparación de todos los formularios oficiales</span></li>
-              <li><span class="check-icon">✓</span><span>Preparación completa para el examen de historia y geografía</span></li>
-              <li><span class="check-icon">✓</span><span>Simulacro de entrevista con retroalimentación</span></li>
-              <li><span class="check-icon">✓</span><span>Acompañamiento presencial a la entrevista oficial</span></li>
-              <li><span class="check-icon">✓</span><span>Material de estudio personalizado</span></li>
-              <li><span class="check-icon">✓</span><span>Consultas ilimitadas durante todo el proceso</span></li>
-              <li><span class="check-icon">✓</span><span>Prioridad en la atención y seguimiento semanal</span></li>
+          <div class="consulta-body">
+            <ul class="consulta-steps">
+              <li><span class="step-number">1</span><div class="step-content"><strong>Evaluación completa</strong><span>Analizamos su situación migratoria actual y documentamos su caso de forma detallada.</span></div></li>
+              <li><span class="step-number">2</span><div class="step-content"><strong>Plan de acción personalizado</strong><span>Recibe un cronograma detallado con los pasos exactos para su naturalización.</span></div></li>
+              <li><span class="step-number">3</span><div class="step-content"><strong>Propuesta de servicio completo</strong><span>Le presentamos un precio cerrado y definitivo para la gestión integral de su expediente.</span></div></li>
             </ul>
-            <div class="pricing-cta">
-              <a href="#diagnostico" class="btn btn-primary"><span>🚀</span> Quiero el Plan Full Integral</a>
-              <p class="pricing-note">Precio original: <s>$5,500</s> · Oferta limitada: <strong>$2,900</strong></p>
-              <p class="pricing-note">Su consulta de $25 se descuenta del precio final</p>
+            <div class="discount-box">
+              <p style="margin-bottom: 6px; font-weight: 700; font-size: 0.92rem;">🔥 Beneficio por Contratación Inmediata</p>
+              <p>Si contrata el Plan Completo <strong>el mismo día</strong>, el valor de esta consulta se descuenta íntegramente del precio final del servicio.</p>
             </div>
+            <a href="https://wa.me/50762557583?text=Hola%2C%20deseo%20agendar%20la%20sesión%20de%20diagnóstico%20para%20mi%20naturalización." target="_blank" rel="noopener noreferrer" class="btn btn-primary"><span>📅</span> Agendar Mi Consulta Ahora</a>
+            <p style="font-size: 0.72rem; color: var(--muted); margin-top: 12px; text-align: center; margin-bottom: 0;">⏳ Cupos limitados por semana. Sujeto a disponibilidad.</p>
           </div>
-        </div>
-
-        <div class="pricing-footer-note">
-          <p>💡 <strong>Nota:</strong> Los precios pueden variar según la complejidad del caso. Tras la sesión de diagnóstico, le ofrecemos un <strong>precio cerrado y definitivo</strong> para su expediente completo. Estas ofertas son por tiempo limitado y sujetas a disponibilidad.</p>
         </div>
       </div>
     </section>
@@ -1513,9 +1517,10 @@
           <details><summary>¿Cuál es la diferencia entre residencia y ciudadanía?</summary><p>La residencia es un permiso de estancia temporal o permanente que puede requerir renovaciones periódicas. La naturalización confiere la ciudadanía panameña, incluyendo pasaporte y la plenitud de derechos políticos y civiles, sin necesidad de renovaciones.</p></details>
           <details><summary>¿Por qué debo pasar por un filtro de elegibilidad?</summary><p>Nuestro despacho se rige por un estricto código de ética profesional. No aceptamos casos que no cumplen con los requisitos de la Ley Migratoria. El filtro nos permite indicarle con honestidad si está listo para el proceso o qué requisitos le faltan.</p></details>
           <details><summary>¿Cuánto tiempo toma el proceso de naturalización?</summary><p>El proceso varía según cada caso, pero generalmente toma entre 12 a 24 meses desde la presentación de la solicitud hasta la resolución final. Nuestro equipo le brindará un cronograma estimado tras el diagnóstico inicial.</p></details>
-          <details><summary>¿Qué diferencia el Plan Básico del Plan Full Integral?</summary><p>El Plan Básico es para quienes ya tienen sus documentos preparados y solo necesitan presentación formal ante las autoridades. El Plan Full Integral es para quienes deben comenzar desde cero: recolección de documentos, preparación completa, estudio para el examen y acompañamiento integral hasta la naturalización.</p></details>
-          <details><summary>¿Cómo funciona el descuento de la consulta?</summary><p>Si después de la sesión de diagnóstico decide contratar el servicio completo, el valor de la consulta se descuenta del precio final. Es decir, solo pagaría el saldo restante sobre el costo del plan elegido.</p></details>
-          <details><summary>¿Las ofertas de precios tienen fecha límite?</summary><p>Sí. Los precios promocionales del Plan Básico ($1,500) y Plan Full Integral ($2,900) son por tiempo limitado y están sujetos a disponibilidad. Le recomendamos agendar su diagnóstico lo antes posible para asegurar estos precios.</p></details>
+          <details><summary>¿Qué incluye el Plan Completo?</summary><p>El Plan Completo cubre la gestión integral de su naturalización: diagnóstico legal, recolección y verificación de documentos, preparación de formularios, presentación ante autoridades, preparación para el examen de historia y geografía, simulacro de entrevista, acompañamiento presencial, material de estudio y consultas ilimitadas durante todo el proceso.</p></details>
+          <details><summary>¿Cómo se determina el costo del servicio?</summary><p>Tras la sesión de diagnóstico, evaluamos la complejidad de su caso y le ofrecemos un precio cerrado y definitivo. No hay cargos sorpresa ni costos adicionales durante el proceso. Además, el valor de la consulta se descuenta del precio final si contrata el mismo día.</p></details>
+          <details><summary>¿Qué pasa si aún no tengo todos los documentos?</summary><p>No se preocupe. Nuestro Plan Completo incluye la recolección de documentos desde cero. Le indicamos exactamente qué necesita y nos encargamos de gestionar, organizar y verificar toda la documentación requerida.</p></details>
+          <details><summary>¿La sesión de diagnóstico es obligatoria?</summary><p>Sí. Es el primer paso esencial para evaluar su elegibilidad y diseñar un plan de acción personalizado. Sin este análisis previo, no es posible determinar con precisión los requisitos específicos de su caso ni ofrecerle un presupuesto definitivo.</p></details>
         </div>
       </div>
     </section>
@@ -1528,7 +1533,7 @@
       <p style="opacity: 0.7; max-width: 500px; margin: 0 auto 24px; line-height: 1.8;">Firma legal especializada en Derecho Migratorio.<br>República de Panamá.</p>
       <div class="footer-links">
         <a href="#proceso">Proceso</a>
-        <a href="#precios">Precios</a>
+        <a href="#plan">Plan Completo</a>
         <a href="#consulta">Consulta</a>
         <a href="#faq">Preguntas Frecuentes</a>
         <a href="https://wa.me/50762557583" target="_blank" rel="noopener noreferrer">WhatsApp</a>
@@ -1566,7 +1571,7 @@
     const burger = document.getElementById('burger');
     const drawer = document.getElementById('drawer');
     const drawerOverlay = document.getElementById('drawerOverlay');
-    const closeDrawer = document.getElementById('closeDrawer');
+    const closeDrawerBtn = document.getElementById('closeDrawer');
     const bodyEl = document.body;
     
     function openDrawer() {
@@ -1592,7 +1597,7 @@
       window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
     burger.addEventListener('click', openDrawer);
-    closeDrawer.addEventListener('click', closeDrawerFunc);
+    closeDrawerBtn.addEventListener('click', closeDrawerFunc);
     drawerOverlay.addEventListener('click', closeDrawerFunc);
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawerFunc();
@@ -1722,4 +1727,3 @@
   </script>
 </body>
 </html>
-

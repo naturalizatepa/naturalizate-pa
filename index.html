@@ -165,12 +165,12 @@
     .proof-num em { font-style: italic; color: var(--navy-mid); }
     .proof-label { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-700); font-weight: 600; }
 
-    /* ====== NUEVA SECCIÓN: INVERSIÓN ====== */
+    /* INVERSIÓN - PLANES DETALLADOS */
     .investment { background: var(--white); padding: 100px 0; }
     .investment h2 { text-align: center; }
     .investment-sub { text-align: center; color: var(--gray-700); max-width: 640px; margin: 0 auto 3rem; font-size: 1.05rem; }
     
-    .investment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
+    .investment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
     @media (max-width: 900px) { .investment-grid { grid-template-columns: 1fr; gap: 20px; } }
     
     .investment-card { background: var(--white); border: 1px solid var(--gray-200); padding: 40px 32px; text-align: center; transition: all var(--transition); position: relative; }
@@ -179,6 +179,7 @@
     .investment-card.featured h3, .investment-card.featured .investment-price { color: var(--white); }
     .investment-card.featured .investment-features li { color: rgba(255,255,255,0.85); }
     .investment-card.featured .investment-features svg { fill: var(--gold); }
+    .investment-card.featured .investment-includes { color: rgba(255,255,255,0.7); }
     
     .investment-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--navy); font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; white-space: nowrap; }
     
@@ -192,8 +193,11 @@
     .investment-currency { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 24px; }
     .investment-card.featured .investment-currency { color: rgba(255,255,255,0.6); }
     
+    .investment-includes { font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-600); font-weight: 600; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--gray-200); }
+    .investment-card.featured .investment-includes { color: rgba(255,255,255,0.5); border-bottom-color: rgba(255,255,255,0.1); }
+    
     .investment-features { list-style: none; text-align: left; margin-bottom: 24px; }
-    .investment-features li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 0.9rem; color: var(--gray-700); line-height: 1.5; }
+    .investment-features li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 0.88rem; color: var(--gray-700); line-height: 1.5; }
     .investment-features svg { width: 16px; height: 16px; fill: var(--navy); flex-shrink: 0; margin-top: 3px; }
 
     /* Reserva destacada */
@@ -411,7 +415,7 @@
       </div>
     </section>
 
-    <!-- ====== NUEVA SECCIÓN: INVERSIÓN ====== -->
+    <!-- INVERSIÓN - PLANES DETALLADOS -->
     <section id="inversion" class="investment">
       <div class="wrap">
         <div class="text-center">
@@ -421,49 +425,56 @@
         </div>
 
         <div class="investment-grid">
-          <!-- Plan Esencial -->
+          <!-- Plan 1 - Esencial -->
           <div class="investment-card">
             <div class="investment-tier">Plan Esencial</div>
             <h3>Caso Estándar</h3>
             <div class="investment-price"><sup>B/.</sup>2,800</div>
             <div class="investment-currency">Honorarios totales</div>
+            <div class="investment-includes">Incluye:</div>
             <ul class="investment-features">
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Evaluación de viabilidad completa</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Constitución del expediente</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Redacción de poder</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Redacción de solicitud</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Notaría de poder</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Notaría de solicitud</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Armado de expediente</li>
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Presentación oficial</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Seguimiento procesal</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Acompañamiento en entrevista y jura</li>
             </ul>
           </div>
 
-          <!-- Plan Recomendado -->
+          <!-- Plan 2 - Profesional (Destacado) -->
           <div class="investment-card featured">
             <div class="investment-badge">Más solicitado</div>
             <div class="investment-tier">Plan Profesional</div>
             <h3>Caso con Complejidad Media</h3>
             <div class="investment-price"><sup>B/.</sup>3,800</div>
             <div class="investment-currency">Honorarios totales</div>
+            <div class="investment-includes">Incluye todo lo del Plan Esencial más:</div>
             <ul class="investment-features">
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Redacción de declaración jurada</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Notaría de declaración jurada</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Timbres de declaración jurada</li>
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Todo lo del Plan Esencial</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Revisión exhaustiva de antecedentes</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Gestión de documentación internacional</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Traducciones certificadas incluidas</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Atención prioritaria</li>
             </ul>
           </div>
 
-          <!-- Plan Premium -->
+          <!-- Plan 3 - Premium -->
           <div class="investment-card">
             <div class="investment-tier">Plan Premium</div>
             <h3>Caso de Alta Complejidad</h3>
             <div class="investment-price"><sup>B/.</sup>5,500</div>
             <div class="investment-currency">Honorarios totales</div>
+            <div class="investment-includes">Incluye todo lo anterior más:</div>
             <ul class="investment-features">
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Material de examen</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Material de entrevista</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Preparación para entrevista</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Preparación para examen</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Simulador de entrevistas</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Prólogo de examen</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Prólogo de entrevista</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Gastos incluidos (timbres, presentación)</li>
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Todo lo del Plan Profesional</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Casos con antecedentes migratorios complejos</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Estrategia jurídica personalizada</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Acompañamiento familiar integral</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Comunicación directa con el licenciado</li>
             </ul>
           </div>
         </div>
@@ -663,7 +674,7 @@
                   <option>🇳🇮 Nicaragua (2 años)</option>
                   <option>🇵🇪 Perú (2 años)</option>
                   <option>🇺🇾 Uruguay (3 años)</option>
-                  <option>🇻🇪 Venezuela (5 años)</option>
+                  <option>🇪 Venezuela (5 años)</option>
                   <option>Otra nacionalidad</option>
                 </select>
               </div>

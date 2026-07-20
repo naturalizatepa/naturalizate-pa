@@ -105,7 +105,7 @@
     .hero-actions { display: flex; gap: 16px; flex-direction: column; align-items: center; }
     @media (min-width: 600px) { .hero-actions { flex-direction: row; justify-content: center; } }
     
-    .hero-trust { display: flex; justify-content: center; gap: 32px; margin-top: 3rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    .hero-trust { display: flex; justify-content: center; gap: 24px; margin-top: 3rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
     .hero-trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: rgba(255,255,255,0.7); font-weight: 500; }
     .hero-trust-item svg { width: 18px; height: 18px; fill: var(--gold); }
 
@@ -129,6 +129,54 @@
       .value-num { width: 56px; height: 56px; font-size: 1.3rem; }
       .value-badge { grid-column: 1 / -1; justify-self: start; margin-top: 8px; }
     }
+
+    /* INVERSIÓN */
+    .investment { background: var(--white); padding: 100px 0; }
+    .investment h2 { text-align: center; }
+    .investment-sub { text-align: center; color: var(--gray-700); max-width: 640px; margin: 0 auto 3rem; font-size: 1.05rem; }
+    
+    .investment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+    @media (max-width: 900px) { .investment-grid { grid-template-columns: 1fr; gap: 20px; } }
+    
+    .investment-card { background: var(--white); border: 1px solid var(--gray-200); padding: 40px 32px; text-align: center; transition: all var(--transition); position: relative; }
+    .investment-card:hover { border-color: var(--navy); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(13, 27, 42, 0.08); }
+    .investment-card.featured { border: 2px solid var(--navy); background: var(--navy); color: var(--white); }
+    .investment-card.featured h3, .investment-card.featured .investment-price { color: var(--white); }
+    .investment-card.featured .investment-features li { color: rgba(255,255,255,0.85); }
+    .investment-card.featured .investment-features svg { fill: var(--gold); }
+    .investment-card.featured .investment-includes { color: rgba(255,255,255,0.5); border-bottom-color: rgba(255,255,255,0.1); }
+    
+    .investment-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--navy); font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; white-space: nowrap; }
+    
+    .investment-tier { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-600); font-weight: 600; margin-bottom: 12px; }
+    .investment-card.featured .investment-tier { color: rgba(255,255,255,0.6); }
+    .investment-card h3 { font-family: var(--font-serif); font-size: 1.4rem; color: var(--navy); margin-bottom: 20px; }
+    .investment-price { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 500; color: var(--navy); line-height: 1; margin-bottom: 8px; }
+    .investment-price sup { font-size: 1.2rem; vertical-align: top; margin-right: 4px; }
+    .investment-currency { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 24px; }
+    .investment-card.featured .investment-currency { color: rgba(255,255,255,0.6); }
+    .investment-includes { font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-600); font-weight: 600; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--gray-200); }
+    .investment-features { list-style: none; text-align: left; margin-bottom: 24px; }
+    .investment-features li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 0.88rem; color: var(--gray-700); line-height: 1.5; }
+    .investment-features svg { width: 16px; height: 16px; fill: var(--navy); flex-shrink: 0; margin-top: 3px; }
+
+    /* Reserva destacada */
+    .reservation-box { max-width: 800px; margin: 4rem auto 0; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); color: var(--white); padding: 48px; border-radius: 4px; position: relative; overflow: hidden; }
+    .reservation-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(212, 168, 75, 0.15), transparent 60%); pointer-events: none; }
+    .reservation-box-content { position: relative; }
+    .reservation-box h3 { color: var(--white); font-size: 1.6rem; margin-bottom: 1rem; }
+    .reservation-box p { color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 1.5rem; }
+    .reservation-price-block { display: flex; align-items: baseline; gap: 16px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .reservation-price { font-family: var(--font-serif); font-size: 3.5rem; font-weight: 500; color: var(--gold); line-height: 1; }
+    .reservation-price sup { font-size: 1.5rem; vertical-align: top; }
+    .reservation-price-note { font-size: 0.9rem; color: rgba(255,255,255,0.7); max-width: 300px; }
+    .reservation-price-note strong { color: var(--gold); font-weight: 600; }
+    .reservation-guarantees { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    @media (max-width: 600px) { .reservation-guarantees { grid-template-columns: 1fr; } }
+    .reservation-guarantee { display: flex; align-items: flex-start; gap: 12px; font-size: 0.9rem; color: rgba(255,255,255,0.85); }
+    .reservation-guarantee svg { width: 20px; height: 20px; fill: var(--gold); flex-shrink: 0; margin-top: 2px; }
+    .reservation-guarantee strong { color: var(--white); display: block; margin-bottom: 2px; }
+    @media (max-width: 600px) { .reservation-box { padding: 32px 24px; } .reservation-price { font-size: 2.8rem; } }
 
     /* PROCESS */
     .process { background: var(--navy); color: var(--white); padding: 100px 0; }
@@ -159,67 +207,11 @@
 
     /* SOCIAL PROOF */
     .social-proof { background: var(--gray-50); padding: 80px 0; border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
-    .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+    .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; }
     @media (max-width: 768px) { .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; } }
     .proof-num { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 400; color: var(--navy); line-height: 1; margin-bottom: 8px; }
     .proof-num em { font-style: italic; color: var(--navy-mid); }
     .proof-label { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-700); font-weight: 600; }
-
-    /* INVERSIÓN - PLANES DETALLADOS */
-    .investment { background: var(--white); padding: 100px 0; }
-    .investment h2 { text-align: center; }
-    .investment-sub { text-align: center; color: var(--gray-700); max-width: 640px; margin: 0 auto 3rem; font-size: 1.05rem; }
-    
-    .investment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
-    @media (max-width: 900px) { .investment-grid { grid-template-columns: 1fr; gap: 20px; } }
-    
-    .investment-card { background: var(--white); border: 1px solid var(--gray-200); padding: 40px 32px; text-align: center; transition: all var(--transition); position: relative; }
-    .investment-card:hover { border-color: var(--navy); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(13, 27, 42, 0.08); }
-    .investment-card.featured { border: 2px solid var(--navy); background: var(--navy); color: var(--white); }
-    .investment-card.featured h3, .investment-card.featured .investment-price { color: var(--white); }
-    .investment-card.featured .investment-features li { color: rgba(255,255,255,0.85); }
-    .investment-card.featured .investment-features svg { fill: var(--gold); }
-    .investment-card.featured .investment-includes { color: rgba(255,255,255,0.7); }
-    
-    .investment-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--navy); font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; white-space: nowrap; }
-    
-    .investment-tier { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-600); font-weight: 600; margin-bottom: 12px; }
-    .investment-card.featured .investment-tier { color: rgba(255,255,255,0.6); }
-    
-    .investment-card h3 { font-family: var(--font-serif); font-size: 1.4rem; color: var(--navy); margin-bottom: 20px; }
-    
-    .investment-price { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 500; color: var(--navy); line-height: 1; margin-bottom: 8px; }
-    .investment-price sup { font-size: 1.2rem; vertical-align: top; margin-right: 4px; }
-    .investment-currency { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 24px; }
-    .investment-card.featured .investment-currency { color: rgba(255,255,255,0.6); }
-    
-    .investment-includes { font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-600); font-weight: 600; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--gray-200); }
-    .investment-card.featured .investment-includes { color: rgba(255,255,255,0.5); border-bottom-color: rgba(255,255,255,0.1); }
-    
-    .investment-features { list-style: none; text-align: left; margin-bottom: 24px; }
-    .investment-features li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 0.88rem; color: var(--gray-700); line-height: 1.5; }
-    .investment-features svg { width: 16px; height: 16px; fill: var(--navy); flex-shrink: 0; margin-top: 3px; }
-
-    /* Reserva destacada */
-    .reservation-box { max-width: 800px; margin: 4rem auto 0; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); color: var(--white); padding: 48px; border-radius: 4px; position: relative; overflow: hidden; }
-    .reservation-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(212, 168, 75, 0.15), transparent 60%); pointer-events: none; }
-    .reservation-box-content { position: relative; }
-    .reservation-box h3 { color: var(--white); font-size: 1.6rem; margin-bottom: 1rem; }
-    .reservation-box p { color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 1.5rem; }
-    
-    .reservation-price-block { display: flex; align-items: baseline; gap: 16px; margin-bottom: 1.5rem; flex-wrap: wrap; }
-    .reservation-price { font-family: var(--font-serif); font-size: 3.5rem; font-weight: 500; color: var(--gold); line-height: 1; }
-    .reservation-price sup { font-size: 1.5rem; vertical-align: top; }
-    .reservation-price-note { font-size: 0.9rem; color: rgba(255,255,255,0.7); max-width: 300px; }
-    .reservation-price-note strong { color: var(--gold); font-weight: 600; }
-    
-    .reservation-guarantees { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
-    @media (max-width: 600px) { .reservation-guarantees { grid-template-columns: 1fr; } }
-    .reservation-guarantee { display: flex; align-items: flex-start; gap: 12px; font-size: 0.9rem; color: rgba(255,255,255,0.85); }
-    .reservation-guarantee svg { width: 20px; height: 20px; fill: var(--gold); flex-shrink: 0; margin-top: 2px; }
-    .reservation-guarantee strong { color: var(--white); display: block; margin-bottom: 2px; }
-    
-    @media (max-width: 600px) { .reservation-box { padding: 32px 24px; } .reservation-price { font-size: 2.8rem; } }
 
     /* FORM SECTION */
     .form-section { background: var(--navy); padding: 100px 0; color: var(--white); position: relative; overflow: hidden; }
@@ -281,15 +273,21 @@
 
     /* FOOTER */
     footer { background: var(--navy-deep); color: var(--white); padding: 80px 0 40px; }
-    .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 60px; align-items: start; }
+    .footer-content { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; margin-bottom: 60px; align-items: start; }
     @media (max-width: 768px) { .footer-content { grid-template-columns: 1fr; gap: 40px; text-align: center; } }
     .footer-brand { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 600; letter-spacing: 2px; margin-bottom: 1rem; text-transform: uppercase; }
     .footer-brand em { font-style: italic; color: rgba(255, 255, 255, 0.6); font-weight: 400; }
     .footer-tag { font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); font-style: italic; max-width: 320px; font-family: var(--font-serif); line-height: 1.7; }
     @media (max-width: 768px) { .footer-tag { margin: 0 auto; } }
     .footer-col h4 { font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255, 255, 255, 0.6); margin-bottom: 1.5rem; font-weight: 600; }
-    .footer-col a { display: block; color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; margin-bottom: 0.75rem; transition: color var(--transition); }
-    .footer-col a:hover { color: var(--white); }
+    
+    .social-links { display: flex; gap: 16px; }
+    @media (max-width: 768px) { .social-links { justify-content: center; } }
+    .social-link { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: rgba(255,255,255,0.1); border-radius: 50%; transition: all var(--transition); }
+    .social-link:hover { background: var(--gold); transform: translateY(-3px); }
+    .social-link svg { width: 22px; height: 22px; fill: var(--white); }
+    .social-link:hover svg { fill: var(--navy); }
+
     .footer-bottom { padding-top: 2.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     @media (max-width: 600px) { .footer-bottom { justify-content: center; text-align: center; } }
     .footer-copy { font-size: 0.75rem; color: rgba(255, 255, 255, 0.4); margin: 0; }
@@ -340,15 +338,15 @@
           <div class="hero-trust">
             <div class="hero-trust-item">
               <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              <span>⭐ 4.9/5 satisfacción</span>
+              <span>13K+ Seguidores</span>
             </div>
             <div class="hero-trust-item">
               <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-              <span>+400 expedientes</span>
+              <span>1M+ Vistas</span>
             </div>
             <div class="hero-trust-item">
               <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-              <span>98% favorables</span>
+              <span>98% Favorables</span>
             </div>
           </div>
         </div>
@@ -391,7 +389,7 @@
             <div class="value-num">4</div>
             <div class="value-content">
               <h3 class="value-title">Timeline Estimado</h3>
-              <p class="value-desc">Le indicamos la duración real de su proceso: desde 1 año (reciprocidad) hasta 19–22 meses (vía general).</p>
+              <p class="value-desc">Le indicamos la duración real de su proceso: desde 1 año (reciprocidad) hasta 19–26 meses (vía general).</p>
             </div>
             <div class="value-badge">Planificación</div>
           </div>
@@ -415,7 +413,7 @@
       </div>
     </section>
 
-    <!-- INVERSIÓN - PLANES DETALLADOS -->
+    <!-- INVERSIÓN -->
     <section id="inversion" class="investment">
       <div class="wrap">
         <div class="text-center">
@@ -425,7 +423,6 @@
         </div>
 
         <div class="investment-grid">
-          <!-- Plan 1 - Esencial -->
           <div class="investment-card">
             <div class="investment-tier">Plan Esencial</div>
             <h3>Caso Estándar</h3>
@@ -442,7 +439,6 @@
             </ul>
           </div>
 
-          <!-- Plan 2 - Profesional (Destacado) -->
           <div class="investment-card featured">
             <div class="investment-badge">Más solicitado</div>
             <div class="investment-tier">Plan Profesional</div>
@@ -458,7 +454,6 @@
             </ul>
           </div>
 
-          <!-- Plan 3 - Premium -->
           <div class="investment-card">
             <div class="investment-tier">Plan Premium</div>
             <h3>Caso de Alta Complejidad</h3>
@@ -466,20 +461,16 @@
             <div class="investment-currency">Honorarios totales</div>
             <div class="investment-includes">Incluye todo lo anterior más:</div>
             <ul class="investment-features">
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Material de examen</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Material de entrevista</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Preparación para entrevista</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Preparación para examen</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Material de examen y entrevista</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Preparación para entrevista y examen</li>
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Simulador de entrevistas</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Prólogo de examen</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Prólogo de entrevista</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Prólogo de examen y entrevista</li>
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Gastos incluidos (timbres, presentación)</li>
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Todo lo del Plan Profesional</li>
             </ul>
           </div>
         </div>
 
-        <!-- Caja destacada de Reserva -->
         <div class="reservation-box">
           <div class="reservation-box-content">
             <h3>Reserve su evaluación estratégica</h3>
@@ -504,7 +495,7 @@
                 <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
                 <div>
                   <strong>Se descuenta del proceso</strong>
-                  Si su caso es viable, los B/. 50 se aplican como abono al saldo inicial de B/. 250 que separa su cupo.
+                  Si su caso es viable, los B/. 50 se aplican como abono al saldo inicial que separa su cupo.
                 </div>
               </div>
               <div class="reservation-guarantee">
@@ -573,7 +564,7 @@
               <h3 class="process-title">Resolución</h3>
               <p class="process-desc">Asistencia presencial el día de la entrevista oficial, jura y retiro de la cédula de nacionalidad panameña.</p>
             </div>
-            <div class="process-duration">Mes 19–22</div>
+            <div class="process-duration">Mes 19–26</div>
           </div>
         </div>
       </div>
@@ -592,11 +583,11 @@
       <div class="wrap">
         <div class="proof-grid">
           <div>
-            <div class="proof-num"><em>15</em>+</div>
+            <div class="proof-num"><em>12</em>+</div>
             <div class="proof-label">Años de ejercicio</div>
           </div>
           <div>
-            <div class="proof-num"><em>400</em>+</div>
+            <div class="proof-num"><em>130</em>+</div>
             <div class="proof-label">Expedientes tramitados</div>
           </div>
           <div>
@@ -604,8 +595,16 @@
             <div class="proof-label">Resoluciones favorables</div>
           </div>
           <div>
-            <div class="proof-num"><em>19</em>–22</div>
+            <div class="proof-num"><em>19</em>–26</div>
             <div class="proof-label">Meses, plazo habitual</div>
+          </div>
+          <div>
+            <div class="proof-num"><em>13</em>K+</div>
+            <div class="proof-label">Seguidores en redes</div>
+          </div>
+          <div>
+            <div class="proof-num"><em>1</em>M+</div>
+            <div class="proof-label">Vistas en contenido</div>
           </div>
         </div>
       </div>
@@ -674,7 +673,7 @@
                   <option>🇳🇮 Nicaragua (2 años)</option>
                   <option>🇵🇪 Perú (2 años)</option>
                   <option>🇺🇾 Uruguay (3 años)</option>
-                  <option>🇪 Venezuela (5 años)</option>
+                  <option>🇻🇪 Venezuela (5 años)</option>
                   <option>Otra nacionalidad</option>
                 </select>
               </div>
@@ -726,13 +725,13 @@
           <details>
             <summary>¿Cuánto tiempo toma obtener la nacionalidad?</summary>
             <div>
-              <p>Depende de su caso. Con reciprocidad: 1 a 3 años. Sin reciprocidad: 19 a 22 meses desde la presentación. Le detallamos su timeline específico en la evaluación.</p>
+              <p>Depende de su caso. Con reciprocidad: 1 a 3 años. Sin reciprocidad: 19 a 26 meses desde la presentación. Le detallamos su timeline específico en la evaluación.</p>
             </div>
           </details>
           <details>
             <summary>¿Ofrecen planes de pago?</summary>
             <div>
-              <p>Sí. Tras la evaluación, le presentamos un plan de pagos estructurado: <strong>B/. 250 para separar su cupo</strong> (donde ya están incluidos los B/. 50 de la reserva), y el saldo restante distribuido en cuotas durante el proceso. Le detallamos las opciones específicas en su evaluación personalizada.</p>
+              <p>Sí. Tras la evaluación, le presentamos un plan de pagos estructurado para separar su cupo, y el saldo restante distribuido en cuotas durante el proceso. Le detallamos las opciones específicas en su evaluación personalizada.</p>
             </div>
           </details>
           <details>
@@ -780,15 +779,18 @@
           <p class="footer-tag">Asesoría jurídica especializada en naturalización panameña. Rigor, discreción y acompañamiento integral en cada etapa del proceso.</p>
         </div>
         <div class="footer-col">
-          <h4>Contacto</h4>
-          <a href="https://wa.me/50762557583" target="_blank" rel="noopener noreferrer">+507 6255-7583</a>
-          <a href="mailto:contacto@naturalizate.pa">contacto@naturalizate.pa</a>
-          <a href="https://naturalizate.pa">naturalizate.pa</a>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="#">Aviso de privacidad</a>
-          <a href="#">Términos de servicio</a>
+          <h4>Síganos</h4>
+          <div class="social-links">
+            <a href="https://www.tiktok.com/@naturalizate.pa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+              <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/naturalizate-pa/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/naturalizate.pa/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+            </a>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">

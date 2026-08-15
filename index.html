@@ -130,7 +130,7 @@
       .value-badge { grid-column: 1 / -1; justify-self: start; margin-top: 8px; }
     }
 
-    /* INVERSIÓN */
+    /* PLANES (sin precios) */
     .investment { background: var(--white); padding: 100px 0; }
     .investment h2 { text-align: center; }
     .investment-sub { text-align: center; color: var(--gray-700); max-width: 640px; margin: 0 auto 3rem; font-size: 1.05rem; }
@@ -151,32 +151,23 @@
     .investment-tier { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-600); font-weight: 600; margin-bottom: 12px; }
     .investment-card.featured .investment-tier { color: rgba(255,255,255,0.6); }
     .investment-card h3 { font-family: var(--font-serif); font-size: 1.4rem; color: var(--navy); margin-bottom: 20px; }
-    .investment-price { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 500; color: var(--navy); line-height: 1; margin-bottom: 8px; }
-    .investment-price sup { font-size: 1.2rem; vertical-align: top; margin-right: 4px; }
-    .investment-currency { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 24px; }
-    .investment-card.featured .investment-currency { color: rgba(255,255,255,0.6); }
     .investment-includes { font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-600); font-weight: 600; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--gray-200); }
     .investment-features { list-style: none; text-align: left; margin-bottom: 24px; }
     .investment-features li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 0.88rem; color: var(--gray-700); line-height: 1.5; }
     .investment-features svg { width: 16px; height: 16px; fill: var(--navy); flex-shrink: 0; margin-top: 3px; }
 
-    /* Reserva destacada */
+    /* Reserva destacada (sin precio) */
     .reservation-box { max-width: 800px; margin: 4rem auto 0; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); color: var(--white); padding: 48px; border-radius: 4px; position: relative; overflow: hidden; }
     .reservation-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(212, 168, 75, 0.15), transparent 60%); pointer-events: none; }
     .reservation-box-content { position: relative; }
     .reservation-box h3 { color: var(--white); font-size: 1.6rem; margin-bottom: 1rem; }
     .reservation-box p { color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 1.5rem; }
-    .reservation-price-block { display: flex; align-items: baseline; gap: 16px; margin-bottom: 1.5rem; flex-wrap: wrap; }
-    .reservation-price { font-family: var(--font-serif); font-size: 3.5rem; font-weight: 500; color: var(--gold); line-height: 1; }
-    .reservation-price sup { font-size: 1.5rem; vertical-align: top; }
-    .reservation-price-note { font-size: 0.9rem; color: rgba(255,255,255,0.7); max-width: 300px; }
-    .reservation-price-note strong { color: var(--gold); font-weight: 600; }
     .reservation-guarantees { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
     @media (max-width: 600px) { .reservation-guarantees { grid-template-columns: 1fr; } }
     .reservation-guarantee { display: flex; align-items: flex-start; gap: 12px; font-size: 0.9rem; color: rgba(255,255,255,0.85); }
     .reservation-guarantee svg { width: 20px; height: 20px; fill: var(--gold); flex-shrink: 0; margin-top: 2px; }
     .reservation-guarantee strong { color: var(--white); display: block; margin-bottom: 2px; }
-    @media (max-width: 600px) { .reservation-box { padding: 32px 24px; } .reservation-price { font-size: 2.8rem; } }
+    @media (max-width: 600px) { .reservation-box { padding: 32px 24px; } }
 
     /* PROCESS */
     .process { background: var(--navy); color: var(--white); padding: 100px 0; }
@@ -314,7 +305,7 @@
       </a>
       <nav class="nav-links">
         <a href="#diagnostico">Diagnóstico</a>
-        <a href="#inversion">Inversión</a>
+        <a href="#inversion">Planes</a>
         <a href="#metodologia">Metodología</a>
         <a href="#faq">Preguntas</a>
         <a href="#formulario" class="btn btn-header">Reservar Evaluación</a>
@@ -332,8 +323,8 @@
           <h1>Obtenga su <em>nacionalidad panameña</em> con respaldo jurídico profesional.</h1>
           <p class="hero-subtitle">Reserve su evaluación estratégica de viabilidad. Le informamos con precisión si califica, el costo exacto del proceso y la ruta más eficiente para obtener su cédula N y pasaporte.</p>
           <div class="hero-actions">
-            <a href="#formulario" class="btn btn-gold btn-arrow">Reservar Mi Evaluación · B/. 50</a>
-            <a href="#inversion" class="btn btn-outline btn-arrow">Ver Planes de Inversión</a>
+            <a href="#formulario" class="btn btn-gold btn-arrow">Reservar Mi Evaluación</a>
+            <a href="#inversion" class="btn btn-outline btn-arrow">Ver Planes de Servicio</a>
           </div>
           <div class="hero-trust">
             <div class="hero-trust-item">
@@ -413,11 +404,11 @@
       </div>
     </section>
 
-    <!-- INVERSIÓN -->
+    <!-- PLANES DE SERVICIO (sin precios) -->
     <section id="inversion" class="investment">
       <div class="wrap">
         <div class="text-center">
-          <span class="eyebrow center">Planes de Inversión</span>
+          <span class="eyebrow center">Planes de Servicio</span>
           <h2>Transparentes desde el primer momento</h2>
           <p class="investment-sub">Tres niveles de servicio adaptados a la complejidad de su caso. Todos incluyen acompañamiento presencial del abogado y garantía documentada.</p>
         </div>
@@ -426,8 +417,6 @@
           <div class="investment-card">
             <div class="investment-tier">Plan Esencial</div>
             <h3>Caso Estándar</h3>
-            <div class="investment-price"><sup>B/.</sup>2,800</div>
-            <div class="investment-currency">Honorarios totales</div>
             <div class="investment-includes">Incluye:</div>
             <ul class="investment-features">
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Redacción de poder</li>
@@ -443,8 +432,6 @@
             <div class="investment-badge">Más solicitado</div>
             <div class="investment-tier">Plan Profesional</div>
             <h3>Caso con Complejidad Media</h3>
-            <div class="investment-price"><sup>B/.</sup>3,800</div>
-            <div class="investment-currency">Honorarios totales</div>
             <div class="investment-includes">Incluye todo lo del Plan Esencial más:</div>
             <ul class="investment-features">
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Redacción de declaración jurada</li>
@@ -457,15 +444,13 @@
           <div class="investment-card">
             <div class="investment-tier">Plan Premium</div>
             <h3>Caso de Alta Complejidad</h3>
-            <div class="investment-price"><sup>B/.</sup>5,500</div>
-            <div class="investment-currency">Honorarios totales</div>
             <div class="investment-includes">Incluye todo lo anterior más:</div>
             <ul class="investment-features">
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Material de examen y entrevista</li>
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Preparación para entrevista y examen</li>
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Simulador de entrevistas</li>
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Prólogo de examen y entrevista</li>
-              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Gastos incluidos (timbres, presentación)</li>
+              <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Gastos incluidos</li>
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Todo lo del Plan Profesional</li>
             </ul>
           </div>
@@ -476,26 +461,19 @@
             <h3>Reserve su evaluación estratégica</h3>
             <p>Para iniciar su diagnóstico, se requiere una reserva de cupo que garantiza la dedicación exclusiva del licenciado a su caso. Este monto se aplica directamente a su proceso.</p>
             
-            <div class="reservation-price-block">
-              <div class="reservation-price"><sup>B/.</sup>50</div>
-              <div class="reservation-price-note">
-                <strong>100% reembolsable.</strong> Si su caso no es viable legalmente, le devolvemos el monto completo. Si califica, se descuenta del saldo inicial de su proceso.
-              </div>
-            </div>
-
             <div class="reservation-guarantees">
               <div class="reservation-guarantee">
                 <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
                 <div>
-                  <strong>Garantía de reembolso total</strong>
-                  Si no califica, le devolvemos los B/. 50 completos. Sin preguntas, sin trámites.
+                  <strong>Compromiso de reembolso</strong>
+                  Si no califica, le devolvemos el importe completo. Sin preguntas, sin trámites.
                 </div>
               </div>
               <div class="reservation-guarantee">
                 <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
                 <div>
                   <strong>Se descuenta del proceso</strong>
-                  Si su caso es viable, los B/. 50 se aplican como abono al saldo inicial que separa su cupo.
+                  Si su caso es viable, la reserva se aplica como abono al saldo inicial que separa su cupo.
                 </div>
               </div>
               <div class="reservation-guarantee">
@@ -616,8 +594,8 @@
         <div class="form-layout">
           <div class="form-info">
             <span class="eyebrow">Reserva de Evaluación</span>
-            <h2>Reserve su cupo con B/. 50</h2>
-            <p>Complete el formulario para reservar su evaluación estratégica. El Lic. Villarreal revisará personalmente su caso y le contactará en menos de 24 horas. Los B/. 50 se descuentan del saldo inicial si su caso es viable, o se le reembolsan completamente si no califica.</p>
+            <h2>Reserve su cupo para la evaluación</h2>
+            <p>Complete el formulario para reservar su evaluación estratégica. El Lic. Villarreal revisará personalmente su caso y le contactará en menos de 24 horas. La reserva se descuenta del saldo inicial si su caso es viable, o se le reembolsa completamente si no califica.</p>
             <ul class="benefit-list">
               <li>
                 <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
@@ -687,7 +665,7 @@
                 </select>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-arrow">Reservar Mi Evaluación · B/. 50</button>
+              <button type="submit" class="btn btn-primary btn-arrow">Reservar Mi Evaluación</button>
               <p class="form-disclaimer">
                 <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
                 100% confidencial · Reembolso garantizado si no califica
@@ -705,21 +683,21 @@
         <h2>Lo que suele consultarse antes de iniciar</h2>
         <div class="faq-list">
           <details>
-            <summary>¿Por qué debo pagar B/. 50 para la evaluación?</summary>
+            <summary>¿Por qué debo hacer una reserva para la evaluación?</summary>
             <div>
-              <p>Los B/. 50 son una <strong>reserva de cupo</strong> que garantiza la dedicación exclusiva del licenciado a su caso. Este monto <strong>se descuenta del saldo inicial</strong> si su caso es viable, o <strong>se le reembolsa completamente</strong> si no califica legalmente. Es un filtro que nos permite atender solo casos con probabilidad real de éxito, manteniendo la calidad del servicio.</p>
+              <p>La reserva garantiza la dedicación exclusiva del licenciado a su caso. Este importe <strong>se descuenta del saldo inicial</strong> si su caso es viable, o <strong>se le reembolsa completamente</strong> si no califica legalmente. Es un filtro que nos permite atender solo casos con probabilidad real de éxito, manteniendo la calidad del servicio.</p>
             </div>
           </details>
           <details>
             <summary>¿Qué pasa si mi caso no es viable?</summary>
             <div>
-              <p>Si tras el análisis determinamos que su caso no cumple los requisitos legales, <strong>le devolvemos los B/. 50 completos</strong>, sin preguntas ni trámites. Además, le explicamos con claridad las razones y, si aplica, le orientamos sobre alternativas o el tiempo que debería esperar para reintentar.</p>
+              <p>Si tras el análisis determinamos que su caso no cumple los requisitos legales, <strong>le devolvemos el importe completo</strong>, sin preguntas ni trámites. Además, le explicamos con claridad las razones y, si aplica, le orientamos sobre alternativas o el tiempo que debería esperar para reintentar.</p>
             </div>
           </details>
           <details>
             <summary>¿Cuál es el costo total del proceso de naturalización?</summary>
             <div>
-              <p>Dependiendo de la complejidad de su caso, ofrecemos tres planes: <strong>Esencial (B/. 2,800)</strong>, <strong>Profesional (B/. 3,800)</strong> y <strong>Premium (B/. 5,500)</strong>. Todos incluyen honorarios, gestión documental y acompañamiento integral. En la evaluación le indicamos cuál plan aplica a su caso particular y le mostramos las opciones de pago disponibles.</p>
+              <p>Dependiendo de la complejidad de su caso, ofrecemos tres planes: <strong>Esencial</strong>, <strong>Profesional</strong> y <strong>Premium</strong>. Todos incluyen honorarios, gestión documental y acompañamiento integral. En la evaluación le indicamos cuál plan aplica a su caso particular y le mostramos las opciones de pago disponibles.</p>
             </div>
           </details>
           <details>
@@ -750,8 +728,8 @@
         <div class="final-cta-content">
           <span class="eyebrow center" style="color: rgba(255,255,255,0.7);">Primer Paso</span>
           <h2>¿Listo para dar el primer paso?</h2>
-          <p>Reserve su evaluación estratégica con B/. 50. Si no califica, le devolvemos el 100%. Si califica, se descuenta del saldo inicial de su proceso.</p>
-          <a href="#formulario" class="btn btn-gold btn-arrow">Reservar Mi Evaluación · B/. 50</a>
+          <p>Reserve su evaluación estratégica. Si no califica, le devolvemos el 100%. Si califica, se descuenta del saldo inicial de su proceso.</p>
+          <a href="#formulario" class="btn btn-gold btn-arrow">Reservar Mi Evaluación</a>
           <div class="final-cta-checks">
             <div class="final-cta-check">
               <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
@@ -800,7 +778,7 @@
   </footer>
 
   <div class="sticky-cta">
-    <a href="#formulario" class="btn btn-gold btn-arrow">Reservar Evaluación · B/. 50</a>
+    <a href="#formulario" class="btn btn-gold btn-arrow">Reservar Evaluación</a>
   </div>
 
   <a href="#formulario" class="audit-float" aria-label="Reservar evaluación">
@@ -879,18 +857,17 @@
           const nacionalidad = data.get('nacionalidad') || '';
           const tiempo = data.get('tiempo') || '';
 
-          const texto = '📋 *RESERVA DE EVALUACIÓN ESTRATÉGICA (B/. 50)*\n\n' +
+          const texto = '📋 *RESERVA DE EVALUACIÓN ESTRATÉGICA*\n\n' +
             '👤 *Nombre:* ' + nombre + '\n' +
             '📱 *WhatsApp:* ' + cleanPhone + '\n' +
             '🌍 *Nacionalidad:* ' + nacionalidad + '\n' +
             '🪪 *Cédula E:* ' + tiempo + '\n\n' +
-            '💰 *Listo para realizar el pago de reserva de B/. 50*\n\n' +
-            'Quedo a la espera de las instrucciones de pago y confirmación de mi cupo. Gracias.';
+            'Quedo a la espera de la confirmación de mi cupo. Gracias.';
 
           const encodedText = encodeURIComponent(texto);
           window.open('https://wa.me/50762557583?text=' + encodedText, '_blank', 'noopener,noreferrer');
 
-          msg.textContent = '¡Excelente! Redirigiendo a WhatsApp para coordinar el pago de reserva y su evaluación...';
+          msg.textContent = '¡Excelente! Redirigiendo a WhatsApp para coordinar su evaluación...';
           msg.className = 'form-message success';
           
           setTimeout(() => {

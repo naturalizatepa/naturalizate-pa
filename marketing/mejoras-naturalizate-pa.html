@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Naturalízate.pa · Análisis de la web y mejoras de perfiles</title>
+<meta name="robots" content="noindex, nofollow" />
+<style>
+:root{
+  --navy:#0d1b2a;--navy-mid:#1b3a57;--navy-deep:#060f17;
+  --white:#fff;--gray-50:#f8f9fa;--gray-100:#f1f3f5;--gray-200:#e9ecef;
+  --gray-300:#dee2e6;--gray-600:#6c757d;--gray-700:#495057;--gray-900:#212529;
+  --gold:#d4a84b;--gold-dark:#b8912f;--gold-acc:#8f6b1a;
+  --ok:#28a745;--warn:#d98b0a;--err:#dc3545;--wa:#25D366;
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,::before,::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:24px;font-size:16px}
+body{background:var(--gray-100);color:var(--gray-900);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+.sheet{max-width:900px;margin:0 auto;background:var(--white);box-shadow:0 2px 40px rgba(13,27,42,.08)}
+.pad{padding:0 clamp(20px,5vw,64px)}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--navy);line-height:1.25;font-weight:500}
+p{margin-bottom:1rem;color:var(--gray-700)}
+a{color:var(--navy-mid)}
+ul,ol{margin:0 0 1rem 1.2rem}
+li{margin-bottom:.4rem;color:var(--gray-700)}
+strong{color:var(--navy)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86em;background:var(--gray-100);padding:2px 6px;border-radius:3px;color:var(--navy)}
+
+/* ---------- portada ---------- */
+.cover{background:var(--navy);color:var(--white);padding:64px clamp(20px,5vw,64px) 56px;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 15%,rgba(27,58,87,.65),transparent);pointer-events:none}
+.cover>*{position:relative}
+.eyebrow{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
+.cover h1{color:var(--white);font-size:clamp(1.9rem,4.6vw,2.9rem);margin-bottom:1rem}
+.cover h1 em{font-style:italic;color:rgba(255,255,255,.82);font-weight:400}
+.cover .lede{color:rgba(255,255,255,.72);font-size:1.02rem;max-width:62ch;margin-bottom:2rem}
+.cover-meta{display:flex;flex-wrap:wrap;gap:10px 28px;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.14);font-size:.72rem;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:600}
+
+/* ---------- aviso ---------- */
+.notice{background:rgba(212,168,75,.1);border-left:3px solid var(--gold);padding:16px 20px;margin:32px 0;font-size:.9rem;color:var(--gray-700)}
+.notice strong{color:var(--navy)}
+
+/* ---------- indice ---------- */
+.toc{background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);padding:36px clamp(20px,5vw,64px)}
+.toc h2{font-size:.72rem;font-family:var(--sans);letter-spacing:2.5px;text-transform:uppercase;color:var(--gray-600);margin-bottom:1.25rem;font-weight:600}
+.toc ol{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px}
+.toc a{display:flex;gap:12px;align-items:baseline;background:var(--white);border:1px solid var(--gray-200);padding:12px 16px;font-size:.88rem;color:var(--gray-700);text-decoration:none;transition:all .25s}
+.toc a:hover{border-color:var(--navy);color:var(--navy);transform:translateY(-2px)}
+.toc .n{font-family:var(--serif);font-style:italic;color:var(--gold-acc)}
+
+/* ---------- secciones ---------- */
+section{padding:56px 0 8px;border-bottom:1px solid var(--gray-200)}
+section:last-of-type{border-bottom:none}
+.sec-head{display:flex;gap:18px;align-items:baseline;margin-bottom:1.75rem}
+.sec-num{font-family:var(--serif);font-style:italic;font-size:1.7rem;color:var(--gold-acc);line-height:1}
+.sec-head h2{font-size:clamp(1.5rem,3.4vw,2rem)}
+h3{font-size:1.2rem;margin:2.25rem 0 .75rem}
+h4{font-size:1rem;margin:1.5rem 0 .5rem;font-family:var(--sans);font-weight:600;color:var(--navy);letter-spacing:.2px}
+
+/* ---------- tablas ---------- */
+.tw{overflow-x:auto;margin:1.25rem 0;border:1px solid var(--gray-200)}
+table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:460px}
+th{background:var(--navy);color:var(--white);text-align:left;padding:12px 16px;font-size:.66rem;letter-spacing:1.4px;text-transform:uppercase;font-weight:600}
+td{padding:12px 16px;border-bottom:1px solid var(--gray-200);color:var(--gray-700);vertical-align:top}
+tr:nth-child(2n) td{background:var(--gray-50)}
+tr:last-child td{border-bottom:none}
+td strong{color:var(--navy)}
+
+/* ---------- hallazgos ---------- */
+.finding{border:1px solid var(--gray-200);border-left:3px solid var(--gray-300);padding:20px 24px;margin-bottom:14px;background:var(--white)}
+.finding.fixed{border-left-color:var(--ok);background:rgba(40,167,69,.03)}
+.finding.pending{border-left-color:var(--warn);background:rgba(217,139,10,.04)}
+.finding-top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:.5rem}
+.finding h4{margin:0;font-size:.98rem}
+.tag{font-size:.6rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:4px 10px;border-radius:2px;white-space:nowrap}
+.tag.ok{background:rgba(40,167,69,.14);color:#1c6b2c}
+.tag.pend{background:rgba(217,139,10,.16);color:#8a5a06}
+.finding p{font-size:.9rem;margin:0}
+.finding p+p{margin-top:.6rem}
+
+/* ---------- bloques copiables ---------- */
+.copy-block{border:1px solid var(--gray-200);margin:1rem 0 1.5rem;background:var(--white)}
+.copy-head{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;background:var(--gray-50);border-bottom:1px solid var(--gray-200);padding:10px 16px}
+.copy-label{font-size:.68rem;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--navy-mid)}
+.copy-right{display:flex;align-items:center;gap:10px}
+.counter{font-size:.68rem;font-weight:700;letter-spacing:1px;color:var(--ok);background:rgba(40,167,69,.1);padding:4px 9px;border-radius:2px;white-space:nowrap}
+.counter.tight{color:#8a5a06;background:rgba(217,139,10,.14)}
+.btn-copy{font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;background:var(--navy);color:var(--white);border:1px solid var(--navy);padding:7px 14px;cursor:pointer;transition:all .25s}
+.btn-copy:hover{background:var(--navy-mid);border-color:var(--navy-mid)}
+.btn-copy.done{background:var(--ok);border-color:var(--ok)}
+.copy-text{margin:0;padding:16px;font-family:var(--sans);font-size:.94rem;line-height:1.7;color:var(--gray-900);white-space:pre-wrap;word-break:break-word}
+.copy-text.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.8rem;color:var(--navy-mid);line-height:1.6}
+.copy-text.long{max-height:340px;overflow-y:auto;font-size:.9rem}
+.alt-note{font-size:.8rem;color:var(--gray-600);margin:-.5rem 0 1rem}
+
+/* ---------- checklist ---------- */
+.check{list-style:none;margin:0 0 1.5rem}
+.check li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--gray-100);font-size:.92rem}
+.check li:last-child{border-bottom:none}
+.check .mark{flex-shrink:0;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;margin-top:2px}
+.check .mark.done{background:var(--ok);color:#fff}
+.check .mark.todo{background:var(--white);border:1.5px solid var(--gray-300)}
+
+/* ---------- callout ---------- */
+.callout{background:var(--gray-50);border-left:3px solid var(--navy-mid);padding:18px 22px;margin:1.25rem 0;font-size:.92rem;color:var(--gray-700)}
+.callout.gold{border-left-color:var(--gold);background:rgba(212,168,75,.07)}
+.callout strong{color:var(--navy)}
+
+/* ---------- footer ---------- */
+footer{background:var(--navy-deep);color:rgba(255,255,255,.62);padding:44px clamp(20px,5vw,64px);font-size:.8rem;text-align:center}
+footer .fbrand{font-family:var(--serif);font-size:1.05rem;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:.6rem}
+footer em{font-style:italic;color:rgba(255,255,255,.55)}
+footer a{color:var(--gold);text-decoration:none}
+
+/* ---------- toast ---------- */
+#toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(80px);background:var(--navy);color:#fff;padding:13px 26px;font-size:.78rem;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;box-shadow:0 8px 30px rgba(0,0,0,.25);opacity:0;transition:all .3s cubic-bezier(.4,0,.2,1);z-index:999;pointer-events:none}
+#toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+@media print{
+  body{background:#fff}
+  .sheet{box-shadow:none;max-width:none}
+  .btn-copy,#toast{display:none}
+  section{page-break-inside:auto;border-bottom:none}
+  .finding,.copy-block{page-break-inside:avoid}
+  .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- ============ PORTADA ============ -->
+  <div class="cover">
+    <span class="eyebrow">🇵🇦 Informe interno · Naturalízate.pa</span>
+    <h1>Análisis de la web y <em>optimización de perfiles</em></h1>
+    <p class="lede">Diagnóstico del embudo redes → web, correcciones ya aplicadas al sitio y textos listos para pegar en cada plataforma, con los límites de caracteres verificados.</p>
+    <div class="cover-meta">
+      <span>21 de agosto de 2026</span>
+      <span>Lic. Alfonso Villarreal</span>
+      <span>naturalizate.pa</span>
+    </div>
+  </div>
+
+  <!-- ============ ÍNDICE ============ -->
+  <nav class="toc">
+    <h2>Contenido</h2>
+    <ol>
+      <li><a href="#s1"><span class="n">01</span> Análisis de la web</a></li>
+      <li><a href="#s2"><span class="n">02</span> Arquitectura de perfiles</a></li>
+      <li><a href="#s3"><span class="n">03</span> Textos listos para pegar</a></li>
+      <li><a href="#s4"><span class="n">04</span> Enlaces y medición</a></li>
+      <li><a href="#s5"><span class="n">05</span> Pilares de contenido</a></li>
+      <li><a href="#s6"><span class="n">06</span> Checklist</a></li>
+    </ol>
+  </nav>
+
+  <div class="pad">
+
+    <div class="notice">
+      <strong>Antes de publicar:</strong> los campos entre <code>[corchetes]</code> son placeholders. Complételos con datos reales. En un perfil de abogado, un dato no verificable es un riesgo reputacional y disciplinario.
+    </div>
+
+    <!-- ============ 1 ============ -->
+    <section id="s1">
+      <div class="sec-head"><span class="sec-num">01</span><h2>Análisis de la web</h2></div>
+
+      <h3>Qué comunica hoy el sitio</h3>
+      <div class="tw">
+        <table>
+          <tr><th>Elemento</th><th>Estado actual</th></tr>
+          <tr><td><strong>Propuesta de valor</strong></td><td>«Sesión de Diagnóstico → Plan de Acción en menos de 24 h, o reembolso del 100%»</td></tr>
+          <tr><td><strong>Oferta</strong></td><td>Vía legal exacta + cronograma + checklist de documentos + presupuesto</td></tr>
+          <tr><td><strong>Prueba social</strong></td><td>12+ años, 130+ expedientes, 98% favorables, 19–26 meses, 13K seguidores, 1M+ vistas</td></tr>
+          <tr><td><strong>Conversión</strong></td><td>Formulario que abre WhatsApp (<code>wa.me/50762557583</code>) + CTA fijo móvil + botón flotante</td></tr>
+          <tr><td><strong>Contenido</strong></td><td>15 preguntas frecuentes muy completas: reciprocidad, matrimonio, documentos, plazos</td></tr>
+          <tr><td><strong>Marca</strong></td><td>Navy + dorado, serif Playfair, tono formal de usted</td></tr>
+        </table>
+      </div>
+
+      <div class="callout">
+        <strong>Veredicto.</strong> El mensaje comercial es fuerte y coherente. El eslabón débil no es la página: es el <strong>puente entre el perfil social y la página</strong>. Los perfiles no repiten la misma promesa («24 horas», «o le devolvemos el dinero»), y al compartir el enlace en redes no aparecía imagen de vista previa.
+      </div>
+
+      <h3>Hallazgos que afectan al embudo redes → web</h3>
+
+      <div class="finding fixed">
+        <div class="finding-top"><h4>1. No había <code>og:image</code></h4><span class="tag ok">Corregido</span></div>
+        <p>Cada vez que alguien pegaba <code>naturalizate.pa</code> en WhatsApp, Instagram DM, Facebook o LinkedIn, salía un enlace gris sin imagen. Es la fuga de clics más cara y la más fácil de tapar.</p>
+        <p>Se añadió <code>assets/og-image.jpg</code> (1200×630) y las etiquetas Open Graph y Twitter completas.</p>
+      </div>
+
+      <div class="finding fixed">
+        <div class="finding-top"><h4>2. Faltaba <code>sameAs</code> y datos estructurados de la persona</h4><span class="tag ok">Corregido</span></div>
+        <p>Google no tenía forma de saber que la web, el TikTok, el Instagram y el LinkedIn son la misma entidad. Se añadió schema <code>LegalService</code> + <code>Attorney</code> con <code>sameAs</code> a los tres perfiles.</p>
+      </div>
+
+      <div class="finding fixed">
+        <div class="finding-top"><h4>3. Bug en el mensaje de WhatsApp del formulario</h4><span class="tag ok">Corregido</span></div>
+        <p>El texto usaba <code>\\n</code> con doble escape, así que cada lead le llegaba con <code>\n</code> literales dentro del mensaje. Se veía descuidado justo en el primer contacto con el cliente.</p>
+      </div>
+
+      <div class="finding pending">
+        <div class="finding-top"><h4>4. El <code>canonical</code> apunta a <code>/preguntas-frecuentes</code></h4><span class="tag pend">Decisión suya</span></div>
+        <p>El archivo es <code>index.html</code>. Si esta página se sirve en la raíz del dominio, el canonical está mandando la autoridad SEO a otra URL. Si es la home, cámbielo a <code>https://naturalizate.pa/</code>.</p>
+      </div>
+
+      <div class="finding pending">
+        <div class="finding-top"><h4>5. Cifras sin fuente visible</h4><span class="tag pend">Revisar</span></div>
+        <p>«98% de resoluciones favorables» y «130+ expedientes» son excelentes ganchos, pero conviene poder sustentarlos si alguien los cuestiona en comentarios o ante el Colegio de Abogados. Mantenga el disclaimer que ya tiene.</p>
+      </div>
+
+      <div class="finding pending">
+        <div class="finding-top"><h4>6. El archivo <code>index</code> (residencia estudiantes)</h4><span class="tag pend">Pendiente</span></div>
+        <p>No tiene extensión <code>.html</code>, no tiene <code>meta description</code> ni etiquetas OG, y envía a un grupo de WhatsApp en vez de a un chat 1:1. Si lo va a promocionar desde redes, renómbrelo a <code>residencia-estudiantes.html</code> y dele el mismo tratamiento de metadatos.</p>
+      </div>
+    </section>
+
+    <!-- ============ 2 ============ -->
+    <section id="s2">
+      <div class="sec-head"><span class="sec-num">02</span><h2>Arquitectura de perfiles</h2></div>
+
+      <p>Usted tiene dos identidades activas: la marca de nicho <strong>@naturalizate.pa</strong> y la marca personal <strong>@abogadovillarreal_</strong> (derecho de familia, cobros, contenido legal general).</p>
+
+      <div class="callout gold"><strong>No las fusione. Especialícelas y conéctelas.</strong></div>
+
+      <div class="tw">
+        <table>
+          <tr><th>Cuenta</th><th>Rol</th><th>Tema</th><th>CTA</th></tr>
+          <tr><td><strong>@naturalizate.pa</strong></td><td>Cuenta madre del negocio</td><td>Nacionalidad, naturalización, residencia, cédula E → cédula N</td><td>Diagnóstico en 24 h</td></tr>
+          <tr><td><strong>@abogadovillarreal_</strong></td><td>Marca personal / autoridad</td><td>Derecho de familia, cobros, contenido legal general</td><td>Consulta general + enlace a Naturalízate.pa si el tema es migratorio</td></tr>
+        </table>
+      </div>
+
+      <h4>Acciones concretas</h4>
+      <ul>
+        <li>En la bio de <strong>@abogadovillarreal_</strong>, añada una línea: <code>🇵🇦 ¿Nacionalidad panameña? → @naturalizate.pa</code></li>
+        <li>En <strong>@naturalizate.pa</strong>, ancle un video de presentación donde aparezca su cara y diga su nombre y número de idoneidad. La cara del abogado convierte más que el logo.</li>
+        <li>Use la <strong>misma foto de perfil</strong> en las tres redes: retrato profesional, fondo neutro, encuadre pecho-cabeza. La consistencia visual es lo que hace que Google agrupe los perfiles como una sola entidad.</li>
+      </ul>
+    </section>
+
+    <!-- ============ 3 ============ -->
+    <section id="s3">
+      <div class="sec-head"><span class="sec-num">03</span><h2>Textos listos para pegar</h2></div>
+
+      <h3>3.1 · TikTok — @naturalizate.pa</h3>
+
+      <div class="copy-block">
+        <div class="copy-head">
+          <span class="copy-label">Nombre · máx. 30</span>
+          <div class="copy-right"><span class="counter">30 / 30</span><button class="btn-copy">Copiar</button></div>
+        </div>
+        <p class="copy-text">Naturalízate.pa | Nacionalidad</p>
+      </div>
+
+      <div class="copy-block">
+        <div class="copy-head">
+          <span class="copy-label">Bio recomendada · máx. 80</span>
+          <div class="copy-right"><span class="counter">75 / 80</span><button class="btn-copy">Copiar</button></div>
+        </div>
+        <p class="copy-text">⚖️ Abogado en Panamá 🇵🇦
+Nacionalidad y residencia
+👇 ¿Califica? Sepa en 24 h</p>
+      </div>
+
+      <div class="copy-block">
+        <div class="copy-head">
+          <span class="copy-label">Bio alternativa A · orientada al dolor</span>
+          <div class="copy-right"><span class="counter">76 / 80</span><button class="btn-copy">Copiar</button></div>
+        </div>
+        <p class="copy-text">Nacionalidad panameña sin errores 🇵🇦
+⚖️ Lic. Villarreal
+👇 ¿Califica? En 24 h</p>
+      </div>
+
+      <div class="copy-block">
+        <div class="copy-head">
+          <span class="copy-label">Bio alternativa B · orientada al resultado</span>
+          <div class="copy-right"><span class="counter">78 / 80</span><button class="btn-copy">Copiar</button></div>
+        </div>
+        <p class="copy-text">🇵🇦 Su vía legal a la nacionalidad
+⚖️ Lic. Villarreal
+👇 ¿Califica? Sepa en 24 h</p>
+      </div>
+
+      <div class="copy-block">
+        <div class="copy-head">
+          <span class="copy-label">Enlace de la bio</span>
+          <div class="copy-right"><button class="btn-copy">Copiar</button></div>
+        </div>
+        <p class="copy-text mono">https://naturalizate.pa/?utm_source=tiktok&amp;utm_medium=bio&amp;utm_campaign=perfil</p>
+      </div>
+
+      <h4>Ajustes de cuenta</h4>
+      <ul>
+        <li>Cambie a <strong>cuenta Business</strong>, categoría <em>Legal Services</em>: habilita el botón de enlace y las analíticas.</li>
+        <li>Active el <strong>botón de mensaje a WhatsApp</strong> si su cuenta lo permite (TikTok Business Contact).</li>
+        <li><strong>Videos anclados (3):</strong> ¿Califica usted? 3 preguntas · Tabla de reciprocidad por país · Un testimonio real en video.</li>
+        <li><strong>No cambie el usuario.</strong> <code>naturalizate.pa</code> es la palabra clave + el dominio: es un activo.</li>
+      </ul>
+
+      <h3>3.2 · Instagram — @naturalizate.pa</h3>
+
+      <div class="copy-block">
+        <div class="copy-head">
+          <span class="copy-label">Nombre · campo indexable, máx. 30</span>
+          <div class="copy-right"><span class="counter">28 / 30</span><button class="btn-copy">Copiar</button></div>
+        </div>
+        <p class="copy-text">Naturalízate.pa | Abogado 🇵🇦</p>
+      </div>
+
+      <div class="copy-block">
+        <div class="copy-head">
+          <span class="copy-label">Nombre alternativo · más buscable</span>
+          <div class="copy-right"><span class="counter">29 / 30</span><button class="btn-copy">Copiar</button></div>
+        </div>
+        <p class="copy-text">Nacionalidad Panameña|Abogado</p>
+      </div>
+
+      <div class="copy-block">
+        <div class="copy-head">
+          <span class="copy-label">Bio · máx. 150</span>
+          <div class="copy-right"><span class="counter">126 / 150</span><button class="btn-copy">Copiar</button></div>
+        </div>
+        <p class="copy-text">⚖️ Lic. Alfonso Villarreal · Abogado
+🇵🇦 Nacionalidad y residencia panameña
+✅ ¿Califica? Respuesta en 24 h
+👇 Evalúe su caso hoy</p>
+      </div>
+
+      <div class="copy-block">
+        <div class="copy-head">
+          <span class="copy-label">Enlace</span>
+          <div class="copy-right"><button class="btn-copy">Copiar</button></div>
+        </div>
+        <p class="copy-text mono">https://naturalizate.pa/?utm_source=instagram&amp;utm_medium=bio&amp;utm_campaign=perfil</p>
+      </div>
+
+      <p class="alt-note">Categoría del perfil: <strong>Abogado/a</strong>, no «Empresa» genérica.</p>
+
+      <h4>Historias destacadas · portadas navy + dorado</h4>
+      <div class="tw">
+        <table>
+          <tr><th>Destacada</th><th>Contenido</th></tr>
+          <tr><td><strong>¿CALIFICO?</strong></td><td>Los 3 filtros: tiempo de residencia, cédula E, antecedentes</td></tr>
+          <tr><td><strong>RECIPROCIDAD</strong></td><td>Tabla país por país: 1, 2, 3, 5 años</td></tr>
+          <tr><td><strong>MATRIMONIO</strong></td><td>La vía de 2 años y qué prueba exige la autoridad</td></tr>
+          <tr><td><strong>DOCUMENTOS</strong></td><td>Checklist visual, apostillas y traducciones</td></tr>
+          <tr><td><strong>PLAZOS</strong></td><td>Cronograma real de 19 a 26 meses</td></tr>
+          <tr><td><strong>RESULTADOS</strong></td><td>Resoluciones favorables, con datos tapados</td></tr>
+          <tr><td><strong>OPINIONES</strong></td><td>Testimonios de clientes</td></tr>
+          <tr><td><strong>PRECIOS</strong></td><td>Cómo funciona la sesión de diagnóstico y el reembolso</td></tr>
+        </table>
+      </div>
+
+      <ul>
+        <li>Perfil profesional con botón de contacto a WhatsApp.</li>
+        <li>Dirección física si atiende presencialmente: activa el descubrimiento local.</li>
+        <li><strong>DM automáticos</strong> con la palabra clave <code>CALIFICO</code> → responde con el enlace del diagnóstico.</li>
+      </ul>
+
+      <h3>3.3 · LinkedIn — /in/naturalizate-pa/</h3>
+
+      <div class="callout gold">
+        <strong>Recomendación importante.</strong> El perfil personal debería llamarse <strong>Alfonso Villarreal</strong>, no «Naturalízate pa». LinkedIn es una red de personas: un perfil personal con nombre de marca pierde credibilidad y alcance. La marca va en una <strong>página de empresa</strong> aparte.
+      </div>
+
+      <div class="copy-block">
+        <div class="copy-head">
+          <span class="copy-label">Titular · máx. 220</span>
+          <div class="copy-right"><span class="counter">132 / 220</span><button class="btn-copy">Copiar</button></div>
+        </div>
+        <p class="copy-text">Abogado idóneo en Panamá | Nacionalidad, naturalización y residencia permanente | Sepa en 24 h si su caso califica | Naturalízate.pa</p>
+      </div>
+
+      <div class="copy-block">
+        <div class="copy-head">
+          <span class="copy-label">Extracto / Acerca de</span>
+          <div class="copy-right"><button class="btn-copy">Copiar</button></div>
+        </div>
+        <p class="copy-text long">Ayudo a extranjeros residentes en Panamá a convertirse en ciudadanos panameños sin perder tiempo ni dinero en trámites mal planteados.
+
+La mayoría de las solicitudes de naturalización no se rechazan por falta de derecho: se rechazan o se estancan por expedientes incompletos, apostillas mal hechas, traducciones no oficiales o por haber elegido la vía legal equivocada. Un documento mal presentado puede costar meses de espera.
+
+Por eso trabajo al revés que la mayoría: antes de que usted invierta un centavo en el trámite, analizo su caso y le entrego un Plan de Acción con cuatro cosas concretas:
+
+• Su vía legal exacta: reciprocidad, matrimonio o residencia general.
+• El cronograma mes a mes, desde hoy hasta su cédula N.
+• El checklist completo de documentos, sin olvidos.
+• El presupuesto real: honorarios y costos, sin sorpresas.
+
+Si su caso no califica legalmente, se lo digo con honestidad y le devuelvo el 100% de la reserva. Prefiero perder un cliente que hacerle perder dos años.
+
+EN QUÉ TRABAJO
+• Naturalización por residencia (vía general de 5 años)
+• Naturalización por matrimonio con panameño/a (2 años)
+• Vías de reciprocidad por convenio (desde 1 año: Colombia, El Salvador, España, México, Argentina y otros)
+• Hijos de panameños nacidos en el exterior
+• Residencia permanente y cédula E, incluida la vía de estudiantes
+• Preparación para el examen de historia, geografía y organización del Estado
+
+RESULTADOS
+[12]+ años de ejercicio · [130]+ expedientes tramitados · [98]% de resoluciones favorables. Los resultados individuales varían según el caso y la autoridad competente.
+
+Además divulgo derecho migratorio panameño en TikTok e Instagram (@naturalizate.pa), donde una comunidad de más de 13.000 personas sigue explicaciones sin tecnicismos sobre nacionalidad y residencia, con más de un millón de reproducciones.
+
+Idoneidad N.º [XXXX] otorgada por la Corte Suprema de Justicia de Panamá. Miembro de [Colegio Nacional de Abogados / otro].
+
+¿Quiere saber si su caso califica? Reserve su Sesión de Diagnóstico en naturalizate.pa o escríbame por WhatsApp al +507 6255-7583.</p>
+      </div>
+
+      <h4>Los campos que casi nadie llena y sí pesan</h4>
+      <ul>
+        <li><strong>URL personalizada:</strong> <code>linkedin.com/in/alfonso-villarreal-abogado</code></li>
+        <li><strong>Sección Servicios</strong> (aparece en el buscador de LinkedIn): Derecho de inmigración, Consultoría legal, Derecho de familia.</li>
+        <li><strong>Aptitudes</strong>, en este orden: Derecho migratorio · Naturalización · Derecho administrativo · Redacción legal · Litigio.</li>
+        <li><strong>Destacado:</strong> fije el enlace a naturalizate.pa y su mejor video.</li>
+        <li><strong>Recomendaciones:</strong> pida 3–5 a clientes ya naturalizados. Es el equivalente LinkedIn de las reseñas.</li>
+        <li><strong>Banner:</strong> reutilice <code>assets/og-image.jpg</code> como base (1584×396).</li>
+      </ul>
+
+      <h3>3.4 · Perfiles que aún no tiene</h3>
+
+      <h4>Google Business Profile — prioridad máxima</h4>
+      <p>«Abogado naturalización Panamá» es una búsqueda con intención local altísima y hoy usted no aparece en el mapa.</p>
+
+      <div class="copy-block">
+        <div class="copy-head">
+          <span class="copy-label">Nombre del negocio</span>
+          <div class="copy-right"><button class="btn-copy">Copiar</button></div>
+        </div>
+        <p class="copy-text">Naturalízate.pa — Lic. Alfonso Villarreal, Abogado</p>
+      </div>
+
+      <ul>
+        <li><strong>Categoría principal:</strong> Abogado de inmigración. <strong>Secundarias:</strong> Abogado, Servicio jurídico.</li>
+        <li><strong>Descripción (750 car.):</strong> reutilice el primer bloque del «Acerca de» de LinkedIn.</li>
+        <li>Añada horario, WhatsApp, enlace con <code>?utm_source=gbp</code> y fotos del despacho.</li>
+        <li><strong>Pida reseñas</strong> a cada cliente naturalizado.</li>
+      </ul>
+
+      <h4>YouTube — @naturalizate.pa</h4>
+      <p>Reutilice los verticales de TikTok como Shorts.</p>
+
+      <div class="copy-block">
+        <div class="copy-head">
+          <span class="copy-label">Descripción del canal</span>
+          <div class="copy-right"><button class="btn-copy">Copiar</button></div>
+        </div>
+        <p class="copy-text">Nacionalidad y residencia panameña explicadas sin tecnicismos, por el Lic. Alfonso Villarreal, abogado idóneo en Panamá. Cada semana: requisitos, plazos reales, vías de reciprocidad, matrimonio, documentos y errores que le pueden costar meses.
+
+¿Quiere saber si su caso califica? Diagnóstico en menos de 24 horas 👉 https://naturalizate.pa</p>
+      </div>
+
+      <h4>WhatsApp Business</h4>
+      <p>Es su canal de cierre: trátelo como un perfil más. Nombre <code>Naturalízate.pa | Lic. Villarreal</code>, descripción, horario, dirección y un catálogo con un solo producto: <em>Sesión de Diagnóstico</em>.</p>
+
+      <div class="copy-block">
+        <div class="copy-head">
+          <span class="copy-label">Mensaje de bienvenida</span>
+          <div class="copy-right"><button class="btn-copy">Copiar</button></div>
+        </div>
+        <p class="copy-text">Gracias por escribir a Naturalízate.pa. Soy el equipo del Lic. Alfonso Villarreal. Para darle una respuesta útil, cuénteme: 1) su nacionalidad, 2) desde cuándo tiene cédula E, 3) si está casado/a con panameño/a.</p>
+      </div>
+
+      <p class="alt-note">Configure respuestas rápidas para: reciprocidad, documentos, plazos y honorarios.</p>
+
+      <h4>Threads y Facebook</h4>
+      <p>Reserve los handles aunque no publique. Evita la suplantación, algo frecuente con cuentas legales que venden trámites.</p>
+    </section>
+
+    <!-- ============ 4 ============ -->
+    <section id="s4">
+      <div class="sec-head"><span class="sec-num">04</span><h2>Enlaces y medición</h2></div>
+
+      <p>Un solo destino, con parámetros distintos por red. Así sabrá qué red le trae <strong>clientes</strong> y no solo seguidores.</p>
+
+      <div class="tw">
+        <table>
+          <tr><th>Red</th><th>Enlace</th></tr>
+          <tr><td><strong>TikTok</strong></td><td><code>https://naturalizate.pa/?utm_source=tiktok&amp;utm_medium=bio&amp;utm_campaign=perfil</code></td></tr>
+          <tr><td><strong>Instagram</strong></td><td><code>https://naturalizate.pa/?utm_source=instagram&amp;utm_medium=bio&amp;utm_campaign=perfil</code></td></tr>
+          <tr><td><strong>LinkedIn</strong></td><td><code>https://naturalizate.pa/?utm_source=linkedin&amp;utm_medium=perfil&amp;utm_campaign=perfil</code></td></tr>
+          <tr><td><strong>YouTube</strong></td><td><code>https://naturalizate.pa/?utm_source=youtube&amp;utm_medium=descripcion&amp;utm_campaign=perfil</code></td></tr>
+          <tr><td><strong>Google Business</strong></td><td><code>https://naturalizate.pa/?utm_source=gbp&amp;utm_medium=organic&amp;utm_campaign=perfil</code></td></tr>
+        </table>
+      </div>
+
+      <h4>WhatsApp con mensaje precargado</h4>
+      <p>Úselo en historias y comentarios, <strong>no</strong> en la bio principal: la bio debe llevar a la web, donde el formulario cualifica al lead.</p>
+
+      <div class="copy-block">
+        <div class="copy-head">
+          <span class="copy-label">Enlace WhatsApp precargado</span>
+          <div class="copy-right"><button class="btn-copy">Copiar</button></div>
+        </div>
+        <p class="copy-text mono">https://wa.me/50762557583?text=Hola%2C%20vengo%20de%20Instagram%20y%20quiero%20saber%20si%20califico%20para%20la%20nacionalidad%20panameña.</p>
+      </div>
+
+      <div class="callout gold">
+        <strong>Frases que deben repetirse idénticas en todos los perfiles.</strong> La repetición es lo que construye recordación:<br>
+        · «¿Califica su caso? Respuesta en 24 horas»<br>
+        · «Plan de acción o le devolvemos el 100%»<br>
+        · «Su vía exacta a la cédula N»
+      </div>
+    </section>
+
+    <!-- ============ 5 ============ -->
+    <section id="s5">
+      <div class="sec-head"><span class="sec-num">05</span><h2>Pilares de contenido</h2></div>
+
+      <p>Su página ya contiene el mejor calendario editorial posible: las 15 preguntas frecuentes son 15 series de videos.</p>
+
+      <div class="tw">
+        <table>
+          <tr><th>Pilar</th><th>Ángulo</th><th>Gancho de ejemplo</th></tr>
+          <tr><td><strong>Reciprocidad</strong><br><em>el más viral</em></td><td>Un video por país</td><td>«Si usted es colombiano, no necesita 5 años. Necesita 1.»</td></tr>
+          <tr><td><strong>Matrimonio</strong></td><td>Mitos y realidad</td><td>«Casarse con panameño/a no le da la nacionalidad. Le da esto.»</td></tr>
+          <tr><td><strong>Documentos</strong></td><td>Errores caros</td><td>«Esta apostilla mal hecha le costó 7 meses a mi cliente.»</td></tr>
+          <tr><td><strong>Plazos</strong></td><td>Expectativas reales</td><td>«Le dijeron 6 meses. La verdad son 19 a 26. Le explico por qué.»</td></tr>
+          <tr><td><strong>Doble nacionalidad</strong></td><td>El miedo principal</td><td>«¿Pierde su nacionalidad de origen? Depende de una sola cosa.»</td></tr>
+          <tr><td><strong>Derechos</strong></td><td>El premio</td><td>«Con la cédula N puede votar, pero no puede ser presidente.»</td></tr>
+          <tr><td><strong>Casos reales</strong></td><td>Prueba social</td><td>Testimonios en video, con autorización escrita del cliente.</td></tr>
+        </table>
+      </div>
+
+      <div class="callout">
+        <strong>Regla de oro.</strong> El CTA hablado de cada video debe ser el mismo de la bio: <em>«¿Quiere saber si su caso califica? El enlace de mi perfil, respuesta en 24 horas.»</em>
+      </div>
+    </section>
+
+    <!-- ============ 6 ============ -->
+    <section id="s6">
+      <div class="sec-head"><span class="sec-num">06</span><h2>Checklist</h2></div>
+
+      <h4>Ya hecho en el repositorio</h4>
+      <ul class="check">
+        <li><span class="mark done">✓</span> Imagen de vista previa social <code>assets/og-image.jpg</code> (1200×630)</li>
+        <li><span class="mark done">✓</span> Etiquetas Open Graph e imagen de Twitter/X completas</li>
+        <li><span class="mark done">✓</span> <code>og:site_name</code>, <code>og:image:alt</code>, <code>twitter:title</code>, <code>twitter:description</code></li>
+        <li><span class="mark done">✓</span> Datos estructurados <code>LegalService</code> + <code>Attorney</code> con <code>sameAs</code> a TikTok, Instagram y LinkedIn</li>
+        <li><span class="mark done">✓</span> Corrección del salto de línea roto en el mensaje de WhatsApp del formulario</li>
+      </ul>
+
+      <h4>Para hacer usted · 30 a 60 minutos</h4>
+      <ul class="check">
+        <li><span class="mark todo"></span> Pegar los textos de la sección 03 en cada red</li>
+        <li><span class="mark todo"></span> Unificar la foto de perfil en las tres redes</li>
+        <li><span class="mark todo"></span> Anclar los 3 videos en TikTok</li>
+        <li><span class="mark todo"></span> Crear las 8 historias destacadas de Instagram</li>
+        <li><span class="mark todo"></span> Renombrar el perfil de LinkedIn a «Alfonso Villarreal» y crear la página de empresa</li>
+        <li><span class="mark todo"></span> Abrir el Google Business Profile y pedir las primeras 5 reseñas</li>
+        <li><span class="mark todo"></span> Completar todos los <code>[placeholders]</code> con datos reales: idoneidad, colegio, cifras</li>
+        <li><span class="mark todo"></span> Confirmar la URL canónica correcta</li>
+        <li><span class="mark todo"></span> Subir <code>assets/og-image.jpg</code> al servidor en la ruta <code>/assets/</code></li>
+        <li><span class="mark todo"></span> Validar el resultado en el depurador de enlaces de Facebook y de LinkedIn tras publicar</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="fbrand">Naturalízate <em>.pa</em></div>
+    <p>Lic. Alfonso Villarreal · WhatsApp +507 6255-7583 · <a href="https://naturalizate.pa">naturalizate.pa</a></p>
+    <p style="margin:.8rem 0 0;font-size:.72rem;opacity:.6">Documento interno de trabajo · 21 de agosto de 2026</p>
+  </footer>
+
+</div>
+
+<div id="toast">Copiado al portapapeles</div>
+
+<script>
+(function () {
+  'use strict';
+  var toast = document.getElementById('toast'), t;
+
+  function show(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(t);
+    t = setTimeout(function () { toast.classList.remove('show'); }, 2000);
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  document.querySelectorAll('.btn-copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var block = btn.closest('.copy-block');
+      var node = block && block.querySelector('.copy-text');
+      if (!node) return;
+      var text = node.innerText;
+
+      var done = function () {
+        btn.classList.add('done');
+        btn.textContent = 'Copiado';
+        show('Copiado al portapapeles');
+        setTimeout(function () {
+          btn.classList.remove('done');
+          btn.textContent = 'Copiar';
+        }, 1800);
+      };
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done, function () {
+          if (fallbackCopy(text)) done(); else show('No se pudo copiar');
+        });
+      } else {
+        if (fallbackCopy(text)) done(); else show('No se pudo copiar');
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

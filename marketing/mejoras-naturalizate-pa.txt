@@ -1,0 +1,458 @@
+===============================================================
+ NATURALIZATE.PA - ANALISIS DE LA WEB Y MEJORAS DE PERFILES
+ Fecha: 21 de agosto de 2026
+===============================================================
+
+Los campos entre [corchetes] son placeholders: complételos con
+datos reales antes de publicar. No invente credenciales: en un
+perfil de abogado, un dato no verificable es un riesgo.
+
+
+===============================================================
+ PARTE 1 - QUE ENCONTRE EN LA WEB
+===============================================================
+
+QUE COMUNICA HOY EL SITIO
+-------------------------
+Propuesta de valor : "Sesion de Diagnostico -> Plan de Accion en
+                      menos de 24 h, o reembolso del 100%"
+Oferta             : Via legal exacta + cronograma + checklist de
+                      documentos + presupuesto
+Prueba social      : 12+ anios, 130+ expedientes, 98% favorables,
+                      19-26 meses, 13K seguidores, 1M+ vistas
+Conversion         : Formulario que abre WhatsApp (wa.me/50762557583)
+                      + CTA fijo movil + boton flotante
+Contenido          : 15 preguntas frecuentes muy completas
+Marca              : Navy + dorado, serif Playfair, tono formal
+
+VEREDICTO: el mensaje comercial es fuerte y coherente. El eslabon
+debil no es la pagina, es el PUENTE entre el perfil social y la
+pagina. Los perfiles no repiten la misma promesa ("24 horas",
+"o le devolvemos el dinero"), y cuando alguien comparte el enlace
+en redes no aparecia imagen de vista previa.
+
+
+HALLAZGOS QUE AFECTAN AL EMBUDO REDES -> WEB
+--------------------------------------------
+
+1. NO HABIA og:image  [CORREGIDO]
+   Cada vez que alguien pegaba naturalizate.pa en WhatsApp,
+   Instagram DM, Facebook o LinkedIn, salia un enlace gris sin
+   imagen. Es la fuga de clics mas cara y la mas facil de tapar.
+   Se anadio assets/og-image.jpg (1200x630) y las etiquetas
+   Open Graph y Twitter completas.
+
+2. FALTABA sameAs Y DATOS ESTRUCTURADOS DE LA PERSONA [CORREGIDO]
+   Google no tenia forma de saber que la web, el TikTok, el
+   Instagram y el LinkedIn son la misma entidad. Se anadio schema
+   LegalService + Attorney con sameAs a los tres perfiles.
+
+3. BUG EN EL MENSAJE DE WHATSAPP DEL FORMULARIO  [CORREGIDO]
+   El texto usaba \\n con doble escape, asi que cada lead llegaba
+   con "\n" literales dentro del mensaje. Se veia descuidado justo
+   en el primer contacto con el cliente.
+
+4. CANONICAL APUNTA A /preguntas-frecuentes  [PENDIENTE - DECIDA]
+   El archivo es index.html. Si esta pagina se sirve en la raiz
+   del dominio, el canonical esta mandando la autoridad SEO a otra
+   URL. Si es la home, cambielo a https://naturalizate.pa/
+
+5. CIFRAS SIN FUENTE VISIBLE  [REVISAR]
+   "98% de resoluciones favorables" y "130+ expedientes" son
+   excelentes ganchos, pero conviene poder sustentarlos si alguien
+   los cuestiona en comentarios o ante el Colegio de Abogados.
+   Mantenga el disclaimer que ya tiene.
+
+6. EL ARCHIVO "index" (residencia estudiantes)  [PENDIENTE]
+   No tiene extension .html, no tiene meta description ni
+   etiquetas OG, y envia a un grupo de WhatsApp en vez de a un
+   chat 1:1. Si lo va a promocionar desde redes, renombrelo a
+   residencia-estudiantes.html y dele el mismo tratamiento.
+
+
+===============================================================
+ PARTE 2 - ARQUITECTURA DE PERFILES
+===============================================================
+
+Usted tiene dos identidades activas: la marca de nicho
+@naturalizate.pa y la marca personal @abogadovillarreal_
+(contenido legal general: divorcios, cobros, prestamos).
+
+NO LAS FUSIONE. ESPECIALICELAS Y CONECTELAS.
+
+  @naturalizate.pa
+    Rol  : cuenta madre del negocio
+    Tema : nacionalidad, naturalizacion, residencia, cedula E -> N
+    CTA  : diagnostico en 24 h
+
+  @abogadovillarreal_
+    Rol  : marca personal / autoridad
+    Tema : derecho de familia, cobros, contenido legal general
+    CTA  : consulta general + enlace a Naturalizate.pa cuando el
+           tema sea migratorio
+
+ACCIONES CONCRETAS
+  - En la bio de @abogadovillarreal_ anada una linea:
+    "PA ¿Nacionalidad panamena? -> @naturalizate.pa"
+  - En @naturalizate.pa ancle un video de presentacion donde
+    aparezca su cara y diga su nombre y numero de idoneidad.
+    La cara del abogado convierte mas que el logo.
+  - Use LA MISMA FOTO DE PERFIL en las tres redes (retrato
+    profesional, fondo neutro, encuadre pecho-cabeza). La
+    consistencia visual es lo que hace que Google agrupe los
+    perfiles como una sola entidad.
+
+
+===============================================================
+ PARTE 3 - TEXTOS LISTOS PARA PEGAR
+===============================================================
+
+---------------------------------------------------------------
+ 3.1  TIKTOK - @naturalizate.pa
+---------------------------------------------------------------
+
+NOMBRE (maximo 30 caracteres) -- usa 30/30:
+
+Naturalízate.pa | Nacionalidad
+
+
+BIO (maximo 80 caracteres) -- usa 75/80:
+
+⚖️ Abogado en Panamá 🇵🇦
+Nacionalidad y residencia
+👇 ¿Califica? Sepa en 24 h
+
+
+BIO ALTERNATIVA A (76/80) - orientada al dolor:
+
+Nacionalidad panameña sin errores 🇵🇦
+⚖️ Lic. Villarreal
+👇 ¿Califica? En 24 h
+
+
+BIO ALTERNATIVA B (78/80) - orientada al resultado:
+
+🇵🇦 Su vía legal a la nacionalidad
+⚖️ Lic. Villarreal
+👇 ¿Califica? Sepa en 24 h
+
+
+ENLACE DE LA BIO:
+
+https://naturalizate.pa/?utm_source=tiktok&utm_medium=bio&utm_campaign=perfil
+
+
+AJUSTES DE CUENTA:
+  - Cambie a cuenta Business, categoria "Legal Services".
+    Eso habilita el boton de enlace y las analiticas.
+  - Active el boton de mensaje directo a WhatsApp si su cuenta
+    lo permite (TikTok Business Contact).
+  - Videos anclados (3):
+      1) "¿Califica usted para la nacionalidad panamena?
+          3 preguntas"
+      2) "Tabla de reciprocidad: 1, 2, 3 o 5 anios segun su pais"
+      3) Un testimonio real en video
+  - Nombre de usuario: MANTENGALO. "naturalizate.pa" es
+    literalmente la palabra clave + el dominio. Es un activo.
+
+
+---------------------------------------------------------------
+ 3.2  INSTAGRAM - @naturalizate.pa
+---------------------------------------------------------------
+
+NOMBRE (campo indexable por el buscador de IG, max 30) -- 28/30:
+
+Naturalízate.pa | Abogado 🇵🇦
+
+
+ALTERNATIVA MAS BUSCABLE (29/30):
+
+Nacionalidad Panameña|Abogado
+
+
+CATEGORIA: "Abogado/a"  (no "Empresa" generica)
+
+
+BIO (maximo 150 caracteres) -- usa 126/150:
+
+⚖️ Lic. Alfonso Villarreal · Abogado
+🇵🇦 Nacionalidad y residencia panameña
+✅ ¿Califica? Respuesta en 24 h
+👇 Evalúe su caso hoy
+
+
+ENLACE:
+
+https://naturalizate.pa/?utm_source=instagram&utm_medium=bio&utm_campaign=perfil
+
+
+HISTORIAS DESTACADAS (portadas navy + dorado, estilo de la web):
+
+  ¿CALIFICO?    Los 3 filtros: tiempo de residencia, cedula E,
+                antecedentes
+  RECIPROCIDAD  Tabla pais por pais (1, 2, 3, 5 anios)
+  MATRIMONIO    La via de 2 anios y que prueba exige la autoridad
+  DOCUMENTOS    Checklist visual, apostillas y traducciones
+  PLAZOS        Cronograma real de 19 a 26 meses
+  RESULTADOS    Resoluciones favorables (con datos tapados)
+  OPINIONES     Testimonios de clientes
+  PRECIOS       Como funciona la sesion de diagnostico y el
+                reembolso
+
+AJUSTES:
+  - Perfil profesional, boton de contacto con WhatsApp.
+  - Direccion fisica si atiende presencialmente: activa el
+    descubrimiento local.
+  - Active los DM automaticos con palabra clave CALIFICO ->
+    responde con el enlace del diagnostico.
+
+
+---------------------------------------------------------------
+ 3.3  LINKEDIN - /in/naturalizate-pa/
+---------------------------------------------------------------
+
+RECOMENDACION IMPORTANTE: el perfil personal deberia llamarse
+ALFONSO VILLARREAL, no "Naturalizate pa". LinkedIn es una red de
+personas; un perfil personal con nombre de marca pierde
+credibilidad y alcance. Cree ademas una PAGINA DE EMPRESA para
+Naturalizate.pa.
+
+
+TITULAR (maximo 220 caracteres) -- usa 132/220:
+
+Abogado idóneo en Panamá | Nacionalidad, naturalización y residencia permanente | Sepa en 24 h si su caso califica | Naturalízate.pa
+
+
+EXTRACTO / ACERCA DE:
+
+Ayudo a extranjeros residentes en Panamá a convertirse en
+ciudadanos panameños sin perder tiempo ni dinero en trámites mal
+planteados.
+
+La mayoría de las solicitudes de naturalización no se rechazan por
+falta de derecho: se rechazan o se estancan por expedientes
+incompletos, apostillas mal hechas, traducciones no oficiales o
+por haber elegido la vía legal equivocada. Un documento mal
+presentado puede costar meses de espera.
+
+Por eso trabajo al revés que la mayoría: antes de que usted
+invierta un centavo en el trámite, analizo su caso y le entrego un
+Plan de Acción con cuatro cosas concretas:
+
+• Su vía legal exacta: reciprocidad, matrimonio o residencia
+  general.
+• El cronograma mes a mes, desde hoy hasta su cédula N.
+• El checklist completo de documentos, sin olvidos.
+• El presupuesto real: honorarios y costos, sin sorpresas.
+
+Si su caso no califica legalmente, se lo digo con honestidad y le
+devuelvo el 100% de la reserva. Prefiero perder un cliente que
+hacerle perder dos años.
+
+EN QUÉ TRABAJO
+• Naturalización por residencia (vía general de 5 años)
+• Naturalización por matrimonio con panameño/a (2 años)
+• Vías de reciprocidad por convenio (desde 1 año: Colombia,
+  El Salvador, España, México, Argentina y otros)
+• Hijos de panameños nacidos en el exterior
+• Residencia permanente y cédula E, incluida la vía de estudiantes
+• Preparación para el examen de historia, geografía y organización
+  del Estado
+
+RESULTADOS
+[12]+ años de ejercicio · [130]+ expedientes tramitados · [98]% de
+resoluciones favorables. Los resultados individuales varían según
+el caso y la autoridad competente.
+
+Además divulgo derecho migratorio panameño en TikTok e Instagram
+(@naturalizate.pa), donde una comunidad de más de 13.000 personas
+sigue explicaciones sin tecnicismos sobre nacionalidad y
+residencia, con más de un millón de reproducciones.
+
+Idoneidad N.º [XXXX] otorgada por la Corte Suprema de Justicia de
+Panamá. Miembro de [Colegio Nacional de Abogados / otro].
+
+¿Quiere saber si su caso califica? Reserve su Sesión de
+Diagnóstico en naturalizate.pa o escríbame por WhatsApp al
++507 6255-7583.
+
+--- fin del extracto ---
+
+
+OTROS CAMPOS DE LINKEDIN (los que casi nadie llena y si pesan):
+  - URL personalizada: linkedin.com/in/alfonso-villarreal-abogado
+  - Seccion SERVICIOS (aparece en el buscador de LinkedIn):
+    Derecho de inmigracion, Consultoria legal, Derecho de familia
+  - Aptitudes, en este orden: Derecho migratorio, Naturalizacion,
+    Derecho administrativo, Redaccion legal, Litigio
+  - Destacado: fije el enlace a naturalizate.pa y su mejor video
+  - Recomendaciones: pida 3 a 5 a clientes ya naturalizados.
+    Es el equivalente LinkedIn de las resenas.
+  - Banner: reutilice assets/og-image.jpg como base (1584x396)
+
+
+---------------------------------------------------------------
+ 3.4  PERFILES QUE AUN NO TIENE Y DEBERIA ABRIR
+---------------------------------------------------------------
+
+GOOGLE BUSINESS PROFILE  --  PRIORIDAD MAXIMA
+"abogado naturalizacion Panama" es una busqueda con intencion
+local altisima y hoy usted no aparece en el mapa.
+
+  Nombre    : Naturalízate.pa — Lic. Alfonso Villarreal, Abogado
+  Categoria principal : Abogado de inmigración
+  Secundarias         : Abogado, Servicio jurídico
+  Descripcion (750 car.): reutilice el primer bloque del
+                          "Acerca de" de LinkedIn
+  Anada     : horario, WhatsApp, enlace con ?utm_source=gbp,
+              fotos del despacho
+  Y PIDA RESENAS a cada cliente naturalizado.
+
+
+YOUTUBE (@naturalizate.pa)
+Reutilice los verticales de TikTok como Shorts.
+
+Descripcion del canal:
+
+Nacionalidad y residencia panameña explicadas sin tecnicismos, por
+el Lic. Alfonso Villarreal, abogado idóneo en Panamá. Cada semana:
+requisitos, plazos reales, vías de reciprocidad, matrimonio,
+documentos y errores que le pueden costar meses.
+
+¿Quiere saber si su caso califica? Diagnóstico en menos de 24
+horas 👉 https://naturalizate.pa
+
+
+WHATSAPP BUSINESS
+Es su canal de cierre: tratelo como un perfil mas.
+
+  Nombre: Naturalízate.pa | Lic. Villarreal
+  Complete descripcion, horario de atencion, direccion y un
+  catalogo con un solo producto: Sesion de Diagnostico.
+
+  Mensaje de bienvenida:
+  "Gracias por escribir a Naturalízate.pa. Soy el equipo del
+  Lic. Alfonso Villarreal. Para darle una respuesta útil,
+  cuénteme: 1) su nacionalidad, 2) desde cuándo tiene cédula E,
+  3) si está casado/a con panameño/a."
+
+  Respuestas rapidas para: reciprocidad, documentos, plazos,
+  honorarios.
+
+
+THREADS Y FACEBOOK
+Reserve los handles aunque no publique. Evita la suplantacion,
+algo frecuente con cuentas legales que venden tramites.
+
+
+===============================================================
+ PARTE 4 - ENLACES Y MEDICION
+===============================================================
+
+Un solo destino, con parametros distintos por red. Asi sabra que
+red le trae CLIENTES y no solo seguidores.
+
+TikTok
+https://naturalizate.pa/?utm_source=tiktok&utm_medium=bio&utm_campaign=perfil
+
+Instagram
+https://naturalizate.pa/?utm_source=instagram&utm_medium=bio&utm_campaign=perfil
+
+LinkedIn
+https://naturalizate.pa/?utm_source=linkedin&utm_medium=perfil&utm_campaign=perfil
+
+YouTube
+https://naturalizate.pa/?utm_source=youtube&utm_medium=descripcion&utm_campaign=perfil
+
+Google Business
+https://naturalizate.pa/?utm_source=gbp&utm_medium=organic&utm_campaign=perfil
+
+
+WHATSAPP CON MENSAJE PRECARGADO
+Uselo en historias y comentarios, NO en la bio principal: la bio
+debe llevar a la web, donde el formulario cualifica al lead.
+
+https://wa.me/50762557583?text=Hola%2C%20vengo%20de%20Instagram%20y%20quiero%20saber%20si%20califico%20para%20la%20nacionalidad%20panameña.
+
+
+FRASES QUE DEBEN REPETIRSE IDENTICAS EN TODOS LOS PERFILES
+La repeticion es lo que construye recordacion:
+
+  "¿Califica su caso? Respuesta en 24 horas"
+  "Plan de acción o le devolvemos el 100%"
+  "Su vía exacta a la cédula N"
+
+
+===============================================================
+ PARTE 5 - PILARES DE CONTENIDO
+===============================================================
+
+Su pagina ya contiene el mejor calendario editorial posible: las
+15 preguntas frecuentes son 15 series de videos.
+
+RECIPROCIDAD (el mas viral) - un video por pais
+  Gancho: "Si usted es colombiano, no necesita 5 anios.
+           Necesita 1."
+
+MATRIMONIO - mitos y realidad
+  Gancho: "Casarse con panameno/a no le da la nacionalidad.
+           Le da esto."
+
+DOCUMENTOS - errores caros
+  Gancho: "Esta apostilla mal hecha le costo 7 meses a mi
+           cliente."
+
+PLAZOS - expectativas reales
+  Gancho: "Le dijeron 6 meses. La verdad son 19 a 26. Le explico
+           por que."
+
+DOBLE NACIONALIDAD - el miedo principal
+  Gancho: "¿Pierde su nacionalidad de origen? Depende de una sola
+           cosa."
+
+DERECHOS - el premio
+  Gancho: "Con la cedula N puede votar, pero no puede ser
+           presidente."
+
+CASOS REALES - prueba social
+  Testimonios en video, con autorizacion escrita del cliente.
+
+REGLA DE ORO: el CTA hablado de cada video debe ser el mismo de
+la bio -> "¿Quiere saber si su caso califica? El enlace de mi
+perfil, respuesta en 24 horas."
+
+
+===============================================================
+ PARTE 6 - CHECKLIST
+===============================================================
+
+YA HECHO EN EL REPOSITORIO
+  [x] Imagen de vista previa social assets/og-image.jpg (1200x630)
+  [x] Etiquetas Open Graph e imagen de Twitter/X completas
+  [x] og:site_name, og:image:alt, twitter:title,
+      twitter:description
+  [x] Datos estructurados LegalService + Attorney con sameAs a
+      TikTok, Instagram y LinkedIn
+  [x] Correccion del salto de linea roto en el mensaje de
+      WhatsApp del formulario
+
+PARA HACER USTED (30 a 60 minutos)
+  [ ] Pegar los textos de la PARTE 3 en cada red
+  [ ] Unificar la foto de perfil en las tres redes
+  [ ] Anclar los 3 videos en TikTok
+  [ ] Crear las 8 historias destacadas de Instagram
+  [ ] Renombrar el perfil de LinkedIn a "Alfonso Villarreal" y
+      crear la pagina de empresa
+  [ ] Abrir el Google Business Profile y pedir las primeras
+      5 resenas
+  [ ] Completar todos los [placeholders] con datos reales
+      (idoneidad, colegio, cifras)
+  [ ] Confirmar la URL canonica correcta
+  [ ] Subir assets/og-image.jpg al servidor en la ruta /assets/
+  [ ] Validar el resultado en el depurador de enlaces de Facebook
+      y de LinkedIn despues de publicar
+
+===============================================================
+ Naturalizate.pa - Lic. Alfonso Villarreal
+ WhatsApp +507 6255-7583 - https://naturalizate.pa
+===============================================================

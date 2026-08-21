@@ -10,11 +10,24 @@
   <link rel="canonical" href="https://naturalizate.pa/preguntas-frecuentes" />
 
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Naturalízate.pa" />
   <meta property="og:url" content="https://naturalizate.pa/preguntas-frecuentes" />
   <meta property="og:title" content="Nacionalidad Panameña: ¿Califica su caso? Respuesta en 24 horas" />
   <meta property="og:description" content="Descubra en menos de 24 horas si su caso califica para la nacionalidad panameña: vía legal exacta, plazos y costos transparentes. Reembolso garantizado." />
   <meta property="og:locale" content="es_PA" />
+  <meta property="og:image" content="https://naturalizate.pa/assets/og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://naturalizate.pa/assets/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Nacionalidad Panameña: ¿califica su caso? Respuesta en 24 horas. Naturalízate.pa · Lic. Alfonso Villarreal" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nacionalidad Panameña: ¿Califica su caso? Respuesta en 24 horas" />
+  <meta name="twitter:description" content="Descubra en menos de 24 horas si su caso califica para la nacionalidad panameña: vía legal exacta, plazos y costos transparentes. Reembolso garantizado." />
+  <meta name="twitter:image" content="https://naturalizate.pa/assets/og-image.jpg" />
+  <meta name="twitter:image:alt" content="Naturalízate.pa · Nacionalidad panameña · Diagnóstico en 24 horas" />
+  <meta name="author" content="Lic. Alfonso Villarreal" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
 
   <script type="application/ld+json">
   {
@@ -149,12 +162,51 @@
   {
     "@context": "https://schema.org",
     "@type": "LegalService",
+    "@id": "https://naturalizate.pa/#organizacion",
     "name": "Naturalízate.pa — Lic. Alfonso Villarreal",
     "description": "Asesoría jurídica especializada en la obtención de la nacionalidad panameña por naturalización: evaluación de casos, preparación de expedientes y acompañamiento integral.",
     "url": "https://naturalizate.pa",
     "telephone": "+507 6255-7583",
     "areaServed": "PA",
-    "priceRange": "$$"
+    "priceRange": "$$",
+    "image": "https://naturalizate.pa/assets/og-image.jpg",
+    "inLanguage": "es-PA",
+    "knowsLanguage": ["es", "en"],
+    "sameAs": [
+      "https://www.tiktok.com/@naturalizate.pa",
+      "https://www.instagram.com/naturalizate.pa/",
+      "https://www.linkedin.com/in/naturalizate-pa/"
+    ],
+    "founder": { "@id": "https://naturalizate.pa/#alfonso-villarreal" },
+    "employee": { "@id": "https://naturalizate.pa/#alfonso-villarreal" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Attorney",
+    "@id": "https://naturalizate.pa/#alfonso-villarreal",
+    "name": "Alfonso Villarreal",
+    "honorificPrefix": "Lic.",
+    "jobTitle": "Abogado idóneo",
+    "description": "Abogado panameño especializado en naturalización, nacionalidad y residencia permanente en Panamá.",
+    "url": "https://naturalizate.pa",
+    "telephone": "+507 6255-7583",
+    "areaServed": "PA",
+    "knowsAbout": [
+      "Naturalización en Panamá",
+      "Nacionalidad panameña",
+      "Residencia permanente",
+      "Convenios de reciprocidad",
+      "Derecho migratorio panameño"
+    ],
+    "worksFor": { "@id": "https://naturalizate.pa/#organizacion" },
+    "sameAs": [
+      "https://www.tiktok.com/@naturalizate.pa",
+      "https://www.instagram.com/naturalizate.pa/",
+      "https://www.linkedin.com/in/naturalizate-pa/"
+    ]
   }
   </script>
 
@@ -891,11 +943,11 @@
           const nacionalidad = data.get('nacionalidad') || '';
           const tiempo = data.get('tiempo') || '';
 
-          const texto = '📋 *RESERVA DE EVALUACIÓN ESTRATÉGICA*\\n\\n' +
-            '👤 *Nombre:* ' + nombre + '\\n' +
-            '📱 *WhatsApp:* ' + cleanPhone + '\\n' +
-            '🌍 *Nacionalidad:* ' + nacionalidad + '\\n' +
-            '🪪 *Cédula E:* ' + tiempo + '\\n\\n' +
+          const texto = '📋 *RESERVA DE SESIÓN DE DIAGNÓSTICO*\n\n' +
+            '👤 *Nombre:* ' + nombre + '\n' +
+            '📱 *WhatsApp:* ' + cleanPhone + '\n' +
+            '🌍 *Nacionalidad:* ' + nacionalidad + '\n' +
+            '🪪 *Cédula E:* ' + tiempo + '\n\n' +
             'Quedo a la espera de la confirmación de mi cupo. Gracias.';
 
           const encodedText = encodeURIComponent(texto);

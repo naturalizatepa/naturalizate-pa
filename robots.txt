@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# AJUSTAR el dominio al publicar
+Sitemap: https://naturalizate.pa/sitemap.xml

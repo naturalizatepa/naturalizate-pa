@@ -508,6 +508,36 @@
   .sticky-cta.hidden { transform: translateY(110%); }
   @media (max-width: 768px) { .sticky-cta { display: block; } body { padding-bottom: 76px; } }
 </style>
+<style>
+/* ============================================================
+   VARIANTE DORADA (comparativa) — NOTA: el dorado NO forma parte
+   del Brand Book v2.0 (paleta oficial: navy / blanco / grises).
+   Esta variante lo introduce como acento para su evaluación.
+   Para volver a la versión estricta, elimine este bloque.
+   ============================================================ */
+:root { --gold: #C9A24B; --gold-light: #E7CB85; --gold-deep: #8A6D2B; }
+.hero-eyebrow { color: var(--gold-light); border-color: rgba(201,162,75,0.55); }
+.section-head .eyebrow { color: var(--gold-deep); }
+.section-head .rule { background: linear-gradient(90deg, var(--gold-deep), var(--gold-light)); width: 64px; }
+.hero-card .hc-tag { color: var(--gold-deep); border-color: var(--gold); }
+.hero-card li::before, .diag-box ul li::before, .price-card ul li::before,
+.form-trust span::before { color: var(--gold-deep); }
+.who-card.yes { border-top-color: var(--gold); }
+.risk-card .rnum { color: var(--gold); }
+.pillar-num, .pstep .num, .diag-steps .ds-n, .commit-inner .c-mark { color: var(--gold-deep); }
+.pstep { border-top-color: var(--gold); }
+.diag-box { border-color: var(--gold); }
+.diag-tag, .form-step-badge, .price-badge { background: linear-gradient(135deg, #9A7A30, var(--gold)); }
+.price-card.featured { border-color: var(--gold); }
+/* CTAs dorados solo en la oferta núcleo y cierre */
+.hero-card .btn-navy, .diag-price-card .btn-white, .final-cta .btn-white {
+  background: linear-gradient(135deg, #B8913F 0%, #D9B968 100%);
+  color: #0D1B2A; border-color: transparent;
+}
+.hero-card .btn-navy:hover, .diag-price-card .btn-white:hover,
+.final-cta .btn-white:hover { opacity: 0.92; }
+.diag-price-card .dp-price { color: var(--gold-light); }
+</style>
 </head>
 <body>
 

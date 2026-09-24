@@ -1,10 +1,18 @@
-# Naturalízate.pa — Paquete listo para publicar
+# Naturalízate.pa — Paquete listo para publicar (v3)
+
+Novedades v3: la precalificación aparece centrada al cargar, con el fondo
+desenfocado hasta completar los datos; FAQPage para Google; render diferido
+de secciones; formulario sin zoom en iOS.
+Filtro por reciprocidad: 10 nacionalidades (El Salvador 1 año; Argentina,
+Colombia, Ecuador, España, Honduras, México, Nicaragua, Perú 2 años; Uruguay
+3 años) no se rechazan por <3 años: pasan a WhatsApp como «verificar cómputo
+por reciprocidad». Validar la vigencia de los convenios con el abogado.
 
 ## Contenido
 | Archivo | Descripción |
 |---|---|
-| `index.html` | Landing principal (versión estricta Brand Book: navy/blanco/grises) |
-| `variante-dorada.html` | Variante con acento dorado para comparar (opcional: elimínela si no la usa) |
+| `index.html` | Landing principal (estricta Brand Book: navy/blanco/grises) |
+| `variante-dorada.html` | Variante con acento dorado (opcional: elimínela si no la usa) |
 | `404.html` | Página de error |
 | `robots.txt` / `sitemap.xml` | SEO técnico (ya apuntan a `https://naturalizate.pa/`) |
 | `site.webmanifest` + `icon-*.png` + `maskable-*.png` | Iconos PWA / móvil |
@@ -12,15 +20,28 @@
 | `foto-alfonso-villarreal.jpg` | Fotografía oficial (barras laterales recortadas) |
 | `og-image.png` | Imagen al compartir en WhatsApp y redes (1200×630) |
 
+## Puerta de entrada (cómo funciona)
+- Al cargar, el formulario de precalificación se muestra centrado con el fondo
+  desenfocado y la página bloqueada (sin desplazamiento).
+- Al completar los datos (cualquier veredicto), el botón principal abre
+  WhatsApp con su resultado y revela el contenido; el formulario regresa a su
+  sección con el resultado visible. Cada mensaje llega etiquetado
+  (Perfil A/B/C, consulta general, pendiente examen o "Aún no procede" con solicitud de diagnóstico).
+- Se recuerda por sesión (`sessionStorage nzq_gate_done`): recargar no la
+  muestra de nuevo; nueva visita sí. Sin JavaScript, la puerta no aparece y el
+  formulario queda en su sección (compatible con Google).
+- **Desactivarla:** elimine el bloque `#entryGate`, el micro-script
+  `nzq_gate_done` del `<head>` y el bloque JS «Puerta de entrada».
+
 ## Cómo publicar
-1. **cPanel / hosting tradicional:** suba todo el contenido a `public_html/` (o a la carpeta de su dominio) conservando los nombres.
-2. **Netlify / Vercel / Cloudflare Pages:** arrastre la carpeta en el panel, o conecte su repositorio.
-3. **GitHub Pages:** suba el contenido a la rama `main` (o `docs/`) y active Pages.
+1. **cPanel / hosting tradicional:** suba todo a `public_html/` conservando nombres.
+2. **Netlify / Vercel / Cloudflare Pages:** arrastre la carpeta o conecte su repo.
+3. **GitHub Pages:** suba a `main` (o `docs/`) y active Pages.
 
 ## Pendientes (2 minutos, en `index.html`)
-1. `ENLACE_PAGO` — enlace de pago del Diagnóstico $49 (buscar `TODO` en el código).
+1. `ENLACE_PAGO` — enlace de pago del Diagnóstico $49 (buscar `TODO`).
 2. Píxel de Meta / Google / GA4 — pegarlo en el `<head>` si pauta tráfico.
-3. Verificar WhatsApp `50762557583` y correo `contacto@naturalizate.pa`.
+3. Verificar WhatsApp `50762557583` y correo `Villarreallawyers@proton.me`.
 
 ## Verificación
 - Rich results: https://search.google.com/test/rich-results

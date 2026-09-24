@@ -38,6 +38,7 @@
   4) Pegue aquí su píxel (Meta / Google Ads / GA4) si pauta tráfico.
 -->
 
+<script>try{if(sessionStorage.getItem("nzq_gate_done")==="1"){document.documentElement.className+=" gate-done";}}catch(e){}</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -47,12 +48,101 @@
   "url": "https://naturalizate.pa/",
   "image": "https://naturalizate.pa/foto-alfonso-villarreal.jpg",
   "logo": "https://naturalizate.pa/icon-512.png",
-  "email": "contacto@naturalizate.pa",
+  "email": "Villarreallawyers@proton.me",
   "telephone": "+507 6255-7583",
   "address": { "@type": "PostalAddress", "addressLocality": "Panamá", "addressCountry": "PA" },
   "areaServed": "Panamá",
   "priceRange": "$49 - $5,500",
   "knowsAbout": ["Naturalización panameña", "Cédula E", "Tribunal Electoral", "Derecho migratorio"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Basta tener la Cédula E para naturalizarme?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No por sí sola. La ley exige además los cinco años de residencia, el arraigo, la conducta y la integración."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Desde cuándo se cuentan los cinco años?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por la residencia permanente mantenida en Panamá; si hubo cambios de categoría o interrupciones, el historial migratorio manda. Excepción por reciprocidad: El Salvador 1 año; Argentina, Colombia, Ecuador, España, Honduras, México, Nicaragua y Perú 2 años; Uruguay 3 años."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué exige el examen del Tribunal Electoral?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Conocimientos de español, historia, geografía, gobierno y cultura de Panamá. Es un requisito legal, no opcional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo perder mi nacionalidad de origen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La jura incluye renunciar a la nacionalidad de origen; además, el naturalizado que adquiere voluntariamente otra nacionalidad puede perder la panameña (artículo 14 de la Constitución)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué debo pagar $49 antes de saber si califico?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cubren el análisis del abogado titular y un resumen ejecutivo escrito con la estrategia. Si firma el contrato dentro de los 7 días siguientes, el monto se acredita íntegramente a sus honorarios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo pagar los honorarios por partes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, contra avance de fases, acordado por escrito desde el inicio. El monto total es fijo, sin cargos posteriores no pactados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué ocurre si el Tribunal emite un requerimiento o niega mi caso?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La Modalidad Integral incluye la preparación de los recursos procedentes sin honorarios adicionales ante requerimientos subsanables."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito un abogado en Panamá?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La solicitud de naturalización se presenta mediante abogado ante el Tribunal Electoral."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda el proceso completo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El plazo habitual es de 19 a 22 meses, según la carga del Tribunal y la integridad del expediente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si mi caso no califica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se lo indicamos por escrito en el diagnóstico, con el fundamento correspondiente, y no le proponemos el trámite."
+      }
+    }
+  ]
 }
 </script>
 
@@ -123,7 +213,6 @@
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
   .nav { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-  /* Logotipo textual según Brand Book V2: blanco + .pa blanco 65% */
   .logo {
     font-family: var(--font-serif);
     font-weight: 500;
@@ -266,7 +355,7 @@
   @media (max-width: 768px) { .trust-bar-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
 
   /* ============ SECCIONES ============ */
-  section.block { padding: 84px 0; }
+  section.block { padding: 84px 0; content-visibility: auto; contain-intrinsic-size: auto 700px; }
   .section-head { text-align: center; margin-bottom: 52px; max-width: 760px; margin-left: auto; margin-right: auto; }
   .section-head .eyebrow { font-size: 0.76rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray-600); margin-bottom: 12px; }
   .section-head h2 { font-family: var(--font-serif); font-weight: 600; font-size: clamp(1.6rem, 3.2vw, 2.15rem); color: var(--navy); margin-bottom: 14px; line-height: 1.25; letter-spacing: -0.3px; }
@@ -434,7 +523,8 @@
   .faq-item.open .faq-q .fi { transform: rotate(45deg); }
   .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
   .faq-a p { padding: 0 24px 22px; color: var(--gray-600); font-size: 0.93rem; }
-  .faq-item.open .faq-a { max-height: 520px; }
+  .faq-a p + p { margin-top: 12px; }
+  .faq-item.open .faq-a { max-height: 950px; }
 
   /* ============ FORMULARIO (Brand Book: etiquetas uppercase, foco navy) ============ */
   .form-sec { background: var(--gray-50); }
@@ -507,6 +597,50 @@
   .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); box-shadow: 0 -6px 24px rgba(0,0,0,0.15); z-index: 99; border-top: 1px solid var(--gray-200); transition: transform .3s; }
   .sticky-cta.hidden { transform: translateY(110%); }
   @media (max-width: 768px) { .sticky-cta { display: block; } body { padding-bottom: 76px; } }
+
+  /* ============ PUERTA DE ENTRADA (precalificación al cargar) ============ */
+  html.gate-done #entryGate { display: none; }
+  #entryGate {
+    position: fixed; inset: 0; z-index: 200;
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+    background: rgba(6,15,23,0.74);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    overflow-y: auto;
+    opacity: 1; transition: opacity .4s ease;
+  }
+  #entryGate.closing { opacity: 0; pointer-events: none; }
+  #entryGate[hidden] { display: none; }
+  body.gated { overflow: hidden; }
+  .gate-card {
+    background: #fff; border-radius: 16px; border-top: 4px solid var(--navy);
+    max-width: 640px; width: 100%; margin: auto;
+    max-height: calc(100dvh - 40px); overflow-y: auto; overscroll-behavior: contain;
+    padding: 34px 36px 30px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    animation: gateIn .45s ease;
+  }
+  @keyframes gateIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  .gate-brand { font-family: var(--font-serif); text-transform: uppercase; letter-spacing: 3px; font-size: .95rem; color: var(--navy); text-align: center; margin-bottom: 14px; }
+  .gate-brand span { font-style: italic; letter-spacing: 1px; color: var(--gray-500); }
+  .gate-head { text-align: center; margin-bottom: 22px; }
+  .gate-head .eyebrow { font-size: .76rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray-600); margin-bottom: 10px; }
+  .gate-head h2 { font-family: var(--font-serif); font-weight: 600; font-size: 1.7rem; color: var(--navy); margin-bottom: 10px; line-height: 1.25; }
+  .gate-head h2 em { font-style: italic; font-weight: 400; }
+  .gate-head p { color: var(--gray-600); font-size: .95rem; }
+  .gate-head .rule { width: 48px; height: 2px; background: var(--navy); margin: 16px auto 0; }
+  #entryGate .form-wrap { box-shadow: none; border: none; padding: 0; margin: 0; max-width: none; }
+  #entryGate .form-step-badge, #entryGate .form-wrap > h3, #entryGate .form-wrap > .form-sub { display: none; }
+  @media (max-width: 560px) {
+    #entryGate { padding: 0; align-items: stretch; }
+    .gate-card { max-width: none; margin: 0; border-radius: 0; border-top: none; max-height: 100dvh; padding: 26px 20px calc(30px + env(safe-area-inset-bottom)); }
+    .gate-head h2 { font-size: 1.45rem; }
+    .form-group input, .form-group select { font-size: 16px; } /* evita zoom automático en iOS */
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #entryGate, .gate-card { animation: none; transition: none; }
+  }
 </style>
 <style>
 /* ============================================================
@@ -540,18 +674,31 @@
 </style>
 </head>
 <body>
+<!-- ============ PUERTA DE ENTRADA: la precalificación aparece al cargar; el fondo permanece desenfocado hasta completar los datos ============ -->
+<div id="entryGate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="gate-brand">Naturalízate<span>.pa</span></div>
+    <div class="gate-head">
+      <div class="eyebrow">Precalificación · 60 segundos</div>
+      <h2 id="gateTitle">Verifique <em>su elegibilidad</em></h2>
+      <p>Responda con franqueza. Al completar, continuamos por WhatsApp con su resultado y se revela el contenido de la página.</p>
+      <div class="rule"></div>
+    </div>
+    <div id="gateSlot"></div>
+  </div>
+</div>
+<noscript><style>#entryGate{display:none !important;}</style></noscript>
 
 <!-- ============ TOPBAR: filtro desde el primer píxel ============ -->
 <div class="topbar">
   <strong>Diagnóstico de viabilidad · $49</strong> acreditables a honorarios
   <span class="dot hide-m">·</span>
-  <span class="hide-m">Solo casos con <strong>Cédula E superior a 5 años</strong></span>
+  <span class="hide-m">Cédula E <strong>+5 años</strong> · menos con <strong>reciprocidad</strong></span>
 </div>
 
 <!-- ============ HEADER ============ -->
 <header>
   <div class="container nav">
-    <!-- Logotipo textual V2 (fondo oscuro). Si dispone del SVG oficial, reemplácelo aquí manteniendo 140 px mínimos. -->
     <a href="#inicio" class="logo" aria-label="Naturalízate.pa — inicio">Naturalízate<span class="pa">.pa</span></a>
     <nav class="nav-links" aria-label="Navegación principal">
       <a class="nl" href="#elegibilidad">¿Le aplica?</a>
@@ -588,9 +735,9 @@
       <div class="hc-price">$49 <small>pago único · se acredita a honorarios si su caso procede</small></div>
       <ul>
         <li>Veredicto de viabilidad <strong>por escrito en 48 h hábiles</strong></li>
-        <li>Revisión de su historial migratorio por el abogado titular</li>
-        <li>Lista exacta de documentos según su situación</li>
-        <li>Tiempo estimado y riesgos de su expediente</li>
+        <li>Análisis profundo para identificar la ruta jurídica <strong>más eficiente y económica</strong> para su caso</li>
+        <li>Transcripción y resumen ejecutivo de la sesión, para que tenga un <strong>documento tangible</strong> con la estrategia discutida</li>
+        <li>Lista exacta de documentos y riesgos específicos de su expediente</li>
       </ul>
       <a href="#verificar" class="btn btn-navy btn-block">Iniciar precalificación gratuita</a>
       <p class="hc-note">La precalificación es gratuita. El diagnóstico ($49) es el único paso pago antes del trámite.</p>
@@ -621,7 +768,7 @@
       <div class="who-card yes">
         <h3>Es para usted si…</h3>
         <ul>
-          <li>Posee <strong>Cédula E con más de 5 años</strong> de emisión</li>
+          <li>Posee <strong>Cédula E con más de 5 años</strong> de emisión (o menos, si su nacionalidad tiene convenio de reciprocidad)</li>
           <li>Ha mantenido <strong>residencia efectiva</strong> en Panamá</li>
           <li>Cuenta con arraigo, medios de vida lícitos y récord limpio</li>
           <li>Está dispuesto a prepararse para el <strong>examen de naturalización</strong></li>
@@ -632,7 +779,7 @@
       <div class="who-card no">
         <h3>No es para usted si…</h3>
         <ul>
-          <li>Su Cédula E tiene <strong>menos de 3 años</strong> de emisión</li>
+          <li>Su Cédula E tiene <strong>menos de 3 años</strong> de emisión, sin convenio de reciprocidad aplicable</li>
           <li>Ha tenido ausencias prolongadas no documentadas</li>
           <li>Busca atajos o un trámite por fuera de la ley</li>
           <li>Exige una garantía del resultado antes de empezar</li>
@@ -773,7 +920,7 @@
   <div class="container authority-grid">
     <div class="authority-card">
       <div class="authority-avatar">
-        <img src="foto-alfonso-villarreal.jpg" alt="Lic. Alfonso Villarreal, abogado fundador de Naturalízate.pa" width="104" height="104" loading="lazy" />
+        <img src="foto-alfonso-villarreal.jpg" alt="Lic. Alfonso Villarreal, abogado fundador de Naturalízate.pa" width="104" height="104" loading="lazy" decoding="async" />
       </div>
       <h3>Lic. Alfonso Villarreal</h3>
       <div class="role">Abogado fundador · Naturalízate.pa</div>
@@ -835,27 +982,28 @@
       <div class="diag-grid">
         <div>
           <h3>Veredicto documentado en <em>48 horas hábiles</em></h3>
-          <p class="diag-lead">El Lic. Alfonso Villarreal revisa sus constancias migratorias y le entrega un informe escrito que incluye:</p>
+          <p class="diag-lead">El Lic. Alfonso Villarreal revisa su historial y le entrega un informe escrito que incluye:</p>
           <ul>
-            <li><strong>Viabilidad real de su caso</strong> — si procede o no, con fundamentos concretos.</li>
-            <li><strong>Documentación exacta</strong> que debe reunir según su situación.</li>
-            <li><strong>Tiempo estimado</strong> y riesgos específicos de su expediente.</li>
-            <li><strong>Ruta jurídica escrita</strong> — no promesas verbales ni estimaciones vagas.</li>
-            <li><strong>Honestidad total</strong> — si existe un obstáculo insalvable, se lo indicamos antes de proponerle el trámite.</li>
+            <li><strong>Viabilidad real de su caso:</strong> fundamentos concretos sobre si procede o no.</li>
+            <li><strong>Definición de la ruta más eficiente:</strong> analizamos si su caso requiere un camino complejo o si existe una solución más simple y económica que le ahorra tiempo y dinero.</li>
+            <li><strong>Resumen ejecutivo tangible:</strong> utilizamos tecnología de transcripción para enviarle un documento con todo lo hablado y la estrategia definida. Usted paga por conocimiento; entregamos ese conocimiento por escrito.</li>
+            <li><strong>Honestidad total:</strong> si existe un obstáculo insalvable, se lo indicamos antes de proponerle el trámite.</li>
           </ul>
         </div>
         <div class="diag-price-card">
           <div class="dp-label">Diagnóstico de viabilidad</div>
           <div class="dp-price">$49</div>
-          <p class="dp-sub">Pago único. <strong>Se acredita a sus honorarios</strong> si su caso procede y usted continúa con el despacho.</p>
+          <p class="dp-sub">Pago único. <strong>Se acredita íntegramente a sus honorarios</strong> si su caso procede y usted continúa con el despacho.</p>
           <a href="#verificar" class="btn btn-white btn-block">Solicitar mi diagnóstico</a>
-          <p class="dp-sub" style="margin:14px 0 0; font-size:0.78rem;">Revisado personalmente por el abogado titular · Cupo limitado por semana</p>
+          <p class="dp-sub" style="margin:14px 0 0; font-size:0.75rem; line-height:1.4;">
+            <strong>Condición de bonificación:</strong> El descuento de los $49 aplica únicamente si el contrato de servicios se firma dentro de los <strong>7 días posteriores</strong> al envío de la propuesta. Pasado este plazo, se factura como consulta independiente.
+          </p>
         </div>
       </div>
       <div class="diag-steps">
         <div class="ds"><span class="ds-n">1.</span><p><strong>Complete la precalificación</strong>De 60 segundos, más abajo en esta página.</p></div>
-        <div class="ds"><span class="ds-n">2.</span><p><strong>Reciba el enlace de pago</strong>Nuestra asistente legal le escribe por WhatsApp.</p></div>
-        <div class="ds"><span class="ds-n">3.</span><p><strong>Reciba su veredicto escrito</strong>En 48 horas hábiles, con ruta jurídica.</p></div>
+        <div class="ds"><span class="ds-n">2.</span><p><strong>Agende y realice la consulta</strong>Recibirá el enlace de pago y la grabación/resumen de la sesión.</p></div>
+        <div class="ds"><span class="ds-n">3.</span><p><strong>Reciba su veredicto escrito</strong>En 48 horas hábiles, con la ruta jurídica y la opción de bonificación.</p></div>
       </div>
     </div>
   </div>
@@ -900,7 +1048,10 @@
         <a href="#verificar" class="btn btn-navy btn-block">Iniciar con el diagnóstico · $49</a>
       </div>
     </div>
-    <p class="price-note"><strong>No se acepta mandato de trámite sin diagnóstico previo ($49).</strong> Este orden protege su inversión: primero la viabilidad por escrito, después el compromiso.</p>
+    <p class="price-note">
+      <strong>Política de bonificación:</strong> No se acepta mandato de trámite sin diagnóstico previo ($49). Este orden protege su inversión: primero la viabilidad por escrito, después el compromiso. 
+      <br><span style="font-size:0.85rem; margin-top:8px; display:block;">Si decide contratar nuestros servicios dentro de los <strong>7 días posteriores</strong> a la entrega del diagnóstico, el costo de esta evaluación se descontará automáticamente de su factura final. No asumimos casos sin este filtro ético.</span>
+    </p>
   </div>
 </section>
 
@@ -919,7 +1070,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">¿Desde cuándo se cuentan los cinco años? <span class="fi">+</span></button>
-        <div class="faq-a"><p>El período se cuenta por la residencia permanente mantenida en Panamá. La fecha de emisión de la cédula suele reflejarla, pero si hubo cambios de categoría o interrupciones, el historial migratorio manda. Por eso revisamos su caso con las constancias en mano antes de presentar.</p></div>
+        <div class="faq-a"><p>El período se cuenta por la residencia permanente mantenida en Panamá. La fecha de emisión de la cédula suele reflejarla, pero si hubo cambios de categoría o interrupciones, el historial migratorio manda. Por eso revisamos su caso con las constancias en mano antes de presentar.</p><p><strong>Excepción por reciprocidad:</strong> los nacionales de El Salvador requieren 1 año; los de Argentina, Colombia, Ecuador, España, Honduras, México, Nicaragua y Perú, 2 años; y los de Uruguay, 3 años. Si es su caso, indíquelo en la precalificación: el diagnóstico verifica su cómputo exacto.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">¿Qué exige el examen del Tribunal Electoral? <span class="fi">+</span></button>
@@ -931,7 +1082,10 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">¿Por qué debo pagar $49 antes de saber si califico? <span class="fi">+</span></button>
-        <div class="faq-a"><p>Porque cada historial migratorio es único. Los $49 cubren las horas de análisis de su caso, el cruce de normas y la redacción de un diagnóstico escrito. Es el filtro que nos permite dedicar el 100% de nuestro tiempo a casos con viabilidad real. Si su caso procede y usted continúa, el monto se acredita a sus honorarios.</p></div>
+        <div class="faq-a">
+          <p>Porque cada historial migratorio es único y requiere un análisis profundo, no una respuesta improvisada. Los $49 cubren las horas de estudio de su caso por parte del abogado titular y la generación de un <strong>documento tangible</strong> (resumen ejecutivo de la consulta) con la estrategia definida.</p>
+          <p>Además, este análisis nos permite identificar si existe un camino jurídico más simple y económico para usted, evitando que invierta en trámites innecesariamente complejos. Si su caso procede y usted firma el contrato dentro de los 7 días siguientes, este monto se acredita íntegramente a sus honorarios finales.</p>
+        </div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">¿Puedo pagar los honorarios por partes? <span class="fi">+</span></button>
@@ -963,7 +1117,7 @@
     <div class="section-head">
       <div class="eyebrow">Precalificación · 60 segundos</div>
       <h2>Verifique <em>su elegibilidad</em></h2>
-      <p>Responda con franqueza. Este filtro protege su tiempo y el nuestro: solo los perfiles que cumplen los criterios continúan a WhatsApp.</p>
+      <p>Responda con franqueza. Al completar, continuamos por WhatsApp con su resultado y se revela el contenido de la página.</p>
       <div class="rule"></div>
     </div>
     <form class="form-wrap" id="prequalForm" novalidate>
@@ -1133,7 +1287,7 @@
       <div>
         <h5>Contacto</h5>
         <a href="https://wa.me/50762557583" target="_blank" rel="noopener">WhatsApp · +507 6255-7583</a>
-        <a href="mailto:contacto@naturalizate.pa">contacto@naturalizate.pa</a>
+        <a href="mailto:Villarreallawyers@proton.me">Villarreallawyers@proton.me</a>
         <a href="https://naturalizate.pa" target="_blank" rel="noopener">naturalizate.pa</a>
         <a href="#verificar">Precalificar mi caso</a>
       </div>
@@ -1159,6 +1313,45 @@
 <script>
 (function () {
   "use strict";
+
+  /* ===== Puerta de entrada: precalificación al cargar, fondo desenfocado hasta completar ===== */
+  var GATE_KEY = "nzq_gate_done";
+  var gate = document.getElementById("entryGate");
+  var gateSlot = document.getElementById("gateSlot");
+  var formEl = document.getElementById("prequalForm");
+  var formHome = formEl ? formEl.parentNode : null;
+  var formNext = formEl ? formEl.nextSibling : null;
+  var gateDone = false;
+  try { gateDone = sessionStorage.getItem(GATE_KEY) === "1"; } catch (e) {}
+
+  function openGate() {
+    if (!gate || !formEl || !gateSlot) return;
+    document.body.classList.add("gated");
+    gateSlot.appendChild(formEl);
+    gate.removeAttribute("hidden");
+    if (window.matchMedia && window.matchMedia("(min-width: 700px)").matches) {
+      var first = document.getElementById("nombre");
+      if (first) setTimeout(function () { try { first.focus({ preventScroll: true }); } catch (e) { first.focus(); } }, 350);
+    }
+  }
+  function closeGate() {
+    if (!gate || gateDone) return;
+    try { sessionStorage.setItem(GATE_KEY, "1"); } catch (e) {}
+    gateDone = true;
+    if (formEl && formHome) formHome.insertBefore(formEl, formNext);
+    document.body.classList.remove("gated");
+    gate.classList.add("closing");
+    window.scrollTo(0, 0);
+    setTimeout(function () { gate.setAttribute("hidden", ""); }, 430);
+  }
+  document.addEventListener("click", function (e) {
+    if (e.target && e.target.closest && e.target.closest("[data-gate-close]")) closeGate();
+  });
+  if (gateDone) {
+    if (gate) gate.setAttribute("hidden", "");
+  } else {
+    openGate();
+  }
 
   /* ===== Configuración (ver TODO en el <head>) ===== */
   var WHATSAPP_NUMBER = "50762557583"; // +507 6255-7583 (Brand Book v2.0)
@@ -1208,6 +1401,20 @@
   }
 
   /* ===== Filtro inteligente de precalificación ===== */
+  /* Años de residencia exigidos por convenio de reciprocidad (fuente: PDF oficial de convenios).
+     Validar vigencia con el abogado. Claves normalizadas (minúsculas, sin tildes). */
+  var RECIPROCIDAD = {
+    "el salvador": 1,
+    "argentina": 2, "ecuador": 2, "espana": 2, "honduras": 2, "mexico": 2,
+    "nicaragua": 2, "peru": 2, "colombia": 2,
+    "uruguay": 3
+  };
+  function normPais(s) {
+    try {
+      return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    } catch (e) { return (s || "").toLowerCase().trim(); }
+  }
+
   var LABELS = {
     cedula: { menos3: "Menos de 3 años", entre35: "Entre 3 y 5 años", mas5: "Más de 5 años", nose: "No estoy seguro(a)" },
     ausencias: { no: "No", menores: "Sí, menores a 6 meses", mayores: "Sí, mayores a 6 meses", nose: "No estoy seguro(a)" },
@@ -1279,34 +1486,53 @@
 
     /* --- FILTRO DURO 1: cómputo legal insuficiente --- */
     if (cedula === "menos3") {
+      /* Excepción: nacionalidades con convenio de reciprocidad exigen menos años */
+      var recAnos = RECIPROCIDAD[normPais(pais)];
+      if (recAnos) {
+        var msgR = base + "\n\nPerfil interno: Reciprocidad — " + pais + " (" + recAnos + (recAnos === 1 ? " año" : " años") + ")\nMi nacionalidad tiene convenio de reciprocidad. Deseo solicitar mi Diagnóstico de Viabilidad Legal ($49) para verificar mi cómputo exacto.";
+        try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: "precalificacion_reciprocidad", pais: pais }); } catch (err) {}
+        showVerdict("verdictWarn",
+          '<span class="v-tag">Convenio de reciprocidad</span>' +
+          "<h4>Su nacionalidad puede aplicar con menos años, " + primerNombre + "</h4>" +
+          "<p>" + pais + " registra convenio de reciprocidad: la residencia exigida es de <strong>" + recAnos + (recAnos === 1 ? " año" : " años") + "</strong>, no cinco. Por eso su caso <strong>no se descarta</strong>, pero requiere verificar su cómputo exacto con documentos en mano.</p>" +
+          "<p>El <strong>Diagnóstico de Viabilidad ($49)</strong> incluye esa verificación, con veredicto escrito del abogado en 48 horas hábiles.</p>" +
+          '<div class="v-actions"><a class="btn btn-navy btn-sm" target="_blank" rel="noopener" data-gate-close href="' + waLink(msgR) + '">Verificar mi cómputo por WhatsApp</a></div>');
+        return false;
+      }
+      var msgC = base + "\n\nNOTA: Aún no procede (cómputo legal insuficiente: menos de 3 años de Cédula E)\nSé que aún no aplico, pero deseo solicitar mi Diagnóstico de Viabilidad Legal ($49).";
+      try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: "precalificacion_no_califica", motivo: "computo" }); } catch (err) {}
       showVerdict("verdictFail",
         '<span class="v-tag">Aún no procede</span>' +
         "<h4>" + primerNombre + ", su caso aún no cumple el cómputo legal</h4>" +
         "<p>Con menos de 3 años de Cédula E, la ley exige esperar: la naturalización requiere <strong>5 años de residencia permanente</strong>. Presentar ahora sería invertir en un caso sin viabilidad, y eso es justamente lo que nuestro filtro evita.</p>" +
-        "<p>Conserve esta página. Cuando se acerque a los 5 años, el <strong>Diagnóstico de Viabilidad ($49)</strong> será su primer paso. Si lo desea, escríbanos por correo y le orientamos sobre qué regularizar mientras tanto.</p>" +
-        '<div class="v-actions"><a class="btn btn-navy btn-sm" href="mailto:contacto@naturalizate.pa?subject=' +
-        encodeURIComponent("Orientación previa — " + nombre) + '">Escribir por correo</a></div>');
+        "<p>Conserve esta página. Cuando se acerque a los 5 años, el <strong>Diagnóstico de Viabilidad ($49)</strong> será su primer paso. Si lo desea, puede solicitarlo desde ahora: le indicará por escrito qué regularizar mientras se acerca el momento.</p>" +
+        '<div class="v-actions"><a class="btn btn-navy btn-sm" target="_blank" rel="noopener" data-gate-close href="' + waLink(msgC) + '">Sé que no aplico, pero quiero el Diagnóstico ($49)</a></div>');
       return false;
     }
 
     /* --- FILTRO DURO 2: examen (requisito legal) --- */
     if (examen === "no") {
+      var msgE = base + "\n\nPerfil interno: Pendiente examen obligatorio\nDeseo información sobre la preparación para el examen de naturalización.";
+      try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: "precalificacion_no_califica", motivo: "examen" }); } catch (err) {}
       showVerdict("verdictFail",
         '<span class="v-tag">Requisito legal</span>' +
         "<h4>El examen es obligatorio, " + primerNombre + "</h4>" +
         "<p>El <strong>examen de naturalización ante el Tribunal Electoral</strong> (español, historia, geografía, gobierno y cultura de Panamá) es un requisito legal, no opcional. Sin disposición a prepararlo, ningún abogado serio puede proponerle el trámite.</p>" +
-        "<p>Si cambia de parecer, nuestra Modalidad incluye la <strong>preparación orientada</strong>. Estaremos a su disposición.</p>");
+        "<p>Si cambia de parecer, nuestra Modalidad incluye la <strong>preparación orientada</strong>. Continuamos por WhatsApp para enviarle el detalle.</p>" +
+        '<div class="v-actions"><a class="btn btn-navy btn-sm" target="_blank" rel="noopener" data-gate-close href="' + waLink(msgE) + '">Continuar por WhatsApp</a></div>');
       return false;
     }
 
     /* --- FILTRO SUAVE: presupuesto --- */
     if (presupuesto === "no") {
+      var msgP = base + "\n\nPerfil interno: Consulta general (presupuesto)\nDeseo recibir el detalle de las modalidades y pagos fraccionados.";
+      try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: "precalificacion_general" }); } catch (err) {}
       showVerdict("verdictWarn",
         '<span class="v-tag">Transparencia ante todo</span>' +
         "<h4>Entendemos su posición, " + primerNombre + "</h4>" +
-        "<p>Nuestros honorarios son <strong>fijos y por escrito: $3,800 (Esencial) o $5,500 (Integral)</strong>, con pago fraccionado. Preferimos indicárselo ahora antes que iniciar una conversación que no conduce a un trámite viable.</p>" +
+        "<p>Nuestros honorarios son <strong>fijos y por escrito: $3,800 (Esencial) o $5,500 (Integral)</strong>, con pago fraccionado. Continuamos por WhatsApp y le enviamos el detalle de cada modalidad para cuando la inversión esté a su alcance.</p>" +
         "<p>Cuando la inversión esté a su alcance, el primer paso seguirá siendo el mismo: el <strong>Diagnóstico de Viabilidad ($49)</strong>, acreditables a honorarios.</p>" +
-        '<div class="v-actions"><a class="btn btn-outline-n btn-sm" href="#honorarios">Revisar qué incluye cada modalidad</a></div>');
+        '<div class="v-actions"><a class="btn btn-navy btn-sm" target="_blank" rel="noopener" data-gate-close href="' + waLink(msgP) + '">Continuar por WhatsApp</a><a class="btn btn-outline-n btn-sm" data-gate-close href="#honorarios">Revisar qué incluye cada modalidad</a></div>');
       return false;
     }
 
@@ -1317,6 +1543,8 @@
     else { score += 0; flags.push("ausencias mayores a 6 meses: revisión prioritaria"); }
     if (examen === "si") score += 2; else { score += 1; flags.push("resolver dudas sobre el examen"); }
     if (presupuesto === "si") score += 2; else { score += 1; flags.push("explicar alcance de cada modalidad"); }
+    var recFlag = RECIPROCIDAD[normPais(pais)];
+    if (recFlag && cedula !== "mas5") flags.push("verificar cómputo reducido por reciprocidad (" + pais + ": " + recFlag + (recFlag === 1 ? " año" : " años") + ")");
 
     var perfil = score >= 7 ? "A — Prioritario" : (score >= 4 ? "B — Viable con revisión" : "C — Requiere verificación");
     var msg = base + "\n\nPerfil interno: " + perfil + "\nDeseo solicitar mi Diagnóstico de Viabilidad Legal ($49).";
@@ -1333,14 +1561,14 @@
         "<h4>Su perfil cumple los criterios, " + primerNombre + "</h4>" +
         "<p>Con <strong>" + LABELS.cedula[cedula].toLowerCase() + " de Cédula E</strong> y su disposición actual, su caso amerita el <strong>Diagnóstico de Viabilidad ($49)</strong>: veredicto escrito en 48 horas hábiles, acreditables a honorarios si procede.</p>" +
         "<p>Continúe por WhatsApp: <strong>" + ASISTENTE + "</strong>, nuestra asistente legal, ya recibe su contexto y le envía el enlace de pago.</p>" +
-        '<div class="v-actions"><a class="btn btn-navy" target="_blank" rel="noopener" href="' + waLink(msg) + '">Continuar por WhatsApp</a></div>');
+        '<div class="v-actions"><a class="btn btn-navy" target="_blank" rel="noopener" data-gate-close href="' + waLink(msg) + '">Continuar por WhatsApp</a></div>');
     } else {
       showVerdict("verdictWarn",
         '<span class="v-tag">Revisión recomendada · ' + perfil + "</span>" +
         "<h4>Su caso requiere verificación, " + primerNombre + "</h4>" +
         "<p>Su perfil presenta puntos que deben revisarse con documentos en mano: <strong>" + flags.join("; ") + "</strong>. Esto no significa que su caso no proceda — significa que el <strong>Diagnóstico de Viabilidad ($49)</strong> es especialmente importante para usted.</p>" +
         "<p>Continúe por WhatsApp y mencione estos puntos a <strong>" + ASISTENTE + "</strong>: le indicará qué constancias aportar.</p>" +
-        '<div class="v-actions"><a class="btn btn-navy" target="_blank" rel="noopener" href="' + waLink(msg) + '">Continuar por WhatsApp</a></div>');
+        '<div class="v-actions"><a class="btn btn-navy" target="_blank" rel="noopener" data-gate-close href="' + waLink(msg) + '">Continuar por WhatsApp</a></div>');
     }
     return false;
   });

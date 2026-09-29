@@ -12,6 +12,7 @@ por reciprocidad». Validar la vigencia de los convenios con el abogado.
 | Archivo | Descripción |
 |---|---|
 | `index.html` | Landing principal (estricta Brand Book: navy/blanco/grises) |
+| `guia.html` | Guía de contratación y preguntas frecuentes (mismo formulario y filtro) |
 | `variante-dorada.html` | Variante con acento dorado (opcional: elimínela si no la usa) |
 | `404.html` | Página de error |
 | `robots.txt` / `sitemap.xml` | SEO técnico (ya apuntan a `https://naturalizate.pa/`) |

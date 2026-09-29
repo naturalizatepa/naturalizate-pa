@@ -590,13 +590,26 @@
   footer a { color: #b8c1d4; text-decoration: none; display: block; padding: 5px 0; transition: color .2s; }
   footer a:hover { color: #fff; }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center; font-size: 0.78rem; line-height: 1.7; }
-  @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 26px; } }
+  @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 26px; } footer a { padding: 9px 0; } }
   .disclaimer { background: var(--gray-100); padding: 24px 0; font-size: 0.8rem; color: var(--gray-600); text-align: center; line-height: 1.65; }
+
+  /* ============ REFINAMIENTO MÓVIL (márgenes, cabecera, tablas) ============ */
+  .compare-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  @media (max-width: 640px) { .compare table { min-width: 560px; } }
+  @media (max-width: 560px) {
+    .container { padding: 0 20px; }
+    .logo { font-size: .85rem; letter-spacing: 2px; min-width: 0; }
+    .nav-links .hide-m { display: none; }
+    header .btn-sm { padding: 10px 14px; }
+    .hero-eyebrow { letter-spacing: 1.5px; }
+    .hero-cta .btn, .final-cta .cta-row .btn, .verdict .v-actions .btn { flex: 1 1 100%; }
+    .form-step-badge { font-size: .66rem; letter-spacing: 1px; padding: 6px 16px; }
+  }
 
   /* ============ STICKY MOBILE CTA ============ */
   .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); box-shadow: 0 -6px 24px rgba(0,0,0,0.15); z-index: 99; border-top: 1px solid var(--gray-200); transition: transform .3s; }
   .sticky-cta.hidden { transform: translateY(110%); }
-  @media (max-width: 768px) { .sticky-cta { display: block; } body { padding-bottom: 76px; } }
+  @media (max-width: 768px) { .sticky-cta { display: block; } body { padding-bottom: calc(76px + env(safe-area-inset-bottom)); } }
 
   /* ============ PUERTA DE ENTRADA (precalificación al cargar) ============ */
   html.gate-done #entryGate { display: none; }
@@ -706,7 +719,8 @@
       <a class="nl" href="#proceso">Proceso</a>
       <a class="nl" href="#honorarios">Honorarios</a>
       <a class="nl" href="#preguntas">Preguntas</a>
-      <a href="#verificar" class="btn btn-white btn-sm">Precalificar mi caso</a>
+      <a class="nl" href="guia.html">Guía</a>
+      <a href="#verificar" class="btn btn-white btn-sm">Precalificar<span class="hide-m"> mi caso</span></a>
     </nav>
   </div>
 </header>
@@ -854,6 +868,7 @@
       </div>
     </div>
     <div class="compare" role="table" aria-label="Comparativa de enfoques">
+      <div class="compare-scroll">
       <table>
         <thead>
           <tr><th scope="col">Criterio</th><th scope="col">Naturalízate.pa</th><th scope="col">Trámite sin filtro previo</th></tr>
@@ -866,6 +881,7 @@
           <tr><td>Acompañamiento hasta la jura y gestión posterior</td><td class="c yes">✓</td><td class="c noc">—</td></tr>
         </tbody>
       </table>
+      </div>
     </div>
   </div>
 </section>
@@ -1283,6 +1299,7 @@
         <a href="#proceso">Proceso</a>
         <a href="#honorarios">Honorarios</a>
         <a href="#preguntas">Preguntas</a>
+        <a href="guia.html">Guía de contratación</a>
       </div>
       <div>
         <h5>Contacto</h5>

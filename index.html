@@ -4,13 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Naturalización panameña · De la Cédula E a la nacionalidad | Naturalízate.pa</title>
-<meta name="description" content="Evaluamos la viabilidad de su caso antes de comprometernos. Consulta inicial gratuita y sin compromiso. Honorarios fijos por escrito. Solo casos con Cédula E superior a 5 años." />
+<meta name="description" content="Evaluamos la viabilidad de su caso antes de comprometernos. Evaluación Estratégica US$49, aplicables al proceso. Proceso profesional desde US$3,800. Solo casos con Cédula E superior a 5 años." />
 <link rel="canonical" href="https://naturalizate.pa/" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="es_PA" />
 <meta property="og:title" content="Naturalízate.pa — Asesoría jurídica con la sobriedad que su caso merece" />
-<meta property="og:description" content="Filtro previo gratuito · Consulta inicial sin costo · Honorarios fijos: Esencial $3,800 · Integral $5,500. Solo ante el Tribunal Electoral." />
+<meta property="og:description" content="Filtro previo · Evaluación Estratégica US$49 · Procesos: Esencial $3,800 · Todo Incluido $5,500. Solo ante el Tribunal Electoral." />
 <meta property="og:url" content="https://naturalizate.pa/" />
 <meta property="og:image" content="https://naturalizate.pa/og-image.png" />
 <meta property="og:image:width" content="1200" />
@@ -18,7 +18,7 @@
 <meta property="og:image:alt" content="Naturalízate.pa — De la cédula E con más de 5 años a la nacionalidad panameña" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Naturalízate.pa — Asesoría jurídica con la sobriedad que su caso merece" />
-<meta name="twitter:description" content="Filtro previo gratuito · Consulta inicial sin costo · Honorarios fijos por escrito." />
+<meta name="twitter:description" content="Filtro previo · Evaluación Estratégica US$49 · Honorarios fijos por escrito." />
 <meta name="twitter:image" content="https://naturalizate.pa/og-image.png" />
 <meta name="theme-color" content="#0D1B2A" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
@@ -33,8 +33,9 @@
 
 <!-- Notas de publicación:
   1) Número de WhatsApp en const WHATSAPP_NUMBER (actual: 50762557583).
-  2) Dominio canónico (actual: https://naturalizate.pa/).
-  3) Pegue aquí su píxel (Meta / Google Ads / GA4) si pauta tráfico.
+  2) Enlace de pago US$49 (Yappy/tarjeta) en const ENLACE_PAGO. Si está vacío, el embudo opera en modo manual (Patricia envía el enlace).
+  3) Dominio canónico (actual: https://naturalizate.pa/).
+  4) Pegue aquí su píxel (Meta / Google Ads / GA4) si pauta tráfico.
 -->
 
 <script>try{if(sessionStorage.getItem("nzq_gate_done")==="1"){document.documentElement.className+=" gate-done";}}catch(e){}</script>
@@ -51,7 +52,7 @@
   "telephone": "+507 6255-7583",
   "address": { "@type": "PostalAddress", "addressLocality": "Panamá", "addressCountry": "PA" },
   "areaServed": "Panamá",
-  "priceRange": "Consulta gratuita · $3,800 - $5,500",
+  "priceRange": "Evaluación US$49 · Procesos $3,800–$5,500",
   "knowsAbout": ["Naturalización panameña", "Cédula E", "Tribunal Electoral", "Derecho migratorio"]
 }
 </script>
@@ -95,10 +96,10 @@
     },
     {
       "@type": "Question",
-      "name": "¿La consulta inicial tiene algún costo?",
+      "name": "¿Qué es la Evaluación Estratégica?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. La precalificación y la consulta inicial son gratuitas y sin compromiso. Solo si su caso procede y usted decide contratar, aplican honorarios fijos por escrito."
+        "text": "Es una sesión virtual de 30 minutos (US$49) donde el abogado revisa su situación y define la ruta. Los US$49 se aplican al proceso si contrata."
       }
     },
     {
@@ -114,7 +115,7 @@
       "name": "¿Qué ocurre si el Tribunal emite un requerimiento o niega mi caso?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La Modalidad Integral incluye la preparación de los recursos procedentes sin honorarios adicionales ante requerimientos subsanables."
+        "text": "El Proceso Todo Incluido incluye la preparación de los recursos procedentes sin honorarios adicionales ante requerimientos subsanables."
       }
     },
     {
@@ -138,7 +139,7 @@
       "name": "¿Qué pasa si mi caso no califica?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Se lo indicamos por escrito en su consulta inicial, con el fundamento correspondiente, y no le proponemos el trámite."
+        "text": "Se lo indicamos por escrito en su Evaluación Estratégica, con el fundamento correspondiente, y no le proponemos el trámite."
       }
     }
   ]
@@ -685,6 +686,13 @@
   @media (prefers-reduced-motion: reduce) {
     #entryGate, .gate-card { animation: none; transition: none; }
   }
+  /* ============ TARJETA DE PAGO (Evaluación Estratégica US$49) ============ */
+  .pay-card { background: var(--gray-50); border: 1.5px solid var(--navy); border-radius: 12px; padding: 24px 22px; text-align: center; margin-bottom: 22px; }
+  .pay-title { font-size: .76rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); }
+  .pay-price { font-family: var(--font-serif); font-size: 2.6rem; font-weight: 600; color: var(--navy); margin: 6px 0 2px; }
+  .pay-sub { color: var(--gray-600); font-size: .9rem; margin-bottom: 16px; }
+  .pay-note { font-size: .78rem; color: var(--gray-500); margin-top: 12px; }
+  .pay-note.warn { color: var(--no); font-weight: 600; }
 </style>
 </head>
 <body>
@@ -693,9 +701,9 @@
   <div class="gate-card">
     <div class="gate-brand">Naturalízate<span>.pa</span></div>
     <div class="gate-head">
-      <div class="eyebrow">Consulta inicial gratuita · 60 segundos</div>
-      <h2 id="gateTitle">Reserve su consulta <em>gratuita</em></h2>
-      <p>Filtro de 60 segundos, resultado al instante y reserva de día y hora. Al confirmar, continuamos por WhatsApp y se revela el contenido de la página.</p>
+      <div class="eyebrow">Evaluación Estratégica · US$49</div>
+      <h2 id="gateTitle">Verifique si <em>su perfil encaja</em></h2>
+      <p>Precalificación, inversión visible y Evaluación Estratégica (US$49, aplicables al proceso). Al completar el pago, continuamos por WhatsApp y se revela la página.</p>
       <div class="rule"></div>
     </div>
     <div id="gateSlot"></div>
@@ -704,7 +712,7 @@
 <noscript><style>#entryGate{display:none !important;}</style></noscript>
 <!-- ============ TOPBAR: filtro desde el primer píxel ============ -->
 <div class="topbar">
-  <strong>Consulta inicial gratuita</strong> · sin compromiso
+  <strong>Proceso desde US$3,800</strong> · Evaluación US$49
   <span class="dot hide-m">·</span>
   <span class="hide-m">Cédula E <strong>+5 años</strong> · menos con <strong>reciprocidad</strong></span>
 </div>
@@ -732,29 +740,29 @@
       <span class="hero-eyebrow">Naturalización panameña · Tribunal Electoral</span>
       <h1>De la Cédula E a la <em>nacionalidad panameña</em>, con certeza jurídica.</h1>
       <p class="slogan">«Asesoría jurídica con la sobriedad que su caso merece.»</p>
-      <p class="lead">Evaluamos la <strong>viabilidad de su caso antes de comprometernos</strong>. Si no procede, se lo indicamos por escrito. Si procede, le acompañamos en las cinco fases, hasta la jura de nacionalidad.</p>
+      <p class="lead">Evaluamos la <strong>viabilidad de su caso antes de comprometernos</strong>. Proceso profesional desde <strong>US$3,800</strong>, para personas con capacidad real de inversión. Si no procede, se lo indicamos por escrito.</p>
       <div class="hero-cta">
-        <a href="#verificar" class="btn btn-white">Precalificar mi caso · 60 seg</a>
+        <a href="#verificar" class="btn btn-white">Verificar si mi perfil encaja</a>
         <a href="#honorarios" class="btn btn-outline-w">Ver honorarios</a>
       </div>
       <div class="hero-trust">
         <span>Honorarios fijos por escrito</span>
         <span>Respuesta en 24 h hábiles</span>
-        <span>No aceptamos todos los casos</span>
+        <span>Evaluación previa · US$49</span>
       </div>
     </div>
     <div class="hero-card">
-      <span class="hc-tag">Paso 01 · Sin costo</span>
-      <h3>Consulta Inicial Gratuita</h3>
-      <div class="hc-price">Gratis <small>sin costo · sin compromiso · reserve en 60 segundos</small></div>
+      <span class="hc-tag">Paso 01 · US$49 aplicables</span>
+      <h3>Evaluación Estratégica</h3>
+      <div class="hc-price">US$49 <small>virtual · 30 min · 100% aplicables al proceso</small></div>
       <ul>
-        <li>Veredicto de viabilidad <strong>por escrito en 48 h hábiles</strong></li>
+        <li>Revisión personal del Lic. Villarreal <strong>en sesión virtual de 30 min</strong></li>
         <li>Análisis profundo para identificar la ruta jurídica <strong>más eficiente y económica</strong> para su caso</li>
         <li>Transcripción y resumen ejecutivo de la sesión, para que tenga un <strong>documento tangible</strong> con la estrategia discutida</li>
         <li>Lista exacta de documentos y riesgos específicos de su expediente</li>
       </ul>
-      <a href="#verificar" class="btn btn-navy btn-block">Iniciar precalificación gratuita</a>
-      <p class="hc-note">La precalificación y la consulta inicial son 100% gratuitas. Sin pagos antes del trámite.</p>
+      <a href="#verificar" class="btn btn-navy btn-block">Verificar si mi perfil encaja</a>
+      <p class="hc-note">Complete la precalificación en línea. La Evaluación (US$49) es el único paso antes de la propuesta.</p>
     </div>
   </div>
 </section>
@@ -968,58 +976,58 @@
     </div>
     <div class="testi-grid">
       <div class="testimonial">
-        <p>Llegué con temor de que mi caso estuviera mal armado. En la consulta inicial me mostraron exactamente qué faltaba. Presentamos con todo en orden y la resolución llegó en el plazo estimado.</p>
-        <div class="testimonial-author"><strong>María C.</strong><span>Naturalizada en 2025 · Modalidad Esencial</span></div>
+        <p>Llegué con temor de que mi caso estuviera mal armado. En la evaluación me mostraron exactamente qué faltaba. Presentamos con todo en orden y la resolución llegó en el plazo estimado.</p>
+        <div class="testimonial-author"><strong>María C.</strong><span>Naturalizada en 2025 · Proceso Esencial</span></div>
       </div>
       <div class="testimonial">
         <p>Lo que más valoro es que me dijeron la verdad desde el inicio: mi caso sí procedía, pero requería tres meses de preparación antes de presentar. Otros me ofrecían presentar de inmediato. Eso habría sido un error.</p>
-        <div class="testimonial-author"><strong>J. Rodríguez</strong><span>Naturalizado en 2024 · Modalidad Integral</span></div>
+        <div class="testimonial-author"><strong>J. Rodríguez</strong><span>Naturalizado en 2024 · Proceso Todo Incluido</span></div>
       </div>
       <div class="testimonial">
         <p>No tuve que ocuparme de nada. Poderes, notarías, legalizaciones, cita para el examen, jura. Todo coordinado. Lo único que tuve que hacer fue prepararme y presentarme.</p>
-        <div class="testimonial-author"><strong>L. Pérez</strong><span>Naturalizada en 2024 · Modalidad Integral</span></div>
+        <div class="testimonial-author"><strong>L. Pérez</strong><span>Naturalizada en 2024 · Proceso Todo Incluido</span></div>
       </div>
     </div>
     <p class="testi-note">Por confidencialidad profesional, no publicamos resoluciones ni documentos de clientes.</p>
   </div>
 </section>
 
-<!-- ============ DIAGNÓSTICO ============ -->
-<section class="block" id="diagnostico">
+<!-- ============ EVALUACIÓN ESTRATÉGICA ============ -->
+<section class="block" id="evaluacion">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">Paso 01 · Gratuito y sin compromiso</div>
-      <h2>Consulta inicial <em>gratuita</em></h2>
-      <p>No es una charla de cortesía. Es una pre-auditoría de su historial migratorio, con la evaluación del abogado titular.</p>
+      <div class="eyebrow">Paso 01 · Antes de contratar</div>
+      <h2>Evaluación <em>Estratégica</em></h2>
+      <p>No es una conversación de cortesía. Es análisis, criterio profesional y ruta jurídica — en sesión virtual de 30 minutos con el abogado titular.</p>
       <div class="rule"></div>
     </div>
     <div class="diag-box">
-      <span class="diag-tag">Sin costo · Sin compromiso</span>
+      <span class="diag-tag">Virtual · 30 min · US$49</span>
       <div class="diag-grid">
         <div>
-          <h3>Veredicto documentado en <em>48 horas hábiles</em></h3>
-          <p class="diag-lead">El Lic. Alfonso Villarreal revisa su historial y le entrega un informe escrito que incluye:</p>
+          <h3>Su ruta definida <em>por el abogado titular</em></h3>
+          <p class="diag-lead">El Lic. Alfonso Villarreal revisa personalmente su situación y le entrega:</p>
           <ul>
-            <li><strong>Viabilidad real de su caso:</strong> fundamentos concretos sobre si procede o no.</li>
+            <li><strong>Viabilidad preliminar de su caso:</strong> criterio profesional sobre si procede.</li>
             <li><strong>Definición de la ruta más eficiente:</strong> analizamos si su caso requiere un camino complejo o si existe una solución más simple y económica que le ahorra tiempo y dinero.</li>
-            <li><strong>Resumen ejecutivo tangible:</strong> utilizamos tecnología de transcripción para enviarle un documento con todo lo hablado y la estrategia definida. Todo lo hablado y la estrategia definida, por escrito y sin costo.</li>
+            <li><strong>Recomendación de modalidad:</strong> Esencial o Todo Incluido según su caso, con opciones de pago para iniciar.</li>
             <li><strong>Honestidad total:</strong> si existe un obstáculo insalvable, se lo indicamos antes de proponerle el trámite.</li>
           </ul>
         </div>
         <div class="diag-price-card">
-          <div class="dp-label">Consulta inicial</div>
-          <div class="dp-price">Gratis</div>
-          <p class="dp-sub">Sin costo y sin compromiso. <strong>Reserve en 60 segundos</strong> y reciba fecha y hora por WhatsApp.</p>
-          <a href="#verificar" class="btn btn-white btn-block">Reservar mi consulta gratuita</a>
+          <div class="dp-label">Evaluación Estratégica</div>
+          <div class="dp-price">US$49</div>
+          <p class="dp-sub">Sesión virtual de 30 min. <strong>100% aplicables al proceso</strong> si decide contratar.</p>
+          <a href="#verificar" class="btn btn-white btn-block">Reservar mi Evaluación · US$49</a>
           <p class="dp-sub" style="margin:14px 0 0; font-size:0.75rem; line-height:1.4;">
-            Qué sigue después: si su caso procede, recibe una propuesta de honorarios fijos por escrito ($3,800 Esencial · $5,500 Integral, con pago fraccionado). Usted decide sin presión.
+            Qué sigue después: propuesta de honorarios fijos por escrito ($3,800 Proceso Esencial · $5,500 Todo Incluido, con pago fraccionado). Usted decide.
           </p>
         </div>
       </div>
       <div class="diag-steps">
-        <div class="ds"><span class="ds-n">1.</span><p><strong>Complete la precalificación</strong>De 60 segundos, más abajo en esta página.</p></div>
-        <div class="ds"><span class="ds-n">2.</span><p><strong>Reserve día y hora en el formulario</strong>Confirmamos por WhatsApp con los datos de su sesión.</p></div>
-        <div class="ds"><span class="ds-n">3.</span><p><strong>Reciba su evaluación</strong>Viabilidad de su caso y ruta jurídica, por escrito.</p></div>
+        <div class="ds"><span class="ds-n">1.</span><p><strong>Complete la precalificación</strong>Perfil migratorio + intención de compra.</p></div>
+        <div class="ds"><span class="ds-n">2.</span><p><strong>Pague su Evaluación (US$49)</strong>100% aplicables si contrata el proceso.</p></div>
+        <div class="ds"><span class="ds-n">3.</span><p><strong>Reciba propuesta y contrato</strong>Modalidad recomendada + forma de pago.</p></div>
       </div>
     </div>
   </div>
@@ -1036,7 +1044,7 @@
     </div>
     <div class="pricing-grid">
       <div class="price-card">
-        <h3>Modalidad Esencial</h3>
+        <h3>Proceso Esencial</h3>
         <div class="price">$3,800 <small>honorarios totales · pago fraccionado</small></div>
         <p class="tagline">Para quien desea acompañamiento jurídico y asumir parte de las gestiones por su cuenta.</p>
         <ul>
@@ -1046,26 +1054,26 @@
           <li>Preparación para entrevista y examen</li>
           <li>Comunicación directa con el abogado</li>
         </ul>
-        <a href="#verificar" class="btn btn-outline-n btn-block">Reservar consulta gratuita</a>
+        <a href="#verificar" class="btn btn-outline-n btn-block">Reservar Evaluación · US$49</a>
       </div>
       <div class="price-card featured">
         <div class="price-badge">Recomendada</div>
-        <h3>Modalidad Integral</h3>
+        <h3>Proceso Todo Incluido</h3>
         <div class="price">$5,500 <small>delegación total · pago fraccionado</small></div>
         <p class="tagline">Para quien desea delegar la coordinación completa del proceso, sin ocuparse de nada.</p>
         <ul>
-          <li>Todo lo incluido en la Modalidad Esencial</li>
+          <li>Todo lo incluido en el Proceso Esencial</li>
           <li class="exclusive">Coordinación de poderes y cartas poder</li>
           <li class="exclusive">Gestión notarial y legalizaciones completas</li>
           <li class="exclusive">Acompañamiento posterior a la jura (cédula y pasaporte)</li>
           <li class="exclusive">Recursos y apelaciones si el Tribunal lo requiere</li>
           <li class="exclusive">Prioridad en agenda y respuesta</li>
         </ul>
-        <a href="#verificar" class="btn btn-navy btn-block">Reservar consulta gratuita</a>
+        <a href="#verificar" class="btn btn-navy btn-block">Reservar Evaluación · US$49</a>
       </div>
     </div>
     <p class="price-note">
-      <strong>Sin pagos por adelantado:</strong> la precalificación y la consulta inicial son gratuitas. Solo si su caso procede y usted decide continuar, aplican honorarios fijos por escrito, con pago fraccionado contra avance de fases. 
+      <strong>Cómo se inicia:</strong> precalificación → Evaluación Estratégica (US$49, aplicables) → propuesta → contrato + abono. No se acepta mandato de trámite sin evaluación previa. 
       <br><span style="font-size:0.85rem; margin-top:8px; display:block;">No asumimos casos sin evaluación previa: este orden protege su inversión — primero la viabilidad, después el compromiso.</span>
     </p>
   </div>
@@ -1086,7 +1094,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">¿Desde cuándo se cuentan los cinco años? <span class="fi">+</span></button>
-        <div class="faq-a"><p>El período se cuenta por la residencia permanente mantenida en Panamá. La fecha de emisión de la cédula suele reflejarla, pero si hubo cambios de categoría o interrupciones, el historial migratorio manda. Por eso revisamos su caso con las constancias en mano antes de presentar.</p><p><strong>Excepción por reciprocidad:</strong> los nacionales de El Salvador requieren 1 año; los de Argentina, Colombia, Ecuador, España, Honduras, México, Nicaragua y Perú, 2 años; y los de Uruguay, 3 años. Si es su caso, indíquelo en la precalificación: la consulta inicial verifica su cómputo exacto.</p></div>
+        <div class="faq-a"><p>El período se cuenta por la residencia permanente mantenida en Panamá. La fecha de emisión de la cédula suele reflejarla, pero si hubo cambios de categoría o interrupciones, el historial migratorio manda. Por eso revisamos su caso con las constancias en mano antes de presentar.</p><p><strong>Excepción por reciprocidad:</strong> los nacionales de El Salvador requieren 1 año; los de Argentina, Colombia, Ecuador, España, Honduras, México, Nicaragua y Perú, 2 años; y los de Uruguay, 3 años. Si es su caso, indíquelo en la precalificación: la Evaluación Estratégica verifica su cómputo exacto.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">¿Qué exige el examen del Tribunal Electoral? <span class="fi">+</span></button>
@@ -1097,10 +1105,10 @@
         <div class="faq-a"><p>La jura de naturalización incluye renunciar a la nacionalidad de origen. Además, el panameño naturalizado que adquiere voluntariamente otra nacionalidad puede perder la panameña (artículo 14 de la Constitución). Verifique también las reglas de su país de origen antes de iniciar.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">¿La consulta inicial tiene algún costo? <span class="fi">+</span></button>
+        <button class="faq-q" aria-expanded="false">¿Qué es la Evaluación Estratégica? <span class="fi">+</span></button>
         <div class="faq-a">
-          <p>No. La precalificación (60 segundos) y la consulta inicial son completamente gratuitas y sin compromiso.</p>
-          <p>Solo si su caso procede y usted decide contratar el trámite aplican honorarios fijos por escrito ($3,800 Esencial · $5,500 Integral, con pago fraccionado). Nunca le pediremos un pago antes de evaluar su caso.</p>
+          <p>Es una sesión virtual de 30 minutos (US$49) donde el Lic. Villarreal revisa personalmente su situación y define la ruta: viabilidad preliminar, documentación a revisar y la modalidad que corresponde.</p>
+          <p>Los US$49 se descuentan del proceso si decide contratar. En WhatsApp solo coordinamos información administrativa, pagos y citas: el análisis de su caso ocurre dentro de la evaluación.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -1109,7 +1117,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">¿Qué ocurre si el Tribunal emite un requerimiento o niega mi caso? <span class="fi">+</span></button>
-        <div class="faq-a"><p>Nuestra pre-auditoría documental existe para evitarlo. Si el Tribunal emite un requerimiento subsanable, la Modalidad Integral incluye la preparación de los recursos procedentes sin honorarios adicionales. La decisión del Estado no se promete; el rigor técnico, sí.</p></div>
+        <div class="faq-a"><p>Nuestra pre-auditoría documental existe para evitarlo. Si el Tribunal emite un requerimiento subsanable, el Proceso Todo Incluido incluye la preparación de los recursos procedentes sin honorarios adicionales. La decisión del Estado no se promete; el rigor técnico, sí.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">¿Necesito un abogado en Panamá? <span class="fi">+</span></button>
@@ -1121,7 +1129,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">¿Qué pasa si mi caso no califica? <span class="fi">+</span></button>
-        <div class="faq-a"><p>Se lo indicamos por escrito en su consulta inicial, con el fundamento correspondiente, y no le proponemos el trámite. Usted conserva el informe con la ruta de lo que debería regularizar antes de intentarlo. Preferimos perder un trámite antes que comprometer su inversión.</p></div>
+        <div class="faq-a"><p>Se lo indicamos por escrito en su Evaluación Estratégica, con el fundamento correspondiente, y no le proponemos el trámite. Usted conserva el informe con la ruta de lo que debería regularizar antes de intentarlo. Preferimos perder un trámite antes que comprometer su inversión.</p></div>
       </div>
     </div>
   </div>
@@ -1131,18 +1139,18 @@
 <section class="block form-sec" id="verificar">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">Consulta inicial gratuita · 60 segundos</div>
-      <h2>Reserve su consulta <em>gratuita</em></h2>
-      <p>Tres pasos: filtro de 60 segundos, su resultado al instante y reserva de día y hora. Al confirmar, toda su información llega a nuestro WhatsApp.</p>
+      <div class="eyebrow">Evaluación Estratégica · US$49</div>
+      <h2>Verifique si <em>su perfil encaja</em></h2>
+      <p>Cuatro pasos: perfil migratorio, intención de compra, resultado y Evaluación (US$49). Solo los perfiles aptos con intención real llegan a WhatsApp.</p>
       <div class="rule"></div>
     </div>
-        <form class="form-wrap" id="prequalForm" novalidate>
-      <span class="form-step-badge" id="stepBadge">Paso 1 de 4 · Filtro</span>
-      <h3>Consulta inicial gratuita</h3>
-      <p class="form-sub">Filtro de 60 segundos, resultado al instante y reserva de día y hora. Sin costo, sin compromiso.</p>
+            <form class="form-wrap" id="prequalForm" novalidate>
+      <span class="form-step-badge" id="stepBadge">Paso 1 de 4 · Perfil</span>
+      <h3>Verifique si su perfil encaja</h3>
+      <p class="form-sub">Perfil migratorio + intención de compra. Los perfiles aptos reservan la Evaluación Estratégica (US$49, aplicables al proceso).</p>
       <div class="fbar" aria-hidden="true"><div class="fbar-fill" id="fbarFill"></div></div>
 
-      <!-- PASO 1 · FILTRO: solo toques, sin escribir -->
+      <!-- PASO 1 · PERFIL MIGRATORIO -->
       <div class="fstep active" id="fstep1">
         <div class="form-group">
           <label for="pais">País de origen</label>
@@ -1219,25 +1227,78 @@
           </div>
         </div>
         <div class="form-group">
-          <label id="lb-pre">La inversión de $3,800 a $5,500, ¿está dentro de su presupuesto?</label>
-          <div class="chips" role="radiogroup" aria-labelledby="lb-pre">
-            <label class="chip"><input type="radio" name="f_presupuesto" value="si" /><span>Sí, puedo contemplarla</span></label>
-            <label class="chip"><input type="radio" name="f_presupuesto" value="incluye" /><span>Necesito conocer qué incluye</span></label>
-            <label class="chip"><input type="radio" name="f_presupuesto" value="no" /><span>No en este momento</span></label>
+          <label id="lb-civil">Estado civil</label>
+          <div class="chips" role="radiogroup" aria-labelledby="lb-civil">
+            <label class="chip"><input type="radio" name="f_civil" value="soltero" /><span>Soltero(a)</span></label>
+            <label class="chip"><input type="radio" name="f_civil" value="casado" /><span>Casado(a)</span></label>
+            <label class="chip"><input type="radio" name="f_civil" value="unido" /><span>Unido(a)</span></label>
+            <label class="chip"><input type="radio" name="f_civil" value="divorciado" /><span>Divorciado(a)</span></label>
+            <label class="chip"><input type="radio" name="f_civil" value="viudo" /><span>Viudo(a)</span></label>
           </div>
         </div>
-        <p class="field-error" id="err1" hidden>Responda las 5 preguntas para ver su resultado. Le toma menos de un minuto.</p>
-        <button type="button" class="btn btn-navy btn-block" data-next="2">Ver mi resultado →</button>
+        <div class="form-group">
+          <label id="lb-ant">Antecedentes</label>
+          <div class="chips" role="radiogroup" aria-labelledby="lb-ant">
+            <label class="chip"><input type="radio" name="f_antecedentes" value="limpio" /><span>Récord limpio</span></label>
+            <label class="chip"><input type="radio" name="f_antecedentes" value="tema" /><span>Tengo un tema que debo explicar</span></label>
+            <label class="chip"><input type="radio" name="f_antecedentes" value="privado" /><span>Prefiero explicarlo en la evaluación</span></label>
+          </div>
+        </div>
+        <p class="field-error" id="err1" hidden>Complete su perfil migratorio (7 puntos) para continuar.</p>
+        <button type="button" class="btn btn-navy btn-block" data-next="2">Continuar →</button>
       </div>
 
-      <!-- PASO 2 · RESULTADO -->
+      <!-- PASO 2 · INTENCIÓN DE COMPRA -->
       <div class="fstep" id="fstep2">
+        <div class="form-group">
+          <label id="lb-obj">¿Cuál es su objetivo?</label>
+          <div class="chips" role="radiogroup" aria-labelledby="lb-obj">
+            <label class="chip"><input type="radio" name="i_objetivo" value="iniciar" /><span>Iniciar mi proceso de naturalización</span></label>
+            <label class="chip"><input type="radio" name="i_objetivo" value="evaluar" /><span>Evaluar si mi caso califica</span></label>
+            <label class="chip"><input type="radio" name="i_objetivo" value="info" /><span>Solo informarme por ahora</span></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label id="lb-cap">¿Cuál describe mejor su situación actualmente?</label>
+          <div class="chips" role="radiogroup" aria-labelledby="lb-cap">
+            <label class="chip"><input type="radio" name="i_capacidad" value="a" /><span>Tengo presupuesto para iniciar el proceso.</span></label>
+            <label class="chip"><input type="radio" name="i_capacidad" value="b" /><span>Puedo iniciar con un abono y continuar con un plan de pagos.</span></label>
+            <label class="chip"><input type="radio" name="i_capacidad" value="c" /><span>Estoy comparando abogados antes de decidir.</span></label>
+            <label class="chip"><input type="radio" name="i_capacidad" value="d" /><span>Solo quiero conocer precios y opciones.</span></label>
+            <label class="chip"><input type="radio" name="i_capacidad" value="e" /><span>Todavía no estoy en condiciones de iniciar.</span></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label id="lb-dis">¿Cuándo podría iniciar?</label>
+          <div class="chips" role="radiogroup" aria-labelledby="lb-dis">
+            <label class="chip"><input type="radio" name="i_disponibilidad" value="ahora" /><span>De inmediato</span></label>
+            <label class="chip"><input type="radio" name="i_disponibilidad" value="30dias" /><span>En los próximos 30 días</span></label>
+            <label class="chip"><input type="radio" name="i_disponibilidad" value="meses" /><span>En 2 a 3 meses</span></label>
+            <label class="chip"><input type="radio" name="i_disponibilidad" value="nose" /><span>Aún no lo sé</span></label>
+          </div>
+        </div>
+        <p class="field-error" id="err2" hidden>Responda las 3 preguntas para ver su resultado.</p>
+        <div class="btn-row">
+          <button type="button" class="btn btn-outline-n" data-back="1">← Atrás</button>
+          <button type="button" class="btn btn-navy" data-next="3">Ver mi resultado →</button>
+        </div>
+      </div>
+
+      <!-- PASO 3 · RESULTADO -->
+      <div class="fstep" id="fstep3">
         <div id="verdictBox"></div>
       </div>
 
-      <!-- PASO 3 · RESERVA (cierre) -->
-      <div class="fstep" id="fstep3">
+      <!-- PASO 4 · EVALUACIÓN Y PAGO -->
+      <div class="fstep" id="fstep4">
         <p class="book-ref" id="bookRef"></p>
+        <div class="pay-card">
+          <div class="pay-title">Evaluación Estratégica · Virtual 30 min</div>
+          <div class="pay-price">US$49</div>
+          <p class="pay-sub">100% aplicables al proceso si contrata.</p>
+          <a class="btn btn-navy btn-block" id="payBtn" target="_blank" rel="noopener" href="#">Pagar US$49 →</a>
+          <p class="pay-note" id="payNote">Será redirigido al pago seguro. Luego regrese y confirme abajo.</p>
+        </div>
         <div class="form-row">
           <div class="form-group">
             <label for="nombre">Nombre completo</label>
@@ -1249,7 +1310,11 @@
           </div>
         </div>
         <div class="form-group">
-          <label id="lb-dia">¿Qué día prefiere su consulta?</label>
+          <label for="refpago">Referencia de pago</label>
+          <input type="text" id="refpago" name="refpago" autocomplete="off" placeholder="N.º de transacción Yappy / transferencia" />
+        </div>
+        <div class="form-group">
+          <label id="lb-dia">¿Qué día prefiere su evaluación?</label>
           <div class="chips" role="radiogroup" aria-labelledby="lb-dia">
             <label class="chip"><input type="radio" name="r_dia" value="hoy" /><span>Hoy</span></label>
             <label class="chip"><input type="radio" name="r_dia" value="manana" /><span>Mañana</span></label>
@@ -1264,41 +1329,23 @@
             <label class="chip"><input type="radio" name="r_horario" value="tarde" /><span>Tarde · 1:00 – 5:00 p.m.</span></label>
           </div>
         </div>
-        <div class="form-group">
-          <label id="lb-mod">Modalidad de su interés</label>
-          <div class="chips" role="radiogroup" aria-labelledby="lb-mod">
-            <label class="chip"><input type="radio" name="r_modalidad" value="esencial" /><span>Esencial · $3,800</span></label>
-            <label class="chip"><input type="radio" name="r_modalidad" value="integral" /><span>Integral · $5,500</span></label>
-            <label class="chip"><input type="radio" name="r_modalidad" value="nose" /><span>Aún no lo sé</span></label>
-          </div>
-        </div>
         <!-- Honeypot anti-spam (no completar) -->
         <div class="hp" aria-hidden="true">
           <label>Empresa (dejar vacío)<input type="text" id="empresa" name="empresa" tabindex="-1" autocomplete="off" /></label>
         </div>
-        <p class="field-error" id="err3" hidden></p>
-        <div class="btn-row">
-          <button type="button" class="btn btn-outline-n" data-back="2">← Atrás</button>
-          <button type="button" class="btn btn-navy" data-next="4">Revisar confirmación →</button>
-        </div>
-      </div>
-
-      <!-- PASO 4 · CONFIRMACIÓN -->
-      <div class="fstep" id="fstep4">
-        <div class="sum-card" id="sumCard"></div>
-        <p class="form-privacy">Al confirmar, se abrirá WhatsApp con toda su información lista para enviar. Sus datos se tratan con confidencialidad profesional.</p>
+        <p class="field-error" id="err4" hidden></p>
         <div class="btn-row">
           <button type="button" class="btn btn-outline-n" data-back="3">← Atrás</button>
-          <button type="submit" class="btn btn-navy" id="confirmBtn">Confirmar por WhatsApp ✓</button>
+          <button type="submit" class="btn btn-navy" id="confirmBtn">Ya pagué — Confirmar por WhatsApp ✓</button>
         </div>
       </div>
 
       <!-- ÉXITO -->
       <div class="fstep" id="fstepDone">
         <div class="verdict verdict-pass show">
-          <span class="v-tag">Reserva lista</span>
-          <h4>¡Gracias, <span id="doneName"></span>! Su lugar está apartado.</h4>
-          <p>Se abrió WhatsApp con toda su información: solo presione enviar. <strong id="asistenteName"></strong>, nuestra asistente legal, confirma su fecha y hora en horario hábil.</p>
+          <span class="v-tag">Evaluación en curso</span>
+          <h4 id="doneTitle">¡Gracias! Su evaluación está reservada.</h4>
+          <p id="doneMsg"></p>
           <div class="v-actions">
             <a class="btn btn-navy" id="waAgain" target="_blank" rel="noopener" href="#">Abrir WhatsApp de nuevo</a>
           </div>
@@ -1321,7 +1368,7 @@
     <div class="commit-inner">
       <div class="c-mark">§</div>
       <h3>Compromiso con el resultado</h3>
-      <p>En caso de resolución desfavorable por <strong>error profesional comprobable</strong>, la Modalidad Integral contempla devolución parcial de honorarios. No prometemos la decisión del Estado — prometemos rigor técnico en cada folio de su expediente.</p>
+      <p>En caso de resolución desfavorable por <strong>error profesional comprobable</strong>, el Proceso Todo Incluido contempla devolución parcial de honorarios. No prometemos la decisión del Estado — prometemos rigor técnico en cada folio de su expediente.</p>
     </div>
   </div>
 </section>
@@ -1329,10 +1376,10 @@
 <!-- ============ FINAL CTA ============ -->
 <section class="final-cta">
   <div class="container">
-    <h2>El primer paso es saber <em>si su caso califica.</em></h2>
-    <p>En 60 segundos sabemos si su perfil sostiene una solicitud. Su consulta inicial es gratuita y sin compromiso.</p>
+    <h2>El primer paso es saber <em>si su perfil encaja.</em></h2>
+    <p>Verifique su perfil, conozca la inversión y reserve su Evaluación Estratégica (US$49, aplicables al proceso).</p>
     <div class="cta-row">
-      <a href="#verificar" class="btn btn-white">Precalificar mi caso · 60 seg</a>
+      <a href="#verificar" class="btn btn-white">Verificar si mi perfil encaja</a>
       <a href="#honorarios" class="btn btn-outline-w">Revisar honorarios</a>
     </div>
   </div>
@@ -1361,7 +1408,7 @@
         <a href="https://wa.me/50762557583" target="_blank" rel="noopener">WhatsApp · +507 6255-7583</a>
         <a href="mailto:Villarreallawyers@proton.me">Villarreallawyers@proton.me</a>
         <a href="https://naturalizate.pa" target="_blank" rel="noopener">naturalizate.pa</a>
-        <a href="#verificar">Precalificar mi caso</a>
+        <a href="#verificar">Verificar si mi perfil encaja</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1379,7 +1426,7 @@
 
 <!-- ============ STICKY MOBILE CTA ============ -->
 <div class="sticky-cta" id="stickyCta">
-  <a href="#verificar" class="btn btn-navy btn-block">Reservar consulta gratuita</a>
+  <a href="#verificar" class="btn btn-navy btn-block">Reservar Evaluación · US$49</a>
 </div>
 
 <script>
@@ -1425,6 +1472,7 @@
   /* ===== Configuración (ver TODO en el <head>) ===== */
   var WHATSAPP_NUMBER = "50762557583"; // +507 6255-7583 (Brand Book v2.0)
   var ASISTENTE = "Patricia";          // Nombre operativo de la asistente legal
+  var ENLACE_PAGO = ""; // TODO: enlace de pago US$49 (Yappy/tarjeta). Vacío = modo manual (Patricia envía el enlace).
 
   /* Año dinámico */
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -1487,19 +1535,17 @@
     cedula: { menos3: "Menos de 3 años", entre35: "Entre 3 y 5 años", mas5: "Más de 5 años", nose: "No estoy seguro(a)" },
     ausencias: { no: "No", menores: "Sí, menores a 6 meses", mayores: "Sí, mayores a 6 meses", nose: "No estoy seguro(a)" },
     examen: { si: "Sí, con disciplina", dudas: "Tengo dudas sobre el examen", no: "No" },
-    presupuesto: { si: "Sí, puedo contemplarla", incluye: "Necesito conocer qué incluye", no: "No en este momento" },
+    civil: { soltero: "Soltero(a)", casado: "Casado(a)", unido: "Unido(a)", divorciado: "Divorciado(a)", viudo: "Viudo(a)" },
+    antecedentes: { limpio: "Récord limpio", tema: "Tengo un tema que debo explicar", privado: "Prefiero explicarlo en la evaluación" },
+    objetivo: { iniciar: "Iniciar mi proceso de naturalización", evaluar: "Evaluar si mi caso califica", info: "Solo informarme por ahora" },
+    capacidad: { a: "Tiene presupuesto para iniciar.", b: "Abono + plan de pagos.", c: "Comparando abogados.", d: "Solo precios y opciones.", e: "Sin condiciones para iniciar." },
+    disponibilidad: { ahora: "De inmediato", "30dias": "En los próximos 30 días", meses: "En 2 a 3 meses", nose: "Aún no lo sé" },
     dia: { hoy: "Hoy", manana: "Mañana", semana: "Esta semana", proxima: "Próxima semana" },
-    horario: { manana: "Mañana (8:00 a.m. – 12:00 m.)", tarde: "Tarde (1:00 – 5:00 p.m.)" },
-    modalidad: { esencial: "Esencial ($3,800)", integral: "Integral ($5,500)", nose: "Aún no lo sé" }
+    horario: { manana: "Mañana (8:00 a.m. – 12:00 m.)", tarde: "Tarde (1:00 – 5:00 p.m.)" }
   };
 
   function waLink(message) {
     return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
-  }
-  function esc(s) {
-    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
-    });
   }
   function checked(name) {
     var el = document.querySelector('input[name="' + name + '"]:checked');
@@ -1512,11 +1558,11 @@
     } catch (err) {}
   }
 
-  /* ===== Motor de pasos: filtro → resultado → reserva → confirmación ===== */
+  /* ===== Motor de pasos: perfil → intención → resultado → evaluación y pago ===== */
   var formEl = document.getElementById("prequalForm");
   var stepBadge = document.getElementById("stepBadge");
   var fbarFill = document.getElementById("fbarFill");
-  var STEP_NAMES = { 1: "Paso 1 de 4 · Filtro", 2: "Paso 2 de 4 · Resultado", 3: "Paso 3 de 4 · Reserva", 4: "Paso 4 de 4 · Confirmación" };
+  var STEP_NAMES = { 1: "Paso 1 de 4 · Perfil", 2: "Paso 2 de 4 · Intención", 3: "Paso 3 de 4 · Resultado", 4: "Paso 4 de 4 · Evaluación y pago" };
   var lead = {};
   var currentStep = 1;
 
@@ -1533,8 +1579,8 @@
     } else {
       stepBadge.textContent = STEP_NAMES[n];
       fbarFill.style.width = (n * 25) + "%";
-      if (n === 3 && lead.perfil) {
-        document.getElementById("bookRef").textContent = "Su resultado: " + lead.perfil;
+      if (n === 4) {
+        document.getElementById("bookRef").textContent = "Su resultado: Perfil apto para evaluación";
       }
     }
     if (document.body.classList.contains("gated")) {
@@ -1543,6 +1589,17 @@
     } else {
       document.getElementById("verificar").scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  }
+
+  /* ===== Pago: directo si hay enlace configurado, manual si no ===== */
+  var payBtn = document.getElementById("payBtn");
+  var payNote = document.getElementById("payNote");
+  var PAY_DIRECT = /^https?:\/\//i.test(ENLACE_PAGO || "");
+  if (PAY_DIRECT) {
+    payBtn.setAttribute("href", ENLACE_PAGO);
+  } else {
+    payBtn.style.display = "none";
+    payNote.textContent = "Al confirmar, Patricia le enviará el enlace para pagar su Evaluación (US$49) a su WhatsApp.";
   }
 
   /* País "Otro": mostrar campo para especificar */
@@ -1558,121 +1615,113 @@
     return paisSelect.value;
   }
 
-  /* ===== PASO 1 → 2: filtro inteligente + veredicto (todas las rutas cierran en reserva) ===== */
-  function runFilter() {
+  /* ===== PASO 1 → 2: perfil migratorio (sin análisis, solo datos) ===== */
+  function runProfile() {
     var err = document.getElementById("err1");
     var pais = paisValue();
     var cedula = checked("f_cedula");
     var ausencias = checked("f_ausencias");
     var examen = checked("f_examen");
-    var presupuesto = checked("f_presupuesto");
-    if (!pais || !cedula || !ausencias || !examen || !presupuesto) {
+    var civil = checked("f_civil");
+    var antecedentes = checked("f_antecedentes");
+    if (!pais || !cedula || !ausencias || !examen || !civil || !antecedentes) {
       err.hidden = false;
       err.scrollIntoView({ behavior: "smooth", block: "center" });
       return false;
     }
     err.hidden = true;
     lead = { pais: pais, cedula: cedula, ausencias: ausencias, examen: examen,
-             presupuesto: presupuesto, perfil: "", flags: [] };
-
-    var box = document.getElementById("verdictBox");
-    function render(cls, tag, h4, paras, ctaLabel, extra) {
-      var html = '<div class="verdict ' + cls + ' show">' +
-        '<span class="v-tag">' + tag + "</span><h4>" + h4 + "</h4>";
-      paras.forEach(function (p) { html += "<p>" + p + "</p>"; });
-      html += '<div class="v-actions"><button type="button" class="btn btn-navy" data-next="3">' + ctaLabel + "</button>" +
-        '<button type="button" class="btn btn-outline-n btn-sm" data-back="1">\u2190 Corregir respuestas</button>' +
-        (extra || "") + "</div></div>";
-      box.innerHTML = html;
-      goStep(2);
-    }
-
-    /* --- FILTRO DURO 1: cómputo legal insuficiente --- */
-    if (cedula === "menos3") {
-      var recAnos = RECIPROCIDAD[normPais(pais)];
-      if (recAnos) {
-        lead.perfil = "Reciprocidad — " + pais + " (" + recAnos + (recAnos === 1 ? " año" : " años") + ")";
-        track("filtro_resultado", { resultado: "reciprocidad", pais: pais });
-        render("verdict-warn", "Convenio de reciprocidad",
-          "Su nacionalidad puede aplicar con menos años",
-          ["<strong>" + esc(pais) + "</strong> registra convenio de reciprocidad: la residencia exigida es de <strong>" + recAnos + (recAnos === 1 ? " año" : " años") + "</strong>, no cinco. Su caso <strong>no se descarta</strong>, pero requiere verificar su cómputo exacto con documentos en mano.",
-           "Su consulta inicial gratuita incluye esa verificación. Reserve día y hora y la revisamos juntos."],
-          "Reservar mi consulta gratuita \u2192");
-        return true;
-      }
-      lead.perfil = "D — Aún no procede (cómputo insuficiente)";
-      track("filtro_resultado", { resultado: "no_procede_computo" });
-      render("verdict-fail", "Orientación honesta",
-        "Su caso aún no cumple el cómputo legal",
-        ["Con menos de 3 años de Cédula E, la ley exige esperar: la naturalización requiere <strong>5 años de residencia permanente</strong>. Presentar ahora sería invertir en un caso sin viabilidad, y eso es justamente lo que nuestro filtro evita.",
-         "Reserve una <strong>orientación gratuita</strong>: le indicamos qué regularizar mientras se acerca el momento y le avisamos cuando su caso aplique."],
-        "Solicitar orientación gratuita \u2192");
-      return true;
-    }
-
-    /* --- FILTRO DURO 2: examen (requisito legal) --- */
-    if (examen === "no") {
-      lead.perfil = "D — Pendiente examen obligatorio";
-      track("filtro_resultado", { resultado: "no_procede_examen" });
-      render("verdict-fail", "Requisito legal",
-        "El examen es obligatorio",
-        ["El <strong>examen de naturalización ante el Tribunal Electoral</strong> (español, historia, geografía, gobierno y cultura de Panamá) es un requisito legal, no opcional. Sin disposición a prepararlo, ningún abogado serio puede proponerle el trámite.",
-         "Si cambia de parecer, nuestra Modalidad incluye la <strong>preparación orientada</strong>. Reserve una orientación gratuita y le enviamos el detalle."],
-        "Solicitar orientación gratuita \u2192");
-      return true;
-    }
-
-    /* --- FILTRO SUAVE: presupuesto --- */
-    if (presupuesto === "no") {
-      lead.perfil = "C — Sensible a inversión (requiere detalle)";
-      track("filtro_resultado", { resultado: "presupuesto" });
-      render("verdict-warn", "Transparencia ante todo",
-        "Entendemos su posición",
-        ["Nuestros honorarios son <strong>fijos y por escrito: $3,800 (Esencial) o $5,500 (Integral)</strong>, con pago fraccionado contra avance de fases.",
-         "Reserve su consulta gratuita: le mostramos qué incluye cada modalidad y el plan de pagos, para cuando la inversión esté a su alcance."],
-        "Reservar mi consulta gratuita \u2192");
-      return true;
-    }
-
-    /* --- Puntuación del perfil --- */
-    var score = 0, flags = [];
-    if (cedula === "mas5") score += 2; else if (cedula === "entre35" || cedula === "nose") { score += 0; flags.push("verificar cómputo con constancias"); }
-    if (ausencias === "no") score += 2; else if (ausencias === "menores" || ausencias === "nose") { score += 1; flags.push("revisar historial de movimientos migratorios"); }
-    else { score += 0; flags.push("ausencias mayores a 6 meses: revisión prioritaria"); }
-    if (examen === "si") score += 2; else { score += 1; flags.push("resolver dudas sobre el examen"); }
-    if (presupuesto === "si") score += 2; else { score += 1; flags.push("explicar alcance de cada modalidad"); }
-    var recFlag = RECIPROCIDAD[normPais(pais)];
-    if (recFlag && cedula !== "mas5") flags.push("verificar cómputo reducido por reciprocidad (" + pais + ": " + recFlag + (recFlag === 1 ? " año" : " años") + ")");
-    lead.flags = flags;
-    lead.perfil = score >= 7 ? "A — Prioritario" : (score >= 4 ? "B — Viable con revisión" : "C — Requiere verificación");
-    track("filtro_resultado", { resultado: "calificado", perfil: lead.perfil });
-
-    if (score >= 7) {
-      render("verdict-pass", "Perfil prioritario · " + esc(lead.perfil),
-        "Su perfil cumple los criterios",
-        ["Con <strong>" + esc(LABELS.cedula[cedula].toLowerCase()) + " de Cédula E</strong> y su disposición actual, su caso amerita la consulta inicial gratuita: evaluación de viabilidad y ruta jurídica.",
-         "Reserve día y hora: <strong>" + esc(ASISTENTE) + "</strong>, nuestra asistente legal, confirma su espacio por WhatsApp."],
-        "Reservar día y hora \u2192");
-    } else {
-      render("verdict-warn", "Revisión recomendada · " + esc(lead.perfil),
-        "Su caso requiere verificación",
-        ["Su perfil presenta puntos que deben revisarse con documentos en mano: <strong>" + esc(flags.join("; ")) + "</strong>. Esto no significa que su caso no proceda — significa que la consulta inicial gratuita es especialmente importante para usted.",
-         "Reserve día y hora y revisamos estos puntos con documentos en mano."],
-        "Reservar mi consulta gratuita \u2192");
-    }
+             civil: civil, antecedentes: antecedentes, apto: false };
+    track("filtro_perfil_ok", {});
+    goStep(2);
     return true;
   }
 
-  /* ===== PASO 3 → 4: validar reserva + resumen ===== */
-  function runBooking() {
-    var err = document.getElementById("err3");
+  /* ===== PASO 2 → 3: intención de compra + veredicto (genérico, sin micro-consultoría) ===== */
+  function runIntent() {
+    var err = document.getElementById("err2");
+    var objetivo = checked("i_objetivo");
+    var capacidad = checked("i_capacidad");
+    var disponibilidad = checked("i_disponibilidad");
+    if (!objetivo || !capacidad || !disponibilidad) {
+      err.hidden = false;
+      err.scrollIntoView({ behavior: "smooth", block: "center" });
+      return false;
+    }
+    err.hidden = true;
+    lead.objetivo = objetivo;
+    lead.capacidad = capacidad;
+    lead.disponibilidad = disponibilidad;
+    lead.perfilComercial = capacidad === "a" ? "A — Listo para iniciar" : "B — Abono + plan de pagos";
+
+    var box = document.getElementById("verdictBox");
+    function render(cls, tag, h4, paras, mode) {
+      var html = '<div class="verdict ' + cls + ' show">' +
+        '<span class="v-tag">' + tag + "</span><h4>" + h4 + "</h4>";
+      paras.forEach(function (p) { html += "<p>" + p + "</p>"; });
+      var btn = mode === "unlock"
+        ? '<button type="button" class="btn btn-navy" data-unlock>Conocer las modalidades</button>'
+        : '<button type="button" class="btn btn-navy" data-next="4">Reservar mi Evaluación · US$49 →</button>';
+      html += '<div class="v-actions">' + btn +
+        '<button type="button" class="btn btn-outline-n btn-sm" data-back="2">← Corregir respuestas</button></div></div>';
+      box.innerHTML = html;
+      goStep(3);
+    }
+
+    /* Filtro legal 1: cómputo mínimo (regla pública: 5 años de residencia) */
+    if (lead.cedula === "menos3" && !RECIPROCIDAD[normPais(lead.pais)]) {
+      track("filtro_resultado", { resultado: "educativo_legal", motivo: "computo" });
+      render("verdict-fail", "Aún no es el momento",
+        "Su perfil aún no cumple el cómputo mínimo",
+        ["La naturalización requiere <strong>5 años de residencia permanente</strong>. Con menos de 3 años de Cédula E, presentar ahora sería invertir sin viabilidad.",
+         "Conozca abajo nuestras modalidades y metodología. Cuando se acerque el momento, vuelva a verificar su perfil."], "unlock");
+      return true;
+    }
+
+    /* Filtro legal 2: examen (requisito legal público) */
+    if (lead.examen === "no") {
+      track("filtro_resultado", { resultado: "educativo_legal", motivo: "examen" });
+      render("verdict-fail", "Requisito legal",
+        "El examen es obligatorio",
+        ["El <strong>examen de naturalización ante el Tribunal Electoral</strong> es un requisito legal, no opcional.",
+         "Si cambia de parecer, conozca abajo nuestras modalidades. Cuando esté dispuesto a prepararlo, vuelva a verificar su perfil."], "unlock");
+      return true;
+    }
+
+    /* Filtro comercial: solo A/B con objetivo real avanzan a la Evaluación */
+    var comercial = (capacidad === "a" || capacidad === "b") && objetivo !== "info";
+    if (!comercial) {
+      track("filtro_resultado", { resultado: "educativo_comercial" });
+      render("verdict-warn", "Evaluación de opciones",
+        "Gracias por su interés",
+        ["En esta etapa usted aún está evaluando opciones. Conozca abajo nuestras modalidades, metodología e inversión.",
+         "Cuando esté preparado para avanzar, vuelva y solicite su Evaluación Estratégica (US$49, aplicables al proceso)."], "unlock");
+      return true;
+    }
+
+    /* Apto: genérico. El análisis ocurre dentro de la evaluación pagada. */
+    lead.apto = true;
+    track("filtro_resultado", { resultado: "apto", perfil: lead.perfilComercial });
+    render("verdict-pass", "Perfil apto para evaluación",
+      "Su información preliminar encaja con nuestros criterios",
+      ["El siguiente paso es la <strong>Evaluación Estratégica (US$49)</strong>: sesión virtual de 30 minutos donde el Lic. Villarreal revisa personalmente su situación y define la ruta.",
+       "Los US$49 se aplican al proceso si decide contratar. El análisis específico de su caso ocurre dentro de la evaluación."], "pay");
+    return true;
+  }
+
+  /* ===== PASO 4: validar datos + referencia → resumen ===== */
+  function runPay() {
+    var err = document.getElementById("err4");
     var nombre = document.getElementById("nombre").value.trim();
     var wa = document.getElementById("whatsapp").value.trim();
+    var ref = document.getElementById("refpago").value.trim();
     var dia = checked("r_dia");
     var horario = checked("r_horario");
-    var modalidad = checked("r_modalidad");
-    if (!nombre || wa.replace(/\D/g, "").length < 7 || !dia || !horario || !modalidad) {
-      err.textContent = "Complete su nombre, un WhatsApp válido y las 3 preferencias (día, horario y modalidad).";
+    var refOk = PAY_DIRECT ? !!ref : true;
+    if (!nombre || wa.replace(/\D/g, "").length < 7 || !refOk || !dia || !horario) {
+      err.textContent = PAY_DIRECT
+        ? "Complete su nombre, un WhatsApp válido, su referencia de pago, día y horario."
+        : "Complete su nombre, un WhatsApp válido, día y horario.";
       err.hidden = false;
       err.scrollIntoView({ behavior: "smooth", block: "center" });
       return false;
@@ -1680,85 +1729,82 @@
     err.hidden = true;
     lead.nombre = nombre;
     lead.whatsapp = wa;
+    lead.refpago = ref;
     lead.dia = dia;
     lead.horario = horario;
-    lead.modalidad = modalidad;
-    renderSummary();
     return true;
-  }
-
-  function renderSummary() {
-    var rows = [
-      ["Nombre", lead.nombre, false],
-      ["WhatsApp", lead.whatsapp, false],
-      ["País de origen", lead.pais, false],
-      ["Cédula E", LABELS.cedula[lead.cedula], false],
-      ["Ausencias", LABELS.ausencias[lead.ausencias], false],
-      ["Examen", LABELS.examen[lead.examen], false],
-      ["Presupuesto ($3,800–$5,500)", LABELS.presupuesto[lead.presupuesto], false],
-      ["Modalidad de interés", LABELS.modalidad[lead.modalidad], false],
-      ["Día preferido", LABELS.dia[lead.dia], false],
-      ["Horario", LABELS.horario[lead.horario], false],
-      ["Su resultado", lead.perfil, true]
-    ];
-    var html = "<dl>";
-    rows.forEach(function (r) {
-      html += '<div class="sum-row' + (r[2] ? " hl" : "") + '"><dt>' + esc(r[0]) + "</dt><dd>" + esc(r[1]) + "</dd></div>";
-    });
-    document.getElementById("sumCard").innerHTML = html + "</dl>";
   }
 
   function buildMessage() {
     var utm = getUTM();
-    var lines = [
-      "Hola " + ASISTENTE + ", completé la precalificación en Naturalízate.pa y reservé mi consulta inicial gratuita.",
-      "",
+    var head = PAY_DIRECT
+      ? "Hola " + ASISTENTE + ", completé la precalificación y pagué mi Evaluación Estratégica de Naturalización (US$49)."
+      : "Hola " + ASISTENTE + ", completé la precalificación. Solicito el enlace para pagar mi Evaluación Estratégica (US$49).";
+    var lines = [ head, "",
       "Nombre: " + lead.nombre,
       "WhatsApp: " + lead.whatsapp,
       "País de origen: " + lead.pais,
       "Cédula E: " + LABELS.cedula[lead.cedula],
       "Ausencias: " + LABELS.ausencias[lead.ausencias],
       "Examen: " + LABELS.examen[lead.examen],
-      "Presupuesto ($3,800–$5,500): " + LABELS.presupuesto[lead.presupuesto],
-      "Modalidad de interés: " + LABELS.modalidad[lead.modalidad],
+      "Estado civil: " + LABELS.civil[lead.civil],
+      "Antecedentes: " + LABELS.antecedentes[lead.antecedentes],
+      "Objetivo: " + LABELS.objetivo[lead.objetivo],
+      "Situación de inversión: " + LABELS.capacidad[lead.capacidad],
+      "Disponibilidad: " + LABELS.disponibilidad[lead.disponibilidad],
       "Día preferido: " + LABELS.dia[lead.dia],
       "Horario: " + LABELS.horario[lead.horario],
+      "Referencia de pago: " + (lead.refpago || "(pendiente)"),
       "",
-      "Perfil interno: " + lead.perfil + (lead.flags.length ? " (" + lead.flags.join("; ") + ")" : "")
-    ];
+      "Perfil comercial interno: " + lead.perfilComercial ];
     if (utm) lines.push(utm);
-    lines.push("", "Quedo atento(a) a la confirmación de mi reserva.");
+    lines.push("", PAY_DIRECT
+      ? "Quedo atento(a) a la confirmación de mi evaluación."
+      : "Quedo atento(a) al enlace de pago.");
     return lines.join("\n");
   }
 
-  /* ===== Navegación por botones [data-next] / [data-back] ===== */
+  /* ===== Navegación: [data-next] / [data-back] / [data-unlock] ===== */
   formEl.addEventListener("click", function (e) {
-    var t = e.target && e.target.closest ? e.target.closest("[data-next],[data-back]") : null;
+    var t = e.target && e.target.closest ? e.target.closest("[data-next],[data-back],[data-unlock]") : null;
     if (!t) return;
+    if (t.hasAttribute("data-unlock")) {
+      track("embudo_educativo", {});
+      closeGate();
+      document.getElementById("honorarios").scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
     if (t.hasAttribute("data-next")) {
       var to = parseInt(t.getAttribute("data-next"), 10);
-      if (to === 2) { runFilter(); return; }
-      if (to === 4) { if (runBooking()) goStep(4); return; }
+      if (to === 2) { runProfile(); return; }
+      if (to === 3) { runIntent(); return; }
       goStep(to);
       return;
     }
     goStep(parseInt(t.getAttribute("data-back"), 10));
   });
 
-  /* ===== PASO 4: confirmación → WhatsApp con TODA la información ===== */
+  /* ===== PASO 4: confirmación → WhatsApp (solo perfiles aptos que pagaron) ===== */
   formEl.addEventListener("submit", function (e) {
     e.preventDefault();
     if (currentStep !== 4) {
-      if (currentStep === 1) runFilter();
-      else if (currentStep === 3) { if (runBooking()) goStep(4); }
+      if (currentStep === 1) runProfile();
+      else if (currentStep === 2) runIntent();
+      else if (currentStep === 3 && lead.apto) goStep(4);
       return false;
     }
     if (document.getElementById("empresa").value) return false;
+    if (!runPay()) return false;
     var link = waLink(buildMessage());
     document.getElementById("waAgain").setAttribute("href", link);
-    document.getElementById("doneName").textContent = lead.nombre.split(" ")[0];
-    document.getElementById("asistenteName").textContent = ASISTENTE;
-    track("reserva_confirmada", { perfil: lead.perfil, modalidad: lead.modalidad, dia: lead.dia });
+    if (PAY_DIRECT) {
+      document.getElementById("doneTitle").textContent = "¡Gracias, " + lead.nombre.split(" ")[0] + "! Su evaluación está reservada.";
+      document.getElementById("doneMsg").textContent = "Se abrió WhatsApp con toda su información y su referencia de pago: solo presione enviar. " + ASISTENTE + " confirma su fecha y hora en horario hábil.";
+    } else {
+      document.getElementById("doneTitle").textContent = "¡Gracias, " + lead.nombre.split(" ")[0] + "! Recibimos su solicitud.";
+      document.getElementById("doneMsg").textContent = "Se abrió WhatsApp con toda su información: solo presione enviar. " + ASISTENTE + " le enviará el enlace para pagar su Evaluación (US$49) y confirmar su fecha y hora.";
+    }
+    track("evaluacion_confirmada", { modo: PAY_DIRECT ? "directo" : "manual", perfil: lead.perfilComercial, dia: lead.dia });
     try { window.open(link, "_blank"); } catch (err) {}
     closeGate();
     goStep("done");

@@ -1,5 +1,11 @@
-# Naturalízate.pa — Paquete listo para publicar (v3)
+# Naturalízate.pa — Paquete listo para publicar (v4)
 
+Novedades v4 (embudo de venta): pago dual Yappy + tarjeta (cada botón sin
+enlace se oculta solo); factura de valor + garantía en el paso 4; pregunta de
+antecedentes movida a la evaluación privada; etiqueta comercial interna
+eliminada del mensaje de WhatsApp; captura progresiva opcional de leads
+(FormSubmit); lead magnet para perfiles educativos; 5 FAQs de pago + schema;
+credencial 98% reemplazada por 5+ años de cédula E (Brand Book v3.0).
 Novedades v3: la precalificación aparece centrada al cargar, con el fondo
 desenfocado hasta completar los datos; FAQPage para Google; render diferido
 de secciones; formulario sin zoom en iOS.

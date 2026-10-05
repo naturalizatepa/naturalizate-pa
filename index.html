@@ -33,7 +33,10 @@
 
 <!-- Notas de publicación:
   1) Número de WhatsApp en const WHATSAPP_NUMBER (actual: 50762557583).
-  2) Enlace de pago US$49 (Yappy/tarjeta) en const ENLACE_PAGO. Si está vacío, el embudo opera en modo manual (Patricia envía el enlace).
+  2) Pago US$49: pegue sus enlaces en ENLACE_PAGO (Yappy) y ENLACE_TARJETA (Stripe/PayPal). Cada botón sin enlace se oculta solo.
+     Si ambos están vacíos = modo manual (Patricia envía el enlace por WhatsApp).
+  2b) (Opcional) Captura de leads: pegue su URL FormSubmit AJAX en ENDPOINT_CAPTURA
+      (https://formsubmit.co/ajax/su-correo) para guardar cada perfil, veredicto y abandono. [V4-EMBUDO]
   3) Dominio canónico (actual: https://naturalizate.pa/).
   4) Pegue aquí su píxel (Meta / Google Ads / GA4) si pauta tráfico.
 -->
@@ -140,6 +143,46 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Se lo indicamos por escrito en su Evaluación Estratégica, con el fundamento correspondiente, y no le proponemos el trámite."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué cobran la primera consulta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Porque es una sesión de 30 minutos con el abogado titular que define su ruta por escrito. Los US$49 se descuentan del proceso si califica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Pierdo los US$49 si mi caso no procede?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Recibe el diagnóstico escrito con el fundamento y la ruta de lo que debe regularizar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo pago si estoy fuera de Panamá?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con tarjeta internacional desde el botón de pago. En Panamá también puede usar Yappy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo cambiar la fecha de mi evaluación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, avisando con 24 horas hábiles de anticipación. Su pago se mantiene."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es seguro pagar en línea?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El pago se realiza en la plataforma segura del procesador; el despacho solo recibe la confirmación."
       }
     }
   ]
@@ -692,6 +735,18 @@
   .pay-price { font-family: var(--font-serif); font-size: 2.6rem; font-weight: 600; color: var(--navy); margin: 6px 0 2px; }
   .pay-sub { color: var(--gray-600); font-size: .9rem; margin-bottom: 16px; }
   .pay-note { font-size: .78rem; color: var(--gray-500); margin-top: 12px; }
+  .value-card { background: #fff; border: 1.5px solid var(--gray-200); border-radius: 12px; padding: 22px; margin-bottom: 20px; text-align: left; }
+  .value-title { font-family: var(--font-serif); font-weight: 700; color: var(--navy); font-size: 1.05rem; margin-bottom: 12px; text-align: center; }
+  .value-list { list-style: none; margin: 0 0 14px; padding: 0; }
+  .value-list li { font-size: .88rem; padding: 6px 0 6px 26px; position: relative; line-height: 1.45; }
+  .value-list li::before { content: '✓'; position: absolute; left: 4px; color: var(--navy); font-weight: 700; }
+  .value-guarantee { font-size: .85rem; background: var(--gray-50); border-left: 3px solid var(--navy); padding: 10px 12px; border-radius: 0 8px 8px 0; line-height: 1.5; margin-bottom: 10px; }
+  .value-note { font-size: .78rem; color: var(--gray-500); text-align: center; line-height: 1.5; }
+  .form-privacy { font-size: .8rem; color: var(--gray-500); line-height: 1.55; margin: 4px 0 0; }
+  .magnet { margin-top: 14px; border-top: 1px solid var(--gray-200); padding-top: 14px; }
+  .magnet-row { display: flex; gap: 8px; margin-top: 8px; }
+  .magnet-row input { flex: 1; min-width: 0; }
+  .magnet-ok { color: var(--navy); font-weight: 600; font-size: .85rem; margin-top: 8px; }
   .pay-note.warn { color: var(--no); font-weight: 600; }
 </style>
 </head>
@@ -772,7 +827,7 @@
   <div class="container trust-bar-grid">
     <div class="trust-stat"><div class="num">15+</div><div class="lbl">Años de ejercicio</div></div>
     <div class="trust-stat"><div class="num">400+</div><div class="lbl">Expedientes tramitados</div></div>
-    <div class="trust-stat"><div class="num">98%</div><div class="lbl">Resoluciones favorables</div></div>
+    <div class="trust-stat"><div class="num">5+</div><div class="lbl">Años de cédula E para naturalizar</div></div>
     <div class="trust-stat"><div class="num">19–22</div><div class="lbl">Meses · plazo habitual</div></div>
   </div>
 </div>
@@ -952,8 +1007,9 @@
       <div class="creds">
         <div class="cred-item"><strong>15+</strong><span>Años</span></div>
         <div class="cred-item"><strong>400+</strong><span>Casos</span></div>
-        <div class="cred-item"><strong>98%</strong><span>Favorables</span></div>
+        <div class="cred-item"><strong>5+</strong><span>Años cédula E</span></div>
       </div>
+
     </div>
     <div class="authority-copy">
       <div class="eyebrow">Quién le acompaña</div>
@@ -1131,6 +1187,26 @@
         <button class="faq-q" aria-expanded="false">¿Qué pasa si mi caso no califica? <span class="fi">+</span></button>
         <div class="faq-a"><p>Se lo indicamos por escrito en su Evaluación Estratégica, con el fundamento correspondiente, y no le proponemos el trámite. Usted conserva el informe con la ruta de lo que debería regularizar antes de intentarlo. Preferimos perder un trámite antes que comprometer su inversión.</p></div>
       </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">¿Por qué cobran la primera consulta? <span class="fi">+</span></button>
+        <div class="faq-a"><p>Porque no es una charla de cortesía: el Lic. Villarreal dedica 30 minutos a revisar su caso particular y definir su ruta por escrito. Los US$49 se descuentan del proceso si su caso califica, de modo que la evaluación no le cuesta nada si continúa.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">¿Pierdo los US$49 si mi caso no procede? <span class="fi">+</span></button>
+        <div class="faq-a"><p>No. Si su caso no procede, recibe el diagnóstico escrito con el fundamento y la ruta de lo que debe regularizar antes de intentarlo. En ningún escenario sale con las manos vacías.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">¿Cómo pago si estoy fuera de Panamá? <span class="fi">+</span></button>
+        <div class="faq-a"><p>Con tarjeta de crédito o débito internacional desde el botón de pago. Si está en Panamá, también puede usar Yappy. Al confirmar su evaluación recibe el enlace correspondiente.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">¿Puedo cambiar la fecha de mi evaluación? <span class="fi">+</span></button>
+        <div class="faq-a"><p>Sí. Avisando con al menos 24 horas hábiles de anticipación por WhatsApp, reagendamos su sesión sin costo. Su pago se mantiene.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">¿Es seguro pagar en línea? <span class="fi">+</span></button>
+        <div class="faq-a"><p>Sí. El pago se realiza en la plataforma segura del procesador (Yappy o tarjeta). El despacho solo recibe la confirmación del pago, nunca sus datos bancarios.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1236,14 +1312,7 @@
             <label class="chip"><input type="radio" name="f_civil" value="viudo" /><span>Viudo(a)</span></label>
           </div>
         </div>
-        <div class="form-group">
-          <label id="lb-ant">Antecedentes</label>
-          <div class="chips" role="radiogroup" aria-labelledby="lb-ant">
-            <label class="chip"><input type="radio" name="f_antecedentes" value="limpio" /><span>Récord limpio</span></label>
-            <label class="chip"><input type="radio" name="f_antecedentes" value="tema" /><span>Tengo un tema que debo explicar</span></label>
-            <label class="chip"><input type="radio" name="f_antecedentes" value="privado" /><span>Prefiero explicarlo en la evaluación</span></label>
-          </div>
-        </div>
+        <p class="form-privacy">Sus respuestas son confidenciales y solo se usan para verificar su perfil. Los temas sensibles de su historial se revisan en privado, dentro de la Evaluación.</p>
         <p class="field-error" id="err1" hidden>Complete su perfil migratorio (7 puntos) para continuar.</p>
         <button type="button" class="btn btn-navy btn-block" data-next="2">Continuar →</button>
       </div>
@@ -1292,11 +1361,24 @@
       <!-- PASO 4 · EVALUACIÓN Y PAGO -->
       <div class="fstep" id="fstep4">
         <p class="book-ref" id="bookRef"></p>
+        <div class="value-card">
+          <div class="value-title">Lo que recibe por sus US$49</div>
+          <ul class="value-list">
+            <li><strong>30 minutos con el abogado titular.</strong> El Lic. Villarreal revisa personalmente su caso.</li>
+            <li><strong>Veredicto de viabilidad preliminar</strong> con criterio profesional.</li>
+            <li><strong>Su ruta por escrito:</strong> modalidad recomendada y opciones de pago.</li>
+            <li><strong>Lista exacta de documentos</strong> y riesgos de su expediente.</li>
+            <li><strong>Transcripción + resumen ejecutivo</strong> de la sesión.</li>
+          </ul>
+          <p class="value-guarantee"><strong>Garantía de valor:</strong> si su caso no procede, igual recibe el diagnóstico escrito con qué regularizar. En ningún escenario sale con las manos vacías.</p>
+          <p class="value-note">Menos del 1% de su proceso · 100% aplicables si contrata · Agenda personal del titular: los espacios se asignan en orden de pago.</p>
+        </div>
         <div class="pay-card">
           <div class="pay-title">Evaluación Estratégica · Virtual 30 min</div>
           <div class="pay-price">US$49</div>
           <p class="pay-sub">100% aplicables al proceso si contrata.</p>
-          <a class="btn btn-navy btn-block" id="payBtn" target="_blank" rel="noopener" href="#">Pagar US$49 →</a>
+          <a class="btn btn-navy btn-block" id="payBtn" target="_blank" rel="noopener" href="#">Pagar US$49 con Yappy →</a>
+          <a class="btn btn-outline-n btn-block" id="payBtnCard" target="_blank" rel="noopener" href="#" style="margin-top:10px">Pagar US$49 con tarjeta →</a>
           <p class="pay-note" id="payNote">Será redirigido al pago seguro. Luego regrese y confirme abajo.</p>
         </div>
         <div class="form-row">
@@ -1472,7 +1554,10 @@
   /* ===== Configuración (ver TODO en el <head>) ===== */
   var WHATSAPP_NUMBER = "50762557583"; // +507 6255-7583 (Brand Book v2.0)
   var ASISTENTE = "Patricia";          // Nombre operativo de la asistente legal
-  var ENLACE_PAGO = ""; // TODO: enlace de pago US$49 (Yappy/tarjeta). Vacío = modo manual (Patricia envía el enlace).
+  var ENLACE_PAGO = ""; // TODO: enlace de pago US$49 por Yappy. Vacío = se oculta ese botón.
+  var ENLACE_TARJETA = ""; // TODO: enlace de pago US$49 con tarjeta (Stripe/PayPal). Vacío = se oculta ese botón.
+  // Si ambos están vacíos = modo manual (Patricia envía el enlace por WhatsApp).
+  var ENDPOINT_CAPTURA = ""; // TODO (opcional): URL FormSubmit AJAX para guardar cada lead y abandono. Vacío = sin captura.
 
   /* Año dinámico */
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -1536,7 +1621,6 @@
     ausencias: { no: "No", menores: "Sí, menores a 6 meses", mayores: "Sí, mayores a 6 meses", nose: "No estoy seguro(a)" },
     examen: { si: "Sí, con disciplina", dudas: "Tengo dudas sobre el examen", no: "No" },
     civil: { soltero: "Soltero(a)", casado: "Casado(a)", unido: "Unido(a)", divorciado: "Divorciado(a)", viudo: "Viudo(a)" },
-    antecedentes: { limpio: "Récord limpio", tema: "Tengo un tema que debo explicar", privado: "Prefiero explicarlo en la evaluación" },
     objetivo: { iniciar: "Iniciar mi proceso de naturalización", evaluar: "Evaluar si mi caso califica", info: "Solo informarme por ahora" },
     capacidad: { a: "Tiene presupuesto para iniciar.", b: "Abono + plan de pagos.", c: "Comparando abogados.", d: "Solo precios y opciones.", e: "Sin condiciones para iniciar." },
     disponibilidad: { ahora: "De inmediato", "30dias": "En los próximos 30 días", meses: "En 2 a 3 meses", nose: "Aún no lo sé" },
@@ -1556,6 +1640,17 @@
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push(Object.assign({ event: evento }, datos || {}));
     } catch (err) {}
+  }
+
+  /* Captura progresiva (opcional): guarda cada etapa aunque el lead abandone */
+  function capture(etapa, extra) {
+    if (!ENDPOINT_CAPTURA) return;
+    try {
+      var payload = Object.assign({ etapa: etapa, fecha: new Date().toISOString(), pagina: location.href, utm: getUTM() }, extra || {});
+      fetch(ENDPOINT_CAPTURA, { method: "POST", mode: "no-cors",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(payload) }).catch(function () {});
+    } catch (e) {}
   }
 
   /* ===== Motor de pasos: perfil → intención → resultado → evaluación y pago ===== */
@@ -1593,13 +1688,20 @@
 
   /* ===== Pago: directo si hay enlace configurado, manual si no ===== */
   var payBtn = document.getElementById("payBtn");
+  var payBtnCard = document.getElementById("payBtnCard");
   var payNote = document.getElementById("payNote");
-  var PAY_DIRECT = /^https?:\/\//i.test(ENLACE_PAGO || "");
+  function isURL(u) { return /^https?:\/\//i.test(u || ""); }
+  var HAS_YAPPY = isURL(ENLACE_PAGO);
+  var HAS_CARD = isURL(ENLACE_TARJETA);
+  var PAY_DIRECT = HAS_YAPPY || HAS_CARD;
+  if (HAS_YAPPY) { payBtn.setAttribute("href", ENLACE_PAGO); } else { payBtn.style.display = "none"; }
+  if (HAS_CARD) { payBtnCard.setAttribute("href", ENLACE_TARJETA); } else { payBtnCard.style.display = "none"; }
   if (PAY_DIRECT) {
-    payBtn.setAttribute("href", ENLACE_PAGO);
+    payNote.textContent = (HAS_YAPPY && HAS_CARD)
+      ? "Pague por Yappy o con tarjeta (internacional). Luego regrese y confirme abajo."
+      : "Será redirigido al pago seguro. Luego regrese y confirme abajo.";
   } else {
-    payBtn.style.display = "none";
-    payNote.textContent = "Al confirmar, Patricia le enviará el enlace para pagar su Evaluación (US$49) a su WhatsApp.";
+    payNote.textContent = "Al confirmar, Patricia le enviará de inmediato el enlace para pagar su Evaluación (US$49) a su WhatsApp.";
   }
 
   /* País "Otro": mostrar campo para especificar */
@@ -1623,16 +1725,16 @@
     var ausencias = checked("f_ausencias");
     var examen = checked("f_examen");
     var civil = checked("f_civil");
-    var antecedentes = checked("f_antecedentes");
-    if (!pais || !cedula || !ausencias || !examen || !civil || !antecedentes) {
+    if (!pais || !cedula || !ausencias || !examen || !civil) {
       err.hidden = false;
       err.scrollIntoView({ behavior: "smooth", block: "center" });
       return false;
     }
     err.hidden = true;
     lead = { pais: pais, cedula: cedula, ausencias: ausencias, examen: examen,
-             civil: civil, antecedentes: antecedentes, apto: false };
+             civil: civil, apto: false };
     track("filtro_perfil_ok", {});
+    capture("perfil", { pais: pais, cedula: cedula, ausencias: ausencias, examen: examen });
     goStep(2);
     return true;
   }
@@ -1659,11 +1761,19 @@
       var html = '<div class="verdict ' + cls + ' show">' +
         '<span class="v-tag">' + tag + "</span><h4>" + h4 + "</h4>";
       paras.forEach(function (p) { html += "<p>" + p + "</p>"; });
+      capture("veredicto", { resultado: cls, titulo: h4 });
       var btn = mode === "unlock"
         ? '<button type="button" class="btn btn-navy" data-unlock>Conocer las modalidades</button>'
         : '<button type="button" class="btn btn-navy" data-next="4">Reservar mi Evaluación · US$49 →</button>';
       html += '<div class="v-actions">' + btn +
-        '<button type="button" class="btn btn-outline-n btn-sm" data-back="2">← Corregir respuestas</button></div></div>';
+        '<button type="button" class="btn btn-outline-n btn-sm" data-back="2">← Corregir respuestas</button></div>';
+      if (mode === "unlock" && ENDPOINT_CAPTURA) {
+        html += '<div class="magnet"><p><strong>Guía gratuita:</strong> &ldquo;7 errores que retrasan su nacionalización&rdquo;. Déjenos su correo y se la enviamos.</p>' +
+          '<div class="magnet-row"><input type="email" id="magnetEmail" placeholder="Su correo electrónico" autocomplete="email" />' +
+          '<button type="button" class="btn btn-navy btn-sm" data-magnet>Enviarme la guía</button></div>' +
+          '<p class="magnet-ok" id="magnetOk" hidden>✓ Listo. Revise su bandeja de entrada.</p></div>';
+      }
+      html += '</div>';
       box.innerHTML = html;
       goStep(3);
     }
@@ -1748,15 +1858,13 @@
       "Ausencias: " + LABELS.ausencias[lead.ausencias],
       "Examen: " + LABELS.examen[lead.examen],
       "Estado civil: " + LABELS.civil[lead.civil],
-      "Antecedentes: " + LABELS.antecedentes[lead.antecedentes],
       "Objetivo: " + LABELS.objetivo[lead.objetivo],
       "Situación de inversión: " + LABELS.capacidad[lead.capacidad],
       "Disponibilidad: " + LABELS.disponibilidad[lead.disponibilidad],
       "Día preferido: " + LABELS.dia[lead.dia],
       "Horario: " + LABELS.horario[lead.horario],
       "Referencia de pago: " + (lead.refpago || "(pendiente)"),
-      "",
-      "Perfil comercial interno: " + lead.perfilComercial ];
+      "" ];
     if (utm) lines.push(utm);
     lines.push("", PAY_DIRECT
       ? "Quedo atento(a) a la confirmación de mi evaluación."
@@ -1766,8 +1874,19 @@
 
   /* ===== Navegación: [data-next] / [data-back] / [data-unlock] ===== */
   formEl.addEventListener("click", function (e) {
-    var t = e.target && e.target.closest ? e.target.closest("[data-next],[data-back],[data-unlock]") : null;
+    var t = e.target && e.target.closest ? e.target.closest("[data-next],[data-back],[data-unlock],[data-magnet]") : null;
     if (!t) return;
+    if (t.hasAttribute("data-magnet")) {
+      var em = document.getElementById("magnetEmail");
+      var ok = document.getElementById("magnetOk");
+      if (em && /.+@.+\..+/.test(em.value.trim())) {
+        capture("magnet", { email: em.value.trim() });
+        track("lead_magnet", {});
+        if (ok) ok.hidden = false;
+        em.value = "";
+      } else if (em) { em.focus(); }
+      return;
+    }
     if (t.hasAttribute("data-unlock")) {
       track("embudo_educativo", {});
       closeGate();
@@ -1802,9 +1921,10 @@
       document.getElementById("doneMsg").textContent = "Se abrió WhatsApp con toda su información y su referencia de pago: solo presione enviar. " + ASISTENTE + " confirma su fecha y hora en horario hábil.";
     } else {
       document.getElementById("doneTitle").textContent = "¡Gracias, " + lead.nombre.split(" ")[0] + "! Recibimos su solicitud.";
-      document.getElementById("doneMsg").textContent = "Se abrió WhatsApp con toda su información: solo presione enviar. " + ASISTENTE + " le enviará el enlace para pagar su Evaluación (US$49) y confirmar su fecha y hora.";
+      document.getElementById("doneMsg").textContent = "Se abrió WhatsApp con toda su información: solo presione enviar. " + ASISTENTE + " le enviará de inmediato el enlace para pagar su Evaluación (US$49) y confirmar su fecha y hora.";
     }
     track("evaluacion_confirmada", { modo: PAY_DIRECT ? "directo" : "manual", perfil: lead.perfilComercial, dia: lead.dia });
+    capture("confirmada", { nombre: lead.nombre, whatsapp: lead.whatsapp, dia: lead.dia, horario: lead.horario, modo: PAY_DIRECT ? "directo" : "manual" });
     try { window.open(link, "_blank"); } catch (err) {}
     closeGate();
     goStep("done");

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Formulario interno · Uso del despacho | Naturalízate.pa</title>
+<!-- HERRAMIENTA INTERNA DEL DESPACHO — no enlazada desde el sitio público.
+     · Contiene el cuestionario completo (perfil, solvencia, intención y cita).
+     · Al finalizar genera un INFORME EN PDF descargable, sin dependencias externas.
+     · No indexar. Si se aloja en línea, protéjala con contraseña desde el servidor. -->
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#0D1B2A" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<style>
+  :root{
+    --navy:#0D1B2A; --navy-mid:#1B3A57; --navy-deep:#060F17;
+    --gray-50:#F8F9FA; --gray-100:#F1F3F5; --gray-200:#E9ECEF; --gray-300:#DEE2E6; --gray-500:#ADB5BD;
+    --gray-600:#6C757D; --gray-700:#495057; --gray-900:#212529;
+    --ok:#1E6B4A; --ok-bg:#EDF3EF; --warn:#8A6D1F; --warn-bg:#FBF6E8; --no:#8A3D3B; --no-bg:#F7ECEC;
+    --serif: Georgia, 'Times New Roman', serif;
+    --sans: 'Segoe UI', Arial, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--gray-700);background:var(--gray-100);font-size:16px;line-height:1.55}
+  header{background:var(--navy);color:#fff;padding:14px 0}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .brand{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .brand h1{font-family:var(--serif);font-weight:600;font-size:1.05rem;letter-spacing:2px;text-transform:uppercase}
+  .brand h1 span{font-style:italic;font-weight:400;color:rgba(255,255,255,.65);letter-spacing:1px}
+  .brand .tag{font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:5px 14px}
+  .aviso{background:var(--warn-bg);border-bottom:1px solid #E7DDBB;color:#6B561A;font-size:.82rem;padding:9px 0}
+  form{padding:26px 0 120px}
+  fieldset{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:22px 22px 8px;margin-bottom:20px}
+  legend{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:1.08rem;padding:0 10px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:0 18px}
+  .full{grid-column:1 / -1}
+  .campo{margin-bottom:16px}
+  label{display:block;font-size:.74rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--navy);margin-bottom:6px}
+  input,select,textarea{width:100%;padding:12px 14px;border:1px solid var(--gray-300);border-radius:6px;font-size:16px;font-family:inherit;background:#fff;color:var(--gray-900)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(13,27,42,.10)}
+  textarea{min-height:84px;resize:vertical}
+  .check{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;color:var(--gray-700);padding:8px 0;text-transform:none;letter-spacing:0;font-weight:500}
+  .check input{width:18px;height:18px;margin-top:3px;flex:0 0 18px}
+  .hint{font-size:.8rem;color:var(--gray-600);margin-top:6px}
+  .verdict-panel{position:sticky;top:12px;background:#fff;border:2px solid var(--navy);border-radius:12px;padding:18px 20px;margin-bottom:20px}
+  .verdict-panel h2{font-family:var(--serif);font-size:1rem;color:var(--navy);margin-bottom:10px}
+  .badge{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:8px}
+  .b-ok{background:var(--ok);color:#fff}.b-warn{background:var(--warn);color:#fff}.b-no{background:var(--no);color:#fff}.b-neutro{background:var(--gray-300);color:var(--gray-900)}
+  .verdict-panel p{font-size:.88rem;color:var(--gray-700)}
+  .acciones{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--gray-200);box-shadow:0 -6px 24px rgba(0,0,0,.10);padding:12px 0 calc(12px + env(safe-area-inset-bottom))}
+  .acciones .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 22px;font-size:.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border-radius:6px;border:1.5px solid transparent;cursor:pointer;text-decoration:none;font-family:inherit}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{opacity:.9}
+  .btn-outline{background:#fff;color:var(--navy);border-color:var(--navy)}
+  .btn-outline:hover{background:var(--gray-50)}
+  .btn-gris{background:#fff;color:var(--gray-600);border-color:var(--gray-300)}
+  .btn[disabled]{opacity:.5;cursor:not-allowed}
+  .estado{font-size:.82rem;color:var(--ok);font-weight:700}
+  .estado.error{color:var(--no)}
+  @media (max-width:820px){.grid,.grid3{grid-template-columns:1fr}.acciones .btn{flex:1 1 auto}}
+  @media print{header,.aviso,.acciones,form{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap brand">
+    <h1>Naturalízate<span>.pa</span> · Formulario interno</h1>
+    <span class="tag">Uso exclusivo del despacho</span>
+  </div>
+</header>
+<div class="aviso">
+  <div class="wrap">Herramienta interna: no está enlazada desde el sitio público y lleva <strong>noindex</strong>. Al finalizar, genere el <strong>informe en PDF</strong> y archívelo con el expediente del solicitante.</div>
+</div>
+
+<form id="internoForm" novalidate>
+  <div class="wrap">
+
+    <div class="verdict-panel">
+      <h2>Veredicto en vivo</h2>
+      <span class="badge b-neutro" id="vBadge">Complete el perfil</span>
+      <p id="vTexto">Al marcar país, años de Cédula E y rango de ingresos, aquí se calcula el veredicto con la misma lógica del sitio público.</p>
+    </div>
+
+    <fieldset>
+      <legend>A · Datos del solicitante</legend>
+      <div class="grid">
+        <div class="campo"><label for="i_nombre">Nombre completo *</label><input id="i_nombre" name="i_nombre" autocomplete="off" placeholder="Ej.: María Fernández Ríos" /></div>
+        <div class="campo"><label for="i_whatsapp">WhatsApp *</label><input id="i_whatsapp" name="i_whatsapp" inputmode="tel" autocomplete="off" placeholder="Ej.: 6255-7583" /></div>
+        <div class="campo"><label for="i_email">Correo electrónico</label><input id="i_email" name="i_email" type="email" autocomplete="off" placeholder="opcional" /></div>
+        <div class="campo">
+          <label for="i_pais">País de origen *</label>
+          <select id="i_pais" name="i_pais">
+            <option value="">Seleccione…</option>
+            <option>Alemania</option><option>Argentina</option><option>Bolivia</option><option>Brasil</option><option>Canadá</option>
+            <option>Chile</option><option>China</option><option>Colombia</option><option>Corea del Sur</option><option>Costa Rica</option>
+            <option>Cuba</option><option>Ecuador</option><option>El Salvador</option><option>España</option><option>Estados Unidos</option>
+            <option>Francia</option><option>Guatemala</option><option>Guyana</option><option>Haití</option><option>Honduras</option>
+            <option>India</option><option>Italia</option><option>Jamaica</option><option>Líbano</option><option>México</option>
+            <option>Nicaragua</option><option>Países Bajos</option><option>Pakistán</option><option>Paraguay</option><option>Perú</option>
+            <option>Portugal</option><option>Reino Unido</option><option>República Dominicana</option><option>Rusia</option><option>Suiza</option>
+            <option>Trinidad y Tobago</option><option>Turquía</option><option>Ucrania</option><option>Uruguay</option><option>Venezuela</option>
+            <option value="otro">Otro</option>
+          </select>
+          <input id="i_pais_otro" name="i_pais_otro" placeholder="Especifique el país" style="display:none;margin-top:8px" aria-label="Especifique el país de origen" />
+        </div>
+        <div class="campo">
+          <label for="i_cedula">Años con Cédula E *</label>
+          <select id="i_cedula" name="i_cedula">
+            <option value="">Seleccione…</option>
+            <option value="menos3">Menos de 3 años</option>
+            <option value="entre35">Entre 3 y 5 años</option>
+            <option value="mas5">Más de 5 años</option>
+            <option value="nose">No está seguro(a)</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="i_ausencias">Ausencias prolongadas de Panamá</label>
+          <select id="i_ausencias" name="i_ausencias">
+            <option value="">Seleccione…</option>
+            <option value="no">No</option>
+            <option value="menores">Sí, menores a 6 meses</option>
+            <option value="mayores">Sí, mayores a 6 meses</option>
+            <option value="nose">No está seguro(a)</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="i_civil">Estado civil</label>
+          <select id="i_civil" name="i_civil">
+            <option value="">Seleccione…</option>
+            <option value="soltero">Soltero(a)</option>
+            <option value="casado">Casado(a)</option>
+            <option value="unido">Unido(a)</option>
+            <option value="divorciado">Divorciado(a)</option>
+            <option value="viudo">Viudo(a)</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="i_examen">¿Dispuesto a preparar el examen de naturalización?</label>
+          <select id="i_examen" name="i_examen">
+            <option value="">Seleccione…</option>
+            <option value="si">Sí, con disciplina</option>
+            <option value="dudas">Tiene dudas sobre el examen</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="i_modalidad">Modalidad recomendada</label>
+          <select id="i_modalidad" name="i_modalidad">
+            <option value="">Por definir en la evaluación</option>
+            <option value="esencial">Proceso Esencial · US$3,800</option>
+            <option value="todo">Proceso Todo Incluido · US$5,500</option>
+          </select>
+        </div>
+      </div>
+      <div class="campo full">
+        <label class="check"><input type="checkbox" id="i_dependiente" name="i_dependiente" /> Solicitante dependiente (ama de casa o estudiante): presenta carta de responsabilidad y la solvencia del responsable</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>B · Solvencia económica</legend>
+      <div class="grid">
+        <div class="campo">
+          <label for="i_ingreso">Rango de ingresos mensuales (referencia) *</label>
+          <select id="i_ingreso" name="i_ingreso">
+            <option value="">Seleccione…</option>
+            <option value="menos1">Menos de US$1,000</option>
+            <option value="1a5">US$1,000 a 5,000</option>
+            <option value="5a10">US$5,001 a 10,000</option>
+            <option value="10a20">US$10,001 a 20,000 o más</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label>Pruebas de solvencia con las que cuenta <em style="text-transform:none;font-weight:400">(la norma exige dos de tres)</em></label>
+          <label class="check"><input type="checkbox" id="i_doc_renta" name="i_doc_renta" /> Declaración de Renta (2 años, CPA y notario)</label>
+          <label class="check"><input type="checkbox" id="i_doc_banco" name="i_doc_banco" /> Carta bancaria al Servicio Nacional de Migración</label>
+          <label class="check"><input type="checkbox" id="i_doc_trabajo" name="i_doc_trabajo" /> Carta de trabajo + ficha actualizada de la CSS</label>
+        </div>
+      </div>
+      <div class="campo full">
+        <label for="i_notas_docs">Notas de verificación documental</label>
+        <textarea id="i_notas_docs" name="i_notas_docs" placeholder="Vigencias, firmas del CPA, sellos, faltantes detectados, compromisos de entrega…"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>C · Perfil comercial y cita</legend>
+      <div class="grid">
+        <div class="campo">
+          <label for="i_objetivo">Objetivo declarado</label>
+          <select id="i_objetivo" name="i_objetivo">
+            <option value="">Seleccione…</option>
+            <option value="iniciar">Iniciar el proceso de naturalización</option>
+            <option value="evaluar">Evaluar si el caso califica</option>
+            <option value="info">Solo informarse por ahora</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="i_capacidad">Situación de inversión</label>
+          <select id="i_capacidad" name="i_capacidad">
+            <option value="">Seleccione…</option>
+            <option value="a">Tiene presupuesto para iniciar</option>
+            <option value="b">Puede iniciar con abono y plan de pagos</option>
+            <option value="c">Compara abogados antes de decidir</option>
+            <option value="d">Solo quiere conocer precios</option>
+            <option value="e">Todavía no puede iniciar</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="i_disponibilidad">Disponibilidad para iniciar</label>
+          <select id="i_disponibilidad" name="i_disponibilidad">
+            <option value="">Seleccione…</option>
+            <option value="ahora">De inmediato</option>
+            <option value="30dias">En los próximos 30 días</option>
+            <option value="meses">En 2 a 3 meses</option>
+            <option value="nose">Aún no lo sabe</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="i_asesor">Atendido por</label>
+          <select id="i_asesor" name="i_asesor">
+            <option value="">Seleccione…</option>
+            <option>Patricia (asistente legal)</option>
+            <option>Lic. Alfonso Villarreal</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="campo"><label for="i_cita_fecha">Fecha de la cita</label><input type="date" id="i_cita_fecha" name="i_cita_fecha" /></div>
+        <div class="campo"><label for="i_cita_hora">Hora de la cita</label><input type="time" id="i_cita_hora" name="i_cita_hora" /></div>
+        <div class="campo"><label for="i_dia">Preferencia del solicitante</label><input id="i_dia" name="i_dia" placeholder="Ej.: jueves en la tarde" /></div>
+        <div class="campo"><label for="i_refpago">Referencia de pago de la evaluación</label><input id="i_refpago" name="i_refpago" placeholder="N.º de transacción Yappy / transferencia" /></div>
+        <div class="campo"><label for="i_abono">Abono / pagos recibidos del proceso</label><input id="i_abono" name="i_abono" placeholder="Ej.: US$600 · abono fase I" /></div>
+        <div class="campo"><label for="i_total">Honorarios acordados</label><input id="i_total" name="i_total" placeholder="Ej.: US$3,800 · pactado por escrito" /></div>
+      </div>
+      <div class="campo full">
+        <label for="i_notas">Notas internas del caso</label>
+        <textarea id="i_notas" name="i_notas" placeholder="Observaciones de la llamada, riesgos detectados, documentos por subsanar, acuerdos verbales…"></textarea>
+      </div>
+    </fieldset>
+
+  </div>
+
+  <div class="acciones">
+    <div class="wrap">
+      <button type="button" class="btn btn-navy" id="btnPDF">Generar informe PDF</button>
+      <button type="button" class="btn btn-outline" id="btnResumen">Copiar resumen</button>
+      <button type="button" class="btn btn-outline" id="btnWA">Enviar por WhatsApp</button>
+      <button type="button" class="btn btn-gris" id="btnLimpiar">Limpiar</button>
+      <span class="estado" id="estado" hidden></span>
+    </div>
+  </div>
+</form>
+
+<script>
+/* =====================================================================
+   NATURALÍZATE.PA · Formulario interno — informe en PDF sin dependencias
+   Todo el PDF se construye en el navegador (Helvetica + WinAnsi) y se
+   descarga directamente. No requiere internet ni librerías externas.
+   ===================================================================== */
+(function () {
+  "use strict";
+
+  /* ══════════ 1. Utilidades de PDF ══════════ */
+  var PDF_W = 612, PDF_H = 792, MARGEN = 48, ANCHO = PDF_W - MARGEN * 2; /* 516 */
+
+  var HELV = { " ":278,"!":278,'"':355,"#":556,"$":556,"%":889,"&":667,"'":191,"(":333,")":333,"*":389,"+":584,",":278,"-":333,".":278,"/":278,
+    "0":556,"1":556,"2":556,"3":556,"4":556,"5":556,"6":556,"7":556,"8":556,"9":556,":":278,";":278,"<":584,"=":584,">":584,"?":556,"@":1015,
+    "A":667,"B":667,"C":722,"D":722,"E":667,"F":611,"G":778,"H":722,"I":278,"J":500,"K":667,"L":556,"M":833,"N":722,"O":778,"P":667,"Q":778,"R":722,"S":667,"T":611,"U":722,"V":667,"W":944,"X":667,"Y":667,"Z":611,
+    "[":278,"\\":278,"]":278,"^":469,"_":556,"`":333,
+    "a":556,"b":556,"c":500,"d":556,"e":556,"f":278,"g":556,"h":556,"i":222,"j":222,"k":500,"l":222,"m":833,"n":556,"o":556,"p":556,"q":556,"r":333,"s":500,"t":278,"u":556,"v":500,"w":722,"x":500,"y":500,"z":500,
+    "{":334,"|":260,"}":334,"~":584 };
+
+  var BASE_CHAR = { "á":"a","é":"e","í":"i","ó":"o","ú":"u","ñ":"n","ü":"u","Á":"A","É":"E","Í":"I","Ó":"O","Ú":"U","Ñ":"N","Ü":"U",
+    "«":'"',"»":'"',"“":'"',"”":'"',"’":"'","‘":"'","–":"-","—":"-","·":".","…":".","¿":"?","¡":"!","°":"o","º":"o","ª":"a","§":"S" };
+
+  var WINANSI_EXTRA = { "\u201A":130,"\u0192":131,"\u201E":132,"\u2026":133,"\u2020":134,"\u2021":135,"\u02C6":136,"\u2030":137,"\u0160":138,"\u2039":139,"\u0152":140,"\u017D":142,
+    "\u2018":145,"\u2019":146,"\u201C":147,"\u201D":148,"\u2022":149,"\u2013":150,"\u2014":151,"\u02DC":152,"\u2122":153,"\u0161":154,"\u203A":155,"\u0153":156,"\u017E":158,"\u0178":159 };
+
+  function anchoTexto(t, size, bold) {
+    var w = 0;
+    for (var i = 0; i < t.length; i++) {
+      var ch = BASE_CHAR[t.charAt(i)] || t.charAt(i);
+      var cw = HELV[ch];
+      if (cw === undefined) cw = 556;
+      w += cw;
+    }
+    w = w / 1000 * size;
+    return bold ? w * 1.05 : w;
+  }
+  function envolver(t, size, bold, maxW) {
+    var palabras = String(t === undefined || t === null ? "" : t).split(/\s+/);
+    var lineas = [], actual = "";
+    for (var i = 0; i < palabras.length; i++) {
+      var p = palabras[i];
+      var prueba = actual ? actual + " " + p : p;
+      if (anchoTexto(prueba, size, bold) <= maxW) { actual = prueba; continue; }
+      if (actual) lineas.push(actual);
+      if (anchoTexto(p, size, bold) > maxW) {
+        var trozo = "";
+        for (var k = 0; k < p.length; k++) {
+          if (anchoTexto(trozo + p.charAt(k), size, bold) > maxW) { lineas.push(trozo); trozo = p.charAt(k); }
+          else trozo += p.charAt(k);
+        }
+        actual = trozo;
+      } else { actual = p; }
+    }
+    if (actual) lineas.push(actual);
+    return lineas.length ? lineas : [""];
+  }
+  function escaparPDF(s) {
+    var out = "";
+    for (var i = 0; i < s.length; i++) {
+      var ch = s.charAt(i), code = s.charCodeAt(i);
+      if (WINANSI_EXTRA[ch] !== undefined) code = WINANSI_EXTRA[ch];
+      else if (code > 255) code = 63;
+      if (code === 40) out += "\\(";
+      else if (code === 41) out += "\\)";
+      else if (code === 92) out += "\\\\";
+      else if (code < 32 || code > 126) out += "\\" + ("000" + code.toString(8)).slice(-3);
+      else out += ch;
+    }
+    return out;
+  }
+  function serializarPDF(paginas, titulo) {
+    var N = paginas.length, numContenido = [], numPagina = [], n = 5;
+    for (var i = 0; i < N; i++) { numContenido[i] = n++; numPagina[i] = n++; }
+    var numInfo = n++;
+    var objs = {};
+    objs[1] = "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>";
+    objs[2] = "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>";
+    objs[3] = "<< /Type /Pages /Kids [" + numPagina.map(function (x) { return x + " 0 R"; }).join(" ") + "] /Count " + N + " >>";
+    objs[4] = "<< /Type /Catalog /Pages 3 0 R >>";
+    for (var j = 0; j < N; j++) {
+      var stream = paginas[j].join("\n");
+      objs[numContenido[j]] = "<< /Length " + stream.length + " >>\nstream\n" + stream + "\nendstream";
+      objs[numPagina[j]] = "<< /Type /Page /Parent 3 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents " + numContenido[j] + " 0 R >>";
+    }
+    function p2(x) { return (x < 10 ? "0" : "") + x; }
+    var ahora = new Date();
+    var fecha = "D:" + ahora.getFullYear() + p2(ahora.getMonth() + 1) + p2(ahora.getDate()) + p2(ahora.getHours()) + p2(ahora.getMinutes()) + p2(ahora.getSeconds());
+    var hexTitulo = "FEFF";
+    var tLim = String(titulo || "Informe");
+    for (var th = 0; th < tLim.length; th++) { hexTitulo += ("0000" + tLim.charCodeAt(th).toString(16).toUpperCase()).slice(-4); }
+    objs[numInfo] = "<< /Title <" + hexTitulo + "> /Author (Naturalizate.pa) /Creator (Formulario interno Naturalizate.pa) /CreationDate (" + fecha + ") >>";
+    var total = numInfo, out = "%PDF-1.7\n", offs = [];
+    for (var m = 1; m <= total; m++) { offs[m] = out.length; out += m + " 0 obj\n" + objs[m] + "\nendobj\n"; }
+    var xref = out.length;
+    out += "xref\n0 " + (total + 1) + "\n0000000000 65535 f \n";
+    for (var q = 1; q <= total; q++) { out += ("0000000000" + offs[q]).slice(-10) + " 00000 n \n"; }
+    out += "trailer\n<< /Size " + (total + 1) + " /Root 4 0 R /Info " + numInfo + " 0 R >>\nstartxref\n" + xref + "\n%%EOF\n";
+    var bytes = new Uint8Array(out.length);
+    for (var b = 0; b < out.length; b++) bytes[b] = out.charCodeAt(b) & 0xFF;
+    return bytes;
+  }
+
+  /* ══════════ 2. Lógica de veredicto (misma del sitio público) ══════════ */
+  var RECIPROCIDAD = { "el salvador": 1, "argentina": 2, "ecuador": 2, "espana": 2, "honduras": 2, "mexico": 2, "nicaragua": 2, "peru": 2, "colombia": 2, "uruguay": 3 };
+  function normPais(s) {
+    try { return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim(); }
+    catch (e) { return (s || "").toLowerCase().trim(); }
+  }
+  var ETIQUETAS = {
+    cedula: { menos3: "Menos de 3 años", entre35: "Entre 3 y 5 años", mas5: "Más de 5 años", nose: "No está seguro(a)" },
+    ingreso: { menos1: "Menos de US$1,000", "1a5": "US$1,000 a 5,000", "5a10": "US$5,001 a 10,000", "10a20": "US$10,001 a 20,000 o más" },
+    ausencias: { no: "No", menores: "Sí, menores a 6 meses", mayores: "Sí, mayores a 6 meses", nose: "No está seguro(a)" },
+    examen: { si: "Sí, con disciplina", dudas: "Tiene dudas sobre el examen", no: "No" },
+    civil: { soltero: "Soltero(a)", casado: "Casado(a)", unido: "Unido(a)", divorciado: "Divorciado(a)", viudo: "Viudo(a)" },
+    objetivo: { iniciar: "Iniciar el proceso", evaluar: "Evaluar si califica", info: "Solo informarse" },
+    capacidad: { a: "Presupuesto para iniciar", b: "Abono + plan de pagos", c: "Comparando abogados", d: "Solo precios", e: "Sin condiciones para iniciar" },
+    disponibilidad: { ahora: "De inmediato", "30dias": "Próximos 30 días", meses: "En 2 a 3 meses", nose: "Aún no lo sabe" },
+    modalidad: { esencial: "Proceso Esencial · US$3,800", todo: "Proceso Todo Incluido · US$5,500" }
+  };
+  function etiqueta(grupo, valor) {
+    var g = ETIQUETAS[grupo] || {};
+    return (g[valor] !== undefined && valor !== "") ? g[valor] : (valor || "—");
+  }
+
+  function calcularVeredicto(d) {
+    var recip = RECIPROCIDAD[normPais(d.pais)] || 0;
+    var docs = (d.doc_renta ? 1 : 0) + (d.doc_banco ? 1 : 0) + (d.doc_trabajo ? 1 : 0);
+    if (!d.cedula || !d.ingreso) {
+      return { clave: "incompleto", badge: "Complete el perfil", clase: "b-neutro",
+        texto: "Faltan datos para calcular el veredicto (años de Cédula E e ingresos de referencia).",
+        recomendacion: "Complete el perfil migratorio y de solvencia para emitir el veredicto." };
+    }
+    if (d.cedula === "menos3" && !recip) {
+      return { clave: "computo", badge: "Aún no es el momento", clase: "b-no",
+        texto: "La naturalización exige 5 años de residencia permanente. Con menos de 3 años de Cédula E y sin convenio de reciprocidad, presentar ahora carece de viabilidad.",
+        recomendacion: "No proponer el trámite. Ofrecer seguimiento para cuando se cumpla el cómputo; dejar constancia escrita." };
+    }
+    if (d.examen === "no") {
+      return { clave: "examen", badge: "Requisito legal pendiente", clase: "b-no",
+        texto: "El examen de naturalización ante el Tribunal Electoral es un requisito legal, no opcional.",
+        recomendacion: "Explicar el alcance del examen y su preparación incluida. Reagendar cuando el solicitante lo acepte." };
+    }
+    if (d.ingreso === "menos1" && docs === 0) {
+      return { clave: "solvencia_baja", badge: "Solvencia por acreditar", clase: "b-no",
+        texto: "Con ingresos por debajo de US$1,000 y sin ninguna de las tres pruebas de solvencia, el expediente no puede sostenerse hoy.",
+        recomendacion: "Indicar por escrito qué regularizar (carta bancaria, carta de trabajo con ficha de la CSS o Declaración de Renta). No proponer el trámite todavía." };
+    }
+    if (d.ingreso === "menos1") {
+      return { clave: "solvencia_revision", badge: "Requiere revisión de solvencia", clase: "b-warn",
+        texto: "Ingresos de referencia por debajo de US$1,000. La solvencia depende de las pruebas documentales aportadas (" + docs + " de 3).",
+        recomendacion: "Verificar las pruebas declaradas y su respaldo financiero real antes de proponer el proceso." };
+    }
+    if (docs >= 2) {
+      return { clave: "apto_2de3", badge: "Perfil apto · cumple 2 de 3", clase: "b-ok",
+        texto: "Perfil apto para la Evaluación Estratégica. Solvencia acreditada con " + docs + " de las 3 pruebas admitidas.",
+        recomendacion: "Reservar la Evaluación Estratégica (aplicable al proceso) y preparar la propuesta de honorarios con la modalidad recomendada." };
+    }
+    if (docs === 1) {
+      return { clave: "apto_falta_una", badge: "Perfil apto · falta 1 prueba", clase: "b-warn",
+        texto: "Perfil apto, con una sola prueba de solvencia. La norma exige dos de tres.",
+        recomendacion: "En la Evaluación, definir cuál segunda prueba tramitar y con qué vigencia antes de presentar." };
+    }
+    return { clave: "apto_sin_docs", badge: "Perfil apto · solvencia por definir", clase: "b-warn",
+      texto: "Perfil apto en lo migratorio, pero sin pruebas de solvencia registradas.",
+      recomendacion: "Definir en la Evaluación qué dos pruebas de solvencia puede tramitar el solicitante." };
+  }
+
+  /* ══════════ 3. Lectura del formulario ══════════ */
+  function val(id) { var el = document.getElementById(id); return el ? el.value.trim() : ""; }
+  function marcado(id) { var el = document.getElementById(id); return !!(el && el.checked); }
+  function leerFormulario() {
+    var pais = val("i_pais") === "otro" ? val("i_pais_otro") : val("i_pais");
+    return {
+      nombre: val("i_nombre"), whatsapp: val("i_whatsapp"), email: val("i_email"), pais: pais,
+      cedula: val("i_cedula"), ausencias: val("i_ausencias"), civil: val("i_civil"), examen: val("i_examen"),
+      dependiente: marcado("i_dependiente"), modalidad: val("i_modalidad"),
+      ingreso: val("i_ingreso"), doc_renta: marcado("i_doc_renta"), doc_banco: marcado("i_doc_banco"), doc_trabajo: marcado("i_doc_trabajo"),
+      notas_docs: val("i_notas_docs"),
+      objetivo: val("i_objetivo"), capacidad: val("i_capacidad"), disponibilidad: val("i_disponibilidad"),
+      asesor: val("i_asesor"), cita_fecha: val("i_cita_fecha"), cita_hora: val("i_cita_hora"), dia: val("i_dia"),
+      refpago: val("i_refpago"), abono: val("i_abono"), total: val("i_total"), notas: val("i_notas")
+    };
+  }
+  function docsTexto(d) {
+    var lista = [];
+    if (d.doc_renta) lista.push("Declaración de Renta (2 años, CPA y notario)");
+    if (d.doc_banco) lista.push("Carta bancaria al Servicio Nacional de Migración");
+    if (d.doc_trabajo) lista.push("Carta de trabajo + ficha CSS");
+    return lista.length ? lista.join(" · ") : "Ninguna registrada";
+  }
+  function fechaLegible(iso) {
+    if (!iso) return "—";
+    var p = iso.split("-");
+    return p.length === 3 ? p[2] + "/" + p[1] + "/" + p[0] : iso;
+  }
+  function selloTiempo() {
+    var d = new Date();
+    function p(n) { return (n < 10 ? "0" : "") + n; }
+    return p(d.getDate()) + "/" + p(d.getMonth() + 1) + "/" + d.getFullYear() + " · " + p(d.getHours()) + ":" + p(d.getMinutes());
+  }
+
+  /* ══════════ 4. Construcción del informe PDF ══════════ */
+  function construirInformePDF(d) {
+    var v = calcularVeredicto(d);
+    var paginas = [], ops = null, y = 0, numeroPagina = 0;
+    var generado = selloTiempo();
+
+    function nuevaPagina() {
+      numeroPagina++;
+      ops = [];
+      paginas.push(ops);
+      /* Banda de cabecera */
+      ops.push("0.051 0.106 0.165 rg");
+      ops.push("0 716 612 76 re f");
+      ops.push("1 1 1 rg");
+      ops.push("BT /F2 15 Tf 1 0 0 1 48 764 Tm (" + escaparPDF("NATURALÍZATE.PA") + ") Tj ET");
+      ops.push("0.70 0.75 0.80 rg");
+      ops.push("BT /F1 8.5 Tf 1 0 0 1 48 749 Tm (" + escaparPDF("INFORME INTERNO DE PRECALIFICACIÓN · USO DEL DESPACHO") + ") Tj ET");
+      var der = "Street Mall, Piso 2, Oficina 215 · Ciudad de Panamá";
+      ops.push("BT /F1 8.5 Tf 1 0 0 1 " + (564 - anchoTexto(der, 8.5, false)).toFixed(1) + " 764 Tm (" + escaparPDF(der) + ") Tj ET");
+      var der2 = "Generado: " + generado;
+      ops.push("BT /F1 8.5 Tf 1 0 0 1 " + (564 - anchoTexto(der2, 8.5, false)).toFixed(1) + " 749 Tm (" + escaparPDF(der2) + ") Tj ET");
+      y = 698;
+    }
+    function avanzar(dy) {
+      if (y - dy < 92) { nuevaPagina(); }
+      y -= dy;
+    }
+    function reservar(alto) { /* evita títulos huérfanos: exige espacio antes de dibujar */
+      if (y - alto < 92) { nuevaPagina(); }
+    }
+    function textoLinea(s, size, bold, x, color) {
+      ops.push((color || "0.13 0.16 0.20") + " rg");
+      ops.push("BT /" + (bold ? "F2" : "F1") + " " + size + " Tf 1 0 0 1 " + x + " " + y.toFixed(1) + " Tm (" + escaparPDF(s) + ") Tj ET");
+    }
+    function seccion(titulo) {
+      reservar(120);
+      avanzar(24);
+      ops.push("0.051 0.106 0.165 rg");
+      ops.push("BT /F2 11 Tf 1 0 0 1 48 " + y.toFixed(1) + " Tm (" + escaparPDF(titulo) + ") Tj ET");
+      ops.push("0.72 0.76 0.80 RG 0.8 w 48 " + (y - 6).toFixed(1) + " m 564 " + (y - 6).toFixed(1) + " l S");
+      y -= 9;
+    }
+    function fila(clave, valor) {
+      var txt = (valor === undefined || valor === null || valor === "") ? "—" : String(valor);
+      var lineas = envolver(txt, 10, false, ANCHO - 150);
+      for (var i = 0; i < lineas.length; i++) {
+        avanzar(14);
+        if (i === 0) textoLinea(clave, 8.5, true, 48, "0.42 0.46 0.50");
+        textoLinea(lineas[i], 10, false, 198);
+      }
+      y -= 1;
+    }
+    function filaOpt(clave, valor) { /* solo se imprime si hay dato capturado */
+      if (valor === undefined || valor === null || String(valor).trim() === "" || String(valor) === "—") return;
+      fila(clave, valor);
+    }
+    function parrafo(txt, size, bold, color) {
+      var s = size || 10;
+      var lineas = envolver(txt, s, !!bold, ANCHO);
+      for (var i = 0; i < lineas.length; i++) {
+        avanzar(s * 1.30);
+        textoLinea(lineas[i], s, !!bold, 48, color);
+      }
+    }
+    function insignia(txt, colorRGB) {
+      var w = anchoTexto(txt, 10, true) + 26;
+      reservar(96);
+      avanzar(26);
+      ops.push(colorRGB + " rg");
+      ops.push("48 " + (y - 7).toFixed(1) + " " + w.toFixed(1) + " 21 re f");
+      ops.push("1 1 1 rg");
+      ops.push("BT /F2 10 Tf 1 0 0 1 61 " + (y - 1).toFixed(1) + " Tm (" + escaparPDF(txt) + ") Tj ET");
+      y -= 16;
+    }
+    function firmas() {
+      avanzar(48);
+      ops.push("0.55 0.58 0.62 RG 0.7 w");
+      ops.push("48 " + y.toFixed(1) + " m 276 " + y.toFixed(1) + " l S");
+      ops.push("324 " + y.toFixed(1) + " m 552 " + y.toFixed(1) + " l S");
+      y -= 12;
+      textoLinea("Atendido por: " + (d.asesor || "____________"), 8.5, false, 48, "0.35 0.39 0.43");
+      textoLinea("Firma del solicitante (conforme)", 8.5, false, 324, "0.35 0.39 0.43");
+    }
+    function pieDePagina() {
+      var i = paginas.length;
+      paginas.forEach(function (p, idx) {
+        p.push("0.88 0.90 0.92 RG 0.7 w 48 78 m 564 78 l S");
+        p.push("0.35 0.39 0.43 rg");
+        p.push("BT /F1 7.5 Tf 1 0 0 1 48 64 Tm (" + escaparPDF("Documento interno del despacho. No constituye asesoría legal al solicitante. Naturalízate.pa · Lic. Alfonso Villarreal.") + ") Tj ET");
+        var pag = "Página " + (idx + 1) + " de " + paginas.length;
+        p.push("BT /F2 7.5 Tf 1 0 0 1 " + (564 - anchoTexto(pag, 7.5, true)).toFixed(1) + " 64 Tm (" + escaparPDF(pag) + ") Tj ET");
+      });
+    }
+
+    /* ---- Contenido ---- */
+    nuevaPagina();
+    avanzar(6);
+    parrafo("Informe de precalificación de naturalización", 17, true, "0.051 0.106 0.165");
+    avanzar(6);
+    parrafo("Solicitante: " + (d.nombre || "—") + "  ·  Registrado el " + generado, 9.5, false, "0.42 0.46 0.50");
+    avanzar(8);
+
+    seccion("A · DATOS DEL SOLICITANTE");
+    fila("Nombre completo", d.nombre || "—");
+    fila("WhatsApp", d.whatsapp || "—");
+    filaOpt("Correo", d.email);
+    fila("País de origen", d.pais || "—");
+    fila("Años con Cédula E", d.cedula ? etiqueta("cedula", d.cedula) : "—");
+    filaOpt("Ausencias prolongadas", etiqueta("ausencias", d.ausencias));
+    filaOpt("Estado civil", etiqueta("civil", d.civil));
+    filaOpt("Disposición al examen", etiqueta("examen", d.examen));
+    if (d.dependiente) fila("¿Dependiente?", "Sí · carta de responsabilidad + solvencia del responsable");
+    filaOpt("Modalidad recomendada", etiqueta("modalidad", d.modalidad));
+
+    seccion("B · SOLVENCIA ECONÓMICA");
+    fila("Rango de ingresos", d.ingreso ? etiqueta("ingreso", d.ingreso) : "—");
+    fila("Pruebas disponibles", docsTexto(d));
+    filaOpt("Notas de verificación", d.notas_docs);
+
+    seccion("C · PERFIL COMERCIAL Y CITA");
+    filaOpt("Objetivo declarado", etiqueta("objetivo", d.objetivo));
+    filaOpt("Situación de inversión", etiqueta("capacidad", d.capacidad));
+    filaOpt("Disponibilidad", etiqueta("disponibilidad", d.disponibilidad));
+    filaOpt("Atendido por", d.asesor);
+    var citaTxt = (d.cita_fecha ? fechaLegible(d.cita_fecha) : "") + (d.cita_hora ? (d.cita_fecha ? " · " : "") + d.cita_hora : "");
+    filaOpt("Cita", citaTxt);
+    filaOpt("Preferencia del solicitante", d.dia);
+    filaOpt("Referencia de pago (evaluación)", d.refpago);
+    filaOpt("Abono / pagos recibidos", d.abono);
+    filaOpt("Honorarios acordados", d.total);
+
+    seccion("D · VEREDICTO");
+    var color = v.clase === "b-ok" ? "0.118 0.420 0.290" : (v.clase === "b-warn" ? "0.541 0.427 0.122" : (v.clase === "b-no" ? "0.541 0.239 0.231" : "0.60 0.63 0.66"));
+    insignia(v.badge, color);
+    parrafo(v.texto, 10, false);
+    avanzar(4);
+    parrafo("Recomendación: " + v.recomendacion, 10, true, "0.051 0.106 0.165");
+
+    if (d.notas) {
+      seccion("E · NOTAS INTERNAS");
+      parrafo(d.notas, 10, false);
+    }
+
+    firmas();
+    pieDePagina();
+    return serializarPDF(paginas, "Informe de precalificación — " + (d.nombre || "Solicitante"));
+  }
+
+  function nombreArchivo(d) {
+    var base = (d.nombre || "solicitante").normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^A-Za-z0-9]+/g, "-").replace(/^-+|-+$/g, "").toLowerCase() || "solicitante";
+    var hoy = new Date();
+    function p(n) { return (n < 10 ? "0" : "") + n; }
+    return "Informe-NZQ-" + base + "-" + hoy.getFullYear() + p(hoy.getMonth() + 1) + p(hoy.getDate()) + ".pdf";
+  }
+
+  /* ══════════ 5. Interfaz ══════════ */
+  var form = document.getElementById("internoForm");
+  var estado = document.getElementById("estado");
+  var DRAFT_KEY = "nzq_interno_v1";
+
+  function aviso(txt, esError) {
+    estado.textContent = txt;
+    estado.classList.toggle("error", !!esError);
+    estado.hidden = false;
+    clearTimeout(aviso._t);
+    aviso._t = setTimeout(function () { estado.hidden = true; }, 6000);
+  }
+
+  /* Veredicto en vivo */
+  function refrescarVeredicto() {
+    var v = calcularVeredicto(leerFormulario());
+    var badge = document.getElementById("vBadge");
+    badge.textContent = v.badge;
+    badge.className = "badge " + v.clase;
+    document.getElementById("vTexto").textContent = v.texto + " " + v.recomendacion;
+  }
+
+  /* Borrador */
+  function guardarBorrador() {
+    try {
+      var datos = {};
+      Array.prototype.forEach.call(form.querySelectorAll("input, select, textarea"), function (el) {
+        if (!el.id) return;
+        datos[el.id] = el.type === "checkbox" ? el.checked : el.value;
+      });
+      sessionStorage.setItem(DRAFT_KEY, JSON.stringify(datos));
+    } catch (e) {}
+  }
+  function restaurarBorrador() {
+    var datos = null;
+    try { datos = JSON.parse(sessionStorage.getItem(DRAFT_KEY) || "null"); } catch (e) {}
+    if (!datos) return;
+    Object.keys(datos).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      if (el.type === "checkbox") el.checked = !!datos[id];
+      else el.value = datos[id];
+    });
+    if (document.getElementById("i_pais").value === "otro") document.getElementById("i_pais_otro").style.display = "block";
+    refrescarVeredicto();
+  }
+
+  document.getElementById("i_pais").addEventListener("change", function () {
+    var otro = this.value === "otro";
+    document.getElementById("i_pais_otro").style.display = otro ? "block" : "none";
+    if (!otro) document.getElementById("i_pais_otro").value = "";
+    refrescarVeredicto();
+  });
+  form.addEventListener("input", function () { guardarBorrador(); refrescarVeredicto(); });
+  form.addEventListener("change", function () { guardarBorrador(); refrescarVeredicto(); });
+
+  /* Validación mínima para el informe */
+  function validarParaInforme(d) {
+    var faltan = [];
+    if (!d.nombre) faltan.push("nombre completo");
+    if (!d.whatsapp) faltan.push("WhatsApp");
+    if (!d.pais) faltan.push("país de origen");
+    if (!d.cedula) faltan.push("años de Cédula E");
+    if (!d.ingreso) faltan.push("rango de ingresos");
+    return faltan;
+  }
+
+  /* Generar informe */
+  document.getElementById("btnPDF").addEventListener("click", function () {
+    var d = leerFormulario();
+    var faltan = validarParaInforme(d);
+    if (faltan.length) { aviso("Complete: " + faltan.join(", ") + ".", true); return; }
+    try {
+      var bytes = construirInformePDF(d);
+      var blob = new Blob([bytes], { type: "application/pdf" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = nombreArchivo(d);
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function () { URL.revokeObjectURL(url); a.remove(); }, 1500);
+      aviso("Informe PDF generado: " + a.download);
+    } catch (e) {
+      aviso("No se pudo generar el PDF: " + e.message, true);
+    }
+  });
+
+  /* Copiar resumen */
+  function resumenTexto() {
+    var d = leerFormulario();
+    var v = calcularVeredicto(d);
+    var l = [
+      "NATURALÍZATE.PA · RESUMEN DE PRECALIFICACIÓN",
+      "Registrado: " + selloTiempo(),
+      "",
+      "Solicitante: " + (d.nombre || "—"),
+      "WhatsApp: " + (d.whatsapp || "—"),
+      "País: " + (d.pais || "—") + " · Cédula E: " + etiqueta("cedula", d.cedula),
+      "Ingresos (referencia): " + etiqueta("ingreso", d.ingreso),
+      "Pruebas de solvencia: " + docsTexto(d),
+      "Objetivo: " + etiqueta("objetivo", d.objetivo),
+      "Situación de inversión: " + etiqueta("capacidad", d.capacidad),
+      "Modalidad recomendada: " + etiqueta("modalidad", d.modalidad),
+      "Cita: " + (d.cita_fecha ? fechaLegible(d.cita_fecha) : "—") + (d.cita_hora ? " " + d.cita_hora : ""),
+      "Referencia de pago: " + (d.refpago || "—"),
+      "",
+      "VEREDICTO: " + v.badge,
+      v.texto,
+      "Siguiente paso: " + v.recomendacion
+    ];
+    return l.join("\n");
+  }
+  document.getElementById("btnResumen").addEventListener("click", function () {
+    var txt = resumenTexto();
+    function listo() { aviso("Resumen copiado al portapapeles."); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(listo, function () { copiaManual(txt); });
+    } else { copiaManual(txt); }
+  });
+  function copiaManual(txt) {
+    var t = document.createElement("textarea");
+    t.value = txt; document.body.appendChild(t); t.select();
+    try { document.execCommand("copy"); aviso("Resumen copiado al portapapeles."); }
+    catch (e) { aviso("No se pudo copiar automáticamente.", true); }
+    t.remove();
+  }
+
+  /* WhatsApp */
+  document.getElementById("btnWA").addEventListener("click", function () {
+    var d = leerFormulario();
+    var v = calcularVeredicto(d);
+    var msg = "Hola" + (d.nombre ? " " + d.nombre.split(" ")[0] : "") + ", le escribimos de Naturalízate.pa para coordinar su Evaluación Estratégica. Veredicto preliminar: " + v.badge + ". " + v.recomendacion;
+    var num = (d.whatsapp || "").replace(/\D/g, "");
+    var url = "https://wa.me/" + (num.length >= 7 ? (num.length <= 8 ? "507" + num : num) : "") + "?text=" + encodeURIComponent(msg);
+    window.open(url, "_blank");
+  });
+
+  /* Limpiar */
+  document.getElementById("btnLimpiar").addEventListener("click", function () {
+    if (!confirm("¿Borrar todos los datos del formulario? (el informe ya generado no se afecta)")) return;
+    form.reset();
+    document.getElementById("i_pais_otro").style.display = "none";
+    try { sessionStorage.removeItem(DRAFT_KEY); } catch (e) {}
+    refrescarVeredicto();
+    aviso("Formulario limpio.");
+  });
+
+  /* Arranque */
+  restaurarBorrador();
+  refrescarVeredicto();
+
+  /* API para pruebas y automatizaciones */
+  window.NZQ = {
+    leerFormulario: leerFormulario,
+    calcularVeredicto: calcularVeredicto,
+    construirInformePDF: construirInformePDF,
+    nombreArchivo: nombreArchivo,
+    resumenTexto: resumenTexto
+  };
+})();
+</script>
+</body>
+</html>

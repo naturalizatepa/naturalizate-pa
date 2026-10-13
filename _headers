@@ -1,0 +1,29 @@
+# Cabeceras de seguridad y caché.
+# Funcionan en Netlify y Cloudflare Pages (en cPanel/hosting tradicional este archivo se ignora:
+# use .htaccess o la configuración del servidor).
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formsubmit.co; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
+  X-Robots-Tag: index, follow
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/guia.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Las páginas que NO deben indexarse llevan su propia regla (tiene prioridad sobre /*)
+/formulario-interno.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-store

@@ -60,8 +60,16 @@ subirlo, guárdelo en el escritorio de la oficina: funciona abriéndolo con dobl
 > 2. Se eliminó **el importe de la Evaluación Estratégica** (era el «costo de la auditoría»): metadatos, JSON-LD, hero, tarjeta de la Evaluación, tarjeta de pago, textos del
 >    formulario, mensajes de WhatsApp, la guía y el informe PDF interno. Las tarjetas muestran
 >    ahora «30 min · 100% aplicable al proceso» y los botones «Pagar con Yappy / Pagar con tarjeta».
->    **La página ya no menciona cifra alguna por la evaluación**; los honorarios del proceso
->    ($3,800 / $5,500) siguen visibles tal como estaban.
+>    **La página ya no menciona cifra alguna por la evaluación**.
+>
+> **Ajuste v4.5 (17 oct 2026):**
+> 1. **Se retiraron los montos de los dos paquetes** ($3,800 / $5,500) de la landing y de la guía:
+>    las tarjetas muestran «Propuesta a medida · honorarios fijos por escrito» y el precio se
+>    entrega en la propuesta personalizada.
+> 2. **Ventana de bienvenida estilo WhatsApp** al cargar la página (una vez por sesión): reproduce
+>    la conversación con el mensaje de metodología del despacho y enlaza a WhatsApp con el texto
+>    ya redactado. Se cierra con la X o con Esc y no vuelve a aparecer en la misma sesión.
+>    Para desactivarla en pruebas o campañas, añada `?nopopup=1` a la URL.
 
 ### 2.1 La landing ahora pregunta solo 3 cosas
 1. **País de origen** (lista con opción «Otro»).

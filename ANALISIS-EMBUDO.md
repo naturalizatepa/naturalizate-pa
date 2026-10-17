@@ -17,7 +17,7 @@
 | 8 | `#abogado` Lic. Villarreal | Autoridad |
 | 9 | `#casos` Testimonios | Prueba social |
 | 10 | `#evaluacion` Evaluación Estratégica | Oferta núcleo |
-| 11 | `#honorarios` Esencial $3,800 · Todo Incluido $5,500 | Precio ancla |
+| 11 | `#honorarios` Esencial · Todo Incluido (honorarios por escrito, sin montos publicados) | Precio ancla |
 | 12 | `#preguntas` FAQ (17 preguntas) | Objeciones |
 | 13 | `#verificar` **Precalificación express (3 preguntas)** | **Conversión** |
 | 14 | `#compromiso` + CTA final + footer | Cierre y contacto |

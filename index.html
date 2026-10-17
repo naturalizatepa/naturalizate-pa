@@ -4,13 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Naturalización panameña · De la Cédula E a la nacionalidad | Naturalízate.pa</title>
-<meta name="description" content="Naturalización panameña desde la Cédula E (+5 años). Evaluación Estratégica aplicable al proceso · Procesos desde US$3,800. Requisitos de solvencia económica claros: dos (2) de tres pruebas documentales. Oficina en Street Mall, Panamá." />
+<meta name="description" content="Naturalización panameña desde la Cédula E (+5 años). Evaluación Estratégica aplicable al proceso · Honorarios fijados por escrito. Requisitos de solvencia económica claros: dos (2) de tres pruebas documentales. Oficina en Street Mall, Panamá." />
 <link rel="canonical" href="https://naturalizate.pa/" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="es_PA" />
 <meta property="og:title" content="Naturalízate.pa — Asesoría jurídica con la sobriedad que su caso merece" />
-<meta property="og:description" content="Filtro previo · Evaluación Estratégica · Procesos: Esencial $3,800 · Todo Incluido $5,500. Solvencia económica: dos (2) de tres pruebas. Oficina: Street Mall, Piso 2, Oficina 215." />
+<meta property="og:description" content="Filtro previo · Evaluación Estratégica · Honorarios fijos por escrito según su caso. Solvencia económica: dos (2) de tres pruebas. Oficina: Street Mall, Piso 2, Oficina 215." />
 <meta property="og:url" content="https://naturalizate.pa/" />
 <meta property="og:image" content="https://naturalizate.pa/og-image.png" />
 <meta property="og:image:width" content="1200" />
@@ -45,6 +45,8 @@
      Street Mall, Piso 2, Oficina 215 · Vía Brasil con Vía Israel, Bella Vista, Ciudad de Panamá.
   6) Sin modal de entrada: la página se lee libre y el formulario de tres preguntas vive
      integrado en la sección «Verificar» (#verificar). Los botones de acción llevan allí.
+     Al cargar aparece una ventana de bienvenida estilo WhatsApp (una vez por sesión).
+     Para desactivarla en pruebas o campañas, abra la página con ?nopopup=1.
   7) Antes de publicar, reemplace foto-alfonso-villarreal.jpg por la fotografía real (104x104 o superior).
      Si el archivo no existe, la tarjeta muestra las iniciales "AV" sin romperse.
 -->
@@ -63,7 +65,7 @@
   "address": { "@type": "PostalAddress", "streetAddress": "Street Mall, Piso 2, Oficina 215 — Vía Brasil con Vía Israel, Bella Vista", "addressLocality": "Ciudad de Panamá", "addressRegion": "Panamá", "addressCountry": "PA" },
   "hasMap": "https://maps.google.com/?q=Street+Mall+Oficina+215+V%C3%ADa+Brasil+Bella+Vista+Panam%C3%A1",
   "areaServed": "Panamá",
-  "priceRange": "Procesos $3,800–$5,500",
+  "priceRange": "Presupuesto personalizado por escrito",
   "knowsAbout": ["Naturalización panameña", "Cédula E", "Tribunal Electoral", "Derecho migratorio"]
 }
 </script>
@@ -577,6 +579,7 @@
   .price-badge { position: absolute; top: -13px; right: 24px; background: var(--navy); color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; }
   .price-card h3 { font-family: var(--font-serif); font-size: 1.25rem; color: var(--navy); font-weight: 600; }
   .price-card .price { font-family: var(--font-serif); font-size: 2.6rem; font-weight: 700; color: var(--navy); margin: 14px 0 4px; line-height: 1; }
+  .price-card .price.price-open { font-size: 1.55rem; line-height: 1.25; margin-top: 16px; }
   .price-card .price small { font-family: var(--font-sans); font-size: 0.82rem; color: var(--gray-600); font-weight: 400; display: block; margin-top: 8px; }
   .price-card .tagline { color: var(--gray-600); font-size: 0.9rem; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--gray-200); }
   .price-card ul { list-style: none; margin-bottom: 26px; flex-grow: 1; }
@@ -852,6 +855,88 @@
   .magnet-row input { flex: 1; min-width: 0; }
   .magnet-ok { color: var(--navy); font-weight: 600; font-size: .85rem; margin-top: 8px; }
   .pay-note.warn { color: var(--no); font-weight: 600; }
+
+  /* ============ POPUP · CONVERSACIÓN DE BIENVENIDA (estilo WhatsApp) ============ */
+  .wa-pop {
+    position: fixed; right: 22px; bottom: 22px; z-index: 120;
+    width: 384px; max-width: calc(100vw - 24px);
+    max-height: min(600px, calc(100vh - 40px));
+    display: flex; flex-direction: column;
+    background: #EFEAE2; border-radius: 16px; overflow: hidden;
+    box-shadow: 0 24px 70px rgba(6,15,23,0.38), 0 2px 8px rgba(6,15,23,0.20);
+    font-family: var(--font-sans);
+    opacity: 0; transform: translateY(18px) scale(0.98); pointer-events: none;
+    transition: opacity .3s ease, transform .3s ease;
+  }
+  .wa-pop.is-open { opacity: 1; transform: none; pointer-events: auto; }
+  .wa-pop[hidden] { display: none; }
+
+  .wa-head { display: flex; align-items: center; gap: 10px; padding: 11px 12px 11px 14px; background: #075E54; color: #fff; }
+  .wa-avatar { position: relative; flex: 0 0 42px; width: 42px; height: 42px; border-radius: 50%; background: #0B4A44; display: grid; place-items: center; font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; overflow: hidden; }
+  .wa-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .wa-title { flex: 1; min-width: 0; line-height: 1.3; }
+  .wa-title strong { display: flex; align-items: center; gap: 5px; font-size: 0.94rem; font-weight: 600; color: #fff; }
+  .wa-title strong svg { flex: 0 0 auto; color: #53BDEB; }
+  .wa-title span { display: flex; align-items: center; font-size: 0.72rem; color: rgba(255,255,255,0.82); }
+  .wa-dot { width: 7px; height: 7px; border-radius: 50%; background: #25D366; display: inline-block; margin-right: 5px; }
+  .wa-close { background: transparent; border: 0; color: rgba(255,255,255,0.85); cursor: pointer; width: 34px; height: 34px; border-radius: 50%; font-size: 1.45rem; line-height: 1; display: grid; place-items: center; }
+  .wa-close:hover, .wa-close:focus-visible { background: rgba(255,255,255,0.16); color: #fff; outline: none; }
+
+  .wa-body {
+    flex: 1; overflow-y: auto; padding: 14px 12px 10px;
+    background-color: #EFEAE2;
+    background-image: radial-gradient(rgba(0,0,0,0.035) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+  .wa-day { text-align: center; margin: 0 0 12px; }
+  .wa-day span { display: inline-block; background: #FFFFFF; color: #54656F; font-size: 0.66rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 5px 12px; border-radius: 8px; box-shadow: 0 1px 1px rgba(0,0,0,0.08); }
+
+  .wa-msg {
+    position: relative; max-width: 90%; margin: 0 0 8px;
+    background: #fff; color: #111B21; border-radius: 0 10px 10px 10px;
+    padding: 9px 11px 6px; font-size: 0.85rem; line-height: 1.5;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+    opacity: 1; transform: none;
+    transition: opacity .28s ease, transform .28s ease;
+  }
+  .wa-msg::before { content: ""; position: absolute; top: 0; left: -7px; width: 0; height: 0; border-top: 0 solid transparent; border-bottom: 10px solid transparent; border-right: 8px solid #fff; }
+  .wa-msg p + p { margin-top: 7px; }
+  .wa-msg ol { list-style: none; margin: 8px 0 2px; padding: 0; }
+  .wa-msg ol li { position: relative; padding: 0 0 0 24px; margin-bottom: 7px; }
+  .wa-msg ol li:last-child { margin-bottom: 2px; }
+  .wa-msg .wa-n { position: absolute; left: 0; top: 2px; width: 17px; height: 17px; border-radius: 50%; background: #075E54; color: #fff; font-size: 0.62rem; font-weight: 700; display: grid; place-items: center; }
+  .wa-msg--pending { display: none; }
+  .wa-time { display: block; text-align: right; font-size: 0.62rem; color: #667781; margin-top: 3px; line-height: 1; }
+
+  .wa-typing { display: inline-flex; align-items: center; gap: 4px; background: #fff; border-radius: 0 10px 10px 10px; padding: 11px 14px; margin: 0 0 8px; box-shadow: 0 1px 1px rgba(0,0,0,0.08); }
+  .wa-typing[hidden] { display: none; }
+  .wa-typing span { width: 6px; height: 6px; border-radius: 50%; background: #9AA6AC; animation: waTyping 1.1s infinite ease-in-out; }
+  .wa-typing span:nth-child(2) { animation-delay: .15s; }
+  .wa-typing span:nth-child(3) { animation-delay: .3s; }
+  @keyframes waTyping { 0%, 80%, 100% { opacity: .35; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-2px); } }
+
+  .wa-sign { border-top: 1px solid #E9E2D9; margin-top: 7px; padding-top: 8px; font-size: 0.78rem; color: #3B4A54; line-height: 1.45; }
+  .wa-sign strong { color: #111B21; }
+  .wa-sign a { color: #0A7B6C; font-weight: 600; text-decoration: none; }
+  .wa-sign a:hover { text-decoration: underline; }
+
+  .wa-foot { padding: 10px 12px 11px; background: #F0F2F5; border-top: 1px solid #E4E0DA; }
+  .wa-write { display: flex; align-items: center; gap: 8px; width: 100%; background: transparent; border: 0; padding: 0; cursor: pointer; font-family: inherit; text-align: left; }
+  .wa-write-field { flex: 1; min-width: 0; background: #fff; border-radius: 22px; padding: 11px 16px; font-size: 0.84rem; color: #8696A0; box-shadow: 0 1px 1px rgba(0,0,0,0.06); }
+  .wa-write:hover .wa-write-field { color: #54656F; }
+  .wa-write:focus-visible { outline: 2px solid #075E54; outline-offset: 3px; border-radius: 24px; }
+  .wa-send { flex: 0 0 42px; width: 42px; height: 42px; border-radius: 50%; background: #25D366; color: #fff; display: grid; place-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.15); }
+  .wa-secondary { display: block; width: 100%; margin-top: 8px; background: transparent; border: 0; padding: 6px 4px; font-family: inherit; font-size: 0.74rem; font-weight: 600; letter-spacing: .6px; color: #075E54; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  .wa-secondary:hover { color: #054C44; }
+  .wa-note { margin-top: 3px; text-align: center; font-size: 0.64rem; line-height: 1.4; color: #667781; }
+
+  @media (max-width: 768px) {
+    .wa-pop { left: 10px; right: 10px; width: auto; max-width: none; bottom: calc(86px + env(safe-area-inset-bottom)); max-height: min(74vh, 580px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wa-pop, .wa-msg { transition: none; }
+    .wa-typing span { animation: none; }
+  }
 </style>
 </head>
 <body>
@@ -859,7 +944,7 @@
 <!-- ============ El formulario de tres preguntas vive integrado en la sección «Verificar» (#verificar) ============ -->
 <!-- ============ TOPBAR: filtro desde el primer píxel ============ -->
 <div class="topbar">
-  <strong>Proceso desde US$3,800</strong> · Evaluación Estratégica
+  <strong>Honorarios fijos por escrito</strong> · Evaluación Estratégica
   <span class="dot hide-m">·</span>
   <span class="hide-m">Cédula E <strong>+5 años</strong> · menos con <strong>reciprocidad</strong></span>
 </div>
@@ -889,7 +974,7 @@
       <span class="hero-eyebrow">Naturalización panameña · Tribunal Electoral</span>
       <h1>De la Cédula E a la <em>nacionalidad panameña</em>, con certeza jurídica.</h1>
       <p class="slogan">«Asesoría jurídica con la sobriedad que su caso merece.»</p>
-      <p class="lead">Evaluamos la <strong>viabilidad de su caso antes de comprometernos</strong>. Proceso profesional desde <strong>US$3,800</strong>, para personas con capacidad real de inversión. Si no procede, se lo indicamos por escrito.</p>
+      <p class="lead">Evaluamos la <strong>viabilidad de su caso antes de comprometernos</strong>. Proceso profesional con <strong>honorarios fijados por escrito</strong>, para personas con capacidad real de inversión. Si no procede, se lo indicamos por escrito.</p>
       <div class="hero-cta">
         <a href="#verificar" data-gate="1" class="btn btn-white">Verificar si mi perfil encaja</a>
         <a href="#honorarios" class="btn btn-outline-w">Ver honorarios</a>
@@ -955,7 +1040,7 @@
           <li>Cuenta con arraigo, medios de vida lícitos y récord limpio</li>
           <li>Está dispuesto a prepararse para el <strong>examen de naturalización</strong></li>
           <li>Puede acreditar <strong>solvencia económica</strong> con dos (2) de las tres pruebas documentales</li>
-          <li>Contempla una inversión de <strong>$3,800 a $5,500</strong> en honorarios</li>
+          <li>Conoce los honorarios <strong>por escrito antes de contratar</strong></li>
           <li>Valora la discreción y el rigor en un proceso de 19–22 meses</li>
         </ul>
       </div>
@@ -1261,7 +1346,7 @@
           <p class="dp-sub"><strong>100% aplicable al proceso</strong> si decide contratar.</p>
           <a href="#verificar" data-gate="1" class="btn btn-white btn-block">Reservar mi Evaluación</a>
           <p class="dp-sub" style="margin:14px 0 0; font-size:0.75rem; line-height:1.4;">
-            Qué sigue después: propuesta de honorarios fijos por escrito ($3,800 Proceso Esencial · $5,500 Todo Incluido, con pago fraccionado). Usted decide.
+            Qué sigue después: propuesta de honorarios fijos por escrito para la modalidad que corresponda a su caso, con pago fraccionado. Usted decide.
           </p>
         </div>
       </div>
@@ -1280,13 +1365,13 @@
     <div class="section-head">
       <div class="eyebrow">Honorarios ciertos, resultados comprobables</div>
       <h2>Dos modalidades. <em>Sin variaciones posteriores.</em></h2>
-      <p>Conozca la inversión antes de compartir sus datos. Sin cargos ocultos, sin sorpresas en la factura final.</p>
+      <p>Conozca cómo trabajamos antes de compartir sus datos. Su propuesta de honorarios se fija por escrito y no cambia: sin cargos ocultos, sin sorpresas en la factura final.</p>
       <div class="rule"></div>
     </div>
     <div class="pricing-grid">
       <div class="price-card">
         <h3>Proceso Esencial</h3>
-        <div class="price">$3,800 <small>honorarios totales · pago fraccionado</small></div>
+        <div class="price price-open">Propuesta a medida <small>honorarios fijos por escrito · pago fraccionado</small></div>
         <p class="tagline">Para quien desea acompañamiento jurídico y asumir parte de las gestiones por su cuenta.</p>
         <ul>
           <li>Evaluación y revisión jurídica del caso</li>
@@ -1300,7 +1385,7 @@
       <div class="price-card featured">
         <div class="price-badge">Recomendada</div>
         <h3>Proceso Todo Incluido</h3>
-        <div class="price">$5,500 <small>delegación total · pago fraccionado</small></div>
+        <div class="price price-open">Propuesta a medida <small>delegación total · honorarios fijos por escrito</small></div>
         <p class="tagline">Para quien desea delegar la coordinación completa del proceso, sin ocuparse de nada.</p>
         <ul>
           <li>Todo lo incluido en el Proceso Esencial</li>
@@ -1604,7 +1689,7 @@
 <section class="final-cta">
   <div class="container">
     <h2>El primer paso es saber <em>si su perfil encaja.</em></h2>
-    <p>Verifique su perfil, conozca la inversión y reserve su Evaluación Estratégica (aplicable al proceso).</p>
+    <p>Verifique su perfil, conozca las modalidades de acompañamiento y reserve su Evaluación Estratégica (aplicable al proceso).</p>
     <div class="cta-row">
       <a href="#verificar" data-gate="1" class="btn btn-white">Verificar si mi perfil encaja</a>
       <a href="#honorarios" class="btn btn-outline-w">Revisar honorarios</a>
@@ -1652,6 +1737,66 @@
 <div class="disclaimer">
   <div class="container">
     Cada solicitud se evalúa según sus propios hechos y documentos. La decisión de naturalización corresponde soberanamente al Estado panameño a través del Tribunal Electoral y el Órgano Ejecutivo.
+  </div>
+</div>
+
+<!-- ============ POPUP · CONVERSACIÓN DE BIENVENIDA (estilo WhatsApp) ============ -->
+<div class="wa-pop" id="waPop" role="dialog" aria-modal="false" aria-label="Conversación de bienvenida del despacho del Lic. Alfonso Villarreal" hidden>
+  <div class="wa-head">
+    <div class="wa-avatar">AV<img src="foto-alfonso-villarreal.jpg" alt="" width="42" height="42" loading="lazy" decoding="async" onerror="this.remove()" /></div>
+    <div class="wa-title">
+      <strong>Lic. Alfonso Villarreal
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0l1.9 1.3 2.3-.2.9 2.1 2.1.9-.2 2.3L16 8l-1.3 1.9.2 2.3-2.1.9-.9 2.1-2.3-.2L8 16l-1.9-1.3-2.3.2-.9-2.1-2.1-.9.2-2.3L0 8l1.3-1.9-.2-2.3 2.1-.9.9-2.1 2.3.2L8 0zm-1 10.8L11.3 6 10 4.7 7 7.7 5.5 6.2 4.2 7.5 7 10.8z"/></svg>
+      </strong>
+      <span><i class="wa-dot"></i>Despacho Villarreal · en línea</span>
+    </div>
+    <button type="button" class="wa-close" id="waClose" aria-label="Cerrar conversación">&times;</button>
+  </div>
+
+  <div class="wa-body" id="waBody">
+    <div class="wa-day"><span>Hoy</span></div>
+    <div class="wa-typing" id="waTyping" hidden aria-hidden="true"><span></span><span></span><span></span></div>
+
+    <div class="wa-msg" data-wa-msg>
+      <p>Estimado(a) cliente: reciba un cordial saludo del despacho del <strong>Lic. Alfonso Villarreal</strong>. Gracias por su interés en la nacionalidad panameña.</p>
+      <span class="wa-time"></span>
+    </div>
+
+    <div class="wa-msg" data-wa-msg>
+      <p><strong>Para iniciar su atención, así trabajamos:</strong></p>
+      <ol>
+        <li><span class="wa-n">1</span><strong>Reserva de la consulta</strong> — separamos su espacio en agenda.</li>
+        <li><span class="wa-n">2</span><strong>Pago de la consulta</strong> — US$ 49.99 · acreditable al proceso si decide contratar.</li>
+        <li><span class="wa-n">3</span><strong>Agendamiento</strong> — fijamos fecha y hora según su disponibilidad.</li>
+      </ol>
+      <span class="wa-time"></span>
+    </div>
+
+    <div class="wa-msg" data-wa-msg>
+      <p>En la sesión de <strong>30 minutos</strong> recibirá respuesta puntual a sus dudas y una ruta legal clara, con la estimación de honorarios de su trámite.</p>
+      <span class="wa-time"></span>
+    </div>
+
+    <div class="wa-msg" data-wa-msg>
+      <p>Quedamos a su disposición para enviarle los datos de pago y coordinar su cita.</p>
+      <div class="wa-sign">
+        <strong>Lic. Alfonso Villarreal</strong><br />
+        Abogado · Nacionalidad panameña<br />
+        <a href="https://wa.me/50762557583?text=Hola%2C%20Lic.%20Villarreal.%20Deseo%20agendar%20mi%20consulta%20de%2030%20minutos%20(US%24%2049.99)%20y%20recibir%20los%20datos%20de%20pago.%20Escribo%20desde%20naturalizate.pa." target="_blank" rel="noopener" data-wa-link>wa.me/50762557583</a>
+      </div>
+      <span class="wa-time"></span>
+    </div>
+  </div>
+
+  <div class="wa-foot">
+    <button type="button" class="wa-write" id="waWrite" aria-label="Escribir por WhatsApp al Lic. Alfonso Villarreal">
+      <span class="wa-write-field">Escriba su mensaje&hellip;</span>
+      <span class="wa-send" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" focusable="false"><path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </span>
+    </button>
+    <button type="button" class="wa-secondary" id="waHonorarios">Ver modalidades y honorarios</button>
+    <p class="wa-note">Mensaje de bienvenida · la respuesta la envía el despacho por WhatsApp.</p>
   </div>
 </div>
 
@@ -2109,6 +2254,101 @@
     /* Restaurar después de enganchar eventos */
     restoreDraft();
   }
+
+  /* ===== Popup de bienvenida · conversación simulada estilo WhatsApp ===== */
+  (function initWaPopup() {
+    var pop = document.getElementById("waPop");
+    if (!pop) return;
+    if (window.location.search.indexOf("nopopup=1") !== -1) return;
+
+    var closeBtn = document.getElementById("waClose");
+    var writeBtn = document.getElementById("waWrite");
+    var honorariosBtn = document.getElementById("waHonorarios");
+    var typing = document.getElementById("waTyping");
+    var body = document.getElementById("waBody");
+    var msgs = Array.prototype.slice.call(pop.querySelectorAll("[data-wa-msg]"));
+    var mensajeWa = "Hola, Lic. Villarreal. Deseo agendar mi consulta de 30 minutos (US$ 49.99) y recibir los datos de pago. Escribo desde naturalizate.pa.";
+    var hrefWa = waLink(mensajeWa);
+
+    pop.querySelectorAll("[data-wa-link]").forEach(function (a) { a.href = hrefWa; });
+
+    var ahora = new Date();
+    var hora = String(ahora.getHours()).padStart(2, "0") + ":" + String(ahora.getMinutes()).padStart(2, "0");
+    pop.querySelectorAll(".wa-time").forEach(function (t) { t.textContent = hora; });
+
+    msgs.forEach(function (m) { m.classList.add("wa-msg--pending"); });
+    var iniciada = false;
+    var timers = [];
+    var sinMovimiento = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var KEY = "nz_wa_welcome_v1";
+    var ocultarTimer = null;
+
+    function limpiarTimers() { timers.forEach(clearTimeout); timers = []; }
+
+    /* Revela los mensajes uno a uno, como una conversación real */
+    function secuencia() {
+      if (iniciada) return;
+      iniciada = true;
+      if (sinMovimiento) {
+        msgs.forEach(function (m) { m.classList.remove("wa-msg--pending"); });
+        if (typing) typing.hidden = true;
+        return;
+      }
+      var espera = 300;
+      msgs.forEach(function (m, i) {
+        timers.push(setTimeout(function () {
+          if (typing && body) { body.insertBefore(typing, msgs[i]); typing.hidden = false; }
+        }, espera));
+        timers.push(setTimeout(function () {
+          if (typing) typing.hidden = true;
+          msgs[i].classList.remove("wa-msg--pending");
+        }, espera + 620));
+        espera += 1220;
+      });
+      timers.push(setTimeout(function () {
+        if (typing) typing.hidden = true;
+        if (body) body.scrollTop = body.scrollHeight;
+      }, espera + 200));
+    }
+
+    function abrir() {
+      clearTimeout(ocultarTimer);
+      pop.hidden = false;
+      window.requestAnimationFrame(function () { pop.classList.add("is-open"); });
+      if (body) body.scrollTop = 0;
+      secuencia();
+      track("wa_popup_visto", {});
+    }
+
+    function cerrar(recordar) {
+      pop.classList.remove("is-open");
+      limpiarTimers();
+      if (recordar !== false) {
+        try { sessionStorage.setItem(KEY, "1"); } catch (e) {}
+      }
+      ocultarTimer = setTimeout(function () { pop.hidden = true; }, 320);
+    }
+
+    closeBtn.addEventListener("click", function () { cerrar(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !pop.hidden) cerrar();
+    });
+    writeBtn.addEventListener("click", function () {
+      track("wa_popup_cta", {});
+      try { window.open(hrefWa, "_blank"); } catch (e) {}
+      cerrar();
+    });
+    honorariosBtn.addEventListener("click", function () {
+      track("wa_popup_honorarios", {});
+      cerrar();
+      var h = document.getElementById("honorarios");
+      if (h) h.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    var yaVisto = false;
+    try { yaVisto = sessionStorage.getItem(KEY) === "1"; } catch (e) {}
+    if (!yaVisto) timers.push(setTimeout(abrir, 1400));
+  })();
 })();
 </script>
 

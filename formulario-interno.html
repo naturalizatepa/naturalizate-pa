@@ -150,8 +150,8 @@
           <label for="i_modalidad">Modalidad recomendada</label>
           <select id="i_modalidad" name="i_modalidad">
             <option value="">Por definir en la evaluación</option>
-            <option value="esencial">Proceso Esencial · US$3,800</option>
-            <option value="todo">Proceso Todo Incluido · US$5,500</option>
+            <option value="esencial">Proceso Esencial</option>
+            <option value="todo">Proceso Todo Incluido</option>
           </select>
         </div>
       </div>
@@ -162,23 +162,11 @@
 
     <fieldset>
       <legend>B · Solvencia económica</legend>
-      <div class="grid">
-        <div class="campo">
-          <label for="i_ingreso">Rango de ingresos mensuales (referencia) *</label>
-          <select id="i_ingreso" name="i_ingreso">
-            <option value="">Seleccione…</option>
-            <option value="menos1">Menos de US$1,000</option>
-            <option value="1a5">US$1,000 a 5,000</option>
-            <option value="5a10">US$5,001 a 10,000</option>
-            <option value="10a20">US$10,001 a 20,000 o más</option>
-          </select>
-        </div>
-        <div class="campo">
-          <label>Pruebas de solvencia con las que cuenta <em style="text-transform:none;font-weight:400">(la norma exige dos de tres)</em></label>
-          <label class="check"><input type="checkbox" id="i_doc_renta" name="i_doc_renta" /> Declaración de Renta (2 años, CPA y notario)</label>
-          <label class="check"><input type="checkbox" id="i_doc_banco" name="i_doc_banco" /> Carta bancaria al Servicio Nacional de Migración</label>
-          <label class="check"><input type="checkbox" id="i_doc_trabajo" name="i_doc_trabajo" /> Carta de trabajo + ficha actualizada de la CSS</label>
-        </div>
+      <div class="campo full">
+        <label>Pruebas de solvencia con las que cuenta <em style="text-transform:none;font-weight:400">(la norma exige dos de tres)</em></label>
+        <label class="check"><input type="checkbox" id="i_doc_renta" name="i_doc_renta" /> Declaración de Renta (2 años, CPA y notario)</label>
+        <label class="check"><input type="checkbox" id="i_doc_banco" name="i_doc_banco" /> Carta bancaria al Servicio Nacional de Migración</label>
+        <label class="check"><input type="checkbox" id="i_doc_trabajo" name="i_doc_trabajo" /> Carta de trabajo + ficha actualizada de la CSS</label>
       </div>
       <div class="campo full">
         <label for="i_notas_docs">Notas de verificación documental</label>
@@ -187,7 +175,7 @@
     </fieldset>
 
     <fieldset>
-      <legend>C · Perfil comercial y cita</legend>
+      <legend>C · Seguimiento y cita</legend>
       <div class="grid">
         <div class="campo">
           <label for="i_objetivo">Objetivo declarado</label>
@@ -195,18 +183,7 @@
             <option value="">Seleccione…</option>
             <option value="iniciar">Iniciar el proceso de naturalización</option>
             <option value="evaluar">Evaluar si el caso califica</option>
-            <option value="info">Solo informarse por ahora</option>
-          </select>
-        </div>
-        <div class="campo">
-          <label for="i_capacidad">Situación de inversión</label>
-          <select id="i_capacidad" name="i_capacidad">
-            <option value="">Seleccione…</option>
-            <option value="a">Tiene presupuesto para iniciar</option>
-            <option value="b">Puede iniciar con abono y plan de pagos</option>
-            <option value="c">Compara abogados antes de decidir</option>
-            <option value="d">Solo quiere conocer precios</option>
-            <option value="e">Todavía no puede iniciar</option>
+            <option value="info">Solicitar orientación general</option>
           </select>
         </div>
         <div class="campo">
@@ -216,7 +193,7 @@
             <option value="ahora">De inmediato</option>
             <option value="30dias">En los próximos 30 días</option>
             <option value="meses">En 2 a 3 meses</option>
-            <option value="nose">Aún no lo sabe</option>
+            <option value="nose">Por confirmar</option>
           </select>
         </div>
         <div class="campo">
@@ -230,14 +207,11 @@
         </div>
         <div class="campo"><label for="i_cita_fecha">Fecha de la cita</label><input type="date" id="i_cita_fecha" name="i_cita_fecha" /></div>
         <div class="campo"><label for="i_cita_hora">Hora de la cita</label><input type="time" id="i_cita_hora" name="i_cita_hora" /></div>
-        <div class="campo"><label for="i_dia">Preferencia del solicitante</label><input id="i_dia" name="i_dia" placeholder="Ej.: jueves en la tarde" /></div>
-        <div class="campo"><label for="i_refpago">Referencia de pago de la evaluación</label><input id="i_refpago" name="i_refpago" placeholder="N.º de transacción Yappy / transferencia" /></div>
-        <div class="campo"><label for="i_abono">Abono / pagos recibidos del proceso</label><input id="i_abono" name="i_abono" placeholder="Ej.: US$600 · abono fase I" /></div>
-        <div class="campo"><label for="i_total">Honorarios acordados</label><input id="i_total" name="i_total" placeholder="Ej.: US$3,800 · pactado por escrito" /></div>
+        <div class="campo"><label for="i_dia">Preferencia del solicitante</label><input id="i_dia" placeholder="Ej.: jueves en la tarde" /></div>
       </div>
       <div class="campo full">
         <label for="i_notas">Notas internas del caso</label>
-        <textarea id="i_notas" name="i_notas" placeholder="Observaciones de la llamada, riesgos detectados, documentos por subsanar, acuerdos verbales…"></textarea>
+        <textarea id="i_notas" name="i_notas" placeholder="Observaciones de la llamada, riesgos detectados, documentos por subsanar, acuerdos de seguimiento…"></textarea>
       </div>
     </fieldset>
 
@@ -364,14 +338,12 @@
   }
   var ETIQUETAS = {
     cedula: { menos3: "Menos de 3 años", entre35: "Entre 3 y 5 años", mas5: "Más de 5 años", nose: "No está seguro(a)" },
-    ingreso: { menos1: "Menos de US$1,000", "1a5": "US$1,000 a 5,000", "5a10": "US$5,001 a 10,000", "10a20": "US$10,001 a 20,000 o más" },
     ausencias: { no: "No", menores: "Sí, menores a 6 meses", mayores: "Sí, mayores a 6 meses", nose: "No está seguro(a)" },
     examen: { si: "Sí, con disciplina", dudas: "Tiene dudas sobre el examen", no: "No" },
     civil: { soltero: "Soltero(a)", casado: "Casado(a)", unido: "Unido(a)", divorciado: "Divorciado(a)", viudo: "Viudo(a)" },
-    objetivo: { iniciar: "Iniciar el proceso", evaluar: "Evaluar si califica", info: "Solo informarse" },
-    capacidad: { a: "Presupuesto para iniciar", b: "Abono + plan de pagos", c: "Comparando abogados", d: "Solo precios", e: "Sin condiciones para iniciar" },
-    disponibilidad: { ahora: "De inmediato", "30dias": "Próximos 30 días", meses: "En 2 a 3 meses", nose: "Aún no lo sabe" },
-    modalidad: { esencial: "Proceso Esencial · US$3,800", todo: "Proceso Todo Incluido · US$5,500" }
+    objetivo: { iniciar: "Iniciar el proceso", evaluar: "Evaluar si califica", info: "Orientación general" },
+    disponibilidad: { ahora: "De inmediato", "30dias": "Próximos 30 días", meses: "En 2 a 3 meses", nose: "Por confirmar" },
+    modalidad: { esencial: "Proceso Esencial", todo: "Proceso Todo Incluido" }
   };
   function etiqueta(grupo, valor) {
     var g = ETIQUETAS[grupo] || {};
@@ -381,44 +353,34 @@
   function calcularVeredicto(d) {
     var recip = RECIPROCIDAD[normPais(d.pais)] || 0;
     var docs = (d.doc_renta ? 1 : 0) + (d.doc_banco ? 1 : 0) + (d.doc_trabajo ? 1 : 0);
-    if (!d.cedula || !d.ingreso) {
+    if (!d.cedula) {
       return { clave: "incompleto", badge: "Complete el perfil", clase: "b-neutro",
-        texto: "Faltan datos para calcular el veredicto (años de Cédula E e ingresos de referencia).",
-        recomendacion: "Complete el perfil migratorio y de solvencia para emitir el veredicto." };
+        texto: "Faltan datos para calcular el veredicto (años de Cédula E).",
+        recomendacion: "Complete el perfil migratorio y documental para emitir el veredicto." };
     }
     if (d.cedula === "menos3" && !recip) {
       return { clave: "computo", badge: "Aún no es el momento", clase: "b-no",
         texto: "La naturalización exige 5 años de residencia permanente. Con menos de 3 años de Cédula E y sin convenio de reciprocidad, presentar ahora carece de viabilidad.",
-        recomendacion: "No proponer el trámite. Ofrecer seguimiento para cuando se cumpla el cómputo; dejar constancia escrita." };
+        recomendacion: "Orientar al solicitante y programar seguimiento para cuando se cumpla el cómputo legal." };
     }
     if (d.examen === "no") {
       return { clave: "examen", badge: "Requisito legal pendiente", clase: "b-no",
-        texto: "El examen de naturalización ante el Tribunal Electoral es un requisito legal, no opcional.",
-        recomendacion: "Explicar el alcance del examen y su preparación incluida. Reagendar cuando el solicitante lo acepte." };
-    }
-    if (d.ingreso === "menos1" && docs === 0) {
-      return { clave: "solvencia_baja", badge: "Solvencia por acreditar", clase: "b-no",
-        texto: "Con ingresos por debajo de US$1,000 y sin ninguna de las tres pruebas de solvencia, el expediente no puede sostenerse hoy.",
-        recomendacion: "Indicar por escrito qué regularizar (carta bancaria, carta de trabajo con ficha de la CSS o Declaración de Renta). No proponer el trámite todavía." };
-    }
-    if (d.ingreso === "menos1") {
-      return { clave: "solvencia_revision", badge: "Requiere revisión de solvencia", clase: "b-warn",
-        texto: "Ingresos de referencia por debajo de US$1,000. La solvencia depende de las pruebas documentales aportadas (" + docs + " de 3).",
-        recomendacion: "Verificar las pruebas declaradas y su respaldo financiero real antes de proponer el proceso." };
+        texto: "El examen de naturalización ante el Tribunal Electoral es un requisito legal obligatorio.",
+        recomendacion: "Explicar el alcance del examen y su preparación guiada." };
     }
     if (docs >= 2) {
       return { clave: "apto_2de3", badge: "Perfil apto · cumple 2 de 3", clase: "b-ok",
-        texto: "Perfil apto para la Evaluación Estratégica. Solvencia acreditada con " + docs + " de las 3 pruebas admitidas.",
-        recomendacion: "Reservar la Evaluación Estratégica (aplicable al proceso) y preparar la propuesta de honorarios con la modalidad recomendada." };
+        texto: "Perfil apto para iniciar el acompañamiento jurídico. Solvencia acreditada con " + docs + " de las 3 pruebas admitidas.",
+        recomendacion: "Definir la modalidad recomendada (Proceso Esencial o Proceso Todo Incluido) e iniciar pre-auditoría documental." };
     }
     if (docs === 1) {
       return { clave: "apto_falta_una", badge: "Perfil apto · falta 1 prueba", clase: "b-warn",
-        texto: "Perfil apto, con una sola prueba de solvencia. La norma exige dos de tres.",
-        recomendacion: "En la Evaluación, definir cuál segunda prueba tramitar y con qué vigencia antes de presentar." };
+        texto: "Perfil apto, con una sola prueba de solvencia registrada. La norma exige dos de tres.",
+        recomendacion: "Definir cuál segunda prueba tramitar y con qué vigencia antes de presentar." };
     }
     return { clave: "apto_sin_docs", badge: "Perfil apto · solvencia por definir", clase: "b-warn",
-      texto: "Perfil apto en lo migratorio, pero sin pruebas de solvencia registradas.",
-      recomendacion: "Definir en la Evaluación qué dos pruebas de solvencia puede tramitar el solicitante." };
+      texto: "Perfil apto en lo migratorio; pendiente seleccionar dos pruebas documentales de solvencia.",
+      recomendacion: "Definir qué dos pruebas de solvencia tramitará el solicitante." };
   }
 
   /* ══════════ 3. Lectura del formulario ══════════ */
@@ -430,11 +392,11 @@
       nombre: val("i_nombre"), whatsapp: val("i_whatsapp"), email: val("i_email"), pais: pais,
       cedula: val("i_cedula"), ausencias: val("i_ausencias"), civil: val("i_civil"), examen: val("i_examen"),
       dependiente: marcado("i_dependiente"), modalidad: val("i_modalidad"),
-      ingreso: val("i_ingreso"), doc_renta: marcado("i_doc_renta"), doc_banco: marcado("i_doc_banco"), doc_trabajo: marcado("i_doc_trabajo"),
+      doc_renta: marcado("i_doc_renta"), doc_banco: marcado("i_doc_banco"), doc_trabajo: marcado("i_doc_trabajo"),
       notas_docs: val("i_notas_docs"),
-      objetivo: val("i_objetivo"), capacidad: val("i_capacidad"), disponibilidad: val("i_disponibilidad"),
+      objetivo: val("i_objetivo"), disponibilidad: val("i_disponibilidad"),
       asesor: val("i_asesor"), cita_fecha: val("i_cita_fecha"), cita_hora: val("i_cita_hora"), dia: val("i_dia"),
-      refpago: val("i_refpago"), abono: val("i_abono"), total: val("i_total"), notas: val("i_notas")
+      notas: val("i_notas")
     };
   }
   function docsTexto(d) {
@@ -570,21 +532,16 @@
     filaOpt("Modalidad recomendada", etiqueta("modalidad", d.modalidad));
 
     seccion("B · SOLVENCIA ECONÓMICA");
-    fila("Rango de ingresos", d.ingreso ? etiqueta("ingreso", d.ingreso) : "—");
     fila("Pruebas disponibles", docsTexto(d));
     filaOpt("Notas de verificación", d.notas_docs);
 
-    seccion("C · PERFIL COMERCIAL Y CITA");
+    seccion("C · SEGUIMIENTO Y CITA");
     filaOpt("Objetivo declarado", etiqueta("objetivo", d.objetivo));
-    filaOpt("Situación de inversión", etiqueta("capacidad", d.capacidad));
     filaOpt("Disponibilidad", etiqueta("disponibilidad", d.disponibilidad));
     filaOpt("Atendido por", d.asesor);
     var citaTxt = (d.cita_fecha ? fechaLegible(d.cita_fecha) : "") + (d.cita_hora ? (d.cita_fecha ? " · " : "") + d.cita_hora : "");
     filaOpt("Cita", citaTxt);
     filaOpt("Preferencia del solicitante", d.dia);
-    filaOpt("Referencia de pago (evaluación)", d.refpago);
-    filaOpt("Abono / pagos recibidos", d.abono);
-    filaOpt("Honorarios acordados", d.total);
 
     seccion("D · VEREDICTO");
     var color = v.clase === "b-ok" ? "0.118 0.420 0.290" : (v.clase === "b-warn" ? "0.541 0.427 0.122" : (v.clase === "b-no" ? "0.541 0.239 0.231" : "0.60 0.63 0.66"));
@@ -674,7 +631,6 @@
     if (!d.whatsapp) faltan.push("WhatsApp");
     if (!d.pais) faltan.push("país de origen");
     if (!d.cedula) faltan.push("años de Cédula E");
-    if (!d.ingreso) faltan.push("rango de ingresos");
     return faltan;
   }
 
@@ -704,19 +660,16 @@
     var d = leerFormulario();
     var v = calcularVeredicto(d);
     var l = [
-      "NATURALÍZATE.PA · RESUMEN DE PRECALIFICACIÓN",
+      "NATURALÍZATE.PA · RESUMEN DE EVALUACIÓN",
       "Registrado: " + selloTiempo(),
       "",
       "Solicitante: " + (d.nombre || "—"),
       "WhatsApp: " + (d.whatsapp || "—"),
       "País: " + (d.pais || "—") + " · Cédula E: " + etiqueta("cedula", d.cedula),
-      "Ingresos (referencia): " + etiqueta("ingreso", d.ingreso),
       "Pruebas de solvencia: " + docsTexto(d),
       "Objetivo: " + etiqueta("objetivo", d.objetivo),
-      "Situación de inversión: " + etiqueta("capacidad", d.capacidad),
       "Modalidad recomendada: " + etiqueta("modalidad", d.modalidad),
       "Cita: " + (d.cita_fecha ? fechaLegible(d.cita_fecha) : "—") + (d.cita_hora ? " " + d.cita_hora : ""),
-      "Referencia de pago: " + (d.refpago || "—"),
       "",
       "VEREDICTO: " + v.badge,
       v.texto,

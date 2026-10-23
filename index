@@ -260,21 +260,22 @@
                 </li>
                 <li>
                     <span>✦</span>
-                    <div><strong>ACCESO PRIORITARIO:</strong><br>Al unirte al grupo de WhatsApp hoy, obtienes una guía PDF: <em>"Los 3 errores que rechazan residencias de estudiantes"</em> y descuento en honorarios.</div>
+                    <div><strong>ACCESO PRIORITARIO:</strong><br>Al unirte al grupo de WhatsApp hoy, obtienes una guía PDF: <em>"Los 3 errores que rechazan residencias de estudiantes"</em> y orientación prioritaria con nuestro equipo legal.</div>
                 </li>
             </ul>
 
             <a href="https://chat.whatsapp.com/Eps5vapXPZ49gX96HygFU6?mode=gi_t" class="btn-whatsapp">
-                Reclamar Oferta en WhatsApp
+                Unirme al Grupo en WhatsApp
             </a>
-            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">Cupos limitados para revisión gratuita este mes.</p>
+            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">Cupos limitados para revisión este mes.</p>
         </div>
     </section>
 
     <!-- PERFIL Y CONTACTO (BLANCO) -->
     <section class="contact-section">
-        <h2>Alfonso Villarreal</h2>
-        <p style="letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 30px;">Abogado Fundador | naturalizate.pa</p>
+        <img src="perfil-villarreal.jpg" alt="Lic. Alfonso Villarreal — Abogado Fundador" width="120" height="120" style="width:120px; height:120px; border-radius:50%; object-fit:cover; object-position:center top; margin:0 auto 20px; display:block;" />
+        <h2>Lic. Alfonso Villarreal</h2>
+        <p style="letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 30px;">Abogado Fundador · Naturalízate.pa</p>
         
         <div style="max-width: 600px; margin: 0 auto; line-height: 2;">
             <p>Especialista en Derecho Migratorio Panameño. Mi misión es transformar tu historial académico en seguridad jurídica permanente.</p>

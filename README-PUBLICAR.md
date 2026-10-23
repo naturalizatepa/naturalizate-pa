@@ -116,7 +116,7 @@ del formulario público** y vive en la herramienta interna. El recorrido quedó 
 - Un clic en **Generar informe PDF** descarga `Informe-NZQ-<nombre>-AAAAMMDD.pdf`.
 - **Una página** en el caso típico (dos si las notas internas son largas). Un caso con muchísimos
   campos llenos también puede ocupar dos.
-- Contenido: cabecera con la marca y **Street Mall, Piso 2, Oficina 215 · Ciudad de Panamá**, datos del
+- Contenido: cabecera con la marca y **Scotia Plaza, Piso 7. Av. Federico Boyd, Panamá, Provincia de Panamá**, datos del
   solicitante, solvencia, perfil comercial y cita, **veredicto con insignia de color** y la
   **recomendación operativa**, notas internas, líneas de firma y pie «Documento interno del despacho.
   No constituye asesoría legal al solicitante. Naturalízate.pa · Lic. Alfonso Villarreal».

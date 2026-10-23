@@ -81,7 +81,7 @@
     <div class="verdict-panel">
       <h2>Veredicto en vivo</h2>
       <span class="badge b-neutro" id="vBadge">Complete el perfil</span>
-      <p id="vTexto">Al marcar país, años de Cédula E y rango de ingresos, aquí se calcula el veredicto con la misma lógica del sitio público.</p>
+      <p id="vTexto">Al marcar país, años de Cédula E y pruebas documentales, aquí se calcula el veredicto con la misma lógica del sitio público.</p>
     </div>
 
     <fieldset>
@@ -434,7 +434,7 @@
       ops.push("BT /F2 15 Tf 1 0 0 1 48 764 Tm (" + escaparPDF("NATURALÍZATE.PA") + ") Tj ET");
       ops.push("0.70 0.75 0.80 rg");
       ops.push("BT /F1 8.5 Tf 1 0 0 1 48 749 Tm (" + escaparPDF("INFORME INTERNO DE PRECALIFICACIÓN · USO DEL DESPACHO") + ") Tj ET");
-      var der = "Street Mall, Piso 2, Oficina 215 · Ciudad de Panamá";
+      var der = "Scotia Plaza, Piso 7. Av. Federico Boyd, Panamá, Provincia de Panamá";
       ops.push("BT /F1 8.5 Tf 1 0 0 1 " + (564 - anchoTexto(der, 8.5, false)).toFixed(1) + " 764 Tm (" + escaparPDF(der) + ") Tj ET");
       var der2 = "Generado: " + generado;
       ops.push("BT /F1 8.5 Tf 1 0 0 1 " + (564 - anchoTexto(der2, 8.5, false)).toFixed(1) + " 749 Tm (" + escaparPDF(der2) + ") Tj ET");

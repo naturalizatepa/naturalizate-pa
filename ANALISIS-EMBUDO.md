@@ -107,7 +107,7 @@ firma.
 - **Borrador automático** (`nzq_draft_v3`) con aviso «Recuperamos sus respuestas anteriores»; se
   limpia al confirmar.
 - Salida intermedia en el veredicto apto: **«Ver modalidades y honorarios antes de reservar →»**.
-- Mensaje de WhatsApp que omite campos vacíos e incluye la sede (Street Mall, Oficina 215).
+- Mensaje de WhatsApp que omite campos vacíos e incluye la sede (Scotia Plaza, Piso 7. Av. Federico Boyd, Panamá, Provincia de Panamá).
 
 ### 3.3 Móvil y web
 - Botón sticky compactado a una línea (46 px) con acceso directo a WhatsApp.

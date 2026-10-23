@@ -179,17 +179,22 @@
 
   footer { background: var(--navy-deep); color: rgba(255,255,255,0.72); padding: 48px 0 28px; font-size: 0.88rem; text-align: center; }
 
-  .wa-launcher { position: fixed; right: 20px; bottom: 20px; z-index: 94; width: 56px; height: 56px; border-radius: 50%; border: none; background: var(--wa); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 28px rgba(13,27,42,0.28); }
-  .wa-pop { position: fixed; right: 20px; bottom: 88px; z-index: 95; width: 332px; max-width: calc(100vw - 28px); background: var(--white); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--gray-200); opacity: 0; transform: translateY(12px) scale(.98); pointer-events: none; transition: opacity .24s ease, transform .24s ease; }
+  .wa-tab { position: fixed; right: 24px; bottom: 0; z-index: 95; width: 312px; max-width: calc(100vw - 24px); min-height: 44px; padding: 11px 38px 11px 18px; border: none; border-radius: 10px 30px 0 0; overflow: hidden; background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 58%, var(--navy-2) 100%); color: #fff; font-family: var(--font-sans); font-size: 0.92rem; font-weight: 500; letter-spacing: -0.01em; line-height: 1.3; text-align: left; display: flex; align-items: center; cursor: pointer; box-shadow: 0 -6px 24px rgba(13,27,42,0.24), inset 0 1px 0 rgba(255,255,255,0.14); transition: padding-bottom .18s ease, box-shadow .18s ease, filter .18s ease; }
+  .wa-tab::after { content: ""; position: absolute; top: -24px; right: -35.5px; width: 58px; height: 58px; border-radius: 50%; background: var(--wa); pointer-events: none; }
+  .wa-tab span { position: relative; z-index: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .wa-tab:hover { padding-bottom: 14px; box-shadow: 0 -10px 30px rgba(13,27,42,0.32), inset 0 1px 0 rgba(255,255,255,0.22); filter: brightness(1.06); }
+  .wa-pop { position: fixed; right: 24px; bottom: 54px; z-index: 96; width: 332px; max-width: calc(100vw - 24px); background: var(--white); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--gray-200); transform-origin: bottom right; opacity: 0; transform: translateY(18px) scale(.95); pointer-events: none; transition: opacity .24s cubic-bezier(.2,.8,.2,1), transform .24s cubic-bezier(.2,.8,.2,1); }
   .wa-pop.is-open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
-  .wa-head { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%); color: #fff; padding: 13px 15px; display: flex; align-items: center; gap: 11px; }
+  .wa-head { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%); color: #fff; padding: 13px 14px; display: flex; align-items: center; gap: 11px; }
   .wa-avatar { position: relative; width: 44px; height: 44px; border-radius: 50%; flex: 0 0 44px; background: var(--navy-soft); border: 1.5px solid rgba(255,255,255,0.45); }
   .wa-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: center top; display: block; }
   .wa-avatar::after { content: ""; position: absolute; right: 0; bottom: 0; width: 11px; height: 11px; border-radius: 50%; background: var(--wa); border: 2px solid var(--navy); }
   .wa-who { flex: 1; min-width: 0; }
   .wa-name { font-family: var(--font-serif); font-weight: 600; font-size: 0.96rem; line-height: 1.2; color: #fff; }
   .wa-sub { font-size: 0.75rem; color: rgba(255,255,255,0.8); margin-top: 2px; }
-  .wa-close { background: transparent; border: 0; color: rgba(255,255,255,0.85); width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 1.25rem; line-height: 1; display: grid; place-items: center; }
+  .wa-close { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); color: #fff; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; flex: 0 0 32px; transition: background .18s ease, transform .18s ease; }
+  .wa-close:hover { background: rgba(255,255,255,0.24); transform: scale(1.06); }
+  @media (max-width: 768px) { body { padding-bottom: 56px; } .wa-tab { right: 12px; width: min(312px, calc(100vw - 24px)); font-size: 0.88rem; } .wa-pop { right: 12px; bottom: 52px; width: calc(100vw - 24px); max-width: 326px; } }
   .wa-body { background: #ECE5DD; padding: 18px 16px; }
   .wa-msg { background: var(--white); border-radius: 0 12px 12px 12px; padding: 12px 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.10); font-size: 0.95rem; line-height: 1.45; color: var(--gray-900); font-weight: 500; position: relative; display: inline-block; }
   .wa-msg::before { content: ""; position: absolute; left: -7px; top: 0; border-top: 8px solid var(--white); border-left: 8px solid transparent; }
@@ -390,7 +395,9 @@
       <div class="wa-name">Lic. Alfonso Villarreal</div>
       <div class="wa-sub">Naturalízate.pa · En línea</div>
     </div>
-    <button type="button" class="wa-close" id="waClose" aria-label="Cerrar chat">&times;</button>
+    <button type="button" class="wa-close" id="waClose" aria-label="Minimizar chat" title="Minimizar chat">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg>
+    </button>
   </div>
   <div class="wa-body" id="waBody">
     <div class="wa-msg">¿Necesitas hablar con un agente?</div>
@@ -400,25 +407,26 @@
   </div>
 </div>
 
-<button type="button" class="wa-launcher" id="waLauncher" aria-label="Abrir chat con un agente">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.48 0 .12 5.36.12 11.94c0 2.1.55 4.16 1.6 5.97L0 24l6.28-1.65a11.9 11.9 0 0 0 5.78 1.47h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.49-8.4ZM12.07 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.73.98 1-3.64-.24-.37a9.86 9.86 0 0 1-1.52-5.24c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.13 1.03 7 2.9a9.83 9.83 0 0 1 2.9 7c0 5.45-4.44 9.85-9.91 9.85Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.19 5.06 4.47.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"/></svg>
+<button type="button" class="wa-tab" id="waTab" aria-controls="waPop" aria-expanded="true">
+  <span>¿Consultas? Envíenos un mensaje.</span>
 </button>
 
 <script>
 (function () {
   var pop = document.getElementById("waPop");
   var closeBtn = document.getElementById("waClose");
-  var launcher = document.getElementById("waLauncher");
+  var tab = document.getElementById("waTab");
   var waBase = "https://wa.me/50762557583?text=";
 
-  if (pop && closeBtn && launcher) {
-    closeBtn.addEventListener("click", function () { pop.classList.remove("is-open"); });
-    launcher.addEventListener("click", function () {
-      if (pop.classList.contains("is-open")) {
-        window.open(waBase + encodeURIComponent("Hola, me gustaría hablar con un agente sobre mi proceso de naturalización en Panamá."), "_blank", "noopener");
-      } else {
-        pop.classList.add("is-open");
-      }
+  if (pop && closeBtn && tab) {
+    function openChat() { pop.classList.add("is-open"); tab.setAttribute("aria-expanded", "true"); }
+    function minimizeChat() { pop.classList.remove("is-open"); tab.setAttribute("aria-expanded", "false"); }
+    closeBtn.addEventListener("click", minimizeChat);
+    tab.addEventListener("click", function () {
+      if (pop.classList.contains("is-open")) { minimizeChat(); } else { openChat(); }
+    });
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape" && pop.classList.contains("is-open")) { minimizeChat(); }
     });
   }
 

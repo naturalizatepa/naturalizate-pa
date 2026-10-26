@@ -18,18 +18,48 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="preload" as="image" href="perfil-villarreal.jpg" fetchpriority="high" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<!-- Tipografías del Brand Book v3.0 autohospedadas: sin peticiones a Google Fonts ni bloqueo del renderizado -->
+<link rel="preload" href="fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
+<link rel="preload" href="fonts/playfair-display-latin-wght-italic.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
 <style>
+  picture { display: contents; }
+
+  /* ===== Brand Book v3.0 · Tipografías autohospedadas (cero CSS de terceros que bloquee el render) ===== */
+  @font-face {
+    font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap;
+    src: url("fonts/inter-latin-wght-normal.woff2") format("woff2");
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+  @font-face {
+    font-family: "Playfair Display"; font-style: normal; font-weight: 400 900; font-display: swap;
+    src: url("fonts/playfair-display-latin-wght-normal.woff2") format("woff2");
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+  @font-face {
+    font-family: "Playfair Display"; font-style: italic; font-weight: 400 900; font-display: swap;
+    src: url("fonts/playfair-display-latin-wght-italic.woff2") format("woff2");
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+  /* Fallbacks con métricas ajustadas (Capsize): eliminan el CLS del intercambio tipográfico */
+  @font-face {
+    font-family: "Inter Fallback";
+    src: local("Arial"), local("ArialMT");
+    ascent-override: 90.4365%; descent-override: 22.518%; line-gap-override: 0%; size-adjust: 107.1194%;
+  }
+  @font-face {
+    font-family: "Playfair Display Fallback";
+    src: local("Georgia");
+    ascent-override: 106.716%; descent-override: 24.7558%; line-gap-override: 0%; size-adjust: 101.3906%;
+  }
+
   :root {
     --navy:#0D1B2A; --navy-deep:#060F17; --navy-2:#1B3A57; --navy-soft:#15293E; --white:#FFFFFF;
     --g50:#F8F9FA; --g100:#F1F3F5; --g200:#E9ECEF; --g300:#DEE2E6;
-    --g400:#ADB5BD; --g600:#6C757D; --g700:#495057; --g900:#212529;
-    --wa:#25D366; --wa-hover:#1EBE5D;
-    --serif:"Playfair Display", Georgia, serif;
-    --sans:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --g400:#ADB5BD; --g600:#5C6772; --g700:#495057; --g900:#212529;
+    --wa:#25D366; --wa-hover:#1EBE5D; --wa-solid:#0F7A40; --wa-solid-hover:#0B6332;
+    --serif:"Playfair Display", "Playfair Display Fallback", Georgia, serif;
+    --sans:"Inter", "Inter Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
   *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
   html { scroll-behavior:smooth; }
@@ -69,8 +99,8 @@
   .btn-outline:hover { background:var(--navy); color:#fff; }
   .btn-outline-w { background:transparent; color:#fff; border-color:rgba(255,255,255,.45); }
   .btn-outline-w:hover { border-color:#fff; background:rgba(255,255,255,.08); }
-  .btn-wa-solid { background:var(--wa); color:#fff; border-color:var(--wa); }
-  .btn-wa-solid:hover { background:var(--wa-hover); border-color:var(--wa-hover); }
+  .btn-wa-solid { background:var(--wa-solid); color:#fff; border-color:var(--wa-solid); }
+  .btn-wa-solid:hover { background:var(--wa-solid-hover); border-color:var(--wa-solid-hover); }
   .btn-block { width:100%; }
 
   .hero { background:linear-gradient(155deg, var(--navy-deep) 0%, var(--navy) 55%, var(--navy-2) 100%); color:#fff; padding:68px 0 74px; }
@@ -104,7 +134,7 @@
   .docs { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
   .doc { background:#fff; border:1px solid var(--g200); border-top:3px solid var(--navy); border-radius:8px; padding:26px 24px; }
   .doc .n { font-size:.7rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--g600); margin-bottom:8px; }
-  .doc h4 { font-family:var(--serif); font-size:1.05rem; color:var(--navy); font-weight:600; margin-bottom:12px; line-height:1.35; }
+  .doc h3 { font-family:var(--serif); font-size:1.05rem; color:var(--navy); font-weight:600; margin-bottom:12px; line-height:1.35; }
   .doc ul { list-style:none; }
   .doc li { padding:6px 0 6px 18px; position:relative; font-size:.87rem; color:var(--g700); border-bottom:1px solid var(--g100); }
   .doc li:last-child { border-bottom:none; }
@@ -116,7 +146,7 @@
   .fases { display:grid; grid-template-columns:repeat(4, 1fr); gap:18px; }
   .fase { background:#fff; border:1px solid var(--g200); border-radius:8px; padding:24px 20px; text-align:center; }
   .fase .num { width:40px; height:40px; border-radius:50%; background:var(--navy); color:#fff; font-family:var(--serif); font-weight:600; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; }
-  .fase h4 { font-family:var(--serif); font-size:.98rem; color:var(--navy); font-weight:600; }
+  .fase h3 { font-family:var(--serif); font-size:.98rem; color:var(--navy); font-weight:600; }
   .fase .t { display:inline-block; font-size:.7rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--g600); border:1px solid var(--g300); border-radius:20px; padding:2px 10px; margin:8px 0; }
   .fase p { font-size:.85rem; color:var(--g600); }
   @media (max-width:860px) { .fases { grid-template-columns:1fr 1fr; } }
@@ -191,8 +221,8 @@
   .wa-msg { background:#fff; border-radius:0 12px 12px 12px; padding:12px 15px; box-shadow:0 1px 3px rgba(0,0,0,.1); font-size:.95rem; line-height:1.45; color:var(--g900); font-weight:500; position:relative; display:inline-block; }
   .wa-msg::before { content:""; position:absolute; left:-7px; top:0; border-top:8px solid #fff; border-left:8px solid transparent; }
   .wa-foot { background:#fff; padding:12px 14px; border-top:1px solid var(--g200); }
-  .wa-cta { display:flex; align-items:center; justify-content:center; gap:9px; width:100%; padding:12px 16px; border-radius:8px; background:var(--wa); color:#fff; font-weight:600; font-size:.91rem; text-decoration:none; }
-  .wa-cta:hover { background:var(--wa-hover); }
+  .wa-cta { display:flex; align-items:center; justify-content:center; gap:9px; width:100%; padding:12px 16px; border-radius:8px; background:var(--wa-solid); color:#fff; font-weight:600; font-size:.91rem; text-decoration:none; }
+  .wa-cta:hover { background:var(--wa-solid-hover); }
   @media (max-width:768px) {
     body { padding-bottom:56px; }
     .wa-tab { right:12px; width:min(312px, calc(100vw - 24px)); font-size:.88rem; }
@@ -226,6 +256,7 @@
   </div>
 </header>
 
+<main id="contenido">
 <section class="hero">
   <div class="wrap">
     <div class="kicker">Guía práctica de naturalización</div>
@@ -281,7 +312,7 @@
     <div class="docs">
       <div class="doc">
         <div class="n">Opción 01</div>
-        <h4>Declaración de Renta</h4>
+        <h3>Declaración de Renta</h3>
         <ul>
           <li>De los <strong>dos (2) últimos períodos fiscales</strong> anteriores a la presentación</li>
           <li>Con su <strong>certificado de recepción oficial</strong> ante la DGI</li>
@@ -291,7 +322,7 @@
       </div>
       <div class="doc">
         <div class="n">Opción 02</div>
-        <h4>Carta bancaria al Servicio Nacional de Migración</h4>
+        <h3>Carta bancaria al Servicio Nacional de Migración</h3>
         <ul>
           <li>Dirigida al <strong>Servicio Nacional de Migración</strong></li>
           <li>De <strong>cuatro (4) cifras medias</strong> en adelante</li>
@@ -301,7 +332,7 @@
       </div>
       <div class="doc">
         <div class="n">Opción 03</div>
-        <h4>Carta de trabajo + ficha CSS</h4>
+        <h3>Carta de trabajo + ficha CSS</h3>
         <ul>
           <li>Dirigida al <strong>Servicio Nacional de Migración</strong></li>
           <li>Firmada por el representante legal o empleador autorizado</li>
@@ -325,10 +356,10 @@
       <p>La preparación inicial depende de sus documentos; durante todo el trámite ante cada entidad pública nuestro despacho realiza seguimiento continuo.</p>
     </div>
     <div class="fases">
-      <div class="fase"><div class="num">I</div><h4>Evaluación y Armado</h4><span class="t">4 – 8 semanas</span><p>Auditoría documental, verificación de solvencia, poder legal y armado del expediente.</p></div>
-      <div class="fase"><div class="num">II</div><h4>Migración</h4><span class="t">6 – 12 meses</span><p>Radicación formal, entrevista personal y seguimiento hasta su remisión.</p></div>
-      <div class="fase"><div class="num">III</div><h4>Tribunal Electoral</h4><span class="t">6 – 10 meses</span><p>Preparación guiada y acompañamiento para el examen de idioma, historia y geografía.</p></div>
-      <div class="fase"><div class="num">IV</div><h4>Presidencia y Juramentación</h4><span class="t">6 – 14 meses</span><p>Carta de Naturaleza, juramentación en Gobernación e inscripción de cédula panameña.</p></div>
+      <div class="fase"><div class="num">I</div><h3>Evaluación y Armado</h3><span class="t">4 – 8 semanas</span><p>Auditoría documental, verificación de solvencia, poder legal y armado del expediente.</p></div>
+      <div class="fase"><div class="num">II</div><h3>Migración</h3><span class="t">6 – 12 meses</span><p>Radicación formal, entrevista personal y seguimiento hasta su remisión.</p></div>
+      <div class="fase"><div class="num">III</div><h3>Tribunal Electoral</h3><span class="t">6 – 10 meses</span><p>Preparación guiada y acompañamiento para el examen de idioma, historia y geografía.</p></div>
+      <div class="fase"><div class="num">IV</div><h3>Presidencia y Juramentación</h3><span class="t">6 – 14 meses</span><p>Carta de Naturaleza, juramentación en Gobernación e inscripción de cédula panameña.</p></div>
     </div>
   </div>
 </section>
@@ -407,6 +438,8 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="wrap">
     <div class="row">
@@ -438,7 +471,10 @@
 <div class="wa-pop is-open" id="waPop" role="region" aria-label="Chat de atención en línea">
   <div class="wa-head">
     <div class="wa-avatar">
+      <picture>
+      <source type="image/webp" srcset="perfil-villarreal-88.webp" />
       <img src="perfil-villarreal.jpg" alt="Lic. Alfonso Villarreal" width="44" height="44" decoding="async" />
+    </picture>
     </div>
     <div class="wa-who">
       <div class="wa-name">Lic. Alfonso Villarreal</div>

@@ -21,7 +21,7 @@ por reciprocidad». Validar la vigencia de los convenios con el abogado.
 | `guia.html` | Guía de contratación y preguntas frecuentes (mismo formulario y filtro) |
 | `variante-dorada.html` | Variante con acento dorado (opcional: elimínela si no la usa) |
 | `404.html` | Página de error |
-| `robots.txt` / `sitemap.xml` | SEO técnico (ya apuntan a `https://naturalizate.pa/`) |
+| `robots.txt` / `sitemap.xml` | SEO técnico (apuntan al host real: `https://naturalizatepa.github.io/naturalizate-pa/`) |
 | `site.webmanifest` + `icon-*.png` + `maskable-*.png` | Iconos PWA / móvil |
 | `favicon-*.png` + `apple-touch-icon-180.png` | Favicons del navegador |
 | `foto-alfonso-villarreal.jpg` | Fotografía oficial (barras laterales recortadas) |

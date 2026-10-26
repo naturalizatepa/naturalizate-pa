@@ -139,6 +139,6 @@ python3 landing_shot.py      # capturas de control en landing/shots/
 ## 6. Pendientes que no dependen del código
 
 - [x] Foto del abogado guardada en esta carpeta como `foto-alfonso-villarreal.jpg` y embebida: aparece circular en el bloque «Hablemos de su caso». Para cambiarla, reemplace el archivo (jpg/jpeg/png/webp) y regenere con `python3 landing_build.py`; el recorte se centra en el rostro automáticamente. Si faltara, se muestra el sello de marca.
-- [ ] Confirmar que `villarreallawyers@proton.me` y `naturalizate.pa` están activos y apuntan al hosting correcto.
+- [ ] Confirmar que `villarreallawyers@proton.me` está activo. El dominio `naturalizate.pa` no es del despacho: el sitio se publica en GitHub Pages (ver `SEO.md`).
 - [ ] Revisar con el abogado los criterios de la autoevaluación y las respuestas del FAQ antes de publicar.
 - [ ] Añadir analítica (por ejemplo, Plausible o Google Analytics) si se quiere medir conversión.

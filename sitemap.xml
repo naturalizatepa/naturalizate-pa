@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://naturalizate.pa/</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://naturalizatepa.github.io/naturalizate-pa/</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
-    <loc>https://naturalizate.pa/guia.html</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://naturalizatepa.github.io/naturalizate-pa/guia.html</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
 </urlset>

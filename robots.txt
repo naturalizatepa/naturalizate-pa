@@ -1,4 +1,7 @@
+# Naturalízate.pa · directrices para rastreadores
 User-agent: *
 Allow: /
 
-Sitemap: https://naturalizate.pa/sitemap.xml
+# Sitemap con las únicas URLs canónicas e indexables del sitio.
+# variante-dorada.html y formulario-interno.html llevan noindex y no se listan.
+Sitemap: https://naturalizatepa.github.io/naturalizate-pa/sitemap.xml

@@ -721,10 +721,18 @@
     background: var(--white); border-radius: 14px; overflow: hidden;
     box-shadow: var(--shadow-lg); border: 1px solid var(--gray-200);
     transform-origin: bottom right;
-    opacity: 0; transform: translateY(18px) scale(.95); pointer-events: none;
-    transition: opacity .24s cubic-bezier(.2,.8,.2,1), transform .24s cubic-bezier(.2,.8,.2,1);
+    opacity: 0; transform: translateY(18px) scale(.95); pointer-events: none; visibility: hidden;
+    transition: opacity .24s cubic-bezier(.2,.8,.2,1), transform .24s cubic-bezier(.2,.8,.2,1), visibility 0s linear .24s;
   }
-  .wa-pop.is-open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+  .wa-pop.is-open {
+    opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; visibility: visible;
+    transition: opacity .24s cubic-bezier(.2,.8,.2,1), transform .24s cubic-bezier(.2,.8,.2,1), visibility 0s linear 0s;
+  }
+  @keyframes waNudge {
+    0%, 100% { box-shadow: 0 -6px 24px rgba(13,27,42,0.24), inset 0 1px 0 rgba(255,255,255,0.14); }
+    50% { box-shadow: 0 -8px 30px rgba(37,211,102,0.55), inset 0 1px 0 rgba(255,255,255,0.30); }
+  }
+  .wa-tab.is-nudge { animation: waNudge 1.8s ease-in-out 3; }
   .wa-head {
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
     color: var(--white); padding: 13px 14px;
@@ -1476,7 +1484,7 @@
 </div>
 
 <!-- ============ WIDGET DE CHAT Y PESTAÑA INFERIOR ============ -->
-<div class="wa-pop is-open" id="waPop" role="region" aria-label="Chat de atención en línea">
+<div class="wa-pop" id="waPop" role="region" aria-label="Chat de atención en línea">
   <div class="wa-head">
     <div class="wa-avatar">
       <picture>
@@ -1503,7 +1511,7 @@
   </div>
 </div>
 
-<button type="button" class="wa-tab" id="waTab" aria-controls="waPop" aria-expanded="true">
+<button type="button" class="wa-tab" id="waTab" aria-controls="waPop" aria-expanded="false">
   <span>¿Consultas? Envíenos un mensaje.</span>
 </button>
 
@@ -1723,31 +1731,84 @@
     var mensajeAgente = "Hola, me gustaría hablar con un agente sobre mi proceso de naturalización en Panamá.";
     cta.setAttribute("href", waLink(mensajeAgente));
 
-    function openChat() {
+    /* El chat se abre solo cuando el héroe ya salió de pantalla: nunca tapa
+       el botón "Iniciar mi proceso" ni el CTA verde del hero en móvil. */
+    var CLAVE = "nzChatAuto";
+    var memoria = "";
+    try { memoria = sessionStorage.getItem(CLAVE) || ""; } catch (e) {}
+
+    var abierto = false;
+    var hero = document.querySelector(".hero");
+    var ticking = false;
+
+    function recordar(valor) {
+      memoria = valor;
+      try { sessionStorage.setItem(CLAVE, valor); } catch (e) {}
+    }
+
+    function openChat(origen) {
+      if (abierto) { return; }
+      abierto = true;
       pop.classList.add("is-open");
       tab.setAttribute("aria-expanded", "true");
-      track("wa_chat_open", {});
+      tab.classList.remove("is-nudge");
+      track("wa_chat_open", { origen: origen });
     }
 
-    function minimizeChat() {
+    function minimizeChat(origen) {
+      if (!abierto) { return; }
+      abierto = false;
       pop.classList.remove("is-open");
       tab.setAttribute("aria-expanded", "false");
-      track("wa_chat_minimize", {});
+      track("wa_chat_minimize", { origen: origen });
     }
 
-    closeBtn.addEventListener("click", minimizeChat);
+    function evaluarScroll() {
+      ticking = false;
+      if (abierto || memoria) { return; }
+      /* No interrumpir al usuario mientras completa el formulario */
+      var activo = document.activeElement;
+      if (activo && /^(INPUT|TEXTAREA|SELECT)$/.test(activo.tagName)) { return; }
+      var pasado = hero
+        ? hero.getBoundingClientRect().bottom <= 0
+        : window.scrollY > window.innerHeight * 0.85;
+      if (pasado) {
+        recordar("auto");
+        openChat("scroll");
+      }
+    }
+
+    if (!memoria) {
+      window.addEventListener("scroll", function () {
+        if (ticking) { return; }
+        ticking = true;
+        requestAnimationFrame(evaluarScroll);
+      }, { passive: true });
+
+      /* Sin desplazamiento, un latido discreto en la pestaña invita a escribir
+         sin cubrir nunca el contenido del hero. */
+      setTimeout(function () {
+        if (!abierto && !memoria && window.scrollY < 120) { tab.classList.add("is-nudge"); }
+      }, 12000);
+    }
+
+    closeBtn.addEventListener("click", function () {
+      recordar("usuario");
+      minimizeChat("usuario");
+    });
     tab.addEventListener("click", function () {
-      if (pop.classList.contains("is-open")) {
-        minimizeChat();
+      if (abierto) {
+        recordar("usuario");
+        minimizeChat("usuario");
       } else {
-        openChat();
+        openChat("usuario");
       }
     });
     cta.addEventListener("click", function () {
       track("wa_chat_cta_click", {});
     });
     document.addEventListener("keydown", function (ev) {
-      if (ev.key === "Escape" && pop.classList.contains("is-open")) { minimizeChat(); }
+      if (ev.key === "Escape" && abierto) { minimizeChat("usuario"); }
     });
   })();
 })();

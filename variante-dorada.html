@@ -214,8 +214,13 @@
   .wa-tab::after { content: ""; position: absolute; top: -24px; right: -35.5px; width: 58px; height: 58px; border-radius: 50%; background: var(--wa); pointer-events: none; }
   .wa-tab span { position: relative; z-index: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .wa-tab:hover { padding-bottom: 14px; box-shadow: 0 -10px 30px rgba(13,27,42,0.32), inset 0 1px 0 rgba(255,255,255,0.22); filter: brightness(1.06); }
-  .wa-pop { position: fixed; right: 24px; bottom: 54px; z-index: 96; width: 332px; max-width: calc(100vw - 24px); background: var(--white); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--gray-200); transform-origin: bottom right; opacity: 0; transform: translateY(18px) scale(.95); pointer-events: none; transition: opacity .24s cubic-bezier(.2,.8,.2,1), transform .24s cubic-bezier(.2,.8,.2,1); }
-  .wa-pop.is-open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+  .wa-pop { position: fixed; right: 24px; bottom: 54px; z-index: 96; width: 332px; max-width: calc(100vw - 24px); background: var(--white); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--gray-200); transform-origin: bottom right; opacity: 0; transform: translateY(18px) scale(.95); pointer-events: none; visibility: hidden; transition: opacity .24s cubic-bezier(.2,.8,.2,1), transform .24s cubic-bezier(.2,.8,.2,1), visibility 0s linear .24s; }
+  .wa-pop.is-open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; visibility: visible; transition: opacity .24s cubic-bezier(.2,.8,.2,1), transform .24s cubic-bezier(.2,.8,.2,1), visibility 0s linear 0s; }
+  @keyframes waNudge {
+    0%, 100% { box-shadow: 0 -6px 24px rgba(13,27,42,.24), inset 0 1px 0 rgba(255,255,255,.14); }
+    50% { box-shadow: 0 -8px 30px rgba(37,211,102,.55), inset 0 1px 0 rgba(255,255,255,.30); }
+  }
+  .wa-tab.is-nudge { animation: waNudge 1.8s ease-in-out 3; }
   .wa-head { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%); color: #fff; padding: 13px 14px; display: flex; align-items: center; gap: 11px; }
   .wa-avatar { position: relative; width: 44px; height: 44px; border-radius: 50%; flex: 0 0 44px; background: var(--navy-soft); border: 1.5px solid rgba(255,255,255,0.45); }
   .wa-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: center top; display: block; }
@@ -423,7 +428,7 @@
   </div>
 </footer>
 
-<div class="wa-pop is-open" id="waPop" role="region" aria-label="Chat de atención en línea">
+<div class="wa-pop" id="waPop" role="region" aria-label="Chat de atención en línea">
   <div class="wa-head">
     <div class="wa-avatar">
       <picture>
@@ -447,7 +452,7 @@
   </div>
 </div>
 
-<button type="button" class="wa-tab" id="waTab" aria-controls="waPop" aria-expanded="true">
+<button type="button" class="wa-tab" id="waTab" aria-controls="waPop" aria-expanded="false">
   <span>¿Consultas? Envíenos un mensaje.</span>
 </button>
 
@@ -459,14 +464,78 @@
   var waBase = "https://wa.me/50762557583?text=";
 
   if (pop && closeBtn && tab) {
-    function openChat() { pop.classList.add("is-open"); tab.setAttribute("aria-expanded", "true"); }
-    function minimizeChat() { pop.classList.remove("is-open"); tab.setAttribute("aria-expanded", "false"); }
-    closeBtn.addEventListener("click", minimizeChat);
+    /* Apertura diferida: el chat aparece solo cuando el héroe ya salió de pantalla,
+       para no tapar los botones principales en móvil. */
+    var CLAVE = "nzChatAuto";
+    var memoria = "";
+    try { memoria = sessionStorage.getItem(CLAVE) || ""; } catch (e) {}
+
+    var abierto = false;
+    var hero = document.querySelector(".hero");
+    var ticking = false;
+
+    function recordar(valor) {
+      memoria = valor;
+      try { sessionStorage.setItem(CLAVE, valor); } catch (e) {}
+    }
+
+    function openChat(origen) {
+      if (abierto) { return; }
+      abierto = true;
+      pop.classList.add("is-open");
+      tab.setAttribute("aria-expanded", "true");
+      tab.classList.remove("is-nudge");
+    }
+
+    function minimizeChat(origen) {
+      if (!abierto) { return; }
+      abierto = false;
+      pop.classList.remove("is-open");
+      tab.setAttribute("aria-expanded", "false");
+    }
+
+    function evaluarScroll() {
+      ticking = false;
+      if (abierto || memoria) { return; }
+      /* No interrumpir al usuario mientras completa el formulario */
+      var activo = document.activeElement;
+      if (activo && /^(INPUT|TEXTAREA|SELECT)$/.test(activo.tagName)) { return; }
+      var pasado = hero
+        ? hero.getBoundingClientRect().bottom <= 0
+        : window.scrollY > window.innerHeight * 0.85;
+      if (pasado) {
+        recordar("auto");
+        openChat("scroll");
+      }
+    }
+
+    if (!memoria) {
+      window.addEventListener("scroll", function () {
+        if (ticking) { return; }
+        ticking = true;
+        requestAnimationFrame(evaluarScroll);
+      }, { passive: true });
+
+      /* Sin desplazamiento, un latido discreto en la pestaña invita a escribir. */
+      setTimeout(function () {
+        if (!abierto && !memoria && window.scrollY < 120) { tab.classList.add("is-nudge"); }
+      }, 12000);
+    }
+
+    closeBtn.addEventListener("click", function () {
+      recordar("usuario");
+      minimizeChat("usuario");
+    });
     tab.addEventListener("click", function () {
-      if (pop.classList.contains("is-open")) { minimizeChat(); } else { openChat(); }
+      if (abierto) {
+        recordar("usuario");
+        minimizeChat("usuario");
+      } else {
+        openChat("usuario");
+      }
     });
     document.addEventListener("keydown", function (ev) {
-      if (ev.key === "Escape" && pop.classList.contains("is-open")) { minimizeChat(); }
+      if (ev.key === "Escape" && abierto) { minimizeChat("usuario"); }
     });
   }
 

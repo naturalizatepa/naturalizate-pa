@@ -43,7 +43,7 @@ contenido **en la raíz** de su dominio (el `index.html` debe quedar en `/`).
 | `foto-alfonso-villarreal.jpg` | **Provisional** con monograma «AV». Sustitúyala por la fotografía real |
 | `favicon.ico`, `favicon-16/32/48.png`, `apple-touch-icon-180.png`, `icon-512.png` | Iconos del sitio |
 | `site.webmanifest` | Instalación como app en móvil (PWA básica) |
-| `robots.txt`, `sitemap.xml` | Indexación en Google (dominio `naturalizate.pa`) |
+| `robots.txt`, `sitemap.xml` | Indexación en Google (host `naturalizatepa.github.io/naturalizate-pa/`) |
 | `_headers` | Cabeceras de seguridad y caché (solo Netlify / Cloudflare Pages) |
 | `ANALISIS-EMBUDO.md` | Análisis del embudo y las fricciones eliminadas (con cifras) |
 | `README-PUBLICAR.md` | Este documento |
@@ -131,7 +131,7 @@ del formulario público** y vive en la herramienta interna. El recorrido quedó 
 ### A) Netlify (la más rápida, arrastrar y soltar)
 1. Entre a **app.netlify.com/drop**.
 2. Arrastre la **carpeta descomprimida** (o el ZIP).
-3. Listo: revisa el dominio temporal. Luego *Domain settings → Add custom domain* → `naturalizate.pa`.
+3. Listo: revisa la URL temporal `https://naturalizatepa.github.io/naturalizate-pa/`. Solo si algún día se registra un dominio propio: *Settings → Pages → Custom domain* (ver `SEO.md`).
    El archivo `_headers` se aplica automáticamente.
 
 ### B) Vercel

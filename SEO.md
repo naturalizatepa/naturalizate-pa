@@ -5,35 +5,52 @@ Documento de referencia con lo aplicado según la *Guía de optimización en bus
 
 ---
 
-## 1. Dominio canónico (acción pendiente)
+## 1. Dominio canónico
 
-El sitio se publica hoy en:
+El sitio se publica en:
 
 ```
 https://naturalizatepa.github.io/naturalizate-pa/
 ```
 
-**`naturalizate.pa` no tiene DNS configurado**, por lo que no sirve contenido. Por eso todas las URLs canónicas
-(`<link rel="canonical">`, `og:url`, JSON-LD, `sitemap.xml` y `robots.txt`) apuntan al host que **sí responde**.
-Si se dejaran apuntando a un dominio inexistente, Google recibiría señales de canonicalización hacia URLs muertas
-y el sitio no podría posicionarse.
+**`naturalizate.pa` no pertenece al despacho** (además, hoy no tiene DNS y no sirve contenido).
+Por eso **ninguna URL del sitio apunta a ese dominio**: ni canónicas, ni `og:url`, ni JSON-LD, ni `sitemap.xml`, ni `robots.txt`.
+Todas apuntan al host que realmente responde.
 
-### Cuando se conecte `naturalizate.pa`
+> Si se dejaran apuntando a un dominio ajeno, Google recibiría señales de canonicalización hacia URLs muertas
+> y el sitio no podría posicionarse.
 
-1. **Repositorio → Settings → Pages → Custom domain** → `naturalizate.pa` (esto crea el archivo `CNAME` y activa la redirección 301 desde `*.github.io`).
-2. En el proveedor de DNS: registrar los registros que indique GitHub (A/AAAA para el dominio raíz y CNAME `www`).
-3. Activar **Enforce HTTPS**.
-4. Reemplazar la constante de dominio en el repositorio (todas las apariciones):
+### Cuando se adquiera un dominio propio
+
+Cualquier dominio que el despacho **registre a su nombre** sirve. Recomendaciones:
+
+- Priorizar el `.com` y las variantes de marca: `naturalizatepanama.com`, `naturalizate.com.pa`, `naturalizacionpanama.com`.
+- Comprobar primero en el registrador que el nombre esté libre; **no dar por hecho que `naturalizate.pa` lo está**.
+- Usar `www` redirigido al dominio raíz (o al revés), pero solo uno de los dos como canónico.
+
+Pasos al conectar ese dominio:
+
+1. **Registrar** el dominio a nombre del despacho (con datos reales: influye en la verificación de Search Console).
+2. En el DNS del registrador: registros **A/AAAA** para el dominio raíz y **CNAME** `www` → `naturalizatepa.github.io` (los valores exactos los muestra GitHub).
+3. En el repositorio: **Settings → Pages → Custom domain** → el dominio nuevo. Esto crea el archivo `CNAME` y activa la redirección **301** desde `*.github.io` (se conserva el historial, sin penalización).
+4. Activar **Enforce HTTPS** una vez emitido el certificado.
+5. Reemplazar la constante de dominio en el repositorio:
 
 ```bash
-grep -rl 'naturalizatepa.github.io/naturalizate-pa/' . | xargs sed -i 's|https://naturalizatepa.github.io/naturalizate-pa/|https://naturalizate.pa/|g'
+grep -rl 'naturalizatepa.github.io/naturalizate-pa/' . \
+  | xargs sed -i 's|https://naturalizatepa.github.io/naturalizate-pa/|https://TU-DOMINIO.com/|g'
 ```
 
-5. Volver a enviar el sitemap en Search Console.
+6. Volver a enviar el sitemap en Search Console y avisar del **cambio de dirección** con la herramienta de migración.
 
-> **Por qué importa:** con dominio propio el sitio se sirve en la raíz y `robots.txt` funciona.
-> En una *project page* de GitHub Pages, `robots.txt` se sirve en `/naturalizate-pa/robots.txt` y
-> los rastreadores **solo leen `robots.txt` en la raíz del dominio**, así que hoy ese archivo no tiene efecto.
+> **Por qué importa el dominio propio:** con él, el sitio se sirve en la raíz y `robots.txt` funciona.
+> En una *project page* de GitHub Pages, `robots.txt` se sirve en `/naturalizate-pa/robots.txt`, y
+> los rastreadores **solo leen `robots.txt` en la raíz del dominio**: hoy ese archivo no tiene efecto.
+
+### Sobre el nombre «Naturalízate.pa»
+
+«Naturalízate.pa» funciona como **marca** en el logotipo, el `<title>`, el JSON-LD y los textos, y eso es válido.
+Lo que **no** se hace es usarlo como URL: no hay enlaces, canónicas ni correos apuntando a ese dominio.
 
 ---
 
@@ -47,6 +64,8 @@ grep -rl 'naturalizatepa.github.io/naturalizate-pa/' . | xargs sed -i 's|https:/
 - `404.html` → `noindex`.
 - `index` (archivo sin extensión, heredado y huérfano) → `noindex, follow`.
 - `.nojekyll` para que GitHub Pages sirva los archivos tal cual.
+- `site.webmanifest` con `start_url`, `scope` e `id` relativos (`./`), de modo que al instalar la web como app abra
+  `…/naturalizate-pa/` y no la raíz del dominio (que daría 404).
 
 ### Enlaces de título y fragmentos
 | Página | `<title>` | Caracteres |
@@ -80,13 +99,14 @@ la ubicación y el diferenciador. `og:*` y `twitter:*` replican el mismo texto.
 
 ---
 
-## 3. Pendientes que dependen de terceros
+## 3. Pendientes
 
-- [ ] **Conectar `naturalizate.pa`** (ver sección 1).
-- [ ] **Dar de alta Search Console** para `https://naturalizatepa.github.io/naturalizate-pa/`
-      (o para el dominio propio) y enviar `sitemap.xml`.
+- [ ] **Decidir el dominio definitivo** (ver sección 1). Mientras no exista uno propio, el canónico es `naturalizatepa.github.io/naturalizate-pa/`.
+- [ ] **Dar de alta Search Console** para `https://naturalizatepa.github.io/naturalizate-pa/` y enviar `sitemap.xml`
+      (funciona aunque el dominio sea de GitHub: el sitemap se envía por ruta absoluta).
 - [ ] Verificar la propiedad con la etiqueta HTML de Search Console: se pega en el `<head>` de `index.html`.
 - [ ] Revisar el informe **Páginas** de Search Console 2–4 semanas después para confirmar la indexación.
+- [ ] Si se compra un dominio: repetir los pasos 2–6 de la sección 1 y reenviar el sitemap.
 
 ---
 
@@ -98,3 +118,4 @@ la ubicación y el diferenciador. `og:*` y `twitter:*` replican el mismo texto.
 - La longitud del texto no se ajusta a un número «mágico» de palabras.
 - El orden de los encabezados no es un factor de posicionamiento, pero **sí** es crítico para accesibilidad:
   por eso se mantiene correcto.
+- No se registra el sitio en directorios de dudosa calidad ni se generan páginas puerta.

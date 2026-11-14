@@ -190,19 +190,54 @@
   section { scroll-margin-top: 92px; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-  /* ============ TOPBAR (micro-filtro) ============ */
-  .topbar {
+  /* ============ TICKERS ESTILO NOTICIERO ============ */
+  .ticker-bar {
     background: var(--navy-deep);
     color: rgba(255,255,255,0.82);
-    font-size: 0.78rem;
-    letter-spacing: 0.4px;
-    padding: 9px 0;
-    text-align: center;
+    font-size: 0.80rem;
+    overflow: hidden;
+    position: relative;
+    height: 36px;
+    line-height: 36px;
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  .topbar strong { color: #fff; font-weight: 600; }
-  .topbar .dot { margin: 0 10px; color: var(--gray-500); }
-  @media (max-width: 640px) { .topbar { font-size: 0.72rem; padding: 9px 12px; } .topbar .hide-m { display: none; } }
+  .ticker-bar.tips {
+    background: var(--navy);
+    font-size: 0.76rem;
+    height: 34px;
+    line-height: 34px;
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker-left 45s linear infinite;
+    will-change: transform;
+  }
+  .ticker-track.reverse {
+    animation: ticker-right 50s linear infinite;
+  }
+  .ticker-track span {
+    padding: 0 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .ticker-track span strong { color: #fff; font-weight: 600; }
+  .ticker-track a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+  .ticker-track a:hover { color: var(--gray-300); }
+  .ticker-track .sep { color: rgba(255,255,255,0.2); padding: 0 4px; font-size: 0.7rem; }
+  .ticker-track .tip-ok { color: rgba(130,220,170,0.95); }
+  .ticker-track .tip-myth { color: rgba(255,180,170,0.9); }
+  @keyframes ticker-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes ticker-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  .ticker-bar:hover .ticker-track { animation-play-state: paused; }
+  @media (max-width: 640px) { .ticker-bar { font-size: 0.70rem; height: 30px; line-height: 30px; } .ticker-bar.tips { font-size: 0.66rem; height: 28px; line-height: 28px; } .ticker-track span { padding: 0 18px; } }
 
   /* ============ HEADER (Brand Book: navy 92% blur, 76px) ============ */
   header {
@@ -708,11 +743,20 @@
   </div>
 </div>
 <noscript><style>#entryGate{display:none !important;}</style></noscript>
-<!-- ============ TOPBAR: filtro desde el primer píxel ============ -->
-<div class="topbar">
-  <strong>Consulta inicial gratuita</strong> · sin compromiso
-  <span class="dot hide-m">·</span>
-  <span class="hide-m">Cédula E <strong>+5 años</strong> · menos con <strong>reciprocidad</strong></span>
+<!-- ============ TICKERS: información + consejos estilo noticiero ============ -->
+<!-- Ticker 1: Información de contacto y oficina (desliza izquierda) -->
+<div class="ticker-bar" aria-label="Información de contacto">
+  <div class="ticker-track">
+    <span><strong>Scotia Plaza, Piso 7.</strong> Av. Federico Boyd, Panamá, Provincia de Panamá</span><span class="sep">·</span><span>Lun–Vie 8:00 a.m. – 5:00 p.m.</span><span class="sep">·</span><span>Atención directa · <a href="https://wa.me/50762557583?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20agente%20sobre%20mi%20proceso%20de%20naturalizaci%C3%B3n%20en%20Panam%C3%A1." target="_blank" rel="noopener">WhatsApp +507 6255-7583</a></span><span class="sep">·</span><span><strong>Consulta inicial gratuita</strong> · Cédula E +5 años · menos con reciprocidad</span><span class="sep">·</span>
+    <span><strong>Scotia Plaza, Piso 7.</strong> Av. Federico Boyd, Panamá, Provincia de Panamá</span><span class="sep">·</span><span>Lun–Vie 8:00 a.m. – 5:00 p.m.</span><span class="sep">·</span><span>Atención directa · <a href="https://wa.me/50762557583?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20agente%20sobre%20mi%20proceso%20de%20naturalizaci%C3%B3n%20en%20Panam%C3%A1." target="_blank" rel="noopener">WhatsApp +507 6255-7583</a></span><span class="sep">·</span><span><strong>Consulta inicial gratuita</strong> · Cédula E +5 años · menos con reciprocidad</span><span class="sep">·</span>
+  </div>
+</div>
+<!-- Ticker 2: Consejos útiles, requisitos y mitos (desliza derecha) -->
+<div class="ticker-bar tips" aria-label="Consejos y requisitos">
+  <div class="ticker-track reverse">
+    <span class="tip-ok">✓ Honorarios fijos por escrito desde el inicio: $3,800 Esencial · $5,500 Integral</span><span class="sep">·</span><span class="tip-myth">✗ Mito: "Solo necesito la Cédula E" — la ley exige 5 años de residencia, arraigo, conducta e integración</span><span class="sep">·</span><span class="tip-ok">✓ La precalificación y consulta inicial son 100% gratuitas y sin compromiso</span><span class="sep">·</span><span class="tip-myth">✗ Mito: "El examen es solo un trámite" — evalúa español, historia, geografía, gobierno y cultura de Panamá</span><span class="sep">·</span><span class="tip-ok">✓ Plazo habitual con expediente íntegro: 19–22 meses</span><span class="sep">·</span><span class="tip-ok">✓ Pago fraccionado contra avance de fases acordado por escrito</span><span class="sep">·</span>
+    <span class="tip-ok">✓ Honorarios fijos por escrito desde el inicio: $3,800 Esencial · $5,500 Integral</span><span class="sep">·</span><span class="tip-myth">✗ Mito: "Solo necesito la Cédula E" — la ley exige 5 años de residencia, arraigo, conducta e integración</span><span class="sep">·</span><span class="tip-ok">✓ La precalificación y consulta inicial son 100% gratuitas y sin compromiso</span><span class="sep">·</span><span class="tip-myth">✗ Mito: "El examen es solo un trámite" — evalúa español, historia, geografía, gobierno y cultura de Panamá</span><span class="sep">·</span><span class="tip-ok">✓ Plazo habitual con expediente íntegro: 19–22 meses</span><span class="sep">·</span><span class="tip-ok">✓ Pago fraccionado contra avance de fases acordado por escrito</span><span class="sep">·</span>
+  </div>
 </div>
 
 <!-- ============ HEADER ============ -->

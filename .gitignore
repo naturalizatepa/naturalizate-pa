@@ -1,3 +1,4 @@
-# Generado por build_requisitos.py (se reconstruye con el script)
+# Generado por los scripts de build (se reconstruye con el script)
 fichas/
 requisitos-fichas-numerales.zip
+__pycache__/

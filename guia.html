@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Requisitos de naturalización en Panamá: Cédula E y solvencia</title>
-<meta name="description" content="Requisitos de la Carta de Naturaleza: solvencia (2 de 3 pruebas), convenios de reciprocidad, las 4 fases ante el Estado y plazos. Lic. Alfonso Villarreal." />
+<meta name="description" content="Requisitos de la Carta de Naturaleza: solvencia (2 de 3 pruebas), convenios de reciprocidad, etapas del procedimiento y evaluación inicial de su caso. Lic. Alfonso Villarreal." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://naturalizatepa.github.io/naturalizate-pa/guia.html" />
 <script type="application/ld+json">
@@ -33,7 +33,7 @@
       "@type": "Article",
       "@id": "https://naturalizatepa.github.io/naturalizate-pa/guia.html#articulo",
       "headline": "Requisitos de naturalización en Panamá: Cédula E y solvencia",
-      "description": "Requisitos de la Carta de Naturaleza: solvencia (2 de 3 pruebas), convenios de reciprocidad, las 4 fases ante el Estado y plazos. Lic. Alfonso Villarreal.",
+      "description": "Requisitos de la Carta de Naturaleza: solvencia (2 de 3 pruebas), convenios de reciprocidad, etapas del procedimiento y evaluación inicial de su caso. Lic. Alfonso Villarreal.",
       "inLanguage": "es-PA",
       "mainEntityOfPage": "https://naturalizatepa.github.io/naturalizate-pa/guia.html",
       "url": "https://naturalizatepa.github.io/naturalizate-pa/guia.html",
@@ -41,7 +41,7 @@
         "https://naturalizatepa.github.io/naturalizate-pa/og-image.png"
       ],
       "datePublished": "2026-10-26",
-      "dateModified": "2026-10-26",
+      "dateModified": "2026-11-19",
       "author": {
         "@type": "Person",
         "name": "Alfonso Villarreal",
@@ -65,7 +65,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="Naturalízate.pa" />
 <meta property="og:title" content="Requisitos de naturalización en Panamá: Cédula E y solvencia" />
-<meta property="og:description" content="Requisitos de la Carta de Naturaleza: solvencia (2 de 3 pruebas), convenios de reciprocidad, las 4 fases ante el Estado y plazos. Lic. Alfonso Villarreal." />
+<meta property="og:description" content="Requisitos de la Carta de Naturaleza: solvencia (2 de 3 pruebas), convenios de reciprocidad, etapas del procedimiento y evaluación inicial de su caso. Lic. Alfonso Villarreal." />
 <meta property="og:url" content="https://naturalizatepa.github.io/naturalizate-pa/guia.html" />
 <meta property="og:image" content="https://naturalizatepa.github.io/naturalizate-pa/og-image.png" />
 <meta property="og:image:width" content="1200" />
@@ -74,7 +74,7 @@
 <meta property="og:locale" content="es_PA" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Requisitos de naturalización en Panamá: Cédula E y solvencia" />
-<meta name="twitter:description" content="Requisitos de la Carta de Naturaleza: solvencia (2 de 3 pruebas), convenios de reciprocidad, las 4 fases ante el Estado y plazos. Lic. Alfonso Villarreal." />
+<meta name="twitter:description" content="Requisitos de la Carta de Naturaleza: solvencia (2 de 3 pruebas), convenios de reciprocidad, etapas del procedimiento y evaluación inicial de su caso. Lic. Alfonso Villarreal." />
 <meta name="twitter:image" content="https://naturalizatepa.github.io/naturalizate-pa/og-image.png" />
 <meta name="twitter:image:alt" content="Guía de requisitos para la naturalización panameña — Naturalízate.pa" />
 <meta name="theme-color" content="#0D1B2A" />
@@ -88,7 +88,7 @@
 <style>
   picture { display: contents; }
 
-  /* ===== Brand Book v3.0 · Tipografías autohospedadas (cero CSS de terceros que bloquee el render) ===== */
+  /* ===== Brand Book v3.0 · Tipografías autohospedadas ===== */
   @font-face {
     font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap;
     src: url("fonts/inter-latin-wght-normal.woff2") format("woff2");
@@ -104,7 +104,6 @@
     src: url("fonts/playfair-display-latin-wght-italic.woff2") format("woff2");
     unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
   }
-  /* Fallbacks con métricas ajustadas (Capsize): eliminan el CLS del intercambio tipográfico */
   @font-face {
     font-family: "Inter Fallback";
     src: local("Arial"), local("ArialMT");
@@ -120,20 +119,27 @@
     --navy:#0D1B2A; --navy-deep:#060F17; --navy-2:#1B3A57; --navy-soft:#15293E; --white:#FFFFFF;
     --g50:#F8F9FA; --g100:#F1F3F5; --g200:#E9ECEF; --g300:#DEE2E6;
     --g400:#ADB5BD; --g600:#5C6772; --g700:#495057; --g900:#212529;
-    --wa:#25D366; --wa-hover:#1EBE5D; --wa-solid:#0F7A40; --wa-solid-hover:#0B6332;
+    --wa-solid:#0F7A40; --wa-solid-hover:#0B6332;
+    --radius:8px;
     --serif:"Playfair Display", "Playfair Display Fallback", Georgia, serif;
     --sans:"Inter", "Inter Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
   *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
   html { scroll-behavior:smooth; }
-  body { font-family:var(--sans); color:var(--g900); background:#fff; line-height:1.68; -webkit-font-smoothing:antialiased; }
+  body { font-family:var(--sans); color:var(--g900); background:#fff; line-height:1.68; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  img { max-width:100%; display:block; }
+  a { color:inherit; }
   section[id] { scroll-margin-top:84px; }
-  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  .container { max-width:1080px; margin:0 auto; padding:0 24px; }
 
-  .topbar { background:var(--navy-deep); color:rgba(255,255,255,.82); font-size:.8rem; padding:9px 0; }
-  .topbar .wrap { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-  .topbar strong { color:#fff; font-weight:600; }
-  .topbar a { color:#fff; text-decoration:none; }
+  .nav { position:sticky; top:0; z-index:90; background:rgba(255,255,255,.97); backdrop-filter:blur(10px); border-bottom:1px solid var(--g200); }
+  .nav .container { display:flex; justify-content:space-between; align-items:center; height:72px; gap:16px; }
+  .nav-links { display:flex; gap:24px; align-items:center; }
+  .nav-links a.nl { text-decoration:none; color:var(--g700); font-size:.9rem; font-weight:500; }
+  .nav-links a.nl:hover { color:var(--navy); }
+  .nav-cta { background:var(--navy); color:#fff; text-decoration:none; padding:10px 18px; border-radius:6px; font-size:.86rem; font-weight:600; white-space:nowrap; }
+  .nav-cta:hover { background:var(--navy-2); }
+  @media (max-width:900px) { .nav-links { display:none; } }
 
   .brand { display:inline-flex; flex-direction:column; gap:5px; text-decoration:none; padding:4px 0; }
   .brand-word { display:flex; align-items:baseline; line-height:1; font-family:var(--serif); font-size:20px; }
@@ -141,263 +147,294 @@
   .brand-tld { font-style:italic; color:var(--navy-2); margin-left:1px; }
   .brand-rule { display:block; width:42px; height:1px; background:var(--navy); }
   .brand.on-dark .brand-name { color:#fff; }
-  .brand.on-dark .brand-tld { color:#8E9AA6; }
+  .brand.on-dark .brand-tld { color:#B9C3CC; }
   .brand.on-dark .brand-rule { background:#fff; }
 
-  .nav { position:sticky; top:0; z-index:90; background:rgba(255,255,255,.97); backdrop-filter:blur(10px); border-bottom:1px solid var(--g200); }
-  .nav .wrap { display:flex; justify-content:space-between; align-items:center; height:70px; gap:16px; }
-  .nav-links { display:flex; gap:24px; align-items:center; }
-  .nav-links a.nl { text-decoration:none; color:var(--g700); font-size:.9rem; font-weight:500; }
-  .nav-links a.nl:hover { color:var(--navy); }
-  .nav-cta { background:var(--navy); color:#fff; text-decoration:none; padding:10px 18px; border-radius:6px; font-size:.86rem; font-weight:600; white-space:nowrap; }
-  .nav-cta:hover { background:var(--navy-2); }
-  @media (max-width:860px) { .nav-links { display:none; } }
-
-  .btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:14px 24px; border-radius:6px; font-family:var(--sans); font-weight:600; font-size:.94rem; text-decoration:none; border:1.5px solid transparent; transition:background .18s ease, color .18s ease, transform .18s ease; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:15px 26px; border-radius:6px; font-family:var(--sans); font-weight:600; font-size:.95rem; text-decoration:none; border:1.5px solid transparent; transition:background .18s ease, color .18s ease, transform .18s ease; line-height:1.25; text-align:center; }
   .btn-white { background:#fff; color:var(--navy); }
   .btn-white:hover { background:var(--g100); transform:translateY(-1px); }
   .btn-navy { background:var(--navy); color:#fff; }
   .btn-navy:hover { background:var(--navy-2); transform:translateY(-1px); }
-  .btn-outline { background:transparent; color:var(--navy); border-color:var(--navy); }
-  .btn-outline:hover { background:var(--navy); color:#fff; }
+  .btn-outline-n { background:transparent; color:var(--navy); border-color:var(--navy); }
+  .btn-outline-n:hover { background:var(--navy); color:#fff; }
   .btn-outline-w { background:transparent; color:#fff; border-color:rgba(255,255,255,.45); }
   .btn-outline-w:hover { border-color:#fff; background:rgba(255,255,255,.08); }
   .btn-wa-solid { background:var(--wa-solid); color:#fff; border-color:var(--wa-solid); }
   .btn-wa-solid:hover { background:var(--wa-solid-hover); border-color:var(--wa-solid-hover); }
   .btn-block { width:100%; }
 
-  .hero { background:linear-gradient(155deg, var(--navy-deep) 0%, var(--navy) 55%, var(--navy-2) 100%); color:#fff; padding:68px 0 74px; }
-  .kicker { display:inline-flex; align-items:center; gap:10px; font-size:.75rem; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--g400); margin-bottom:20px; }
-  .kicker::before { content:""; width:28px; height:1px; background:var(--g400); }
-  .hero h1 { font-family:var(--serif); font-weight:600; font-size:clamp(1.9rem, 3.8vw, 2.7rem); line-height:1.18; letter-spacing:-.4px; margin-bottom:18px; max-width:700px; }
+  /* HERO */
+  .hero { background:linear-gradient(155deg, var(--navy-deep) 0%, var(--navy) 55%, var(--navy-2) 100%); color:#fff; padding:76px 0 84px; }
+  .hero-grid { display:grid; grid-template-columns:1.3fr .95fr; gap:48px; align-items:center; }
+  .hero-eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:.75rem; font-weight:600; letter-spacing:2.4px; text-transform:uppercase; color:var(--g400); margin-bottom:20px; }
+  .hero-eyebrow::before { content:""; width:28px; height:1px; background:var(--g400); }
+  .hero h1 { font-family:var(--serif); font-weight:600; font-size:clamp(1.95rem, 3.9vw, 2.75rem); line-height:1.17; letter-spacing:-.4px; margin-bottom:18px; }
   .hero h1 em { font-style:italic; font-weight:400; color:var(--g300); }
-  .hero p { color:rgba(255,255,255,.82); font-size:1.05rem; max-width:600px; margin-bottom:28px; }
-  .hero-btns { display:flex; gap:12px; flex-wrap:wrap; }
+  .hero .lead { color:rgba(255,255,255,.84); font-size:1.05rem; max-width:580px; margin-bottom:26px; }
+  .hero-cta { display:flex; gap:12px; flex-wrap:wrap; }
+  .hero-support { font-size:.9rem; color:rgba(255,255,255,.66); margin-top:18px; max-width:520px; }
+  .hero-card { background:#fff; color:var(--g900); border-radius:var(--radius); padding:30px 26px; box-shadow:0 24px 60px rgba(0,0,0,.28); border-top:3px solid var(--navy); }
+  .hp-top { display:flex; align-items:center; gap:14px; padding-bottom:16px; border-bottom:1px solid var(--g200); margin-bottom:18px; }
+  .hp-photo { width:56px; height:56px; border-radius:50%; object-fit:cover; object-position:center top; }
+  .hp-top h3 { font-family:var(--serif); font-size:1.12rem; color:var(--navy); font-weight:600; line-height:1.25; }
+  .hc-tag { display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; color:var(--g600); margin-top:4px; }
+  .hp-quote { font-family:var(--serif); font-style:italic; font-size:1.12rem; color:var(--navy); margin-bottom:14px; }
+  .hero-card ul { list-style:none; margin-bottom:20px; }
+  .hero-card li { padding:8px 0 8px 26px; position:relative; font-size:.9rem; color:var(--g700); border-bottom:1px solid var(--g200); }
+  .hero-card li:last-child { border-bottom:none; }
+  .hero-card li::before { content:"✓"; position:absolute; left:0; color:var(--navy); font-weight:700; }
+  .hc-note { text-align:center; font-size:.8rem; color:var(--g600); margin-top:11px; }
+  @media (max-width:900px) { .hero { padding:56px 0 64px; } .hero-grid { grid-template-columns:1fr; gap:34px; } }
 
-  section { padding:72px 0; }
-  .alt { background:var(--g50); border-top:1px solid var(--g200); border-bottom:1px solid var(--g200); }
-  .sh { max-width:680px; margin-bottom:40px; }
-  .sh .k { font-size:.74rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--g600); margin-bottom:10px; }
-  .sh h2 { font-family:var(--serif); font-weight:600; font-size:clamp(1.5rem, 3vw, 2rem); color:var(--navy); line-height:1.25; margin-bottom:12px; }
-  .sh h2 em { font-style:italic; font-weight:400; color:var(--navy-2); }
-  .sh p { color:var(--g600); font-size:1rem; }
+  /* SECCIONES */
+  .block { padding:82px 0; }
+  .alt { background:var(--g50); }
+  .section-head { text-align:center; max-width:700px; margin:0 auto 46px; }
+  .eyebrow { font-size:.76rem; font-weight:700; letter-spacing:2.4px; text-transform:uppercase; color:var(--g600); margin-bottom:12px; }
+  .section-head h2 { font-family:var(--serif); font-weight:600; font-size:clamp(1.6rem,3.2vw,2.15rem); color:var(--navy); margin-bottom:14px; line-height:1.25; }
+  .section-head h2 em { font-style:italic; font-weight:400; color:var(--navy-2); }
+  .section-head p { color:var(--g600); font-size:1.02rem; }
+  .rule { width:48px; height:2px; background:var(--navy); margin:20px auto 0; }
+  .section-text { max-width:760px; margin:0 auto; }
+  .section-text p { color:var(--g700); margin-bottom:16px; font-size:1.02rem; }
+  .section-text strong { color:var(--navy); }
+  .positioning { font-family:var(--serif); font-style:italic; font-size:clamp(1.15rem,2.4vw,1.5rem); line-height:1.5; color:var(--navy); text-align:center; max-width:760px; margin:32px auto 0; padding:24px 28px; border-top:1px solid var(--g300); border-bottom:1px solid var(--g300); }
+  .section-cta { text-align:center; margin-top:30px; }
 
-  .two { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
-  .box { background:#fff; border:1px solid var(--g200); border-radius:8px; padding:30px 28px; }
-  .box.yes { border-top:3px solid var(--navy); }
-  .box.no { background:var(--g50); }
-  .box h3 { font-family:var(--serif); font-size:1.2rem; color:var(--navy); margin-bottom:14px; font-weight:600; }
-  .box ul { list-style:none; }
-  .box li { padding:8px 0 8px 24px; position:relative; font-size:.93rem; color:var(--g700); border-bottom:1px solid var(--g200); }
-  .box li:last-child { border-bottom:none; }
-  .box.yes li::before { content:"✓"; position:absolute; left:0; color:var(--navy); font-weight:700; }
-  .box.no li::before { content:"→"; position:absolute; left:0; color:var(--navy-2); font-weight:600; }
-  @media (max-width:780px) { .two { grid-template-columns:1fr; } }
+  /* DIFERENCIADORES */
+  .diff-head { font-family:var(--serif); font-size:1.25rem; color:var(--navy); text-align:center; font-weight:600; margin:44px 0 24px; }
+  .pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .pillar { background:#fff; border:1px solid var(--g200); border-radius:var(--radius); padding:26px 24px; }
+  .pillar-num { font-family:var(--serif); font-style:italic; font-size:1.9rem; color:var(--navy); line-height:1; margin-bottom:10px; }
+  .pillar h3 { font-family:var(--serif); font-size:1.05rem; color:var(--navy); font-weight:600; margin-bottom:8px; }
+  .pillar p { font-size:.9rem; color:var(--g700); }
+  @media (max-width:860px) { .pillars { grid-template-columns:1fr 1fr; } }
+  @media (max-width:560px) { .pillars { grid-template-columns:1fr; } }
 
-  .docs { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
-  .doc { background:#fff; border:1px solid var(--g200); border-top:3px solid var(--navy); border-radius:8px; padding:26px 24px; }
+  /* REQUISITOS */
+  .docs { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .doc { background:#fff; border:1px solid var(--g200); border-top:3px solid var(--navy); border-radius:var(--radius); padding:26px 24px; }
   .doc .n { font-size:.7rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--g600); margin-bottom:8px; }
   .doc h3 { font-family:var(--serif); font-size:1.05rem; color:var(--navy); font-weight:600; margin-bottom:12px; line-height:1.35; }
   .doc ul { list-style:none; }
-  .doc li { padding:6px 0 6px 18px; position:relative; font-size:.87rem; color:var(--g700); border-bottom:1px solid var(--g100); }
+  .doc li { padding:6px 0 6px 18px; position:relative; font-size:.88rem; color:var(--g700); border-bottom:1px solid var(--g100); }
   .doc li:last-child { border-bottom:none; }
   .doc li::before { content:"·"; position:absolute; left:3px; color:var(--navy); font-weight:700; font-size:1.1rem; top:6px; }
-  .dep { margin-top:22px; padding:18px 22px; background:#fff; border:1px solid var(--g200); border-left:3px solid var(--navy); border-radius:8px; font-size:.9rem; color:var(--g700); }
-  .dep strong { color:var(--navy); }
+  .note-box { margin-top:22px; padding:18px 22px; background:#fff; border:1px solid var(--g200); border-left:3px solid var(--navy); border-radius:var(--radius); font-size:.9rem; color:var(--g700); }
+  .note-box strong { color:var(--navy); }
+  .req-extra { max-width:820px; margin:34px auto 0; }
+  .req-extra h3 { font-family:var(--serif); font-size:1.15rem; color:var(--navy); font-weight:600; margin-bottom:8px; }
+  .req-extra p { font-size:.95rem; color:var(--g700); margin-bottom:10px; }
   @media (max-width:860px) { .docs { grid-template-columns:1fr; } }
 
-  .fases { display:grid; grid-template-columns:repeat(4, 1fr); gap:18px; }
-  .fase { background:#fff; border:1px solid var(--g200); border-radius:8px; padding:24px 20px; text-align:center; }
-  .fase .num { width:40px; height:40px; border-radius:50%; background:var(--navy); color:#fff; font-family:var(--serif); font-weight:600; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; }
-  .fase h3 { font-family:var(--serif); font-size:.98rem; color:var(--navy); font-weight:600; }
-  .fase .t { display:inline-block; font-size:.7rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--g600); border:1px solid var(--g300); border-radius:20px; padding:2px 10px; margin:8px 0; }
-  .fase p { font-size:.85rem; color:var(--g600); }
-  @media (max-width:860px) { .fases { grid-template-columns:1fr 1fr; } }
-  @media (max-width:520px) { .fases { grid-template-columns:1fr; } }
+  /* PROCESO */
+  .steps { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
+  .step { background:#fff; border:1px solid var(--g200); border-radius:var(--radius); padding:22px 18px; }
+  .step .num { font-family:var(--serif); font-style:italic; font-size:1.7rem; color:var(--navy); line-height:1; margin-bottom:8px; }
+  .step h3 { font-family:var(--serif); font-size:.98rem; color:var(--navy); font-weight:600; margin-bottom:6px; line-height:1.3; }
+  .step .t { display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:var(--g600); margin-bottom:8px; }
+  .step p { font-size:.84rem; color:var(--g600); }
+  .process-note { text-align:center; font-size:.84rem; color:var(--g600); margin-top:26px; }
+  @media (max-width:940px) { .steps { grid-template-columns:1fr 1fr; } }
+  @media (max-width:520px) { .steps { grid-template-columns:1fr; } }
 
-  .mod-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
-  .mod-card { background:#fff; border:1px solid var(--g200); border-radius:8px; padding:32px 28px; display:flex; flex-direction:column; }
-  .mod-card.dest { border:2px solid var(--navy); position:relative; }
-  .badge { position:absolute; top:-12px; left:26px; background:var(--navy); color:#fff; padding:4px 12px; border-radius:4px; font-size:.68rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
-  .mod-card h3 { font-family:var(--serif); font-size:1.3rem; color:var(--navy); font-weight:600; margin-bottom:8px; }
-  .mod-card .tag { color:var(--g600); font-size:.88rem; margin-bottom:18px; padding-bottom:16px; border-bottom:1px solid var(--g200); }
-  .mod-card ul { list-style:none; margin-bottom:24px; flex:1; }
-  .mod-card li { padding:7px 0 7px 24px; position:relative; font-size:.9rem; color:var(--g700); }
-  .mod-card li::before { content:"✓"; position:absolute; left:0; color:var(--navy); font-weight:700; }
-  @media (max-width:780px) { .mod-grid { grid-template-columns:1fr; } }
+  /* PLANES */
+  .plans { display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+  .plan { background:#fff; border:1px solid var(--g200); border-radius:var(--radius); padding:34px 30px; display:flex; flex-direction:column; }
+  .plan.featured { border:2px solid var(--navy); position:relative; }
+  .plan .badge { position:absolute; top:-13px; left:30px; background:var(--navy); color:#fff; padding:4px 14px; border-radius:4px; font-size:.68rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+  .plan h3 { font-family:var(--serif); font-size:1.35rem; color:var(--navy); font-weight:600; margin-bottom:6px; }
+  .plan .price { font-family:var(--serif); font-size:2rem; font-weight:600; color:var(--navy); line-height:1.2; margin-bottom:4px; }
+  .plan .price small { font-family:var(--sans); font-size:.78rem; font-weight:400; color:var(--g600); display:block; }
+  .plan .tagline { color:var(--g600); font-size:.9rem; padding-bottom:16px; margin-bottom:16px; border-bottom:1px solid var(--g200); }
+  .plan ul { list-style:none; margin-bottom:24px; flex:1; }
+  .plan li { padding:7px 0 7px 24px; position:relative; font-size:.9rem; color:var(--g700); }
+  .plan li::before { content:"✓"; position:absolute; left:0; color:var(--navy); font-weight:700; }
+  .price-note { text-align:center; font-size:.88rem; color:var(--g600); max-width:780px; margin:26px auto 0; }
+  .price-note strong { color:var(--navy); }
+  @media (max-width:820px) { .plans { grid-template-columns:1fr; } }
 
-  .oficina { background:var(--navy); color:#fff; }
-  .oficina .grid { display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:center; }
-  .oficina h2 { font-family:var(--serif); font-size:clamp(1.5rem, 3vw, 2rem); font-weight:600; margin-bottom:14px; line-height:1.25; }
-  .oficina p { color:rgba(255,255,255,.82); margin-bottom:14px; }
-  .ficha { background:var(--navy-soft); border:1px solid rgba(255,255,255,.14); border-radius:8px; padding:28px 26px; font-size:.92rem; line-height:1.85; color:rgba(255,255,255,.88); }
-  .ficha strong { color:#fff; display:block; font-size:.74rem; letter-spacing:2px; text-transform:uppercase; color:var(--g400); margin-top:14px; }
-  .ficha strong:first-child { margin-top:0; }
-  .ficha a { color:#fff; }
-  @media (max-width:800px) { .oficina .grid { grid-template-columns:1fr; gap:26px; } }
+  /* EVALUACIÓN */
+  .diag { background:var(--navy); color:#fff; border-radius:10px; padding:44px 40px; }
+  .diag-tag { display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--g300); border:1px solid rgba(255,255,255,.28); border-radius:20px; padding:5px 14px; margin-bottom:20px; }
+  .diag-grid { display:grid; grid-template-columns:1.5fr 1fr; gap:36px; align-items:start; }
+  .diag h3 { font-family:var(--serif); font-size:1.5rem; font-weight:600; margin-bottom:12px; line-height:1.3; }
+  .diag p { color:rgba(255,255,255,.8); font-size:.96rem; margin-bottom:12px; }
+  .diag ul { list-style:none; }
+  .diag li { padding:6px 0 6px 24px; position:relative; font-size:.9rem; color:rgba(255,255,255,.86); }
+  .diag li::before { content:"✓"; position:absolute; left:0; color:var(--g300); font-weight:700; }
+  .diag li strong { color:#fff; }
+  .diag-price { background:var(--navy-soft); border:1px solid rgba(255,255,255,.14); border-radius:var(--radius); padding:26px 24px; text-align:center; }
+  .diag-price .lbl { font-size:.7rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--g400); margin-bottom:8px; }
+  .diag-price .amount { font-family:var(--serif); font-size:2.5rem; font-weight:600; line-height:1.1; margin-bottom:10px; }
+  .diag-price p { font-size:.84rem; color:rgba(255,255,255,.78); }
+  .diag-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:32px; padding-top:26px; border-top:1px solid rgba(255,255,255,.14); }
+  .ds { display:flex; gap:10px; }
+  .ds .n { font-family:var(--serif); font-size:1.3rem; color:var(--g300); line-height:1.2; }
+  .ds strong { display:block; font-size:.88rem; color:#fff; margin-bottom:2px; }
+  .ds p { margin:0; font-size:.8rem; color:rgba(255,255,255,.72); }
+  @media (max-width:820px) { .diag { padding:34px 24px; } .diag-grid { grid-template-columns:1fr; gap:24px; } .diag-steps { grid-template-columns:1fr; } }
 
-  .cierre { text-align:center; }
-  .cierre h2 { font-family:var(--serif); font-size:clamp(1.5rem, 3vw, 2.05rem); color:var(--navy); margin-bottom:12px; }
-  .cierre p { color:var(--g600); max-width:540px; margin:0 auto 26px; }
-  .cierre .btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  /* AUTORIDAD */
+  .authority { background:var(--navy); color:#fff; }
+  .authority-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:48px; align-items:center; }
+  .authority-card { background:var(--navy-soft); border:1px solid rgba(255,255,255,.12); border-radius:var(--radius); padding:34px 26px; text-align:center; }
+  .authority-avatar { width:118px; height:118px; border-radius:50%; overflow:hidden; margin:0 auto 18px; border:2px solid rgba(255,255,255,.4); }
+  .authority-avatar img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+  .authority-card h3 { font-family:var(--serif); font-size:1.3rem; font-weight:600; margin-bottom:4px; }
+  .authority-card .role { color:rgba(255,255,255,.66); font-size:.85rem; margin-bottom:14px; }
+  .authority-card .bio { font-size:.85rem; color:rgba(255,255,255,.75); }
+  .authority-copy .eyebrow { color:rgba(255,255,255,.6); }
+  .authority-copy h2 { font-family:var(--serif); font-size:clamp(1.5rem,3vw,2rem); font-weight:600; line-height:1.3; margin-bottom:16px; }
+  .authority-copy p { color:rgba(255,255,255,.82); font-size:.98rem; margin-bottom:14px; }
+  .authority-quote { font-family:var(--serif); font-style:italic; font-size:1.02rem; color:#fff; border-left:2px solid rgba(255,255,255,.35); padding-left:18px; margin:20px 0; }
+  @media (max-width:820px) { .authority-grid { grid-template-columns:1fr; gap:28px; } }
 
-  footer { background:var(--navy-deep); color:rgba(255,255,255,.7); padding:40px 0 24px; font-size:.86rem; }
+  /* FAQ */
+  .faq { max-width:820px; margin:0 auto; }
+  .faq details { background:#fff; border:1px solid var(--g200); border-radius:var(--radius); margin-bottom:12px; }
+  .faq summary { cursor:pointer; list-style:none; padding:18px 22px; font-weight:600; font-size:.97rem; color:var(--navy); display:flex; justify-content:space-between; gap:16px; align-items:center; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::after { content:"+"; font-family:var(--serif); font-size:1.3rem; color:var(--navy-2); flex:0 0 auto; }
+  .faq details[open] summary::after { content:"–"; }
+  .faq .a { padding:0 22px 20px; font-size:.92rem; color:var(--g700); }
+  .faq .a p { margin-bottom:10px; }
+  .faq .a strong { color:var(--navy); }
+  .faq-more { text-align:center; margin-top:22px; font-size:.9rem; color:var(--g600); }
+  .faq-more a { color:var(--navy); font-weight:600; }
+
+  /* CIERRE */
+  .final-cta { background:linear-gradient(165deg, var(--navy-deep) 0%, var(--navy) 100%); color:#fff; text-align:center; padding:82px 0; }
+  .final-cta h2 { font-family:var(--serif); font-size:clamp(1.6rem,3.4vw,2.2rem); font-weight:600; margin-bottom:16px; line-height:1.25; }
+  .final-cta h2 em { font-style:italic; font-weight:400; }
+  .final-cta p { color:rgba(255,255,255,.72); font-size:1.02rem; max-width:620px; margin:0 auto 30px; }
+  .final-cta .cta-row { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+  footer { background:var(--navy-deep); color:rgba(255,255,255,.7); padding:44px 0 26px; font-size:.86rem; }
   footer .row { display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; padding-bottom:24px; border-bottom:1px solid rgba(255,255,255,.08); }
-  footer a { color:rgba(255,255,255,.75); text-decoration:none; }
+  footer a { color:rgba(255,255,255,.78); text-decoration:none; }
   footer a:hover { color:#fff; }
+  footer .flinks { display:flex; gap:20px; flex-wrap:wrap; align-items:center; }
+  footer .f-slogan { font-family:var(--serif); font-style:italic; color:rgba(255,255,255,.58); font-size:.9rem; margin-top:12px; }
   footer .copy { padding-top:20px; text-align:center; font-size:.78rem; color:rgba(255,255,255,.45); }
   .legal { background:var(--g100); padding:20px 0; font-size:.78rem; color:var(--g600); text-align:center; line-height:1.6; }
-
-  /* Tickers estilo noticiero (Brand Book v3.0) */
-  .ticker-bar {
-    background: var(--navy-deep);
-    color: rgba(255,255,255,0.82);
-    font-size: 0.82rem;
-    overflow: hidden;
-    position: relative;
-    height: 36px;
-    line-height: 36px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .ticker-bar.tips {
-    background: var(--navy);
-    font-size: 0.78rem;
-    height: 34px;
-    line-height: 34px;
-  }
-  .ticker-track {
-    display: inline-flex;
-    white-space: nowrap;
-    animation: ticker-left 45s linear infinite;
-    will-change: transform;
-  }
-  .ticker-track.reverse {
-    animation: ticker-right 50s linear infinite;
-  }
-  .ticker-track span {
-    padding: 0 32px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .ticker-track span strong { color: #fff; font-weight: 600; }
-  .ticker-track a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
-  .ticker-track a:hover { color: var(--g300); }
-  .ticker-track .sep { color: rgba(255,255,255,0.2); padding: 0 4px; font-size: 0.7rem; }
-  .ticker-track .tip-ok { color: rgba(130,220,170,0.95); }
-  .ticker-track .tip-myth { color: rgba(255,180,170,0.9); }
-  @keyframes ticker-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  @keyframes ticker-right {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0); }
-  }
-  .ticker-bar:hover .ticker-track { animation-play-state: paused; }
-  @media (max-width:768px) {
-    .ticker-bar { font-size: 0.72rem; height: 30px; line-height: 30px; }
-    .ticker-bar.tips { font-size: 0.68rem; height: 28px; line-height: 28px; }
-    .ticker-track span { padding: 0 20px; }
-  }
 </style>
 </head>
 <body>
 
-<!-- Ticker 1: Información de contacto (desliza izquierda) -->
-<div class="ticker-bar" aria-label="Información de contacto">
-  <div class="ticker-track">
-    <span><strong>Scotia Plaza, Piso 7.</strong> Av. Federico Boyd, Panamá, Provincia de Panamá</span><span class="sep">·</span><span>Lun–Vie 8:00 a.m. – 5:00 p.m.</span><span class="sep">·</span><span>Atención directa · <a href="https://wa.me/50762557583?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20agente%20sobre%20mi%20proceso%20de%20naturalizaci%C3%B3n%20en%20Panam%C3%A1." target="_blank" rel="noopener">WhatsApp +507 6255-7583</a></span><span class="sep">·</span><span>Correo: Villarreallawyers@proton.me</span><span class="sep">·</span>
-    <span><strong>Scotia Plaza, Piso 7.</strong> Av. Federico Boyd, Panamá, Provincia de Panamá</span><span class="sep">·</span><span>Lun–Vie 8:00 a.m. – 5:00 p.m.</span><span class="sep">·</span><span>Atención directa · <a href="https://wa.me/50762557583?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20agente%20sobre%20mi%20proceso%20de%20naturalizaci%C3%B3n%20en%20Panam%C3%A1." target="_blank" rel="noopener">WhatsApp +507 6255-7583</a></span><span class="sep">·</span><span>Correo: Villarreallawyers@proton.me</span><span class="sep">·</span>
-  </div>
-</div>
-<!-- Ticker 2: Consejos, requisitos y mitos (desliza derecha) -->
-<div class="ticker-bar tips" aria-label="Consejos y requisitos">
-  <div class="ticker-track reverse">
-    <span class="tip-ok">✓ Necesita Cédula E con más de 5 años para naturalizarse</span><span class="sep">·</span><span class="tip-myth">✗ Mito: "Con la Cédula E ya soy panameño" — debe tramitar ante el Tribunal Electoral</span><span class="sep">·</span><span class="tip-ok">✓ Convenios de reciprocidad: España, Colombia, México — 2 años; El Salvador — 1 año; Uruguay — 3 años</span><span class="sep">·</span><span class="tip-myth">✗ Mito: "Puedo naturalizarme en semanas" — el plazo habitual es de 19 a 22 meses</span><span class="sep">·</span><span class="tip-ok">✓ Solvencia económica: basta con 2 de 3 pruebas (declaración de renta, carta bancaria, o carta de trabajo + ficha CSS)</span><span class="sep">·</span><span class="tip-ok">✓ El examen evalúa: español, historia, geografía, gobierno y cultura de Panamá</span><span class="sep">·</span>
-    <span class="tip-ok">✓ Necesita Cédula E con más de 5 años para naturalizarse</span><span class="sep">·</span><span class="tip-myth">✗ Mito: "Con la Cédula E ya soy panameño" — debe tramitar ante el Tribunal Electoral</span><span class="sep">·</span><span class="tip-ok">✓ Convenios de reciprocidad: España, Colombia, México — 2 años; El Salvador — 1 año; Uruguay — 3 años</span><span class="sep">·</span><span class="tip-myth">✗ Mito: "Puedo naturalizarme en semanas" — el plazo habitual es de 19 a 22 meses</span><span class="sep">·</span><span class="tip-ok">✓ Solvencia económica: basta con 2 de 3 pruebas (declaración de renta, carta bancaria, o carta de trabajo + ficha CSS)</span><span class="sep">·</span><span class="tip-ok">✓ El examen evalúa: español, historia, geografía, gobierno y cultura de Panamá</span><span class="sep">·</span>
-  </div>
-</div>
-
 <header class="nav">
-  <div class="wrap">
+  <div class="container">
     <a class="brand" href="index.html" aria-label="Naturalízate.pa — Inicio">
       <span class="brand-word"><span class="brand-name">NATURALÍZATE</span><span class="brand-tld">.pa</span></span>
       <span class="brand-rule"></span>
     </a>
     <nav class="nav-links" aria-label="Navegación principal">
       <a class="nl" href="index.html">Inicio</a>
-      <a class="nl" href="#solvencia">Solvencia</a>
+      <a class="nl" href="#requisitos">Requisitos</a>
       <a class="nl" href="#proceso">Proceso</a>
-      <a class="nl" href="#modalidades">Modalidades</a>
+      <a class="nl" href="#honorarios">Planes</a>
       <a class="nl" href="index.html#preguntas">Preguntas</a>
     </nav>
-    <a class="nav-cta" href="index.html#verificar">Iniciar proceso</a>
+    <a class="nav-cta" href="index.html#verificar">Quiero evaluar mi caso</a>
   </div>
 </header>
 
 <main id="contenido">
-<section class="hero">
-  <div class="wrap">
-    <div class="kicker">Guía práctica de naturalización</div>
-    <h1>Todo lo que necesita saber <em>para iniciar su trámite con claridad.</em></h1>
-    <p>Requisitos documentales, reglas de solvencia económica, fases ante el Estado y acompañamiento jurídico directo en Ciudad de Panamá.</p>
-    <div class="hero-btns">
-      <a class="btn btn-white" href="index.html#verificar">Evaluar mi caso ahora →</a>
-      <a class="btn btn-wa-solid" href="https://wa.me/50762557583?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20agente%20sobre%20mi%20proceso%20de%20naturalizaci%C3%B3n%20en%20Panam%C3%A1." target="_blank" rel="noopener">Hablar con un agente</a>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-eyebrow">Guía de requisitos · Naturalización panameña</span>
+      <h1>Requisitos de la nacionalidad panameña: <em>lo que se revisa antes de presentar.</em></h1>
+      <p class="lead">Si tiene residencia permanente y Cédula E, podemos evaluar su perfil y orientarle sobre la viabilidad jurídica de su proceso de naturalización.</p>
+      <div class="hero-cta">
+        <a href="index.html#verificar" class="btn btn-white">Quiero evaluar mi caso</a>
+        <a href="#requisitos" class="btn btn-outline-w">Ver requisitos</a>
+      </div>
+      <p class="hero-support">Atención personalizada por un abogado. Primero evaluamos su situación; después definimos los pasos correspondientes.</p>
+    </div>
+    <aside class="hero-card">
+      <div class="hp-top">
+        <img class="hp-photo" src="foto-alfonso-villarreal.jpg" alt="Lic. Alfonso Villarreal, abogado de Naturalízate.pa" width="56" height="56" />
+        <div>
+          <h3>Lic. Alfonso Villarreal</h3>
+          <span class="hc-tag">Abogado fundador</span>
+        </div>
+      </div>
+      <p class="hp-quote">«Asesoría jurídica con la sobriedad que su caso merece.»</p>
+      <ul>
+        <li>Evaluación jurídica individualizada de su caso</li>
+        <li>Honorarios fijos por escrito desde el inicio</li>
+        <li>Atención personalizada del abogado y su equipo</li>
+      </ul>
+      <a href="index.html#verificar" class="btn btn-navy btn-block">Quiero evaluar mi caso</a>
+      <p class="hc-note">Evaluación inicial $49.99 · deducible de sus honorarios · cita previa pagada.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- SITUACIÓN -->
+<section class="block" id="situacion">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Su situación</div>
+      <h2>Vivir en Panamá durante años no significa <em>conocer todos los pasos</em> para obtener la nacionalidad.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="section-text">
+      <p>Es posible que tenga residencia permanente, Cédula E y varios años viviendo en Panamá, y aun así tenga dudas sobre los requisitos, los documentos, los plazos y las condiciones para solicitar la naturalización.</p>
+      <p>No necesita comenzar a reunir documentos sin saber si su situación cumple los requisitos aplicables. <strong>El primer paso es conocer su situación jurídica.</strong></p>
+    </div>
+    <blockquote class="positioning">«¿Lleva años viviendo en Panamá, tiene Cédula E y todavía no sabe si puede solicitar la nacionalidad panameña?»</blockquote>
+    <div class="section-cta">
+      <a href="index.html#verificar" class="btn btn-navy">Quiero evaluar mi caso</a>
     </div>
   </div>
 </section>
 
-<!-- 1. QUIÉN PUEDE APLICAR -->
-<section id="perfil">
-  <div class="wrap">
-    <div class="sh">
-      <div class="k">1 · Elegibilidad</div>
-      <h2>Quién puede solicitar la Carta de Naturaleza <em>y cómo empezar.</em></h2>
-      <p>Verificamos desde el primer contacto su vía constitucional y sus documentos para que avance con seguridad.</p>
+<!-- ENFOQUE -->
+<section class="block alt" id="enfoque">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Nuestro enfoque</div>
+      <h2>Su proceso necesita algo más que <em>presentar documentos</em>.</h2>
+      <div class="rule"></div>
     </div>
-    <div class="two">
-      <div class="box yes">
-        <h3>Puede iniciar de inmediato si…</h3>
-        <ul>
-          <li>Cuenta con <strong>Cédula E vigente de 5 años o más</strong> (o de 1 a 3 años por convenio de reciprocidad o vínculo familiar panameño)</li>
-          <li>Reúne — o puede reunir — <strong>dos de las tres pruebas</strong> de solvencia económica</li>
-          <li>Busca acompañamiento jurídico especializado con oficina física en Panamá</li>
-          <li>Prefiere delegar el seguimiento institucional con reportes claros</li>
-        </ul>
-      </div>
-      <div class="box no">
-        <h3>También le orientamos si…</h3>
-        <ul>
-          <li>Aún está próximo a cumplir los años requeridos de residencia permanente</li>
-          <li>Desea confirmar cuál combinación de documentos le resulta más sencilla</li>
-          <li>Aplicará como dependiente familiar con carta de responsabilidad notariada</li>
-          <li>Quiere ordenar su documentación con antelación sin contratiempos</li>
-        </ul>
-      </div>
+    <div class="section-text">
+      <p>En Naturalízate.pa ofrecemos asesoría jurídica especializada en naturalización panameña. Analizamos su situación particular, verificamos los requisitos aplicables y le acompañamos durante las etapas correspondientes del procedimiento.</p>
+      <p>Nuestro compromiso es ofrecerle información clara, acompañamiento humano y una gestión jurídica responsable.</p>
+    </div>
+    <blockquote class="positioning">«Asesoría jurídica con la sobriedad que su caso merece.»</blockquote>
+    <h3 class="diff-head">¿Por qué confiar su proceso a Naturalízate.pa?</h3>
+    <div class="pillars">
+      <div class="pillar"><div class="pillar-num">I</div><h3>Evaluación jurídica</h3><p>Analizamos su perfil antes de recomendarle iniciar el procedimiento.</p></div>
+      <div class="pillar"><div class="pillar-num">II</div><h3>Transparencia</h3><p>Explicamos condiciones, alcances y costos por escrito, sin cargos no pactados.</p></div>
+      <div class="pillar"><div class="pillar-num">III</div><h3>Acompañamiento</h3><p>Usted sabe quién está a cargo de su proceso y en qué etapa se encuentra.</p></div>
+      <div class="pillar"><div class="pillar-num">IV</div><h3>Atención personalizada</h3><p>Cada situación se analiza según sus propias circunstancias y documentos.</p></div>
+      <div class="pillar"><div class="pillar-num">V</div><h3>Presencia profesional</h3><p>Acompañamiento jurídico en las etapas comprendidas en el servicio contratado.</p></div>
     </div>
   </div>
 </section>
 
-<!-- 2. SOLVENCIA ECONÓMICA -->
-<section class="alt" id="solvencia">
-  <div class="wrap">
-    <div class="sh">
-      <div class="k">2 · Solvencia económica</div>
-      <h2>La regla es clara: <em>dos (2) de tres pruebas documentales.</em></h2>
+<!-- REQUISITOS -->
+<section class="block" id="requisitos">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Requisitos documentales</div>
+      <h2>La solvencia económica se acredita con <em>dos (2) de tres pruebas.</em></h2>
       <p>No se exigen las tres opciones. Basta elegir y presentar correctamente dos de las siguientes pruebas ante el Servicio Nacional de Migración.</p>
+      <div class="rule"></div>
     </div>
-
     <div class="docs">
       <div class="doc">
         <div class="n">Opción 01</div>
         <h3>Declaración de Renta</h3>
         <ul>
           <li>De los <strong>dos (2) últimos períodos fiscales</strong> anteriores a la presentación</li>
-          <li>Con su <strong>certificado de recepción oficial</strong> ante la DGI</li>
+          <li>Con <strong>certificado de recepción oficial</strong> ante la DGI</li>
+          <li>Firmada por <strong>Contador Público Autorizado</strong> y autenticada por notario</li>
           <li>Si es copia, debidamente <strong>notariada</strong></li>
-          <li>Firmada por <strong>Contador Público Autorizado</strong> y <strong>autenticada por notario</strong></li>
         </ul>
       </div>
       <div class="doc">
@@ -407,7 +444,7 @@
           <li>Dirigida al <strong>Servicio Nacional de Migración</strong></li>
           <li>De <strong>cuatro (4) cifras medias</strong> en adelante</li>
           <li>Firmada y con <strong>sello fresco</strong></li>
-          <li>Vigencia máxima de <strong>30 días</strong> al momento de presentarse</li>
+          <li>Vigencia máxima de <strong>30 días</strong> al presentarse</li>
         </ul>
       </div>
       <div class="doc">
@@ -420,100 +457,187 @@
         </ul>
       </div>
     </div>
-
-    <div class="dep">
+    <div class="note-box">
       <strong>¿Es dependiente familiar (ama de casa o estudiante)?</strong> Puede aplicar presentando <strong>carta de responsabilidad notariada</strong> y dos de las tres pruebas documentales de su garante responsable.
     </div>
-  </div>
-</section>
-
-<!-- 3. FASES -->
-<section id="proceso">
-  <div class="wrap">
-    <div class="sh">
-      <div class="k">3 · El proceso</div>
-      <h2>Cuatro fases ante el Estado, <em>acompañadas paso a paso.</em></h2>
-      <p>La preparación inicial depende de sus documentos; durante todo el trámite ante cada entidad pública nuestro despacho realiza seguimiento continuo.</p>
-    </div>
-    <div class="fases">
-      <div class="fase"><div class="num">I</div><h3>Evaluación y Armado</h3><span class="t">4 – 8 semanas</span><p>Auditoría documental, verificación de solvencia, poder legal y armado del expediente.</p></div>
-      <div class="fase"><div class="num">II</div><h3>Migración</h3><span class="t">6 – 12 meses</span><p>Radicación formal, entrevista personal y seguimiento hasta su remisión.</p></div>
-      <div class="fase"><div class="num">III</div><h3>Tribunal Electoral</h3><span class="t">6 – 10 meses</span><p>Preparación guiada y acompañamiento para el examen de idioma, historia y geografía.</p></div>
-      <div class="fase"><div class="num">IV</div><h3>Presidencia y Juramentación</h3><span class="t">6 – 14 meses</span><p>Carta de Naturaleza, juramentación en Gobernación e inscripción de cédula panameña.</p></div>
+    <div class="req-extra">
+      <h3>Residencia, Cédula E y convenios de reciprocidad</h3>
+      <p>La regla general es de <strong>cinco años de residencia permanente</strong>. Existen convenios de reciprocidad que reducen el plazo según la nacionalidad: El Salvador 1 año; Argentina, Colombia, Ecuador, España, Honduras, México, Nicaragua y Perú 2 años; Uruguay 3 años.</p>
+      <p>La <strong>Cédula E no basta por sí sola</strong>: acredita su condición migratoria, pero la ley exige además el tiempo de residencia, el arraigo, la conducta y la integración. El cómputo exacto se verifica con las constancias en mano y la vigencia de cada convenio debe confirmarse al momento de presentar.</p>
     </div>
   </div>
 </section>
 
-<!-- 4. MODALIDADES -->
-<section class="alt" id="modalidades">
-  <div class="wrap">
-    <div class="sh">
-      <div class="k">4 · Modalidades de acompañamiento</div>
-      <h2>Elija la modalidad <em>ideal para su caso.</em></h2>
-      <p>Dos opciones claras según el grado de delegación que prefiera. Un asesor le orienta de inmediato por WhatsApp.</p>
+<!-- PROCESO -->
+<section class="block alt" id="proceso">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">El procedimiento</div>
+      <h2>Así comienza su <em>proceso de naturalización</em></h2>
+      <p>Cinco etapas, con el alcance de cada una definido por escrito antes de comenzar.</p>
+      <div class="rule"></div>
     </div>
-    <div class="mod-grid">
-      <div class="mod-card">
-        <h3>Proceso Esencial</h3>
-        <div class="tag">Para quien ya reúne sus documentos base y desea dirección jurídica experta.</div>
+    <div class="steps">
+      <div class="step"><div class="num">I</div><h3>Evaluación inicial</h3><span class="t">Punto de partida</span><p>Conocemos su situación migratoria, sus antecedentes y las circunstancias relevantes de su caso.</p></div>
+      <div class="step"><div class="num">II</div><h3>Análisis jurídico</h3><span class="t">Viabilidad</span><p>Evaluamos la viabilidad del procedimiento y le explicamos los aspectos que debe considerar.</p></div>
+      <div class="step"><div class="num">III</div><h3>Preparación del expediente</h3><span class="t">Documentación</span><p>Le orientamos sobre los documentos y requisitos necesarios y gestionamos las actuaciones incluidas en el servicio contratado.</p></div>
+      <div class="step"><div class="num">IV</div><h3>Presentación y seguimiento</h3><span class="t">Gestión</span><p>Realizamos las gestiones jurídicas correspondientes y damos seguimiento al procedimiento.</p></div>
+      <div class="step"><div class="num">V</div><h3>Acompañamiento</h3><span class="t">Cierre</span><p>Le orientamos durante las etapas posteriores comprendidas en el servicio.</p></div>
+    </div>
+    <p class="process-note">Los plazos y resultados dependen de las circunstancias de cada caso y de las decisiones de las autoridades competentes. Nuestro plazo habitual es de 19 a 22 meses; no prometemos plazos, los estimamos por escrito después de revisar su caso.</p>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section class="block" id="honorarios">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Planes y honorarios</div>
+      <h2>Dos formas de contratar. <em>La misma responsabilidad jurídica.</em></h2>
+      <p>Conozca la inversión antes de compartir sus datos. El alcance y las exclusiones de cada plan se detallan por escrito en su propuesta.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <h3>Plan Esencial</h3>
+        <div class="price">$3,800 <small>honorarios · pago fraccionado</small></div>
+        <p class="tagline">Para quien desea la gestión jurídica y administrar directamente los gastos y gestiones externas.</p>
         <ul>
-          <li>Evaluación integral de elegibilidad y vía constitucional</li>
-          <li>Lista personalizada y modelos de cartas requeridas</li>
-          <li>Pre-auditoría jurídica de cada documento</li>
-          <li>Redacción de poder y memoriales ante Migración</li>
-          <li>Presentación del expediente ante Migración</li>
-          <li>Guía de estudio para el examen del Tribunal Electoral</li>
-          <li>Seguimiento institucional en las cuatro fases</li>
+          <li>Evaluación y revisión jurídica del caso</li>
+          <li>Integración y presentación del expediente</li>
+          <li>Seguimiento ante el Tribunal Electoral</li>
+          <li>Preparación para entrevista y examen</li>
+          <li>Comunicación directa con el abogado</li>
         </ul>
-        <a class="btn btn-outline btn-block" href="index.html#verificar">Solicitar Proceso Esencial →</a>
+        <a href="index.html#verificar" class="btn btn-outline-n btn-block">Quiero evaluar mi caso</a>
       </div>
-      <div class="mod-card dest">
-        <span class="badge">Más elegido</span>
-        <h3>Proceso Todo Incluido</h3>
-        <div class="tag">Delegación total de principio a fin, con acompañamiento presencial en cada cita clave.</div>
+      <div class="plan featured">
+        <span class="badge">Recomendada</span>
+        <h3>Plan Todo Incluido</h3>
+        <div class="price">$5,500 <small>honorarios · pago fraccionado</small></div>
+        <p class="tagline">Para quien prefiere una solución integral que incorpore los honorarios y los gastos expresamente contemplados en el paquete.</p>
         <ul>
-          <li><strong>Todo lo incluido en el Proceso Esencial</strong></li>
-          <li>Gestión y coordinación directa de certificaciones locales</li>
-          <li>Acompañamiento presencial del abogado en cada cita oficial</li>
-          <li>Preparación personalizada 1 a 1 para los exámenes</li>
-          <li>Atención de requerimientos subsanables durante el trámite</li>
-          <li>Reportes periódicos por escrito en cada etapa</li>
-          <li>Acompañamiento en juramentación e inscripción de cédula</li>
+          <li>Todo lo incluido en el Plan Esencial</li>
+          <li>Coordinación de poderes y cartas poder</li>
+          <li>Gestión notarial y legalizaciones completas</li>
+          <li>Acompañamiento posterior a la jura (cédula y pasaporte)</li>
+          <li>Recursos y apelaciones si el Tribunal lo requiere</li>
+          <li>Prioridad en agenda y respuesta</li>
         </ul>
-        <a class="btn btn-navy btn-block" href="index.html#verificar">Solicitar Proceso Todo Incluido →</a>
+        <a href="index.html#verificar" class="btn btn-navy btn-block">Quiero evaluar mi caso</a>
+      </div>
+    </div>
+    <p class="price-note">
+      <strong>Evaluación inicial:</strong> cuesta $49.99, se paga antes de la cita y se deduce íntegramente de los honorarios si decide continuar.<br>
+      La propuesta de cada plan detalla por escrito qué incluye, qué no incluye y las condiciones de pago. No se cobran cargos no pactados.
+    </p>
+  </div>
+</section>
+
+<!-- EVALUACIÓN -->
+<section class="block alt" id="diagnostico">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Primer paso · Cita previa pagada</div>
+      <h2>Evaluación inicial de su caso <em>$49.99</em></h2>
+      <p>Antes de iniciar un procedimiento conviene verificar que su situación jurídica y documental sea compatible con los requisitos aplicables.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="diag">
+      <span class="diag-tag">Pago único · Deducible de sus honorarios</span>
+      <div class="diag-grid">
+        <div>
+          <h3>Un informe claro, no una conversación genérica</h3>
+          <p>El Lic. Alfonso Villarreal revisa su historial y le entrega por escrito:</p>
+          <ul>
+            <li><strong>Viabilidad de su caso:</strong> los fundamentos concretos sobre si procede o no.</li>
+            <li><strong>Ruta jurídica recomendada:</strong> qué camino corresponde según su residencia, su Cédula E y sus antecedentes.</li>
+            <li><strong>Documentos y riesgos:</strong> la lista exacta de lo que necesita y los puntos que deben resolverse antes de presentar.</li>
+            <li><strong>Honestidad total:</strong> si existe un obstáculo insalvable, se lo indicamos antes de proponerle el trámite.</li>
+          </ul>
+        </div>
+        <div class="diag-price">
+          <div class="lbl">Evaluación inicial</div>
+          <div class="amount">$49.99</div>
+          <p>Pago único, <strong>deducible en su totalidad</strong> de los honorarios si decide contratar. Reserve y envíe el comprobante con su nombre y número de documento.</p>
+          <a href="index.html#verificar" class="btn btn-white btn-block" style="margin-top:16px;">Quiero evaluar mi caso</a>
+        </div>
+      </div>
+      <div class="diag-steps">
+        <div class="ds"><span class="n">1.</span><p><strong>Complete el formulario</strong>Son cuatro pasos breves, en la página principal.</p></div>
+        <div class="ds"><span class="n">2.</span><p><strong>Reserve día y hora</strong>Le enviamos los datos de pago por WhatsApp.</p></div>
+        <div class="ds"><span class="n">3.</span><p><strong>Reciba su evaluación</strong>Viabilidad y ruta jurídica, por escrito.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 5. OFICINA -->
-<section class="oficina" id="oficina">
-  <div class="wrap">
-    <div class="grid">
-      <div>
-        <div class="kicker">5 · Oficina y atención directa</div>
-        <h2>Despacho establecido en Ciudad de Panamá.</h2>
-        <p>Toda atención del despacho está dirigida por el Lic. Alfonso Villarreal, abogado idóneo en la República de Panamá, con atención ágil por WhatsApp o en nuestra oficina física.</p>
+<!-- AUTORIDAD -->
+<section class="block authority" id="abogado">
+  <div class="container authority-grid">
+    <div class="authority-card">
+      <div class="authority-avatar">
+        <picture>
+          <source type="image/webp" srcset="perfil-villarreal-132.webp 132w, perfil-villarreal-264.webp 264w" sizes="118px" />
+          <img src="perfil-villarreal.jpg" alt="Lic. Alfonso Villarreal, abogado fundador de Naturalízate.pa" width="118" height="118" loading="lazy" decoding="async" />
+        </picture>
       </div>
-      <div class="ficha">
-        <strong>Dirección</strong>
-        Scotia Plaza, Piso 7. Av. Federico Boyd,<br>Panamá, Provincia de Panamá
-        <strong>Horario de atención</strong>
-        Lunes a viernes · 8:00 a.m. – 5:00 p.m.
-        <strong>WhatsApp directo</strong>
-        <a href="https://wa.me/50762557583?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20agente%20sobre%20mi%20proceso%20de%20naturalizaci%C3%B3n%20en%20Panam%C3%A1." target="_blank" rel="noopener">+507 6255-7583</a>
-      </div>
+      <h3>Lic. Alfonso Villarreal</h3>
+      <div class="role">Abogado fundador · Naturalízate.pa</div>
+      <p class="bio">Especialista en derecho migratorio panameño. Su reputación se basa en la precisión documental, no en promesas.<br><br>Scotia Plaza, Piso 7. Av. Federico Boyd, Panamá, Provincia de Panamá</p>
+    </div>
+    <div class="authority-copy">
+      <div class="eyebrow">Quién atenderá su caso</div>
+      <h2>Mi trabajo es evaluar si su caso se sostiene. No aceptar cualquier expediente.</h2>
+      <p>Analizo su residencia y su arraigo, determino si sostienen una solicitud de naturalización y, si procede, constituyo el expediente y le acompaño hasta la jura.</p>
+      <div class="authority-quote">«No asumimos expedientes que no cumplan la ley. Cuando procedemos, lo hacemos con la convicción de quien comprende que cada decisión migratoria afecta el rumbo completo de una vida.»</div>
+      <p>Esa frase no es un eslogan. Es el filtro que aplico antes de aceptar un caso.</p>
     </div>
   </div>
 </section>
 
-<section class="cierre">
-  <div class="wrap">
-    <h2>¿Listo para dar el primer paso?</h2>
-    <p>Hable hoy mismo con un asesor de nuestro equipo legal o inicie su evaluación rápida en segundos.</p>
-    <div class="btns">
-      <a class="btn btn-navy" href="index.html#verificar">Iniciar mi proceso →</a>
-      <a class="btn btn-wa-solid" href="https://wa.me/50762557583?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20agente%20sobre%20mi%20proceso%20de%20naturalizaci%C3%B3n%20en%20Panam%C3%A1." target="_blank" rel="noopener">Hablar con un agente</a>
+<!-- FAQ -->
+<section class="block" id="preguntas">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2>Dudas <em>frecuentes</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>¿Cuáles son los requisitos para solicitar la nacionalidad panameña?</summary>
+        <div class="a"><p>Los requisitos legales son la residencia permanente por el tiempo exigido, el arraigo en el país, la conducta, la integración y la aprobación del examen de naturalización. La valoración conjunta de esos elementos es lo que se revisa en la evaluación inicial.</p></div>
+      </details>
+      <details>
+        <summary>¿Cuánto tiempo debo tener de residencia?</summary>
+        <div class="a"><p>La regla general es de cinco años de residencia permanente. Existen convenios de reciprocidad que reducen el plazo según la nacionalidad: El Salvador 1 año; Argentina, Colombia, Ecuador, España, Honduras, México, Nicaragua y Perú 2 años; Uruguay 3 años.</p><p>El cómputo exacto depende de su historial migratorio y se verifica con las constancias en mano.</p></div>
+      </details>
+      <details>
+        <summary>¿La Cédula E significa que ya puedo naturalizarme?</summary>
+        <div class="a"><p>No por sí sola. La Cédula E acredita su condición migratoria, pero la ley exige además el tiempo de residencia, el arraigo, la conducta y la integración. Su antigüedad es el punto de partida de la evaluación, no la garantía del resultado.</p></div>
+      </details>
+      <details>
+        <summary>¿Cuánto cuesta y qué incluye?</summary>
+        <div class="a"><p>La evaluación inicial cuesta <strong>$49.99</strong>, se paga antes de la cita y es <strong>deducible en su totalidad</strong> de los honorarios si decide contratar. Atendemos únicamente bajo cita previa pagada; el comprobante se envía al WhatsApp <a href="https://wa.me/50762557583" target="_blank" rel="noopener">6255-7583</a> con su nombre y número de documento.</p><p>Si su caso procede, los honorarios son fijos por escrito: $3,800 Esencial y $5,500 Todo Incluido, con pago fraccionado. La propuesta de cada plan detalla lo incluido, las exclusiones y las condiciones de pago.</p></div>
+      </details>
+      <details>
+        <summary>¿Cómo puedo saber si mi caso es viable?</summary>
+        <div class="a"><p>Con una evaluación jurídica individualizada. Complete el formulario, reserve día y hora y reciba un informe escrito con la viabilidad, la ruta recomendada y los documentos necesarios. Si su caso no procede, se lo indicamos con fundamento y no le proponemos el trámite.</p></div>
+      </details>
+    </div>
+    <p class="faq-more">¿Tiene otra duda? <a href="index.html#preguntas">Consulte las once preguntas frecuentes de la página principal</a>.</p>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section class="final-cta">
+  <div class="container">
+    <h2>No comience su proceso sin conocer primero <em>su situación jurídica</em>.</h2>
+    <p>Su tiempo y su tranquilidad son importantes. Antes de invertir en un procedimiento de naturalización, conozca si su perfil reúne las condiciones necesarias y cuáles serían los pasos correspondientes. En Naturalízate.pa podemos orientarle.</p>
+    <div class="cta-row">
+      <a href="index.html#verificar" class="btn btn-white">Quiero evaluar mi caso</a>
+      <a href="https://wa.me/50762557583?text=Hola%2C%20quiero%20evaluar%20mi%20caso%20de%20naturalizaci%C3%B3n." target="_blank" rel="noopener" class="btn btn-outline-w">Escribir por WhatsApp</a>
     </div>
   </div>
 </section>
@@ -521,7 +645,7 @@
 </main>
 
 <footer>
-  <div class="wrap">
+  <div class="container">
     <div class="row">
       <div>
         <div class="brand on-dark" style="margin-bottom:10px">
@@ -529,24 +653,26 @@
           <span class="brand-rule"></span>
         </div>
         <div>Lic. Alfonso Villarreal · Scotia Plaza, Piso 7. Av. Federico Boyd, Panamá, Provincia de Panamá</div>
+        <p class="f-slogan">«Asesoría jurídica con la sobriedad que su caso merece.»</p>
       </div>
-      <div style="display:flex; gap:20px; flex-wrap:wrap; align-items:center;">
+      <div class="flinks">
         <a href="index.html">Página principal</a>
+        <a href="#requisitos">Requisitos</a>
+        <a href="#honorarios">Planes</a>
         <a href="index.html#preguntas">Preguntas frecuentes</a>
-        <a href="index.html#verificar">Iniciar proceso</a>
-        <a href="https://wa.me/50762557583?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20agente%20sobre%20mi%20proceso%20de%20naturalizaci%C3%B3n%20en%20Panam%C3%A1." target="_blank" rel="noopener">WhatsApp</a>
+        <a href="index.html#verificar">Quiero evaluar mi caso</a>
+        <a href="https://wa.me/50762557583?text=Hola%2C%20quiero%20evaluar%20mi%20caso%20de%20naturalizaci%C3%B3n." target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
-    <div class="copy">© 2026 Naturalízate.pa · Todos los derechos reservados.<br>Contenido revisado y actualizado en octubre de 2026.</div>
+    <div class="copy">© 2026 Naturalízate.pa · Todos los derechos reservados.<br>Contenido revisado y actualizado en noviembre de 2026.</div>
   </div>
 </footer>
 
 <div class="legal">
-  <div class="wrap">
+  <div class="container">
     <strong>Aviso legal:</strong> Naturalízate.pa es una práctica jurídica privada, independiente de cualquier entidad del Estado panameño. La decisión final sobre toda Carta de Naturaleza corresponde al Órgano Ejecutivo conforme a la Constitución Política y la ley.
   </div>
 </div>
-
 
 </body>
 </html>

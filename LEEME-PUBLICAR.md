@@ -1,55 +1,64 @@
-# Naturalízate.pa — Paquete listo para publicar (v4)
+# Naturalízate.pa — Paquete listo para publicar
 
-Novedades v4 (embudo de venta): pago dual Yappy + tarjeta (cada botón sin
-enlace se oculta solo); factura de valor + garantía en el paso 4; pregunta de
-antecedentes movida a la evaluación privada; etiqueta comercial interna
-eliminada del mensaje de WhatsApp; captura progresiva opcional de leads
-(FormSubmit); lead magnet para perfiles educativos; 5 FAQs de pago + schema;
-credencial 98% reemplazada por 5+ años de cédula E (Brand Book v3.0).
-Novedades v3: la precalificación aparece centrada al cargar, con el fondo
-desenfocado hasta completar los datos; FAQPage para Google; render diferido
-de secciones; formulario sin zoom en iOS.
-Filtro por reciprocidad: 10 nacionalidades (El Salvador 1 año; Argentina,
-Colombia, Ecuador, España, Honduras, México, Nicaragua, Perú 2 años; Uruguay
-3 años) no se rechazan por <3 años: pasan a WhatsApp como «verificar cómputo
-por reciprocidad». Validar la vigencia de los convenios con el abogado.
+**Estado:** 19 de noviembre de 2026 · **una sola página** (`index.html`), sin ventanas de entrada ni
+captura de leads.
+
+## Política comercial vigente (aplicada en todo el sitio)
+
+| Concepto | Condición |
+|---|---|
+| **Auditoría inicial del caso** | **$49.99**, pago único, se paga **antes** de la cita |
+| **Deducible** | Se deduce **en su totalidad** de los honorarios si el cliente contrata |
+| **Atención** | Únicamente bajo **cita previa pagada** |
+| **Comprobante** | Al WhatsApp **6255-7583** con **nombre** y **número de documento** |
+| **Honorarios** | Fijos por escrito: **Esencial $3,800** · **Integral $5,500**, con pago fraccionado |
+
+- El sitio **no promete nada gratis**: no queda ninguna mención de gratuidad, «sin costo» ni
+  «sin compromiso» (verificado el 19 nov 2026 en los cinco HTML del paquete).
+- **No hay pasarela de pago conectada.** El formulario envía la solicitud por WhatsApp y Patricia
+  indica el medio de pago. No invente enlaces de pago en el texto.
 
 ## Contenido
+
 | Archivo | Descripción |
 |---|---|
-| `index.html` | Landing principal (estricta Brand Book: navy/blanco/grises) |
-| `guia.html` | Guía de contratación y preguntas frecuentes (mismo formulario y filtro) |
-| `variante-dorada.html` | Variante con acento dorado (opcional: elimínela si no la usa) |
+| `index.html` | Landing principal: todo el CSS y el JS van dentro (11 secciones + formulario de 4 pasos) |
+| `guia.html` | Guía de requisitos con la misma estructura y copy que la landing (incluye planes y evaluación de $49.99) |
+| `formulario-interno.html` | Herramienta del despacho (26 campos + informe PDF). **`noindex`**, no enlazada desde el sitio |
+| `variante-dorada.html` | Variante con acento dorado del mismo contenido (opcional: elimínela si no la usa) |
 | `404.html` | Página de error |
-| `robots.txt` / `sitemap.xml` | SEO técnico (apuntan al host real: `https://naturalizatepa.github.io/naturalizate-pa/`) |
-| `site.webmanifest` + `icon-*.png` + `maskable-*.png` | Iconos PWA / móvil |
-| `favicon-*.png` + `apple-touch-icon-180.png` | Favicons del navegador |
-| `foto-alfonso-villarreal.jpg` | Fotografía oficial (barras laterales recortadas) |
-| `og-image.png` | Imagen al compartir en WhatsApp y redes (1200×630) |
-
-## Puerta de entrada (cómo funciona)
-- Al cargar, el formulario de precalificación se muestra centrado con el fondo
-  desenfocado y la página bloqueada (sin desplazamiento).
-- Al completar los datos (cualquier veredicto), el botón principal abre
-  WhatsApp con su resultado y revela el contenido; el formulario regresa a su
-  sección con el resultado visible. Cada mensaje llega etiquetado
-  (Perfil A/B/C, consulta general, pendiente examen o "Aún no procede" con solicitud de diagnóstico).
-- Se recuerda por sesión (`sessionStorage nzq_gate_done`): recargar no la
-  muestra de nuevo; nueva visita sí. Sin JavaScript, la puerta no aparece y el
-  formulario queda en su sección (compatible con Google).
-- **Desactivarla:** elimine el bloque `#entryGate`, el micro-script
-  `nzq_gate_done` del `<head>` y el bloque JS «Puerta de entrada».
+| `robots.txt` / `sitemap.xml` | SEO técnico (host: `https://naturalizatepa.github.io/naturalizate-pa/`) |
+| `site.webmanifest`, `icon-*.png`, `maskable-*.png` | Iconos PWA / móvil |
+| `favicon.ico`, `favicon-*.png`, `apple-touch-icon*.png` | Favicons |
+| `foto-alfonso-villarreal.jpg` | Fotografía del licenciado (héroe y datos estructurados) |
+| `og-image.png` | Imagen al compartir (1200×630) |
+| `_headers` | Cabeceras de seguridad y caché (solo Netlify / Cloudflare Pages) |
+| `README-PUBLICAR.md` | Guía detallada (flujo, campos, verificación) |
 
 ## Cómo publicar
-1. **cPanel / hosting tradicional:** suba todo a `public_html/` conservando nombres.
-2. **Netlify / Vercel / Cloudflare Pages:** arrastre la carpeta o conecte su repo.
+
+1. **cPanel / hosting tradicional:** suba todo a `public_html/` conservando nombres y reemplace el
+   `index.html` anterior.
+2. **Netlify / Vercel / Cloudflare Pages:** arrastre la carpeta o conecte el repositorio.
 3. **GitHub Pages:** suba a `main` (o `docs/`) y active Pages.
 
-## Pendientes (2 minutos, en `index.html`)
-1. `ENLACE_PAGO` — enlace de pago del Diagnóstico $49 (buscar `TODO`).
-2. Píxel de Meta / Google / GA4 — pegarlo en el `<head>` si pauta tráfico.
-3. Verificar WhatsApp `50762557583` y correo `Villarreallawyers@proton.me`.
+## Pendientes antes de publicar
+
+1. **Medio de pago.** Confirmar cómo se cobra el $49.99 (Yappy, transferencia, tarjeta) y si se
+   automatiza con un enlace. Hoy el sitio dice que se coordina por WhatsApp.
+2. **Validación legal.** El Lic. Villarreal debe aprobar los textos de honorarios, deducible y
+   requisitos (los de solvencia salen de la guía del SNM; los rangos de ingreso son criterio del
+   despacho).
+3. **Píxeles** (Meta / Google / GA4) en el `<head>` si se pauta tráfico; si usa `_headers`, agregue
+   el dominio del píxel a `script-src` y `connect-src`.
+4. **Fotografía** definitiva en `foto-alfonso-villarreal.jpg`.
+5. Verificar WhatsApp `50762557583` y correo `Villarreallawyers@proton.me`.
 
 ## Verificación
-- Rich results: https://search.google.com/test/rich-results
-- Vista previa al compartir: https://developers.facebook.com/tools/debug/
+
+- `grep` sin coincidencias de «gratis», «gratuita», «sin costo» y «sin compromiso» en los cinco HTML.
+- Script inline de `index.html` validado (`new Function`, sin errores de sintaxis).
+- Flujo del formulario probado en Chrome sin interfaz: bloquea sin número de documento, avanza al
+  completarlo y lo incluye en el resumen y en el mensaje de WhatsApp.
+
+Pendiente de validación humana: revisión visual en navegador real y aprobación del abogado.

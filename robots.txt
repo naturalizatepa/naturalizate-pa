@@ -2,6 +2,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap con las únicas URLs canónicas e indexables del sitio.
-# variante-dorada.html y formulario-interno.html llevan noindex y no se listan.
+# Indexables: la portada y guia.html, las dos únicas URLs del sitemap.
+# contacto, servicios, vias, honorarios, informacion-legal, verificacion y
+# aviso-legal llevan noindex, follow. 404.html lleva noindex y
+# formulario-interno.html, noindex, nofollow.
 Sitemap: https://naturalizatepa.github.io/naturalizate-pa/sitemap.xml

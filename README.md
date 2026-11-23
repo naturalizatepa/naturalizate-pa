@@ -23,6 +23,7 @@ restaure.
 
 | Necesidad | Archivo |
 |---|---|
+| Brand Book completo, embudo comercial y guía de aplicación | `BRANDBOOK.md` · `brandbook.html` (visual/imprimible) |
 | Estructura, formulario, marca y mantenimiento | `LEEME-landing.md` |
 | Embudo, eventos y fricción | `ANALISIS-EMBUDO.md` |
 | Canonical, sitemap, indexación y Search Console | `SEO.md` |

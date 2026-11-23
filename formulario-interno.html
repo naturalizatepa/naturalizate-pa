@@ -12,21 +12,33 @@
 <meta name="theme-color" content="#0D1B2A" />
 <link rel="icon" href="favicon.ico" sizes="any" />
 <style>
+  @font-face {
+    font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap;
+    src: url("fonts/inter-latin-wght-normal.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Playfair Display"; font-style: normal; font-weight: 400 900; font-display: swap;
+    src: url("fonts/playfair-display-latin-wght-normal.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Playfair Display"; font-style: italic; font-weight: 400 900; font-display: swap;
+    src: url("fonts/playfair-display-latin-wght-italic.woff2") format("woff2");
+  }
   :root{
-    --navy:#0D1B2A; --navy-mid:#1B3A57; --navy-deep:#060F17;
+    --navy:#0D1B2A; --navy-mid:#1B3A57; --navy-deep:#060F17; --gold:#C5A572;
     --gray-50:#F8F9FA; --gray-100:#F1F3F5; --gray-200:#E9ECEF; --gray-300:#DEE2E6; --gray-500:#ADB5BD;
     --gray-600:#6C757D; --gray-700:#495057; --gray-900:#212529;
     --ok:#1E6B4A; --ok-bg:#EDF3EF; --warn:#8A6D1F; --warn-bg:#FBF6E8; --no:#8A3D3B; --no-bg:#F7ECEC;
-    --serif: Georgia, 'Times New Roman', serif;
-    --sans: 'Segoe UI', Arial, -apple-system, BlinkMacSystemFont, sans-serif;
+    --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:var(--sans);color:var(--gray-700);background:var(--gray-100);font-size:16px;line-height:1.55}
-  header{background:var(--navy);color:#fff;padding:14px 0}
+  header{background:var(--navy);color:#fff;padding:14px 0;border-bottom:1px solid rgba(197,165,114,.25)}
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
   .brand{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-  .brand h1{font-family:var(--serif);font-weight:600;font-size:1.05rem;letter-spacing:2px;text-transform:uppercase}
-  .brand h1 span{font-style:italic;font-weight:400;color:rgba(255,255,255,.65);letter-spacing:1px}
+  .brand h1{font-family:var(--serif);font-weight:500;font-size:1.05rem;letter-spacing:2.5px;text-transform:none}
+  .brand h1 span{font-style:italic;font-weight:400;text-transform:lowercase;color:var(--gold);letter-spacing:.5px}
   .brand .tag{font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:5px 14px}
   .aviso{background:var(--warn-bg);border-bottom:1px solid #E7DDBB;color:#6B561A;font-size:.82rem;padding:9px 0}
   form{padding:26px 0 120px}
@@ -67,7 +79,7 @@
 
 <header>
   <div class="wrap brand">
-    <h1>Naturalízate<span>.pa</span> · Formulario interno</h1>
+    <h1>NATURALÍZATE<span>.pa</span> · FORMULARIO INTERNO</h1>
     <span class="tag">Uso exclusivo del despacho</span>
   </div>
 </header>
@@ -232,7 +244,7 @@
 
 <script>
 /* =====================================================================
-   NATURALÍZATE.PA · Formulario interno — informe en PDF sin dependencias
+   NATURALÍZATE.pa · Formulario interno — informe en PDF sin dependencias
    Todo el PDF se construye en el navegador (Helvetica + WinAnsi) y se
    descarga directamente. No requiere internet ni librerías externas.
    ===================================================================== */
@@ -433,7 +445,7 @@
       ops.push("0.051 0.106 0.165 rg");
       ops.push("0 716 612 76 re f");
       ops.push("1 1 1 rg");
-      ops.push("BT /F2 15 Tf 1 0 0 1 48 764 Tm (" + escaparPDF("NATURALÍZATE.PA") + ") Tj ET");
+      ops.push("BT /F2 15 Tf 1 0 0 1 48 764 Tm (" + escaparPDF("NATURALÍZATE.pa") + ") Tj ET");
       ops.push("0.70 0.75 0.80 rg");
       ops.push("BT /F1 8.5 Tf 1 0 0 1 48 749 Tm (" + escaparPDF("INFORME INTERNO DE PRECALIFICACIÓN · USO DEL DESPACHO") + ") Tj ET");
       var der = "Scotia Plaza, Piso 7. Av. Federico Boyd, Panamá, Provincia de Panamá";
@@ -662,7 +674,7 @@
     var d = leerFormulario();
     var v = calcularVeredicto(d);
     var l = [
-      "NATURALÍZATE.PA · RESUMEN DE EVALUACIÓN",
+      "NATURALÍZATE.pa · RESUMEN DE EVALUACIÓN",
       "Registrado: " + selloTiempo(),
       "",
       "Solicitante: " + (d.nombre || "—"),

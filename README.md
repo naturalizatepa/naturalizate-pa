@@ -4,14 +4,11 @@ Sitio estático del despacho **Naturalízate.pa**: landing de naturalización pa
 guía de requisitos y siete páginas de apoyo. Se publica en
 <https://naturalizatepa.github.io/naturalizate-pa/> sin build ni dependencias.
 
-- **Portada:** `index.html` — una sola página con la oferta, la tabla de planes, el
-  formulario de 4 pasos y las 11 preguntas frecuentes. Las tipografías van embebidas en
-  base64, así que abre sin conexión.
+- **Portada:** `index.html` — sistema comercial de 10 secciones alineado al embudo de 6 etapas (Contacto → Calificación → Confianza → Conversión → Evaluación → Contratación), separación entre Orientación Inicial Gratuita y Auditoría Jurídica de Caso (**US$49**), formulario de calificación de 8 preguntas y 12 preguntas frecuentes. Las tipografías (`Playfair Display` e `Inter`) van embebidas en base64.
 - **Contenido:** `guia.html` es la única página indexable además de la portada.
 - **Apoyo:** `contacto`, `servicios`, `vias`, `honorarios`, `informacion-legal`,
   `verificacion` y `aviso-legal` (todas `noindex, follow`), más `404.html`.
-- **Oferta publicada:** evaluación **$49.99** deducible; honorarios **USD 3,800**
-  (Esencial) y **USD 5,500** (Todo Incluido), con ITBMS condicional.
+- **Oferta comercial:** Orientación Inicial Gratuita (clasificación preliminar, sin dictamen) y **Auditoría Jurídica de Caso por US$49** (llamada telefónica con el Lic. Alfonso Villarreal). Los servicios jurídicos posteriores se cotizan mediante propuesta de honorarios independiente por escrito.
 
 ## Publicar
 

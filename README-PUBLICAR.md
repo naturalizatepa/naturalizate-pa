@@ -1,9 +1,9 @@
 # Naturalízate.pa — Guía de publicación
 
-**Actualizada:** 22 de noviembre de 2026 · **Sitio:** 11 páginas HTML, sin paso de compilación.
+**Actualizada:** 23 de noviembre de 2026 · **Sitio:** estático, sin paso de compilación.
 
-Esta es la única guía de publicación. Sustituye a `LEEME-PUBLICAR.md`, que se archivó por
-duplicarla y por describir una versión anterior del paquete.
+Esta es la única guía de publicación vigente. Sustituye a `LEEME-PUBLICAR.md` (retirado por
+duplicar esta guía y describir una versión comercial anterior).
 
 ---
 
@@ -11,18 +11,18 @@ duplicarla y por describir una versión anterior del paquete.
 
 | Archivo | Papel |
 |---|---|
-| `index.html` | Portada y landing completa. CSS y JS inline; **indexable** |
-| `guia.html` | Guía de requisitos. **Indexable**, con canónica propia |
+| `index.html` | Portada y embudo comercial completo (CSS, JS y 3 tipografías woff2 embebidas). **Indexable** |
+| `guia.html` | Guía jurídica y de requisitos (Art. 10 y autoridades competentes). **Indexable**, con canónica propia |
 | `aviso-legal.html` · `contacto.html` · `honorarios.html` · `informacion-legal.html` · `servicios.html` · `verificacion.html` · `vias.html` | Páginas de apoyo, `noindex, follow`, con canónica propia |
-| `404.html` | Error. `noindex` |
-| `formulario-interno.html` | Herramienta del despacho. `noindex, nofollow`, no enlazada desde el sitio |
-| `robots.txt` · `sitemap.xml` | Dos URLs indexables: portada y guía |
-| `_headers` | Seguridad y caché para Netlify / Cloudflare Pages. **No define CSP** |
+| `404.html` | Página de error. `noindex` |
+| `formulario-interno.html` | Herramienta interna del despacho. `noindex, nofollow`, no enlazada desde el sitio |
+| `robots.txt` · `sitemap.xml` | Dos URLs indexables: portada (`index.html`) y guía (`guia.html`) |
+| `_headers` | Cabeceras de seguridad y caché para Netlify / Cloudflare Pages |
 | `site.webmanifest` · `favicon-*.png` · `apple-touch-icon*.png` | Iconos e instalación como app |
-| `styles.css` · `app.js` | Sistema visual y comportamiento de las siete interiores |
-| `assets/fonts/` · `fonts/` | Tipografías autoalojadas; las usan páginas distintas, no sobran |
-| `foto-alfonso-villarreal.jpg` · `og-image.png` | Retrato y tarjeta social 1200×630 |
-| `googlef7de84a63b85219f.html` | Verificación de Search Console. No borrar |
+| `styles.css` · `app.js` | Sistema visual y comportamiento de las siete páginas interiores (no los carga `index.html`) |
+| `assets/fonts/` · `fonts/` | Tipografías autoalojadas (`Inter` y `Playfair Display`) |
+| `foto-alfonso-villarreal.jpg` · `og-image.png` | Retrato del abogado y tarjeta social 1200×630 |
+| `googlef7de84a63b85219f.html` | Verificación de Google Search Console. No borrar |
 
 ---
 
@@ -30,32 +30,39 @@ duplicarla y por describir una versión anterior del paquete.
 
 | Concepto | Condición |
 |---|---|
-| **Evaluación inicial** | **$49.99**, pago único, antes de la cita |
-| **Deducible** | Se descuenta de los honorarios si el cliente contrata |
-| **Atención** | Solo con **cita previa pagada** |
-| **Comprobante** | Al WhatsApp **6255-7583** con nombre y número de documento |
-| **Honorarios** | Fijos por escrito: **Esencial $3,800** · **Todo Incluido $5,500** |
-| **Medio de pago** | Se coordina por WhatsApp; **no hay pasarela conectada** |
+| **Orientación Inicial Gratuita** | Primer contacto orientativo breve (nacionalidad, estatus general, necesidad, clasificación preliminar y siguiente paso). **No incluye** opinión jurídica, revisión completa de expediente, análisis exhaustivo ni diagnóstico definitivo de elegibilidad |
+| **Auditoría Jurídica de Caso** | **US$49**, precio visible en la página. Modalidad: **llamada telefónica con el Lic. Alfonso Villarreal**. Servicio profesional independiente |
+| **Alcance de la auditoría** | Análisis de antecedentes del caso, revisión de documentos pertinentes aportados por el cliente, evaluación migratoria, identificación de riesgos u obstáculos, posibles vías legales, requisitos y próximos pasos |
+| **Servicios posteriores** | Si el caso resulta viable, cualquier representación legal, redacción, presentación o acompañamiento se cotiza y contrata **por separado** mediante propuesta de honorarios independiente y por escrito |
+| **Medio de pago** | Se coordina por WhatsApp (`+507 6255-7583`); actualmente **no hay pasarela de pago conectada** en la página |
 
-El sitio no promete gratuidad. El formulario prepara un mensaje de WhatsApp; no cobra ni
-confirma la cita por sí solo.
+El sitio nunca declara elegibilidad o inelegibilidad automática ni promete aprobaciones,
+plazos garantizados o resultados que dependen del Estado panameño.
 
 ---
 
-## 3. Portada y formulario
+## 3. Portada y formulario de calificación
 
-La portada tiene diez secciones con `id` y un cierre comercial: `#inicio`, `#situacion`,
-`#enfoque`, `#proceso`, `#honorarios`, `#diagnostico`, `#abogado`, `#casos`, `#preguntas`,
-`#verificar` y `section.final-cta`. Las nueve llamadas a la acción llevan a `#verificar`.
+La portada (`index.html`) sigue un recorrido de 10 bloques estratégicos para el embudo
+`CONTACTO → CALIFICACIÓN → CONFIANZA → CONVERSIÓN → EVALUACIÓN → CONTRATACIÓN`:
+`#inicio`, `#servicios-inicio`, `#quien-puede`, `#riesgos`, `#auditoria`, `#como-trabajamos`,
+`#abogado`, `#preguntas`, `#contratacion`, `#calificacion` y `#contacto`.
 
-El formulario tiene **cuatro pasos**:
+El formulario de calificación (`#calificacion`) recoge **8 preguntas clave**:
 
-1. **Filtro** (5 preguntas): país, años con Cédula E, ausencias, examen e ingreso.
-2. **Veredicto**: perfiles A, B, C y D, además de la ruta por reciprocidad.
-3. **Reserva**: nombre, WhatsApp, documento obligatorio, día, horario y modalidad.
-4. **Confirmación**: resumen y botón para enviar por WhatsApp.
+1. Nacionalidad.
+2. Año desde que reside en Panamá.
+3. Tipo de residencia actual.
+4. ¿Tiene cédula E?
+5. ¿Desde cuándo tiene cédula E?
+6. ¿Ha salido de Panamá durante su residencia?
+7. ¿Actualmente se encuentra en Panamá o en el extranjero?
+8. ¿Tiene vínculo familiar con ciudadanos panameños?
 
-No guarda borrador: recargar pierde las respuestas.
+Al enviarse, clasifica posibles vías preliminares a revisar (residencia, matrimonio cuando
+corresponda, reciprocidad, hijos panameños cuando aplique u otras situaciones migratorias)
+sin emitir veredicto automático, muestra el mensaje institucional de recepción y habilita el
+botón **«ENVIAR MI INFORMACIÓN POR WHATSAPP»** con los datos estructurados y atribución UTM.
 
 ---
 
@@ -63,77 +70,66 @@ No guarda borrador: recargar pierde las respuestas.
 
 ### GitHub Pages (host actual)
 
-1. Suba el contenido a `main` (o a `docs/`) y active *Deploy from a branch*.
+1. Suba el contenido a `main` y mantenga activo *Deploy from a branch*.
 2. `.nojekyll` ya está incluido.
-3. Con dominio propio, cambie la URL en `<link rel="canonical">`, `og:url`, `og:image`,
+3. Con dominio propio, actualice la URL en `<link rel="canonical">`, `og:url`, `og:image`,
    `sitemap.xml` y la línea `Sitemap:` de `robots.txt`.
 
 ### Netlify o Cloudflare Pages
 
-Arrastre la carpeta. `_headers` se aplica solo. El dominio se configura en *Domains*.
+Arrastre la carpeta o conecte el repositorio. `_headers` se aplica automáticamente.
 
 ### Vercel
 
-Despliegue la carpeta o el repositorio. **Vercel no lee `_headers`**: si quiere las mismas
-cabeceras, declárelas en `vercel.json`.
+Despliegue el repositorio. **Vercel no lee `_headers`**: si requiere las mismas cabeceras,
+declárelas en `vercel.json`.
 
 ### cPanel o hosting tradicional
 
 1. Suba todo el contenido a `public_html/`, conservando nombres y rutas.
-2. `_headers` se ignora; para las cabeceras básicas, añada a `.htaccess`:
-
-```apache
-<IfModule mod_headers.c>
-  Header set X-Content-Type-Options "nosniff"
-  Header set X-Frame-Options "SAMEORIGIN"
-  Header set Referrer-Policy "strict-origin-when-cross-origin"
-</IfModule>
-```
+2. `_headers` se ignora; añada en `.htaccess` las cabeceras de seguridad (`X-Content-Type-Options`,
+   `X-Frame-Options`, `Referrer-Policy`).
 
 ### Formulario interno
 
-- **Recomendado:** una carpeta poco adivinable, por ejemplo `public_html/interno/formulario.html`.
-- Alternativa: no subirlo y usarlo desde el escritorio, con doble clic y sin internet.
-- **Nunca** enlazarlo desde la landing.
+- Manténgalo con `noindex, nofollow` y **nunca** lo enlace desde la portada ni desde las
+  páginas públicas.
 
 ---
 
-## 5. Antes de publicar
+## 5. Pendientes opcionales de configuración
 
-- [ ] Definir el medio de pago del $49.99 (Yappy, transferencia o tarjeta) y si se automatiza.
-- [ ] Confirmar el alcance del deducible en ambos planes y su vigencia.
-- [ ] Revisión legal de honorarios, deducible, requisitos y plazos por el licenciado.
-- [ ] Verificar WhatsApp `50762557583` y correo `villarreallawyers@proton.me`.
-- [ ] Fotografía definitiva.
-- [ ] **GA4:** pegar el ID en `GA4_ID` (hoy vacío, sin peticiones), registrar `resultado`,
-      `perfil` y `pais` como dimensiones personalizadas y revisar la cláusula de
-      `aviso-legal.html#cookies`.
-- [ ] Search Console: comprobar la propiedad y enviar `sitemap.xml`.
-- [x] Siete interiores en `noindex` (decisión del 22 nov 2026); canónica preparada por si se amplían.
+- [ ] **GA4:** pegar el Measurement ID (`G-XXXXXXXXXX`) en `GA4_ID` dentro de `index.html`
+      (actualmente vacío, sin peticiones externas; eventos listos en `window.dataLayer`).
+- [ ] **Enlace de pago directo (opcional):** si se habilita cobro en línea para la
+      Auditoría Jurídica de Caso (US$49), integrarlo junto al botón de WhatsApp.
+- [ ] **Dominio propio y Search Console:** confirmar la propiedad en Search Console y enviar
+      `sitemap.xml`.
+- [ ] **Validación periódica del abogado:** confirmar vigencia de criterios administrativos
+      del SNM, Tribunal Electoral y Órgano Ejecutivo.
 
 ---
 
-## 6. Qué se verificó en esta versión
+## 6. Qué se verificó en esta versión (23 nov 2026)
 
-- **Cero peticiones externas** con `GA4_ID` vacío, medido en Chrome con el resolutor DNS bloqueado.
-- **Sintaxis** del script inline de la portada (`node --check`), sin errores.
-- **286 referencias locales** de HTML, CSS, JS y manifiesto: ninguna falta.
-- **Carga headless** de portada, guía, aviso legal y 404: título y `h1` correctos.
-- **JSON-LD** de portada y guía válido; 11 preguntas en HTML y 11 en el schema.
-- **Canónicas** en portada, guía y las siete interiores; `noindex` solo donde corresponde.
-- **Sitemap** válido, con dos URLs y `lastmod` real.
-
-No verificado: revisión visual en navegador real, comportamiento en Safari o Firefox y
-aprobación del abogado.
+- **Cero peticiones externas bloqueantes** en `index.html` (3 fuentes `.woff2` embebidas en
+  base64 y `GA4_ID = ""`).
+- **Sintaxis JS** de `index.html` verificada (`node --check`, sin errores).
+- **JSON-LD** válido (`Attorney` y `FAQPage` con **12 preguntas** sincronizadas con el HTML).
+- **HTTP 200 OK** en todas las páginas públicas y verificación de enlaces locales y anclas.
+- **Telemetría del embudo** validada en simulación DOM (`visita_embudo`, `evaluacion_iniciada`,
+  `evaluacion_completada`, `whatsapp_click`, `auditoria_solicitada`, `cta_click`, `faq_abierta`).
+- **Limpieza comercial**: cero referencias residuales a tarifas anteriores en las páginas
+  publicadas y retirada de `variante-dorada.html` y `LEEME-PUBLICAR.md`.
 
 ---
 
-## 7. Archivos retirados (no recrear)
+## 7. Archivos heredados que no deben usarse ni recrearse
 
-`index` sin extensión, `variante-dorada.html`, `site_builder.py`, `pages_content.py`,
-`icon-*.png` y `maskable-*.png`, `favicon.svg`, `panama-office.jpg`,
-`perfil-villarreal-88.webp` y los duplicados de fotografía y favicon que no estaban
-referenciados. Los generadores reescribían `index.html`; por eso se eliminaron.
+- `variante-dorada.html` y `LEEME-PUBLICAR.md`: retirados del repositorio por corresponder a
+  una versión comercial anterior. No recrear.
+- `site_builder.py` y `pages_content.py`: generadores antiguos que sobrescribirían `index.html`
+  con una versión obsoleta; **no ejecutar**.
 
 ---
 
@@ -141,6 +137,6 @@ referenciados. Los generadores reescribían `index.html`; por eso se eliminaron.
 
 | Necesidad | Archivo |
 |---|---|
-| Estructura, marca, formulario y mantenimiento | `LEEME-landing.md` |
-| Embudo, eventos y fricción | `ANALISIS-EMBUDO.md` |
-| Canonical, indexación y Search Console | `SEO.md` |
+| Estructura, identidad visual, formulario y mantenimiento | `LEEME-landing.md` |
+| Embudo comercial de 6 etapas y analítica | `ANALISIS-EMBUDO.md` |
+| Canónicas, indexación, JSON-LD y Search Console | `SEO.md` |

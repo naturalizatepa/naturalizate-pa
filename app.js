@@ -56,8 +56,10 @@ const searchEntries = [
   { title: "Áreas de práctica", detail: "Servicios de naturalización", href: "servicios.html", terms: "evaluacion expediente representacion seguimiento" },
   { title: "Evaluación de viabilidad", detail: "Revisión inicial del caso", href: "servicios.html#evaluacion", terms: "cedula e residencia elegibilidad" },
   { title: "Vías de naturalización", detail: "Residencia, reciprocidad y vínculos", href: "vias.html", terms: "pais origen arraigo familiar" },
+  { title: "Auditoría Jurídica de Caso", detail: "US$49 · evaluación profesional", href: "index.html#auditoria", terms: "precio costo 49 auditoria abogado llamada" },
+  { title: "Evaluar mi situación", detail: "Formulario de calificación", href: "index.html#calificacion", terms: "formulario preguntas whatsapp calificacion" },
   { title: "Honorarios", detail: "Alcance y propuesta por escrito", href: "honorarios.html", terms: "precios tarifas costos" },
-  { title: "Guía de requisitos", detail: "Información legal gratuita", href: "informacion-legal.html#requisitos", terms: "cedula e documentos" },
+  { title: "Guía de requisitos", detail: "Guía completa del despacho", href: "guia.html", terms: "cedula e documentos requisitos" },
   { title: "Solvencia económica", detail: "Pruebas documentales", href: "informacion-legal.html#solvencia", terms: "ingresos carta bancaria trabajo" },
   { title: "Etapas del proceso", detail: "Presentación y juramentación", href: "informacion-legal.html#proceso", terms: "tribunal electoral migracion examen" },
   { title: "Enlaces oficiales", detail: "Tribunal Electoral y Migración", href: "informacion-legal.html#enlaces-oficiales", terms: "gobierno instituciones" },
@@ -144,28 +146,41 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-for (const form of document.querySelectorAll("[data-mailto-form]")) {
+const WA_NUMBER = "50762557583";
+
+function openWhatsApp(message) {
+  const anchor = document.createElement("a");
+  anchor.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+  anchor.target = "_blank";
+  anchor.rel = "noopener noreferrer";
+  anchor.hidden = true;
+  document.body.append(anchor);
+  anchor.click();
+  anchor.remove();
+}
+
+const formLabels = {
+  nombre: "Nombre",
+  correo: "Correo electrónico",
+  telefono: "Teléfono o WhatsApp",
+  pais: "País de origen",
+  mensaje: "Mensaje",
+};
+
+for (const form of document.querySelectorAll("[data-wa-form]")) {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     if (!form.reportValidity()) return;
     const values = new FormData(form);
-    const fields = [
-      ["Nombre", values.get("nombre")],
-      ["Correo", values.get("correo")],
-      ["Teléfono", values.get("telefono")],
-      ["País de origen", values.get("pais")],
-      ["Mensaje", values.get("mensaje")],
-      ["Solicita novedades", values.has("novedades") ? "Sí" : "No"],
-    ];
-    const body = fields.filter(([, value]) => value).map(([label, value]) => `${label}: ${value}`).join("\n\n");
-    const url = `mailto:villarreallawyers@proton.me?subject=${encodeURIComponent(form.dataset.subject)}&body=${encodeURIComponent(body)}`;
-    const anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.hidden = true;
-    document.body.append(anchor);
-    anchor.click();
-    anchor.remove();
-    form.querySelector("[data-form-status]").textContent = "Se preparó el correo. Confirme el envío en su aplicación de correo; si no se abre, escriba a villarreallawyers@proton.me.";
+    const lines = ["Hola, les escribo desde el sitio de Naturalízate.pa."];
+    for (const [key, value] of values.entries()) {
+      if (key === "novedades") continue;
+      const text = String(value).trim();
+      if (text) lines.push(`${formLabels[key] || key}: ${text}`);
+    }
+    lines.push(`Novedades legales: ${values.has("novedades") ? "Sí" : "No"}`);
+    openWhatsApp(lines.join("\n"));
+    form.querySelector("[data-form-status]").textContent = "Se abrió WhatsApp con sus datos. Revise el mensaje y envíelo desde su aplicación; si no se abre, escriba al +507 6255-7583.";
   });
 }
 
@@ -217,6 +232,45 @@ for (const button of document.querySelectorAll("[data-share]")) {
     } catch {
       status.textContent = "Copie el enlace desde la barra de direcciones.";
     }
+  });
+}
+
+for (const item of document.querySelectorAll(".faq-item")) {
+  const button = item.querySelector(".faq-q");
+  const panel = item.querySelector(".faq-a");
+  button.addEventListener("click", () => {
+    const open = button.getAttribute("aria-expanded") !== "true";
+    button.setAttribute("aria-expanded", String(open));
+    panel.hidden = !open;
+  });
+}
+
+const qualForm = document.querySelector("[data-qual-form]");
+if (qualForm) {
+  const fields = [...qualForm.querySelectorAll("[data-qual-field]")];
+  const countLabel = document.getElementById("qual-count");
+  const bar = qualForm.querySelector(".progress-track");
+  const fill = document.getElementById("qual-progress");
+  const status = qualForm.querySelector("[data-qual-status]");
+  const update = () => {
+    const filled = fields.filter((field) => field.value).length;
+    countLabel.textContent = `${filled} de ${fields.length} respondidas`;
+    bar.setAttribute("aria-valuenow", String(filled));
+    fill.style.width = `${(filled / fields.length) * 100}%`;
+  };
+  fields.forEach((field) => field.addEventListener("change", update));
+  update();
+  qualForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!qualForm.reportValidity()) return;
+    const lines = fields.map((field) => `${field.name}: ${field.value}`);
+    const message = [
+      "Hola, completé el formulario de calificación de Naturalízate.pa.",
+      "",
+      ...lines,
+    ].join("\n");
+    openWhatsApp(message);
+    status.textContent = "Se preparó el mensaje de WhatsApp con sus respuestas. Revíselo y envíelo desde su aplicación.";
   });
 }
 

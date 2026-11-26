@@ -3,12 +3,12 @@
 from html import escape
 from pathlib import Path
 
-from pages_content import PAGES
+from pages_content import FAQ, PAGES, WHATSAPP
 
 ROOT = Path(__file__).resolve().parent
-GUIDE = "https://naturalizatepa.github.io/naturalizate-pa/guia.html"
-WHATSAPP = "https://wa.me/50762557583?text=Hola%2C%20quisiera%20orientaci%C3%B3n%20sobre%20mi%20proceso%20de%20naturalizaci%C3%B3n%20en%20Panam%C3%A1."
+GUIDE = "guia.html"
 MAP = "https://www.google.com/maps/search/?api=1&amp;query=Scotia+Plaza+Piso+7+Av+Federico+Boyd+Panama"
+SITE = "https://naturalizatepa.github.io/naturalizate-pa/"
 
 
 def nav_link(href, label, active, key):
@@ -33,13 +33,13 @@ def navigation(active):
         ("servicios.html#evaluacion", "Evaluación de viabilidad", ""),
         ("servicios.html#expediente", "Preparación del expediente", ""),
         ("servicios.html#representacion", "Representación y seguimiento", ""),
-        ("vias.html", "Vías de naturalización", ""),
+        ("index.html#auditoria", "Auditoría Jurídica de Caso · US$49", ""),
     ]
     information = [
         ("informacion-legal.html#articulos", "Artículos y novedades", ""),
         ("informacion-legal.html#proceso", "Etapas del proceso", ""),
         ("informacion-legal.html#enlaces-oficiales", "Enlaces oficiales", ""),
-        (GUIDE, "Guía completa de requisitos ↗", ' target="_blank" rel="noopener noreferrer"'),
+        (GUIDE, "Guía completa de requisitos", ""),
     ]
     items = [
         nav_link("index.html", "Inicio", active, "inicio"),
@@ -91,13 +91,13 @@ def footer():
       <div class="footer-columns">
         <section class="footer-form-col" aria-labelledby="footer-form-title">
           <h2 id="footer-form-title">Escríbanos</h2>
-          <form class="contact-form footer-form" data-mailto-form data-subject="Consulta desde Naturalízate.pa">
+          <form class="contact-form footer-form" data-wa-form>
             <label class="visually-hidden" for="footer-name">Nombre</label><input id="footer-name" name="nombre" type="text" placeholder="Nombre" autocomplete="name" required />
             <label class="visually-hidden" for="footer-email">Correo electrónico</label><input id="footer-email" name="correo" type="email" placeholder="Correo electrónico" autocomplete="email" required />
             <label class="visually-hidden" for="footer-message">Mensaje</label><textarea id="footer-message" name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
             <label class="check-line"><input type="checkbox" name="novedades" value="Sí" /> Me interesa recibir novedades legales</label>
             <button class="form-submit" type="submit">Enviar <span aria-hidden="true">→</span></button>
-            <p class="form-note" data-form-status role="status">Se abrirá su aplicación de correo. No guardamos datos en esta página.</p>
+            <p class="form-note" data-form-status role="status">Al enviar, se abrirá WhatsApp con sus datos para que revise y confirme el mensaje. No guardamos datos en esta página.</p>
           </form>
         </section>
         <section class="footer-contact-col" aria-labelledby="footer-contact-title">
@@ -105,7 +105,7 @@ def footer():
           <div class="contact-row"><span class="contact-symbol" aria-hidden="true">⌖</span><div><strong>Dirección</strong><address>Scotia Plaza, Piso 7<br />Av. Federico Boyd<br />Ciudad de Panamá, Panamá</address></div></div>
           <div class="contact-row"><span class="contact-symbol" aria-hidden="true">◔</span><div><strong>WhatsApp</strong><a href="{WHATSAPP}" target="_blank" rel="noopener noreferrer">+507 6255-7583</a></div></div>
           <div class="contact-row"><span class="contact-symbol" aria-hidden="true">✉</span><div><strong>Correo electrónico</strong><a href="mailto:villarreallawyers@proton.me">villarreallawyers@proton.me</a></div></div>
-          <div class="contact-row"><span class="contact-symbol" aria-hidden="true">↗</span><div><strong>Más información</strong><a href="{GUIDE}" target="_blank" rel="noopener noreferrer">Guía de requisitos</a><a href="contacto.html">Formulario de contacto</a></div></div>
+          <div class="contact-row"><span class="contact-symbol" aria-hidden="true">↗</span><div><strong>Más información</strong><a href="{GUIDE}">Guía de requisitos</a><a href="contacto.html">Formulario de contacto</a></div></div>
         </section>
         <section class="footer-map-col" aria-labelledby="footer-map-title">
           <h2 id="footer-map-title">Ubicación</h2>
@@ -118,10 +118,64 @@ def footer():
     </footer>'''
 
 
+def structured_data():
+    faq = {
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": question,
+                "acceptedAnswer": {"@type": "Answer", "text": answer.replace("<strong>", "").replace("</strong>", "")},
+            }
+            for question, answer in FAQ
+        ],
+    }
+    attorney = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Attorney",
+                "@id": SITE + "#despacho",
+                "name": "Naturalízate.pa",
+                "url": SITE,
+                "image": SITE + "og-image.png",
+                "description": "Oficina legal en Ciudad de Panamá enfocada en la naturalización panameña por residencia, vínculo familiar y reciprocidad.",
+                "telephone": "+507 6255-7583",
+                "email": "villarreallawyers@proton.me",
+                "areaServed": "PA",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Scotia Plaza, Piso 7, Avenida Federico Boyd",
+                    "addressLocality": "Ciudad de Panamá",
+                    "addressCountry": "PA",
+                },
+                "founder": {"@type": "Person", "name": "Alfonso Villarreal", "jobTitle": "Abogado"},
+                "makesOffer": {
+                    "@type": "Offer",
+                    "name": "Auditoría Jurídica de Caso",
+                    "price": "49",
+                    "priceCurrency": "USD",
+                    "description": "Llamada telefónica con el Lic. Alfonso Villarreal, análisis de antecedentes, revisión de documentación y alternativas jurídicas.",
+                },
+            },
+            faq,
+        ],
+    }
+    return (
+        '<script type="application/ld+json">'
+        + __import__("json").dumps(attorney, ensure_ascii=False, separators=(",", ":"))
+        + "</script>"
+    )
+
+
 def build_page(filename, page):
     title = escape(page["title"], quote=True)
     description = escape(page["description"], quote=True)
     home = page.get("home", False)
+    robots = page.get("robots", "noindex, follow")
+    canonical = page.get("canonical", SITE if home else SITE + filename)
+    canonical_tag = f'<link rel="canonical" href="{canonical}" />' if canonical else ""
+    og_url = f'<meta property="og:url" content="{canonical or SITE}" />'
     main = f'''<main class="shell main-shell{' is-home' if home else ' is-inner'}" id="contenido">
     {HERO if home else ''}
     {SEARCH}
@@ -133,25 +187,35 @@ def build_page(filename, page):
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0D1B2A" />
-    <meta name="robots" content="noindex, follow" />
+    <meta name="robots" content="{robots}" />
     <meta name="description" content="{description}" />
+    {canonical_tag}
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_PA" />
     <meta property="og:site_name" content="Naturalízate.pa" />
+    {og_url}
     <meta property="og:title" content="{title}" />
     <meta property="og:description" content="{description}" />
-    <meta property="og:image" content="https://naturalizatepa.github.io/naturalizate-pa/og-image.png" />
+    <meta property="og:image" content="{SITE}og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{title}" />
+    <meta name="twitter:description" content="{description}" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
     <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="assets/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css" />
+    {page.get('page_css', '')}
     <script src="app.js" defer></script>
+    {structured_data() if home else page.get('jsonld', '')}
     <title>{title}</title>
   </head>
   <body data-page="{page['active']}">
     {header(page['active'])}
     {main}
     {footer()}
+    {page.get('scripts', '')}
   </body>
 </html>
 '''

@@ -1,0 +1,156 @@
+<div class="aviso">
+  <div class="wrap">Herramienta interna: no está enlazada desde el sitio público y lleva <strong>noindex</strong>. Al finalizar, genere el <strong>informe en PDF</strong> y archívelo con el expediente del solicitante.</div>
+</div>
+
+<form id="internoForm" novalidate>
+  <div class="wrap">
+
+    <div class="verdict-panel">
+      <h2>Veredicto en vivo</h2>
+      <span class="badge b-neutro" id="vBadge">Complete el perfil</span>
+      <p id="vTexto">Al marcar país, años de Cédula E y pruebas documentales, aquí se calcula el veredicto con la misma lógica del sitio público.</p>
+    </div>
+
+    <fieldset>
+      <legend>A · Datos del solicitante</legend>
+      <div class="grid">
+        <div class="campo"><label for="i_nombre">Nombre completo *</label><input id="i_nombre" name="i_nombre" autocomplete="off" placeholder="Ej.: María Fernández Ríos" /></div>
+        <div class="campo"><label for="i_whatsapp">WhatsApp *</label><input id="i_whatsapp" name="i_whatsapp" inputmode="tel" autocomplete="off" placeholder="Ej.: 6255-7583" /></div>
+        <div class="campo"><label for="i_email">Correo electrónico</label><input id="i_email" name="i_email" type="email" autocomplete="off" placeholder="opcional" /></div>
+        <div class="campo">
+          <label for="i_pais">País de origen *</label>
+          <select id="i_pais" name="i_pais">
+            <option value="">Seleccione…</option>
+            <option>Alemania</option><option>Argentina</option><option>Bolivia</option><option>Brasil</option><option>Canadá</option>
+            <option>Chile</option><option>China</option><option>Colombia</option><option>Corea del Sur</option><option>Costa Rica</option>
+            <option>Cuba</option><option>Ecuador</option><option>El Salvador</option><option>España</option><option>Estados Unidos</option>
+            <option>Francia</option><option>Guatemala</option><option>Guyana</option><option>Haití</option><option>Honduras</option>
+            <option>India</option><option>Italia</option><option>Jamaica</option><option>Líbano</option><option>México</option>
+            <option>Nicaragua</option><option>Países Bajos</option><option>Pakistán</option><option>Paraguay</option><option>Perú</option>
+            <option>Portugal</option><option>Reino Unido</option><option>República Dominicana</option><option>Rusia</option><option>Suiza</option>
+            <option>Trinidad y Tobago</option><option>Turquía</option><option>Ucrania</option><option>Uruguay</option><option>Venezuela</option>
+            <option value="otro">Otro</option>
+          </select>
+          <input id="i_pais_otro" name="i_pais_otro" placeholder="Especifique el país" style="display:none;margin-top:8px" aria-label="Especifique el país de origen" />
+        </div>
+        <div class="campo">
+          <label for="i_cedula">Años con Cédula E *</label>
+          <select id="i_cedula" name="i_cedula">
+            <option value="">Seleccione…</option>
+            <option value="menos3">Menos de 3 años</option>
+            <option value="entre35">Entre 3 y 5 años</option>
+            <option value="mas5">Más de 5 años</option>
+            <option value="nose">No está seguro(a)</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="i_ausencias">Ausencias prolongadas de Panamá</label>
+          <select id="i_ausencias" name="i_ausencias">
+            <option value="">Seleccione…</option>
+            <option value="no">No</option>
+            <option value="menores">Sí, menores a 6 meses</option>
+            <option value="mayores">Sí, mayores a 6 meses</option>
+            <option value="nose">No está seguro(a)</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="i_civil">Estado civil</label>
+          <select id="i_civil" name="i_civil">
+            <option value="">Seleccione…</option>
+            <option value="soltero">Soltero(a)</option>
+            <option value="casado">Casado(a)</option>
+            <option value="unido">Unido(a)</option>
+            <option value="divorciado">Divorciado(a)</option>
+            <option value="viudo">Viudo(a)</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="i_examen">¿Dispuesto a preparar el examen de naturalización?</label>
+          <select id="i_examen" name="i_examen">
+            <option value="">Seleccione…</option>
+            <option value="si">Sí, con disciplina</option>
+            <option value="dudas">Tiene dudas sobre el examen</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="i_modalidad">Modalidad recomendada</label>
+          <select id="i_modalidad" name="i_modalidad">
+            <option value="">Por definir en la evaluación</option>
+            <option value="esencial">Proceso Esencial</option>
+            <option value="todo">Proceso Todo Incluido</option>
+          </select>
+        </div>
+      </div>
+      <div class="campo full">
+        <label class="check"><input type="checkbox" id="i_dependiente" name="i_dependiente" /> Solicitante dependiente (ama de casa o estudiante): presenta carta de responsabilidad y la solvencia del responsable</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>B · Solvencia económica</legend>
+      <div class="campo full">
+        <label>Pruebas de solvencia con las que cuenta <em style="text-transform:none;font-weight:400">(la norma exige dos de tres)</em></label>
+        <label class="check"><input type="checkbox" id="i_doc_renta" name="i_doc_renta" /> Declaración de Renta (2 años, CPA y notario)</label>
+        <label class="check"><input type="checkbox" id="i_doc_banco" name="i_doc_banco" /> Carta bancaria al Servicio Nacional de Migración</label>
+        <label class="check"><input type="checkbox" id="i_doc_trabajo" name="i_doc_trabajo" /> Carta de trabajo + ficha actualizada de la CSS</label>
+      </div>
+      <div class="campo full">
+        <label for="i_notas_docs">Notas de verificación documental</label>
+        <textarea id="i_notas_docs" name="i_notas_docs" placeholder="Vigencias, firmas del CPA, sellos, faltantes detectados, compromisos de entrega…"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>C · Seguimiento y cita</legend>
+      <div class="grid">
+        <div class="campo">
+          <label for="i_objetivo">Objetivo declarado</label>
+          <select id="i_objetivo" name="i_objetivo">
+            <option value="">Seleccione…</option>
+            <option value="iniciar">Iniciar el proceso de naturalización</option>
+            <option value="evaluar">Evaluar si el caso califica</option>
+            <option value="info">Solicitar orientación general</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="i_disponibilidad">Disponibilidad para iniciar</label>
+          <select id="i_disponibilidad" name="i_disponibilidad">
+            <option value="">Seleccione…</option>
+            <option value="ahora">De inmediato</option>
+            <option value="30dias">En los próximos 30 días</option>
+            <option value="meses">En 2 a 3 meses</option>
+            <option value="nose">Por confirmar</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="i_asesor">Atendido por</label>
+          <select id="i_asesor" name="i_asesor">
+            <option value="">Seleccione…</option>
+            <option>Patricia (asistente legal)</option>
+            <option>Lic. Alfonso Villarreal</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="campo"><label for="i_cita_fecha">Fecha de la cita</label><input type="date" id="i_cita_fecha" name="i_cita_fecha" /></div>
+        <div class="campo"><label for="i_cita_hora">Hora de la cita</label><input type="time" id="i_cita_hora" name="i_cita_hora" /></div>
+        <div class="campo"><label for="i_dia">Preferencia del solicitante</label><input id="i_dia" placeholder="Ej.: jueves en la tarde" /></div>
+      </div>
+      <div class="campo full">
+        <label for="i_notas">Notas internas del caso</label>
+        <textarea id="i_notas" name="i_notas" placeholder="Observaciones de la llamada, riesgos detectados, documentos por subsanar, acuerdos de seguimiento…"></textarea>
+      </div>
+    </fieldset>
+
+  </div>
+
+  <div class="acciones">
+    <div class="wrap">
+      <button type="button" class="btn btn-navy" id="btnPDF">Generar informe PDF</button>
+      <button type="button" class="btn btn-outline" id="btnResumen">Copiar resumen</button>
+      <button type="button" class="btn btn-outline" id="btnWA">Enviar por WhatsApp</button>
+      <button type="button" class="btn btn-gris" id="btnLimpiar">Limpiar</button>
+      <span class="estado" id="estado" hidden></span>
+    </div>
+  </div>
+</form>

@@ -1,89 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es-PA">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Página no encontrada — Naturalízate.pa</title>
-<meta name="robots" content="noindex" />
-<meta name="theme-color" content="#0D1B2A" />
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
-<link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
-<style>
-
-  /* ===== Brand Book v3.0 · Tipografías autohospedadas (cero CSS de terceros que bloquee el render) ===== */
-  @font-face {
-    font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap;
-    src: url("fonts/inter-latin-wght-normal.woff2") format("woff2");
-    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-  }
-  @font-face {
-    font-family: "Playfair Display"; font-style: normal; font-weight: 400 900; font-display: swap;
-    src: url("fonts/playfair-display-latin-wght-normal.woff2") format("woff2");
-    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-  }
-  @font-face {
-    font-family: "Playfair Display"; font-style: italic; font-weight: 400 900; font-display: swap;
-    src: url("fonts/playfair-display-latin-wght-italic.woff2") format("woff2");
-    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-  }
-  /* Fallbacks con métricas ajustadas (Capsize): eliminan el CLS del intercambio tipográfico */
-  @font-face {
-    font-family: "Inter Fallback";
-    src: local("Arial"), local("ArialMT");
-    ascent-override: 90.4365%; descent-override: 22.518%; line-gap-override: 0%; size-adjust: 107.1194%;
-  }
-  @font-face {
-    font-family: "Playfair Display Fallback";
-    src: local("Georgia");
-    ascent-override: 106.716%; descent-override: 24.7558%; line-gap-override: 0%; size-adjust: 101.3906%;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: "Inter", "Inter Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: linear-gradient(155deg, #060F17 0%, #0D1B2A 55%, #1B3A57 100%);
-    color: #fff; min-height: 100vh; display: flex; flex-direction: column;
-    justify-content: space-between; -webkit-font-smoothing: antialiased;
-  }
-  header, footer { padding: 26px clamp(20px, 5vw, 56px); }
-  .mark { display: inline-flex; align-items: baseline; text-decoration: none; }
-  .mark span { display: flex; align-items: baseline; font-family: "Playfair Display", "Playfair Display Fallback", Georgia, serif; font-size: 20px; line-height: 1; }
-  .mark .n { color: #fff; font-weight: 500; letter-spacing: 3px; }
-  .mark .p { color: #C5A572; font-style: italic; font-weight: 400; text-transform: lowercase; letter-spacing: 0.5px; }
-  main { padding: 40px clamp(20px, 5vw, 56px); max-width: 680px; }
-  .k { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #C5A572; font-weight: 700; margin-bottom: 18px; }
-  h1 { font-family: "Playfair Display", "Playfair Display Fallback", Georgia, serif; font-weight: 600; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 18px; }
-  h1 em { font-style: italic; font-weight: 400; color: #D4B788; }
-  p { color: rgba(255,255,255,0.8); font-size: 1rem; line-height: 1.7; max-width: 520px; margin-bottom: 30px; }
-  .actions { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn {
-    display: inline-block; padding: 14px 26px; background: #C5A572; color: #060F17;
-    text-decoration: none; border-radius: 4px; font-weight: 700; font-size: 0.82rem;
-    letter-spacing: 1.4px; text-transform: uppercase;
-    transition: background .18s ease, transform .18s ease;
-  }
-  .btn:hover { background: #D4B788; transform: translateY(-1px); }
-  .btn-wa { background: #187942; color: #fff; }
-  .btn-wa:hover { background: #136235; color: #fff; }
-  footer { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
-</style>
-</head>
-<body>
-  <header>
-    <a class="mark" href="index.html">
-      <span><b class="n">NATURALÍZATE</b><b class="p">.pa</b></span>
-    </a>
-  </header>
-  <main>
-    <div class="k">Error 404</div>
-    <h1>Esta página no existe, <em>pero su trámite sí tiene inicio.</em></h1>
-    <p>La dirección que abrió pudo cambiar o escribirse con error. Vuelva al inicio o escriba directamente a un asesor para recibir orientación inmediata.</p>
-    <div class="actions">
-      <a class="btn" href="index.html">Ir al inicio →</a>
-      <a class="btn btn-wa" href="https://wa.me/50762557583?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20agente%20sobre%20mi%20proceso%20de%20naturalizaci%C3%B3n." target="_blank" rel="noopener">Hablar con un agente</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0D1B2A" />
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="La dirección solicitada no existe o cambió. Vuelva al inicio de Naturalízate.pa o escriba al despacho por WhatsApp." />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_PA" />
+    <meta property="og:site_name" content="Naturalízate.pa" />
+    <meta property="og:url" content="https://naturalizatepa.github.io/naturalizate-pa/" />
+    <meta property="og:title" content="Página no encontrada — Naturalízate.pa" />
+    <meta property="og:description" content="La dirección solicitada no existe o cambió. Vuelva al inicio de Naturalízate.pa o escriba al despacho por WhatsApp." />
+    <meta property="og:image" content="https://naturalizatepa.github.io/naturalizate-pa/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Página no encontrada — Naturalízate.pa" />
+    <meta name="twitter:description" content="La dirección solicitada no existe o cambió. Vuelva al inicio de Naturalízate.pa o escriba al despacho por WhatsApp." />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+    
+    <script src="app.js" defer></script>
+    
+    <title>Página no encontrada — Naturalízate.pa</title>
+  </head>
+  <body data-page="">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-masthead">
+      <div class="shell masthead-inner">
+        <div class="utility-row"><span class="utility-locale"><span class="locale-mark" aria-hidden="true">PA</span> Panamá · Español</span><a href="https://wa.me/50762557583?text=%C2%A1Hola%21%20%F0%9F%91%8B%20Bienvenido/a%20a%20Natural%C3%ADzate.pa%20%F0%9F%87%B5%F0%9F%87%A6%0ATe%20acompa%C3%B1amos%20en%20tu%20proceso%20de%20naturalizaci%C3%B3n%20paname%C3%B1a%20con%20atenci%C3%B3n%20jur%C3%ADdica%20personalizada%20%E2%9A%96%EF%B8%8F%E2%9C%A8%0A%0A%E2%9C%85%20Primer%20contacto%20gratuito%20y%20sin%20compromiso.%0A%0APara%20comenzar%2C%20cu%C3%A9ntanos%3A%0A%F0%9F%8C%8E%20%C2%BFCu%C3%A1l%20es%20tu%20nacionalidad%3F%0A%F0%9F%93%85%20%C2%BFDesde%20qu%C3%A9%20a%C3%B1o%20tienes%20residencia%20permanente%20en%20Panam%C3%A1%3F" target="_blank" rel="noopener noreferrer">WhatsApp +507 6255-7583 <span aria-hidden="true">↗</span></a></div>
+        <div class="brand-block"><a class="brand-link" href="index.html" aria-label="Naturalízate.pa, página de inicio"><img src="assets/logo-principal-navy.svg" alt="Naturalízate.pa" width="1054" height="140" /></a><p>Oficina legal · Naturalización panameña</p></div>
+      </div>
+    </header>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <div class="shell nav-inner">
+        <a class="nav-mobile-brand" href="index.html" aria-label="Naturalízate.pa, inicio"><img src="assets/isotipo-n-blanco.svg" alt="" width="105" height="92" /></a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+        <div class="nav-links" id="nav-links"><a class="nav-link" href="index.html">Inicio</a>
+<div class="nav-item has-dropdown" data-dropdown>
+      <a class="nav-link" href="servicios.html">Áreas de práctica</a>
+      <button class="nav-caret" type="button" aria-label="Abrir submenú de Áreas de práctica" aria-expanded="false" aria-controls="submenu-servicios">
+        <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="m2 4.5 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </button>
+      <div class="nav-panel" id="submenu-servicios"><a href="servicios.html#evaluacion">Evaluación de viabilidad</a>
+<a href="servicios.html#expediente">Preparación del expediente</a>
+<a href="servicios.html#representacion">Representación y seguimiento</a>
+<a href="index.html#auditoria">Auditoría Jurídica de Caso · US$49</a></div>
     </div>
-  </main>
-  <footer>Naturalízate.pa · Scotia Plaza, Piso 7. Av. Federico Boyd, Panamá, Provincia de Panamá · +507 6255-7583</footer>
-</body>
+<a class="nav-link" href="vias.html">Vías de naturalización</a>
+<a class="nav-link" href="honorarios.html">Honorarios</a>
+<a class="nav-link" href="aviso-legal.html">Aviso legal</a>
+<div class="nav-item has-dropdown" data-dropdown>
+      <a class="nav-link" href="informacion-legal.html">Información legal</a>
+      <button class="nav-caret" type="button" aria-label="Abrir submenú de Información legal" aria-expanded="false" aria-controls="submenu-informacion">
+        <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="m2 4.5 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </button>
+      <div class="nav-panel" id="submenu-informacion"><a href="informacion-legal.html#articulos">Artículos y novedades</a>
+<a href="informacion-legal.html#proceso">Etapas del proceso</a>
+<a href="informacion-legal.html#enlaces-oficiales">Enlaces oficiales</a>
+<a href="guia.html">Guía completa de requisitos</a></div>
+    </div>
+<a class="nav-link" href="verificacion.html">Verificación</a>
+<a class="nav-link" href="contacto.html">Contáctenos</a></div>
+      </div>
+    </nav>
+    <main class="shell main-shell is-inner" id="contenido">
+    
+    <div class="search-region">
+      <form class="site-search" role="search" id="site-search" autocomplete="off">
+        <label for="search-input">Buscar</label>
+        <div class="search-field"><input id="search-input" type="search" placeholder="Buscar en el sitio" aria-controls="search-results" /><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" /><path d="m16 16 5.1 5.1" stroke-linecap="round" /></svg></div>
+      </form>
+      <div class="search-results" id="search-results" aria-live="polite" hidden></div>
+    </div>
+    <div class="content-columns"><article class="article-main">
+      <div class="page-heading"><span class="eyebrow">Error 404</span><h1>Esta página no existe, pero su trámite sí tiene inicio.</h1><p>La dirección que abrió pudo cambiar o escribirse con error. Vuelva al inicio o escriba directamente a un asesor para recibir orientación inmediata.</p></div>
+      <div class="inline-actions"><a class="button-primary" href="index.html">Ir al inicio <span aria-hidden="true">→</span></a><a class="text-action" href="https://wa.me/50762557583?text=%C2%A1Hola%21%20%F0%9F%91%8B%20Bienvenido/a%20a%20Natural%C3%ADzate.pa%20%F0%9F%87%B5%F0%9F%87%A6%0ATe%20acompa%C3%B1amos%20en%20tu%20proceso%20de%20naturalizaci%C3%B3n%20paname%C3%B1a%20con%20atenci%C3%B3n%20jur%C3%ADdica%20personalizada%20%E2%9A%96%EF%B8%8F%E2%9C%A8%0A%0A%E2%9C%85%20Primer%20contacto%20gratuito%20y%20sin%20compromiso.%0A%0APara%20comenzar%2C%20cu%C3%A9ntanos%3A%0A%F0%9F%8C%8E%20%C2%BFCu%C3%A1l%20es%20tu%20nacionalidad%3F%0A%F0%9F%93%85%20%C2%BFDesde%20qu%C3%A9%20a%C3%B1o%20tienes%20residencia%20permanente%20en%20Panam%C3%A1%3F" target="_blank" rel="noopener noreferrer">Hablar con un asesor <span aria-hidden="true">↗</span></a></div>
+    </article></div>
+    </main>
+    <footer class="site-footer shell" id="contacto-pie">
+      <div class="footer-columns">
+        <section class="footer-form-col" aria-labelledby="footer-form-title">
+          <h2 id="footer-form-title">Escríbanos</h2>
+          <form class="contact-form footer-form" data-wa-form>
+            <label class="visually-hidden" for="footer-name">Nombre</label><input id="footer-name" name="nombre" type="text" placeholder="Nombre" autocomplete="name" required />
+            <label class="visually-hidden" for="footer-email">Correo electrónico</label><input id="footer-email" name="correo" type="email" placeholder="Correo electrónico" autocomplete="email" required />
+            <label class="visually-hidden" for="footer-message">Mensaje</label><textarea id="footer-message" name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
+            <label class="check-line"><input type="checkbox" name="novedades" value="Sí" /> Me interesa recibir novedades legales</label>
+            <button class="form-submit" type="submit">Enviar <span aria-hidden="true">→</span></button>
+            <p class="form-note" data-form-status role="status">Al enviar, se abrirá WhatsApp con sus datos para que revise y confirme el mensaje. No guardamos datos en esta página.</p>
+          </form>
+        </section>
+        <section class="footer-contact-col" aria-labelledby="footer-contact-title">
+          <h2 id="footer-contact-title">Contáctenos</h2>
+          <div class="contact-row"><span class="contact-symbol" aria-hidden="true">⌖</span><div><strong>Dirección</strong><address>Scotia Plaza, Piso 7<br />Av. Federico Boyd<br />Ciudad de Panamá, Panamá</address></div></div>
+          <div class="contact-row"><span class="contact-symbol" aria-hidden="true">◔</span><div><strong>WhatsApp</strong><a href="https://wa.me/50762557583?text=%C2%A1Hola%21%20%F0%9F%91%8B%20Bienvenido/a%20a%20Natural%C3%ADzate.pa%20%F0%9F%87%B5%F0%9F%87%A6%0ATe%20acompa%C3%B1amos%20en%20tu%20proceso%20de%20naturalizaci%C3%B3n%20paname%C3%B1a%20con%20atenci%C3%B3n%20jur%C3%ADdica%20personalizada%20%E2%9A%96%EF%B8%8F%E2%9C%A8%0A%0A%E2%9C%85%20Primer%20contacto%20gratuito%20y%20sin%20compromiso.%0A%0APara%20comenzar%2C%20cu%C3%A9ntanos%3A%0A%F0%9F%8C%8E%20%C2%BFCu%C3%A1l%20es%20tu%20nacionalidad%3F%0A%F0%9F%93%85%20%C2%BFDesde%20qu%C3%A9%20a%C3%B1o%20tienes%20residencia%20permanente%20en%20Panam%C3%A1%3F" target="_blank" rel="noopener noreferrer">+507 6255-7583</a></div></div>
+          <div class="contact-row"><span class="contact-symbol" aria-hidden="true">✉</span><div><strong>Correo electrónico</strong><a href="mailto:villarreallawyers@proton.me">villarreallawyers@proton.me</a></div></div>
+          <div class="contact-row"><span class="contact-symbol" aria-hidden="true">↗</span><div><strong>Más información</strong><a href="guia.html">Guía de requisitos</a><a href="contacto.html">Formulario de contacto</a></div></div>
+        </section>
+        <section class="footer-map-col" aria-labelledby="footer-map-title">
+          <h2 id="footer-map-title">Ubicación</h2>
+          <div class="map-preview"><span class="map-schematic-label">Esquema ilustrativo</span><div class="map-streets" aria-hidden="true"><span class="map-road map-road-one"></span><span class="map-road map-road-two"></span><span class="map-road map-road-three"></span><span class="map-road map-road-four"></span><span class="map-marker"></span></div><div class="map-preview-caption"><strong>Scotia Plaza · Piso 7</strong><span>Ciudad de Panamá</span></div></div>
+          <a class="map-open" href="https://www.google.com/maps/search/?api=1&amp;query=Scotia+Plaza+Piso+7+Av+Federico+Boyd+Panama" target="_blank" rel="noopener noreferrer">Ver ubicación en Google Maps <span aria-hidden="true">↗</span></a>
+        </section>
+      </div>
+      <div class="footer-bottom"><img src="assets/logo-principal-navy.svg" alt="Naturalízate.pa" width="1054" height="140" loading="lazy" /><div><p>© <span id="year">2026</span> Naturalízate.pa · Lic. Alfonso Villarreal</p><small>Despacho privado. No afiliado al Estado panameño. La información es general y no garantiza un resultado.</small></div></div>
+      <a class="floating-contact" href="https://wa.me/50762557583?text=%C2%A1Hola%21%20%F0%9F%91%8B%20Bienvenido/a%20a%20Natural%C3%ADzate.pa%20%F0%9F%87%B5%F0%9F%87%A6%0ATe%20acompa%C3%B1amos%20en%20tu%20proceso%20de%20naturalizaci%C3%B3n%20paname%C3%B1a%20con%20atenci%C3%B3n%20jur%C3%ADdica%20personalizada%20%E2%9A%96%EF%B8%8F%E2%9C%A8%0A%0A%E2%9C%85%20Primer%20contacto%20gratuito%20y%20sin%20compromiso.%0A%0APara%20comenzar%2C%20cu%C3%A9ntanos%3A%0A%F0%9F%8C%8E%20%C2%BFCu%C3%A1l%20es%20tu%20nacionalidad%3F%0A%F0%9F%93%85%20%C2%BFDesde%20qu%C3%A9%20a%C3%B1o%20tienes%20residencia%20permanente%20en%20Panam%C3%A1%3F" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp a Naturalízate.pa"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.4 11.7a8.3 8.3 0 0 1-12.1 7.4l-4.8 1.1 1.2-4.6A8.3 8.3 0 1 1 20.4 11.7Z"/><path d="M8.5 8.3c.4-.3.8-.2 1 .3l.8 1.8c.1.3.1.5-.1.8l-.6.8c.8 1.4 1.9 2.4 3.3 3.1l.7-.7c.3-.2.5-.3.8-.2l1.8.7c.5.2.6.6.3 1-.5.8-1.2 1.2-2.1 1.2-3.3-.1-7-3.5-7.1-6.9 0-.8.4-1.5 1.2-1.9Z"/></svg></a>
+    </footer>
+    
+  </body>
 </html>

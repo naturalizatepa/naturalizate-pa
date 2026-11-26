@@ -1,48 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es-PA">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Brand Book, Embudo Comercial y Guía de Aplicación | Naturalízate.pa</title>
-<meta name="robots" content="noindex, nofollow" />
-<meta name="theme-color" content="#0D1B2A" />
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-<link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
-<style>
-  @font-face {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url("fonts/inter-latin-wght-normal.woff2") format("woff2");
-  }
-  @font-face {
-    font-family: "Playfair Display";
-    font-style: normal;
-    font-weight: 400 900;
-    font-display: swap;
-    src: url("fonts/playfair-display-latin-wght-normal.woff2") format("woff2");
-  }
-  @font-face {
-    font-family: "Playfair Display";
-    font-style: italic;
-    font-weight: 400 900;
-    font-display: swap;
-    src: url("fonts/playfair-display-latin-wght-italic.woff2") format("woff2");
-  }
-  @font-face {
-    font-family: "Inter Fallback";
-    src: local("Arial"), local("ArialMT");
-    ascent-override: 90.4365%; descent-override: 22.518%; line-gap-override: 0%; size-adjust: 107.1194%;
-  }
-  @font-face {
-    font-family: "Playfair Display Fallback";
-    src: local("Georgia");
-    ascent-override: 106.716%; descent-override: 24.7558%; line-gap-override: 0%; size-adjust: 101.3906%;
-  }
-
-  :root {
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0D1B2A" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Documento interno de identidad visual, sistema comercial y protocolos de marca de Naturalízate.pa." />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_PA" />
+    <meta property="og:site_name" content="Naturalízate.pa" />
+    <meta property="og:url" content="https://naturalizatepa.github.io/naturalizate-pa/" />
+    <meta property="og:title" content="Brand Book, Embudo Comercial y Guía de Aplicación | Naturalízate.pa" />
+    <meta property="og:description" content="Documento interno de identidad visual, sistema comercial y protocolos de marca de Naturalízate.pa." />
+    <meta property="og:image" content="https://naturalizatepa.github.io/naturalizate-pa/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Brand Book, Embudo Comercial y Guía de Aplicación | Naturalízate.pa" />
+    <meta name="twitter:description" content="Documento interno de identidad visual, sistema comercial y protocolos de marca de Naturalízate.pa." />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+brandbook {
     --navy-deep: #060F17;
     --navy: #0D1B2A;
     --navy-mid: #1B3A57;
@@ -72,10 +54,9 @@
     --radius-btn: 4px;
     --radius-pill: 999px;
   }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
+brandbook * { box-sizing: border-box; margin: 0; padding: 0; }
+brandbook { scroll-behavior: smooth; }
+brandbook {
     font-family: var(--sans);
     color: var(--gray-700);
     background: var(--white);
@@ -85,33 +66,31 @@
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
-  button, input, select, textarea { font-family: inherit; }
-  section[id] { scroll-margin-top: 84px; }
-  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
-
-  /* ============ HEADER ============ */
-  header.topbar {
+brandbook button, brandbook input, brandbook select, brandbook textarea { font-family: inherit; }
+brandbook section[id] { scroll-margin-top: 84px; }
+brandbook .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+brandbook header.topbar {
     position: sticky; top: 0; z-index: 90;
     background: rgba(6,15,23,0.96);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(197,165,114,0.2);
   }
-  .topbar-inner {
+brandbook .topbar-inner {
     display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 74px;
   }
-  .logo {
+brandbook .logo {
     font-family: var(--serif); font-weight: 500; text-transform: none;
     letter-spacing: 3px; font-size: 1rem; line-height: 1;
     color: #fff; text-decoration: none; white-space: nowrap;
   }
-  .logo .pa {
+brandbook .logo .pa {
     font-style: italic; font-weight: 400; text-transform: lowercase;
     color: var(--gold); letter-spacing: 0.5px;
   }
-  .top-nav { display: flex; align-items: center; gap: 18px; }
-  .top-nav a { color: rgba(255,255,255,0.82); text-decoration: none; font-size: 0.82rem; font-weight: 500; white-space: nowrap; }
-  .top-nav a:hover { color: var(--gold); }
-  .btn {
+brandbook .top-nav { display: flex; align-items: center; gap: 18px; }
+brandbook .top-nav a { color: rgba(255,255,255,0.82); text-decoration: none; font-size: 0.82rem; font-weight: 500; white-space: nowrap; }
+brandbook .top-nav a:hover { color: var(--gold); }
+brandbook .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     min-height: 40px; padding: 9px 16px;
     font-family: var(--sans); font-size: 0.72rem; font-weight: 700;
@@ -119,226 +98,247 @@
     border-radius: var(--radius-btn); border: 1.5px solid transparent;
     cursor: pointer; transition: background .18s, color .18s, border-color .18s;
   }
-  .btn-gold { background: var(--gold); color: var(--navy-deep); border-color: var(--gold); }
-  .btn-gold:hover { background: var(--gold-hover); border-color: var(--gold-hover); }
-  .btn-navy { background: var(--navy); color: #fff; border-color: var(--navy); }
-  .btn-navy:hover { background: var(--navy-mid); border-color: var(--navy-mid); }
-  .btn-outline-n { background: transparent; color: var(--navy); border-color: var(--navy); }
-  .btn-outline-w { background: transparent; color: #fff; border-color: rgba(255,255,255,0.55); }
-  .btn-wa { background: var(--wa); color: #fff; border-color: var(--wa); }
-  @media (max-width: 980px) { .top-nav a.nav-hide { display: none; } }
-
-  /* ============ COVER ============ */
-  .cover {
+brandbook .btn-gold { background: var(--gold); color: var(--navy-deep); border-color: var(--gold); }
+brandbook .btn-gold:hover { background: var(--gold-hover); border-color: var(--gold-hover); }
+brandbook .btn-navy { background: var(--navy); color: #fff; border-color: var(--navy); }
+brandbook .btn-navy:hover { background: var(--navy-mid); border-color: var(--navy-mid); }
+brandbook .btn-outline-n { background: transparent; color: var(--navy); border-color: var(--navy); }
+brandbook .btn-outline-w { background: transparent; color: #fff; border-color: rgba(255,255,255,0.55); }
+brandbook .btn-wa { background: var(--wa); color: #fff; border-color: var(--wa); }
+@media (max-width: 980px) {
+brandbook .top-nav a.nav-hide { display: none; }}
+brandbook .cover {
     background: linear-gradient(155deg, var(--navy-deep) 0%, var(--navy) 58%, var(--navy-mid) 100%);
     color: #fff;
     padding: 84px 0 78px;
     position: relative;
     overflow: hidden;
   }
-  .cover::after {
+brandbook .cover::after {
     content: "N.";
     position: absolute; right: -20px; bottom: -85px;
     font-family: var(--serif); font-style: italic; font-size: 21rem; line-height: 1;
     color: rgba(197,165,114,0.05); pointer-events: none; user-select: none;
   }
-  .cover-eyebrow {
+brandbook .cover-eyebrow {
     display: inline-flex; align-items: center; gap: 10px;
     font-size: 0.74rem; font-weight: 700; letter-spacing: 2.3px; text-transform: uppercase;
     color: var(--gold); margin-bottom: 18px;
   }
-  .cover-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); }
-  .cover h1 {
+brandbook .cover-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); }
+brandbook .cover h1 {
     font-family: var(--serif); font-weight: 600;
     font-size: clamp(2.1rem, 4.3vw, 3.2rem); line-height: 1.15; max-width: 820px; margin-bottom: 18px;
   }
-  .cover h1 em { font-style: italic; font-weight: 400; color: var(--gold-hover); }
-  .cover p.lead { color: rgba(255,255,255,0.84); font-size: 1.04rem; max-width: 680px; margin-bottom: 28px; }
-  .meta-strip {
+brandbook .cover h1 em { font-style: italic; font-weight: 400; color: var(--gold-hover); }
+brandbook .cover p.lead { color: rgba(255,255,255,0.84); font-size: 1.04rem; max-width: 680px; margin-bottom: 28px; }
+brandbook .meta-strip {
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
     padding-top: 24px; border-top: 1px solid rgba(197,165,114,0.22); position: relative; z-index: 2;
   }
-  .meta-item { font-size: 0.84rem; color: rgba(255,255,255,0.82); }
-  .meta-item span { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
-  @media (max-width: 820px) { .meta-strip { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 480px) { .meta-strip { grid-template-columns: 1fr; } }
-
-  /* ============ SECTIONS ============ */
-  section.block { padding: 72px 0; }
-  section.alt { background: var(--gray-50); }
-  .sec-head { margin-bottom: 36px; max-width: 780px; }
-  .sec-num { font-size: 0.72rem; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 8px; }
-  .sec-head h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(1.55rem, 2.8vw, 2.1rem); color: var(--navy); line-height: 1.24; margin-bottom: 10px; }
-  .sec-head p { color: var(--gray-600); font-size: 0.98rem; }
-  .rule-left { width: 48px; height: 2px; background: var(--gold); margin-top: 16px; }
-
-  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-  @media (max-width: 900px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } .grid-3 { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 680px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
-
-  .card {
+brandbook .meta-item { font-size: 0.84rem; color: rgba(255,255,255,0.82); }
+brandbook .meta-item span { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+@media (max-width: 820px) {
+brandbook .meta-strip { grid-template-columns: repeat(2, 1fr); }}
+@media (max-width: 480px) {
+brandbook .meta-strip { grid-template-columns: 1fr; }}
+brandbook section.block { padding: 72px 0; }
+brandbook section.alt { background: var(--gray-50); }
+brandbook .sec-head { margin-bottom: 36px; max-width: 780px; }
+brandbook .sec-num { font-size: 0.72rem; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 8px; }
+brandbook .sec-head h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(1.55rem, 2.8vw, 2.1rem); color: var(--navy); line-height: 1.24; margin-bottom: 10px; }
+brandbook .sec-head p { color: var(--gray-600); font-size: 0.98rem; }
+brandbook .rule-left { width: 48px; height: 2px; background: var(--gold); margin-top: 16px; }
+brandbook .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+brandbook .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+brandbook .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 900px) {
+brandbook .grid-4 { grid-template-columns: repeat(2, 1fr); }
+brandbook .grid-3 { grid-template-columns: 1fr 1fr; }}
+@media (max-width: 680px) {
+brandbook .grid-2, brandbook .grid-3, brandbook .grid-4 { grid-template-columns: 1fr; }}
+brandbook .card {
     background: var(--white); border: 1px solid var(--gray-200);
     border-radius: var(--radius); padding: 26px 24px;
   }
-  .card.top-navy { border-top: 3px solid var(--navy); }
-  .card.top-gold { border-top: 3px solid var(--gold); }
-  .card h3 { font-family: var(--serif); font-size: 1.12rem; color: var(--navy); font-weight: 600; margin-bottom: 8px; line-height: 1.3; }
-  .card p, .card li { font-size: 0.91rem; color: var(--gray-700); }
-  .card ul { list-style: none; margin-top: 10px; }
-  .card li { padding: 5px 0 5px 20px; position: relative; }
-  .card li::before { content: "✓"; position: absolute; left: 0; color: var(--ok); font-weight: 700; }
-  .card.no-list li::before { content: "✕"; color: var(--no); font-size: 0.82rem; top: 6px; }
-
-  .quote-box {
+brandbook .card.top-navy { border-top: 3px solid var(--navy); }
+brandbook .card.top-gold { border-top: 3px solid var(--gold); }
+brandbook .card h3 { font-family: var(--serif); font-size: 1.12rem; color: var(--navy); font-weight: 600; margin-bottom: 8px; line-height: 1.3; }
+brandbook .card p, brandbook .card li { font-size: 0.91rem; color: var(--gray-700); }
+brandbook .card ul { list-style: none; margin-top: 10px; }
+brandbook .card li { padding: 5px 0 5px 20px; position: relative; }
+brandbook .card li::before { content: "✓"; position: absolute; left: 0; color: var(--ok); font-weight: 700; }
+brandbook .card.no-list li::before { content: "✕"; color: var(--no); font-size: 0.82rem; top: 6px; }
+brandbook .quote-box {
     background: var(--gold-soft); border-left: 4px solid var(--gold); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     padding: 20px 24px; font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--navy);
     margin-bottom: 24px;
   }
-
-  /* ============ LOGO SPECIMENS ============ */
-  .specimen {
+brandbook .specimen {
     border-radius: var(--radius); padding: 40px 28px;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     min-height: 170px; text-align: center; gap: 14px;
     border: 1px solid var(--gray-200);
   }
-  .specimen.dark { background: var(--navy-deep); border-color: rgba(197,165,114,0.28); }
-  .specimen.navy { background: var(--navy); border-color: rgba(197,165,114,0.28); }
-  .specimen.light { background: var(--white); }
-  .specimen .wordmark-lg {
+brandbook .specimen.dark { background: var(--navy-deep); border-color: rgba(197,165,114,0.28); }
+brandbook .specimen.navy { background: var(--navy); border-color: rgba(197,165,114,0.28); }
+brandbook .specimen.light { background: var(--white); }
+brandbook .specimen .wordmark-lg {
     font-family: var(--serif); font-weight: 500; font-size: clamp(1.35rem, 2.5vw, 1.9rem);
     letter-spacing: 4px; line-height: 1; color: #fff; text-transform: none;
   }
-  .specimen .wordmark-lg .pa {
+brandbook .specimen .wordmark-lg .pa {
     font-style: italic; font-weight: 400; text-transform: lowercase; color: var(--gold); letter-spacing: 0.8px;
   }
-  .specimen.light .wordmark-lg { color: var(--navy); }
-  .specimen.light .wordmark-lg .pa { color: var(--gold-dark); }
-  .specimen img { max-height: 54px; width: auto; max-width: 90%; }
-  .specimen.seal img { max-height: 92px; }
-  .specimen-cap { font-size: 0.76rem; color: var(--gray-600); letter-spacing: 0.4px; }
-  .specimen.dark .specimen-cap, .specimen.navy .specimen-cap { color: rgba(255,255,255,0.68); }
-
-  /* ============ COLOR SWATCHES ============ */
-  .swatch {
+brandbook .specimen.light .wordmark-lg { color: var(--navy); }
+brandbook .specimen.light .wordmark-lg .pa { color: var(--gold-dark); }
+brandbook .specimen img { max-height: 54px; width: auto; max-width: 90%; }
+brandbook .specimen.seal img { max-height: 92px; }
+brandbook .specimen-cap { font-size: 0.76rem; color: var(--gray-600); letter-spacing: 0.4px; }
+brandbook .specimen.dark .specimen-cap, brandbook .specimen.navy .specimen-cap { color: rgba(255,255,255,0.68); }
+brandbook .swatch {
     border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; background: #fff;
   }
-  .swatch-fill { height: 92px; position: relative; display: flex; align-items: flex-end; padding: 10px 14px; }
-  .swatch-badge {
+brandbook .swatch-fill { height: 92px; position: relative; display: flex; align-items: flex-end; padding: 10px 14px; }
+brandbook .swatch-badge {
     font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
     padding: 3px 8px; border-radius: var(--radius-pill); background: rgba(255,255,255,0.92); color: var(--navy);
   }
-  .swatch-body { padding: 14px 16px; }
-  .swatch-body h4 { font-family: var(--serif); font-size: 1rem; color: var(--navy); margin-bottom: 4px; }
-  .swatch-code { font-size: 0.8rem; font-weight: 700; color: var(--gold-dark); margin-bottom: 6px; font-family: monospace; }
-  .swatch-body p { font-size: 0.82rem; color: var(--gray-600); line-height: 1.45; }
-
-  .ratio-bar {
+brandbook .swatch-body { padding: 14px 16px; }
+brandbook .swatch-body h4 { font-family: var(--serif); font-size: 1rem; color: var(--navy); margin-bottom: 4px; }
+brandbook .swatch-code { font-size: 0.8rem; font-weight: 700; color: var(--gold-dark); margin-bottom: 6px; font-family: monospace; }
+brandbook .swatch-body p { font-size: 0.82rem; color: var(--gray-600); line-height: 1.45; }
+brandbook .ratio-bar {
     display: flex; height: 22px; border-radius: var(--radius-pill); overflow: hidden;
     border: 1px solid var(--gray-300); margin: 22px 0 10px;
   }
-  .ratio-legend { display: flex; gap: 22px; flex-wrap: wrap; font-size: 0.84rem; color: var(--gray-700); }
-  .ratio-legend strong { color: var(--navy); }
-
-  /* ============ TYPOGRAPHY SPECIMENS ============ */
-  .type-specimen { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 28px; }
-  .type-big { font-size: 3.1rem; line-height: 1.05; color: var(--navy); margin-bottom: 10px; }
-  .type-serif { font-family: var(--serif); font-weight: 600; }
-  .type-sans { font-family: var(--sans); font-weight: 600; }
-  .type-scale { width: 100%; border-collapse: collapse; margin-top: 22px; background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; }
-  .type-scale th, .type-scale td { padding: 13px 16px; border-bottom: 1px solid var(--gray-200); text-align: left; font-size: 0.88rem; vertical-align: middle; }
-  .type-scale thead th { background: var(--navy); color: #fff; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.4px; }
-
-  /* ============ SHAPES & UI KIT ============ */
-  .shape-box {
+brandbook .ratio-legend { display: flex; gap: 22px; flex-wrap: wrap; font-size: 0.84rem; color: var(--gray-700); }
+brandbook .ratio-legend strong { color: var(--navy); }
+brandbook .type-specimen { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 28px; }
+brandbook .type-big { font-size: 3.1rem; line-height: 1.05; color: var(--navy); margin-bottom: 10px; }
+brandbook .type-serif { font-family: var(--serif); font-weight: 600; }
+brandbook .type-sans { font-family: var(--sans); font-weight: 600; }
+brandbook .type-scale { width: 100%; border-collapse: collapse; margin-top: 22px; background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; }
+brandbook .type-scale th, brandbook .type-scale td { padding: 13px 16px; border-bottom: 1px solid var(--gray-200); text-align: left; font-size: 0.88rem; vertical-align: middle; }
+brandbook .type-scale thead th { background: var(--navy); color: #fff; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.4px; }
+brandbook .shape-box {
     background: #fff; border: 1px solid var(--gray-200); padding: 22px; text-align: center;
   }
-  .shape-demo {
+brandbook .shape-demo {
     height: 54px; background: var(--gold-soft); border: 2px solid var(--navy); margin: 0 auto 12px;
     display: flex; align-items: center; justify-content: center;
     font-size: 0.78rem; font-weight: 700; color: var(--navy);
   }
-  .ui-kit-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 20px; border-radius: var(--radius); border: 1px solid var(--gray-200); }
-  .ui-kit-row.dark { background: var(--navy); border-color: rgba(197,165,114,0.28); }
-  .chip-demo {
+brandbook .ui-kit-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 20px; border-radius: var(--radius); border: 1px solid var(--gray-200); }
+brandbook .ui-kit-row.dark { background: var(--navy); border-color: rgba(197,165,114,0.28); }
+brandbook .chip-demo {
     display: inline-block; padding: 8px 14px; border-radius: var(--radius-pill);
     border: 1.5px solid var(--gray-300); font-size: 0.84rem; color: var(--navy); background: #fff;
   }
-  .chip-demo.active { background: var(--navy); color: #fff; border-color: var(--navy); font-weight: 600; }
-
-  /* ============ FUNNEL VISUAL ============ */
-  .funnel-flow {
+brandbook .chip-demo.active { background: var(--navy); color: #fff; border-color: var(--navy); font-weight: 600; }
+brandbook .funnel-flow {
     display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 28px;
   }
-  .f-stage {
+brandbook .f-stage {
     background: #fff; border: 1px solid var(--gray-200); border-top: 4px solid var(--navy);
     border-radius: var(--radius); padding: 18px 14px; display: flex; flex-direction: column;
   }
-  .f-stage.hl { background: var(--gold-soft); border-top-color: var(--gold); }
-  .f-stage .st-n { font-size: 0.68rem; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 6px; }
-  .f-stage h3 { font-family: var(--serif); font-size: 0.98rem; color: var(--navy); margin-bottom: 6px; }
-  .f-stage p { font-size: 0.82rem; color: var(--gray-700); line-height: 1.48; }
-  .f-stage .st-kpi { margin-top: auto; padding-top: 10px; font-size: 0.72rem; font-weight: 700; color: var(--navy-mid); border-top: 1px solid var(--gray-200); }
-  @media (max-width: 1020px) { .funnel-flow { grid-template-columns: repeat(3, 1fr); } }
-  @media (max-width: 620px) { .funnel-flow { grid-template-columns: 1fr; } }
-
-  /* ============ SCRIPTS & TABLES ============ */
-  .script-card {
+brandbook .f-stage.hl { background: var(--gold-soft); border-top-color: var(--gold); }
+brandbook .f-stage .st-n { font-size: 0.68rem; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 6px; }
+brandbook .f-stage h3 { font-family: var(--serif); font-size: 0.98rem; color: var(--navy); margin-bottom: 6px; }
+brandbook .f-stage p { font-size: 0.82rem; color: var(--gray-700); line-height: 1.48; }
+brandbook .f-stage .st-kpi { margin-top: auto; padding-top: 10px; font-size: 0.72rem; font-weight: 700; color: var(--navy-mid); border-top: 1px solid var(--gray-200); }
+@media (max-width: 1020px) {
+brandbook .funnel-flow { grid-template-columns: repeat(3, 1fr); }}
+@media (max-width: 620px) {
+brandbook .funnel-flow { grid-template-columns: 1fr; }}
+brandbook .script-card {
     background: #fff; border: 1px solid var(--gray-200); border-left: 4px solid var(--navy);
     border-radius: var(--radius-sm); padding: 20px 22px; margin-bottom: 14px;
   }
-  .script-card.gold { border-left-color: var(--gold); background: var(--gold-soft); }
-  .script-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
-  .script-head strong { font-family: var(--serif); font-size: 1.02rem; color: var(--navy); }
-  .script-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; background: var(--navy); color: var(--gold); padding: 3px 10px; border-radius: var(--radius-pill); }
-  .script-body { font-size: 0.9rem; color: var(--gray-700); line-height: 1.62; }
-
-  .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .chk-item {
+brandbook .script-card.gold { border-left-color: var(--gold); background: var(--gold-soft); }
+brandbook .script-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+brandbook .script-head strong { font-family: var(--serif); font-size: 1.02rem; color: var(--navy); }
+brandbook .script-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; background: var(--navy); color: var(--gold); padding: 3px 10px; border-radius: var(--radius-pill); }
+brandbook .script-body { font-size: 0.9rem; color: var(--gray-700); line-height: 1.62; }
+brandbook .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+brandbook .chk-item {
     background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius-sm);
     padding: 14px 16px; display: flex; gap: 10px; align-items: flex-start; font-size: 0.88rem;
   }
-  .chk-item span { color: var(--gold-dark); font-weight: 700; }
-  @media (max-width: 720px) { .checklist-grid { grid-template-columns: 1fr; } }
-
-  footer {
+brandbook .chk-item span { color: var(--gold-dark); font-weight: 700; }
+@media (max-width: 720px) {
+brandbook .checklist-grid { grid-template-columns: 1fr; }}
+brandbook footer {
     background: var(--navy-deep); color: rgba(255,255,255,0.68);
     padding: 38px 0; text-align: center; font-size: 0.84rem;
     border-top: 1px solid rgba(197,165,114,0.2);
   }
-  footer .f-logo { font-family: var(--serif); font-weight: 500; letter-spacing: 3px; font-size: 1rem; color: #fff; margin-bottom: 8px; }
-  footer .f-logo .pa { font-style: italic; font-weight: 400; text-transform: lowercase; color: var(--gold); letter-spacing: 0.5px; }
-
-  @media print {
-    header.topbar, .no-print { display: none !important; }
-    section.block { padding: 28px 0; break-inside: avoid; }
-    .cover { padding: 40px 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .specimen.dark, .specimen.navy, .swatch-fill, .ui-kit-row.dark, .type-scale thead th, footer {
+brandbook footer .f-logo { font-family: var(--serif); font-weight: 500; letter-spacing: 3px; font-size: 1rem; color: #fff; margin-bottom: 8px; }
+brandbook footer .f-logo .pa { font-style: italic; font-weight: 400; text-transform: lowercase; color: var(--gold); letter-spacing: 0.5px; }
+@media print {
+brandbook header.topbar, brandbook .no-print { display: none !important; }
+brandbook section.block { padding: 28px 0; break-inside: avoid; }
+brandbook .cover { padding: 40px 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+brandbook .specimen.dark, brandbook .specimen.navy, brandbook .swatch-fill, brandbook .ui-kit-row.dark, brandbook .type-scale thead th, brandbook footer {
       -webkit-print-color-adjust: exact; print-color-adjust: exact;
-    }
-  }
+    }}
 </style>
-</head>
-<body>
-
-<header class="topbar">
-  <div class="container topbar-inner">
-    <a href="#portada" class="logo" aria-label="Naturalízate.pa — Brand Book"><span>NATURALÍZATE<span class="pa">.pa</span></span></a>
-    <nav class="top-nav" aria-label="Secciones del Brand Book">
-      <a class="nav-hide" href="#identidad">Identidad</a>
-      <a class="nav-hide" href="#logotipo">Logotipo</a>
-      <a class="nav-hide" href="#colores">Colores</a>
-      <a class="nav-hide" href="#tipografia">Tipografía</a>
-      <a class="nav-hide" href="#formas">Formas</a>
-      <a class="nav-hide" href="#embudo">Embudo</a>
-      <a class="nav-hide" href="#aplicacion">Aplicación</a>
-      <button type="button" class="btn btn-gold no-print" onclick="window.print()">Imprimir / PDF</button>
+    <script src="app.js" defer></script>
+    
+    <title>Brand Book, Embudo Comercial y Guía de Aplicación | Naturalízate.pa</title>
+  </head>
+  <body data-page="">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-masthead">
+      <div class="shell masthead-inner">
+        <div class="utility-row"><span class="utility-locale"><span class="locale-mark" aria-hidden="true">PA</span> Panamá · Español</span><a href="https://wa.me/50762557583?text=%C2%A1Hola%21%20%F0%9F%91%8B%20Bienvenido/a%20a%20Natural%C3%ADzate.pa%20%F0%9F%87%B5%F0%9F%87%A6%0ATe%20acompa%C3%B1amos%20en%20tu%20proceso%20de%20naturalizaci%C3%B3n%20paname%C3%B1a%20con%20atenci%C3%B3n%20jur%C3%ADdica%20personalizada%20%E2%9A%96%EF%B8%8F%E2%9C%A8%0A%0A%E2%9C%85%20Primer%20contacto%20gratuito%20y%20sin%20compromiso.%0A%0APara%20comenzar%2C%20cu%C3%A9ntanos%3A%0A%F0%9F%8C%8E%20%C2%BFCu%C3%A1l%20es%20tu%20nacionalidad%3F%0A%F0%9F%93%85%20%C2%BFDesde%20qu%C3%A9%20a%C3%B1o%20tienes%20residencia%20permanente%20en%20Panam%C3%A1%3F" target="_blank" rel="noopener noreferrer">WhatsApp +507 6255-7583 <span aria-hidden="true">↗</span></a></div>
+        <div class="brand-block"><a class="brand-link" href="index.html" aria-label="Naturalízate.pa, página de inicio"><img src="assets/logo-principal-navy.svg" alt="Naturalízate.pa" width="1054" height="140" /></a><p>Oficina legal · Naturalización panameña</p></div>
+      </div>
+    </header>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <div class="shell nav-inner">
+        <a class="nav-mobile-brand" href="index.html" aria-label="Naturalízate.pa, inicio"><img src="assets/isotipo-n-blanco.svg" alt="" width="105" height="92" /></a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+        <div class="nav-links" id="nav-links"><a class="nav-link" href="index.html">Inicio</a>
+<div class="nav-item has-dropdown" data-dropdown>
+      <a class="nav-link" href="servicios.html">Áreas de práctica</a>
+      <button class="nav-caret" type="button" aria-label="Abrir submenú de Áreas de práctica" aria-expanded="false" aria-controls="submenu-servicios">
+        <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="m2 4.5 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </button>
+      <div class="nav-panel" id="submenu-servicios"><a href="servicios.html#evaluacion">Evaluación de viabilidad</a>
+<a href="servicios.html#expediente">Preparación del expediente</a>
+<a href="servicios.html#representacion">Representación y seguimiento</a>
+<a href="index.html#auditoria">Auditoría Jurídica de Caso · US$49</a></div>
+    </div>
+<a class="nav-link" href="vias.html">Vías de naturalización</a>
+<a class="nav-link" href="honorarios.html">Honorarios</a>
+<a class="nav-link" href="aviso-legal.html">Aviso legal</a>
+<div class="nav-item has-dropdown" data-dropdown>
+      <a class="nav-link" href="informacion-legal.html">Información legal</a>
+      <button class="nav-caret" type="button" aria-label="Abrir submenú de Información legal" aria-expanded="false" aria-controls="submenu-informacion">
+        <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="m2 4.5 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </button>
+      <div class="nav-panel" id="submenu-informacion"><a href="informacion-legal.html#articulos">Artículos y novedades</a>
+<a href="informacion-legal.html#proceso">Etapas del proceso</a>
+<a href="informacion-legal.html#enlaces-oficiales">Enlaces oficiales</a>
+<a href="guia.html">Guía completa de requisitos</a></div>
+    </div>
+<a class="nav-link" href="verificacion.html">Verificación</a>
+<a class="nav-link" href="contacto.html">Contáctenos</a></div>
+      </div>
     </nav>
-  </div>
-</header>
-
+    <main class="shell main-shell is-inner" id="contenido">
+    
+    <div class="search-region">
+      <form class="site-search" role="search" id="site-search" autocomplete="off">
+        <label for="search-input">Buscar</label>
+        <div class="search-field"><input id="search-input" type="search" placeholder="Buscar en el sitio" aria-controls="search-results" /><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" /><path d="m16 16 5.1 5.1" stroke-linecap="round" /></svg></div>
+      </form>
+      <div class="search-results" id="search-results" aria-live="polite" hidden></div>
+    </div>
+    <div class="legacy-page" id="brandbook">
+<div class="print-bar no-print"><button type="button" class="btn btn-gold" onclick="window.print()">Imprimir / PDF</button></div>
 <section class="cover" id="portada">
   <div class="container">
     <div class="cover-eyebrow">Manual de Marca y Sistema Comercial · v4.0</div>
@@ -806,13 +806,37 @@
   </div>
 </section>
 
-<footer>
-  <div class="container">
-    <div class="f-logo"><span>NATURALÍZATE<span class="pa">.pa</span></span></div>
-    <p>Brand Book Oficial v4.0 · Documento interno (<code>noindex, nofollow</code>) · Lic. Alfonso Villarreal</p>
-    <p style="margin-top:6px; font-size:0.78rem; color:rgba(255,255,255,0.5);">Scotia Plaza, Piso 7, Av. Federico Boyd, Ciudad de Panamá · +507 6255-7583 · villarreallawyers@proton.me</p>
-  </div>
-</footer>
-
-</body>
+</div>
+    </main>
+    <footer class="site-footer shell" id="contacto-pie">
+      <div class="footer-columns">
+        <section class="footer-form-col" aria-labelledby="footer-form-title">
+          <h2 id="footer-form-title">Escríbanos</h2>
+          <form class="contact-form footer-form" data-wa-form>
+            <label class="visually-hidden" for="footer-name">Nombre</label><input id="footer-name" name="nombre" type="text" placeholder="Nombre" autocomplete="name" required />
+            <label class="visually-hidden" for="footer-email">Correo electrónico</label><input id="footer-email" name="correo" type="email" placeholder="Correo electrónico" autocomplete="email" required />
+            <label class="visually-hidden" for="footer-message">Mensaje</label><textarea id="footer-message" name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
+            <label class="check-line"><input type="checkbox" name="novedades" value="Sí" /> Me interesa recibir novedades legales</label>
+            <button class="form-submit" type="submit">Enviar <span aria-hidden="true">→</span></button>
+            <p class="form-note" data-form-status role="status">Al enviar, se abrirá WhatsApp con sus datos para que revise y confirme el mensaje. No guardamos datos en esta página.</p>
+          </form>
+        </section>
+        <section class="footer-contact-col" aria-labelledby="footer-contact-title">
+          <h2 id="footer-contact-title">Contáctenos</h2>
+          <div class="contact-row"><span class="contact-symbol" aria-hidden="true">⌖</span><div><strong>Dirección</strong><address>Scotia Plaza, Piso 7<br />Av. Federico Boyd<br />Ciudad de Panamá, Panamá</address></div></div>
+          <div class="contact-row"><span class="contact-symbol" aria-hidden="true">◔</span><div><strong>WhatsApp</strong><a href="https://wa.me/50762557583?text=%C2%A1Hola%21%20%F0%9F%91%8B%20Bienvenido/a%20a%20Natural%C3%ADzate.pa%20%F0%9F%87%B5%F0%9F%87%A6%0ATe%20acompa%C3%B1amos%20en%20tu%20proceso%20de%20naturalizaci%C3%B3n%20paname%C3%B1a%20con%20atenci%C3%B3n%20jur%C3%ADdica%20personalizada%20%E2%9A%96%EF%B8%8F%E2%9C%A8%0A%0A%E2%9C%85%20Primer%20contacto%20gratuito%20y%20sin%20compromiso.%0A%0APara%20comenzar%2C%20cu%C3%A9ntanos%3A%0A%F0%9F%8C%8E%20%C2%BFCu%C3%A1l%20es%20tu%20nacionalidad%3F%0A%F0%9F%93%85%20%C2%BFDesde%20qu%C3%A9%20a%C3%B1o%20tienes%20residencia%20permanente%20en%20Panam%C3%A1%3F" target="_blank" rel="noopener noreferrer">+507 6255-7583</a></div></div>
+          <div class="contact-row"><span class="contact-symbol" aria-hidden="true">✉</span><div><strong>Correo electrónico</strong><a href="mailto:villarreallawyers@proton.me">villarreallawyers@proton.me</a></div></div>
+          <div class="contact-row"><span class="contact-symbol" aria-hidden="true">↗</span><div><strong>Más información</strong><a href="guia.html">Guía de requisitos</a><a href="contacto.html">Formulario de contacto</a></div></div>
+        </section>
+        <section class="footer-map-col" aria-labelledby="footer-map-title">
+          <h2 id="footer-map-title">Ubicación</h2>
+          <div class="map-preview"><span class="map-schematic-label">Esquema ilustrativo</span><div class="map-streets" aria-hidden="true"><span class="map-road map-road-one"></span><span class="map-road map-road-two"></span><span class="map-road map-road-three"></span><span class="map-road map-road-four"></span><span class="map-marker"></span></div><div class="map-preview-caption"><strong>Scotia Plaza · Piso 7</strong><span>Ciudad de Panamá</span></div></div>
+          <a class="map-open" href="https://www.google.com/maps/search/?api=1&amp;query=Scotia+Plaza+Piso+7+Av+Federico+Boyd+Panama" target="_blank" rel="noopener noreferrer">Ver ubicación en Google Maps <span aria-hidden="true">↗</span></a>
+        </section>
+      </div>
+      <div class="footer-bottom"><img src="assets/logo-principal-navy.svg" alt="Naturalízate.pa" width="1054" height="140" loading="lazy" /><div><p>© <span id="year">2026</span> Naturalízate.pa · Lic. Alfonso Villarreal</p><small>Despacho privado. No afiliado al Estado panameño. La información es general y no garantiza un resultado.</small></div></div>
+      <a class="floating-contact" href="https://wa.me/50762557583?text=%C2%A1Hola%21%20%F0%9F%91%8B%20Bienvenido/a%20a%20Natural%C3%ADzate.pa%20%F0%9F%87%B5%F0%9F%87%A6%0ATe%20acompa%C3%B1amos%20en%20tu%20proceso%20de%20naturalizaci%C3%B3n%20paname%C3%B1a%20con%20atenci%C3%B3n%20jur%C3%ADdica%20personalizada%20%E2%9A%96%EF%B8%8F%E2%9C%A8%0A%0A%E2%9C%85%20Primer%20contacto%20gratuito%20y%20sin%20compromiso.%0A%0APara%20comenzar%2C%20cu%C3%A9ntanos%3A%0A%F0%9F%8C%8E%20%C2%BFCu%C3%A1l%20es%20tu%20nacionalidad%3F%0A%F0%9F%93%85%20%C2%BFDesde%20qu%C3%A9%20a%C3%B1o%20tienes%20residencia%20permanente%20en%20Panam%C3%A1%3F" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp a Naturalízate.pa"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.4 11.7a8.3 8.3 0 0 1-12.1 7.4l-4.8 1.1 1.2-4.6A8.3 8.3 0 1 1 20.4 11.7Z"/><path d="M8.5 8.3c.4-.3.8-.2 1 .3l.8 1.8c.1.3.1.5-.1.8l-.6.8c.8 1.4 1.9 2.4 3.3 3.1l.7-.7c.3-.2.5-.3.8-.2l1.8.7c.5.2.6.6.3 1-.5.8-1.2 1.2-2.1 1.2-3.3-.1-7-3.5-7.1-6.9 0-.8.4-1.5 1.2-1.9Z"/></svg></a>
+    </footer>
+    
+  </body>
 </html>
